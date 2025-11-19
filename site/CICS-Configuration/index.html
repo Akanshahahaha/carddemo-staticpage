@@ -1,0 +1,2457 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Data-Models/">
+      
+      
+        <link rel="next" href="../Optional-Module-Authorization/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>CICS Configuration - AWS Mainframe Modernization Card Demo - Deep Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cics-configuration-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-header__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AWS Mainframe Modernization Card Demo - Deep Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CICS Configuration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-nav__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AWS Mainframe Modernization Card Demo - Deep Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quick-Start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Admin-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Batch-Processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technical-Components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CICS Configuration
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CICS Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resource-definition-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Definition Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Groups
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resource Groups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-application-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base Application Group
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Categories
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#program-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Program Definitions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Program Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#online-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Online Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Online Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sign-on-and-menu-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sign-On and Menu Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-management-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Management Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-management-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card Management Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-management-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Management Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#report-and-payment-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Report and Payment Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#program-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Program Attributes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transaction-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Definitions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transaction Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Transactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Transactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Attributes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Definitions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vsam-file-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM File Definitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Attributes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapset-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapset Definitions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mapset Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bms-mapset-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BMS Mapset Definitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-module-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Module Resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Module Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ims-db2-mq-authorization-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMS-DB2-MQ Authorization Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db2-transaction-type-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB2 Transaction Type Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vsam-mq-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM-MQ Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-dfhcsdup-batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 1: DFHCSDUP (Batch)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-ceda-interactive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 2: CEDA (Interactive)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-3-batch-ceda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 3: Batch CEDA
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verify-resource-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify Resource Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-verification-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Verification Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optional Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Optional Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Transaction-Type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transaction Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-VSAM-MQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VSAM-MQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resource-definition-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Definition Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Groups
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resource Groups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-application-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base Application Group
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Categories
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#program-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Program Definitions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Program Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#online-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Online Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Online Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sign-on-and-menu-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sign-On and Menu Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-management-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Management Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-management-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card Management Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-management-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Management Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#report-and-payment-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Report and Payment Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#program-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Program Attributes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transaction-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Definitions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transaction Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Transactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Transactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Attributes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Definitions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vsam-file-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM File Definitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Attributes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapset-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapset Definitions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mapset Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bms-mapset-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BMS Mapset Definitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-module-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Module Resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Module Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ims-db2-mq-authorization-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMS-DB2-MQ Authorization Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db2-transaction-type-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB2 Transaction Type Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vsam-mq-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM-MQ Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-dfhcsdup-batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 1: DFHCSDUP (Batch)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-ceda-interactive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 2: CEDA (Interactive)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-3-batch-ceda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 3: Batch CEDA
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verify-resource-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify Resource Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-verification-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Verification Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cics-configuration-guide">CICS Configuration Guide</h1>
+<p>Complete guide to configuring CICS resources for CardDemo.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#resource-groups">Resource Groups</a></li>
+<li><a href="#program-definitions">Program Definitions</a></li>
+<li><a href="#transaction-definitions">Transaction Definitions</a></li>
+<li><a href="#file-definitions">File Definitions</a></li>
+<li><a href="#mapset-definitions">Mapset Definitions</a></li>
+<li><a href="#optional-module-resources">Optional Module Resources</a></li>
+<li><a href="#installation-methods">Installation Methods</a></li>
+<li><a href="#verification">Verification</a></li>
+</ul>
+<h2 id="overview">Overview</h2>
+<p>CardDemo requires various CICS resources to be defined and installed. This guide covers all resource definitions needed for the base application and optional modules.</p>
+<h3 id="resource-definition-methods">Resource Definition Methods</h3>
+<p><strong>DFHCSDUP (Recommended)</strong>
+- Batch utility for resource definition
+- Reproducible and scriptable
+- Provided in CSD folder</p>
+<p><strong>CEDA (Interactive)</strong>
+- Online resource definition
+- Immediate feedback
+- Good for testing and troubleshooting</p>
+<p><strong>RDO (Resource Definition Online)</strong>
+- Modern CICS resource definition
+- Recommended for CICS TS 5.x+</p>
+<h2 id="resource-groups">Resource Groups</h2>
+<h3 id="base-application-group">Base Application Group</h3>
+<p>All CardDemo resources are defined in the CARDDEMO group:</p>
+<pre><code>CEDA DEFINE GROUP(CARDDEMO) DESCRIPTION('CardDemo Application Resources')
+</code></pre>
+<h3 id="resource-categories">Resource Categories</h3>
+<ul>
+<li><strong>Programs</strong>: 29 online programs</li>
+<li><strong>Transactions</strong>: 14 transactions</li>
+<li><strong>Files</strong>: 10 VSAM files</li>
+<li><strong>Mapsets</strong>: 14 BMS mapsets</li>
+</ul>
+<h2 id="program-definitions">Program Definitions</h2>
+<h3 id="online-programs">Online Programs</h3>
+<h4 id="sign-on-and-menu-programs">Sign-On and Menu Programs</h4>
+<pre><code>CEDA DEFINE PROGRAM(COSGN00C) GROUP(CARDDEMO)
+  DESCRIPTION(Sign-On Program)
+  LANGUAGE(COBOL)
+  RELOAD(NO)
+  RESIDENT(NO)
+  USAGE(NORMAL)
+  USELPACOPY(NO)
+  STATUS(ENABLED)
+
+CEDA DEFINE PROGRAM(COMEN01C) GROUP(CARDDEMO)
+  DESCRIPTION(Main Menu Program)
+  LANGUAGE(COBOL)
+  RELOAD(NO)
+  RESIDENT(NO)
+  USAGE(NORMAL)
+  STATUS(ENABLED)
+</code></pre>
+<h4 id="account-management-programs">Account Management Programs</h4>
+<pre><code>CEDA DEFINE PROGRAM(COACTVWC) GROUP(CARDDEMO)
+  DESCRIPTION(Account View Program)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+
+CEDA DEFINE PROGRAM(COACTUPC) GROUP(CARDDEMO)
+  DESCRIPTION(Account Update Program)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+</code></pre>
+<h4 id="card-management-programs">Card Management Programs</h4>
+<pre><code>CEDA DEFINE PROGRAM(COCRDLIC) GROUP(CARDDEMO)
+  DESCRIPTION(Card List Program)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+
+CEDA DEFINE PROGRAM(COCRDSLC) GROUP(CARDDEMO)
+  DESCRIPTION(Card View Program)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+
+CEDA DEFINE PROGRAM(COCRDUPC) GROUP(CARDDEMO)
+  DESCRIPTION(Card Update Program)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+</code></pre>
+<h4 id="transaction-management-programs">Transaction Management Programs</h4>
+<pre><code>CEDA DEFINE PROGRAM(COTRN00C) GROUP(CARDDEMO)
+  DESCRIPTION(Transaction List Program)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+
+CEDA DEFINE PROGRAM(COTRN01C) GROUP(CARDDEMO)
+  DESCRIPTION(Transaction View Program)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+
+CEDA DEFINE PROGRAM(COTRN02C) GROUP(CARDDEMO)
+  DESCRIPTION(Transaction Add Program)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+</code></pre>
+<h4 id="report-and-payment-programs">Report and Payment Programs</h4>
+<pre><code>CEDA DEFINE PROGRAM(CORPT00C) GROUP(CARDDEMO)
+  DESCRIPTION(Report Program)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+
+CEDA DEFINE PROGRAM(COBIL00C) GROUP(CARDDEMO)
+  DESCRIPTION(Bill Payment Program)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+</code></pre>
+<h4 id="admin-programs">Admin Programs</h4>
+<pre><code>CEDA DEFINE PROGRAM(COADM01C) GROUP(CARDDEMO)
+  DESCRIPTION(Admin Menu Program)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+
+CEDA DEFINE PROGRAM(COUSR00C) GROUP(CARDDEMO)
+  DESCRIPTION(User List Program)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+
+CEDA DEFINE PROGRAM(COUSR01C) GROUP(CARDDEMO)
+  DESCRIPTION(User Add Program)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+
+CEDA DEFINE PROGRAM(COUSR02C) GROUP(CARDDEMO)
+  DESCRIPTION(User Update Program)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+
+CEDA DEFINE PROGRAM(COUSR03C) GROUP(CARDDEMO)
+  DESCRIPTION(User Delete Program)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+</code></pre>
+<h3 id="program-attributes">Program Attributes</h3>
+<p><strong>Common Attributes:</strong>
+- <strong>LANGUAGE</strong>: COBOL
+- <strong>RELOAD</strong>: NO (programs are not reloaded automatically)
+- <strong>RESIDENT</strong>: NO (programs are not kept in memory)
+- <strong>USAGE</strong>: NORMAL
+- <strong>STATUS</strong>: ENABLED
+- <strong>EXECKEY</strong>: USER</p>
+<h2 id="transaction-definitions">Transaction Definitions</h2>
+<h3 id="user-transactions">User Transactions</h3>
+<pre><code>CEDA DEFINE TRANSACTION(CC00) GROUP(CARDDEMO)
+  DESCRIPTION(Sign-On)
+  PROGRAM(COSGN00C)
+  TWASIZE(0)
+  PROFILE(DFHCICSA)
+  STATUS(ENABLED)
+  PRIORITY(1)
+  TRANCLASS(DFHTCL00)
+
+CEDA DEFINE TRANSACTION(CM00) GROUP(CARDDEMO)
+  DESCRIPTION(Main Menu)
+  PROGRAM(COMEN01C)
+  TWASIZE(0)
+  STATUS(ENABLED)
+
+CEDA DEFINE TRANSACTION(CAVW) GROUP(CARDDEMO)
+  DESCRIPTION(Account View)
+  PROGRAM(COACTVWC)
+  STATUS(ENABLED)
+
+CEDA DEFINE TRANSACTION(CAUP) GROUP(CARDDEMO)
+  DESCRIPTION(Account Update)
+  PROGRAM(COACTUPC)
+  STATUS(ENABLED)
+
+CEDA DEFINE TRANSACTION(CCLI) GROUP(CARDDEMO)
+  DESCRIPTION(Card List)
+  PROGRAM(COCRDLIC)
+  STATUS(ENABLED)
+
+CEDA DEFINE TRANSACTION(CCDL) GROUP(CARDDEMO)
+  DESCRIPTION(Card View)
+  PROGRAM(COCRDSLC)
+  STATUS(ENABLED)
+
+CEDA DEFINE TRANSACTION(CCUP) GROUP(CARDDEMO)
+  DESCRIPTION(Card Update)
+  PROGRAM(COCRDUPC)
+  STATUS(ENABLED)
+
+CEDA DEFINE TRANSACTION(CT00) GROUP(CARDDEMO)
+  DESCRIPTION(Transaction List)
+  PROGRAM(COTRN00C)
+  STATUS(ENABLED)
+
+CEDA DEFINE TRANSACTION(CT01) GROUP(CARDDEMO)
+  DESCRIPTION(Transaction View)
+  PROGRAM(COTRN01C)
+  STATUS(ENABLED)
+
+CEDA DEFINE TRANSACTION(CT02) GROUP(CARDDEMO)
+  DESCRIPTION(Transaction Add)
+  PROGRAM(COTRN02C)
+  STATUS(ENABLED)
+
+CEDA DEFINE TRANSACTION(CR00) GROUP(CARDDEMO)
+  DESCRIPTION(Reports)
+  PROGRAM(CORPT00C)
+  STATUS(ENABLED)
+  PRIORITY(5)
+
+CEDA DEFINE TRANSACTION(CB00) GROUP(CARDDEMO)
+  DESCRIPTION(Bill Payment)
+  PROGRAM(COBIL00C)
+  STATUS(ENABLED)
+</code></pre>
+<h3 id="admin-transactions">Admin Transactions</h3>
+<pre><code>CEDA DEFINE TRANSACTION(CA00) GROUP(CARDDEMO)
+  DESCRIPTION(Admin Menu)
+  PROGRAM(COADM01C)
+  STATUS(ENABLED)
+  PRIORITY(1)
+
+CEDA DEFINE TRANSACTION(CU00) GROUP(CARDDEMO)
+  DESCRIPTION(User List)
+  PROGRAM(COUSR00C)
+  STATUS(ENABLED)
+
+CEDA DEFINE TRANSACTION(CU01) GROUP(CARDDEMO)
+  DESCRIPTION(User Add)
+  PROGRAM(COUSR01C)
+  STATUS(ENABLED)
+
+CEDA DEFINE TRANSACTION(CU02) GROUP(CARDDEMO)
+  DESCRIPTION(User Update)
+  PROGRAM(COUSR02C)
+  STATUS(ENABLED)
+
+CEDA DEFINE TRANSACTION(CU03) GROUP(CARDDEMO)
+  DESCRIPTION(User Delete)
+  PROGRAM(COUSR03C)
+  STATUS(ENABLED)
+</code></pre>
+<h3 id="transaction-attributes">Transaction Attributes</h3>
+<p><strong>Common Attributes:</strong>
+- <strong>TWASIZE</strong>: 0 (no Transaction Work Area needed)
+- <strong>PROFILE</strong>: DFHCICSA (default)
+- <strong>STATUS</strong>: ENABLED
+- <strong>PRIORITY</strong>: 1 (normal), 5 (low for reports)
+- <strong>TRANCLASS</strong>: DFHTCL00 (default)
+- <strong>TASKDATALOC</strong>: ANY
+- <strong>TASKDATAKEY</strong>: USER</p>
+<h2 id="file-definitions">File Definitions</h2>
+<h3 id="vsam-file-definitions">VSAM File Definitions</h3>
+<pre><code>CEDA DEFINE FILE(ACCTDAT) GROUP(CARDDEMO)
+  DESCRIPTION(Account Master File)
+  DSNAME(AWS.M2.CARDDEMO.ACCTDAT.VSAM.KSDS)
+  STATUS(ENABLED)
+  OPENTIME(FIRSTREF)
+  DISPOSITION(SHR)
+  RECORDFORMAT(V)
+  ADD(YES)
+  BROWSE(YES)
+  DELETE(YES)
+  READ(YES)
+  UPDATE(YES)
+  LSRPOOLID(1)
+  STRINGS(5)
+
+CEDA DEFINE FILE(CARDDAT) GROUP(CARDDEMO)
+  DESCRIPTION(Card Master File)
+  DSNAME(AWS.M2.CARDDEMO.CARDDAT.VSAM.KSDS)
+  STATUS(ENABLED)
+  OPENTIME(FIRSTREF)
+  DISPOSITION(SHR)
+  ADD(YES)
+  BROWSE(YES)
+  DELETE(YES)
+  READ(YES)
+  UPDATE(YES)
+  LSRPOOLID(1)
+  STRINGS(5)
+
+CEDA DEFINE FILE(CUSTDAT) GROUP(CARDDEMO)
+  DESCRIPTION(Customer Master File)
+  DSNAME(AWS.M2.CARDDEMO.CUSTDAT.VSAM.KSDS)
+  STATUS(ENABLED)
+  OPENTIME(FIRSTREF)
+  DISPOSITION(SHR)
+  ADD(YES)
+  BROWSE(YES)
+  DELETE(YES)
+  READ(YES)
+  UPDATE(YES)
+  LSRPOOLID(1)
+  STRINGS(5)
+
+CEDA DEFINE FILE(CARDXREF) GROUP(CARDDEMO)
+  DESCRIPTION(Card Cross Reference File)
+  DSNAME(AWS.M2.CARDDEMO.CARDXREF.VSAM.KSDS)
+  STATUS(ENABLED)
+  OPENTIME(FIRSTREF)
+  DISPOSITION(SHR)
+  ADD(YES)
+  BROWSE(YES)
+  DELETE(YES)
+  READ(YES)
+  UPDATE(YES)
+  LSRPOOLID(1)
+  STRINGS(5)
+
+CEDA DEFINE FILE(TRANSACT) GROUP(CARDDEMO)
+  DESCRIPTION(Transaction File)
+  DSNAME(AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS)
+  STATUS(ENABLED)
+  OPENTIME(FIRSTREF)
+  DISPOSITION(SHR)
+  ADD(YES)
+  BROWSE(YES)
+  DELETE(YES)
+  READ(YES)
+  UPDATE(YES)
+  LSRPOOLID(1)
+  STRINGS(10)
+
+CEDA DEFINE FILE(USRSEC) GROUP(CARDDEMO)
+  DESCRIPTION(User Security File)
+  DSNAME(AWS.M2.CARDDEMO.USRSEC.VSAM.KSDS)
+  STATUS(ENABLED)
+  OPENTIME(FIRSTREF)
+  DISPOSITION(SHR)
+  ADD(YES)
+  BROWSE(YES)
+  DELETE(YES)
+  READ(YES)
+  UPDATE(YES)
+  LSRPOOLID(1)
+  STRINGS(3)
+
+CEDA DEFINE FILE(TRANTYPE) GROUP(CARDDEMO)
+  DESCRIPTION(Transaction Type File)
+  DSNAME(AWS.M2.CARDDEMO.TRANTYPE.VSAM.KSDS)
+  STATUS(ENABLED)
+  OPENTIME(FIRSTREF)
+  DISPOSITION(SHR)
+  READ(YES)
+  BROWSE(YES)
+  LSRPOOLID(1)
+  STRINGS(2)
+
+CEDA DEFINE FILE(TRANCATG) GROUP(CARDDEMO)
+  DESCRIPTION(Transaction Category File)
+  DSNAME(AWS.M2.CARDDEMO.TRANCATG.VSAM.KSDS)
+  STATUS(ENABLED)
+  OPENTIME(FIRSTREF)
+  DISPOSITION(SHR)
+  READ(YES)
+  BROWSE(YES)
+  LSRPOOLID(1)
+  STRINGS(2)
+
+CEDA DEFINE FILE(DISCGRP) GROUP(CARDDEMO)
+  DESCRIPTION(Disclosure Group File)
+  DSNAME(AWS.M2.CARDDEMO.DISCGRP.VSAM.KSDS)
+  STATUS(ENABLED)
+  OPENTIME(FIRSTREF)
+  DISPOSITION(SHR)
+  READ(YES)
+  BROWSE(YES)
+  LSRPOOLID(1)
+  STRINGS(2)
+
+CEDA DEFINE FILE(TCATBALF) GROUP(CARDDEMO)
+  DESCRIPTION(Transaction Category Balance File)
+  DSNAME(AWS.M2.CARDDEMO.TCATBALF.VSAM.KSDS)
+  STATUS(ENABLED)
+  OPENTIME(FIRSTREF)
+  DISPOSITION(SHR)
+  ADD(YES)
+  BROWSE(YES)
+  DELETE(YES)
+  READ(YES)
+  UPDATE(YES)
+  LSRPOOLID(1)
+  STRINGS(3)
+</code></pre>
+<h3 id="file-attributes">File Attributes</h3>
+<p><strong>Common Attributes:</strong>
+- <strong>STATUS</strong>: ENABLED
+- <strong>OPENTIME</strong>: FIRSTREF (open on first reference)
+- <strong>DISPOSITION</strong>: SHR (shared access)
+- <strong>LSRPOOLID</strong>: 1 (Local Shared Resources pool)
+- <strong>STRINGS</strong>: Number of concurrent requests (varies by file)</p>
+<p><strong>Access Permissions:</strong>
+- <strong>READ</strong>: YES (all files)
+- <strong>BROWSE</strong>: YES (all files)
+- <strong>ADD</strong>: YES (master files)
+- <strong>UPDATE</strong>: YES (master files)
+- <strong>DELETE</strong>: YES (master files)</p>
+<h2 id="mapset-definitions">Mapset Definitions</h2>
+<h3 id="bms-mapset-definitions">BMS Mapset Definitions</h3>
+<pre><code>CEDA DEFINE MAPSET(COSGN00) GROUP(CARDDEMO)
+  DESCRIPTION(Sign-On Map)
+  STATUS(ENABLED)
+
+CEDA DEFINE MAPSET(COMEN01) GROUP(CARDDEMO)
+  DESCRIPTION(Main Menu Map)
+  STATUS(ENABLED)
+
+CEDA DEFINE MAPSET(COACTVW) GROUP(CARDDEMO)
+  DESCRIPTION(Account View Map)
+  STATUS(ENABLED)
+
+CEDA DEFINE MAPSET(COACTUP) GROUP(CARDDEMO)
+  DESCRIPTION(Account Update Map)
+  STATUS(ENABLED)
+
+CEDA DEFINE MAPSET(COCRDLI) GROUP(CARDDEMO)
+  DESCRIPTION(Card List Map)
+  STATUS(ENABLED)
+
+CEDA DEFINE MAPSET(COCRDSL) GROUP(CARDDEMO)
+  DESCRIPTION(Card View Map)
+  STATUS(ENABLED)
+
+CEDA DEFINE MAPSET(COCRDUP) GROUP(CARDDEMO)
+  DESCRIPTION(Card Update Map)
+  STATUS(ENABLED)
+
+CEDA DEFINE MAPSET(COTRN00) GROUP(CARDDEMO)
+  DESCRIPTION(Transaction List Map)
+  STATUS(ENABLED)
+
+CEDA DEFINE MAPSET(COTRN01) GROUP(CARDDEMO)
+  DESCRIPTION(Transaction View Map)
+  STATUS(ENABLED)
+
+CEDA DEFINE MAPSET(COTRN02) GROUP(CARDDEMO)
+  DESCRIPTION(Transaction Add Map)
+  STATUS(ENABLED)
+
+CEDA DEFINE MAPSET(CORPT00) GROUP(CARDDEMO)
+  DESCRIPTION(Report Map)
+  STATUS(ENABLED)
+
+CEDA DEFINE MAPSET(COBIL00) GROUP(CARDDEMO)
+  DESCRIPTION(Bill Payment Map)
+  STATUS(ENABLED)
+
+CEDA DEFINE MAPSET(COADM01) GROUP(CARDDEMO)
+  DESCRIPTION(Admin Menu Map)
+  STATUS(ENABLED)
+
+CEDA DEFINE MAPSET(COUSR00) GROUP(CARDDEMO)
+  DESCRIPTION(User List Map)
+  STATUS(ENABLED)
+
+CEDA DEFINE MAPSET(COUSR01) GROUP(CARDDEMO)
+  DESCRIPTION(User Add Map)
+  STATUS(ENABLED)
+
+CEDA DEFINE MAPSET(COUSR02) GROUP(CARDDEMO)
+  DESCRIPTION(User Update Map)
+  STATUS(ENABLED)
+
+CEDA DEFINE MAPSET(COUSR03) GROUP(CARDDEMO)
+  DESCRIPTION(User Delete Map)
+  STATUS(ENABLED)
+</code></pre>
+<h2 id="optional-module-resources">Optional Module Resources</h2>
+<h3 id="ims-db2-mq-authorization-module">IMS-DB2-MQ Authorization Module</h3>
+<pre><code>CEDA DEFINE PROGRAM(COPAUA0C) GROUP(CARDDEMO)
+  DESCRIPTION(Authorization Request Processor)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+
+CEDA DEFINE PROGRAM(COPAUS0C) GROUP(CARDDEMO)
+  DESCRIPTION(Authorization Summary)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+
+CEDA DEFINE PROGRAM(COPAUS1C) GROUP(CARDDEMO)
+  DESCRIPTION(Authorization Details)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+
+CEDA DEFINE PROGRAM(COPAUS2C) GROUP(CARDDEMO)
+  DESCRIPTION(Fraud Marking)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+
+CEDA DEFINE TRANSACTION(CP00) GROUP(CARDDEMO)
+  DESCRIPTION(Auth Request Processor)
+  PROGRAM(COPAUA0C)
+  STATUS(ENABLED)
+
+CEDA DEFINE TRANSACTION(CPVS) GROUP(CARDDEMO)
+  DESCRIPTION(Auth Summary)
+  PROGRAM(COPAUS0C)
+  STATUS(ENABLED)
+
+CEDA DEFINE TRANSACTION(CPVD) GROUP(CARDDEMO)
+  DESCRIPTION(Auth Details)
+  PROGRAM(COPAUS1C)
+  STATUS(ENABLED)
+
+CEDA DEFINE MAPSET(COPAU00) GROUP(CARDDEMO)
+  DESCRIPTION(Auth Summary Map)
+  STATUS(ENABLED)
+
+CEDA DEFINE MAPSET(COPAU01) GROUP(CARDDEMO)
+  DESCRIPTION(Auth Details Map)
+  STATUS(ENABLED)
+
+CEDA DEFINE DB2ENTRY(DB201PLN) GROUP(CARDDEMO)
+  PLAN(CARDDEMO)
+  THREADLIMIT(50)
+  THREADWAIT(YES)
+
+CEDA DEFINE DB2TRAN(CPVDTRAN) GROUP(CARDDEMO)
+  ENTRY(DB201PLN)
+  TRANSID(CPVD)
+</code></pre>
+<h3 id="db2-transaction-type-module">DB2 Transaction Type Module</h3>
+<pre><code>CEDA DEFINE PROGRAM(COTRTLIC) GROUP(CARDDEMO)
+  DESCRIPTION(Transaction Type List)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+
+CEDA DEFINE PROGRAM(COTRTUPC) GROUP(CARDDEMO)
+  DESCRIPTION(Transaction Type Add/Edit)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+
+CEDA DEFINE TRANSACTION(CTLI) GROUP(CARDDEMO)
+  DESCRIPTION(Transaction Type List)
+  PROGRAM(COTRTLIC)
+  STATUS(ENABLED)
+
+CEDA DEFINE TRANSACTION(CTTU) GROUP(CARDDEMO)
+  DESCRIPTION(Transaction Type Add/Edit)
+  PROGRAM(COTRTUPC)
+  STATUS(ENABLED)
+
+CEDA DEFINE MAPSET(COTRTLI) GROUP(CARDDEMO)
+  DESCRIPTION(Transaction Type List Map)
+  STATUS(ENABLED)
+
+CEDA DEFINE MAPSET(COTRTUP) GROUP(CARDDEMO)
+  DESCRIPTION(Transaction Type Add/Edit Map)
+  STATUS(ENABLED)
+
+CEDA DEFINE DB2ENTRY(CARDDEMO) GROUP(CARDDEMO)
+  PLAN(CARDDEMO)
+  THREADLIMIT(50)
+  THREADWAIT(YES)
+
+CEDA DEFINE DB2TRAN(CTLITRAN) GROUP(CARDDEMO)
+  ENTRY(CARDDEMO)
+  TRANSID(CTLI)
+
+CEDA DEFINE DB2TRAN(CTTUTRAN) GROUP(CARDDEMO)
+  ENTRY(CARDDEMO)
+  TRANSID(CTTU)
+</code></pre>
+<h3 id="vsam-mq-module">VSAM-MQ Module</h3>
+<pre><code>CEDA DEFINE PROGRAM(CODATE01) GROUP(CARDDEMO)
+  DESCRIPTION(Date Inquiry via MQ)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+
+CEDA DEFINE PROGRAM(COACCT01) GROUP(CARDDEMO)
+  DESCRIPTION(Account Inquiry via MQ)
+  LANGUAGE(COBOL)
+  STATUS(ENABLED)
+
+CEDA DEFINE TRANSACTION(CDRD) GROUP(CARDDEMO)
+  DESCRIPTION(Date Inquiry)
+  PROGRAM(CODATE01)
+  STATUS(ENABLED)
+
+CEDA DEFINE TRANSACTION(CDRA) GROUP(CARDDEMO)
+  DESCRIPTION(Account Inquiry)
+  PROGRAM(COACCT01)
+  STATUS(ENABLED)
+</code></pre>
+<h2 id="installation-methods">Installation Methods</h2>
+<h3 id="method-1-dfhcsdup-batch">Method 1: DFHCSDUP (Batch)</h3>
+<p>Use the provided DFHCSDUP job in the CSD folder:</p>
+<pre><code class="language-jcl">//CSDUP    EXEC PGM=DFHCSDUP
+//STEPLIB  DD DSN=CICS.SDFHLOAD,DISP=SHR
+//DFHCSD   DD DSN=CICS.DFHCSD,DISP=SHR
+//SYSPRINT DD SYSOUT=*
+//SYSIN    DD *
+  DEFINE GROUP(CARDDEMO) AS(...)
+  [All resource definitions]
+  INSTALL GROUP(CARDDEMO)
+/*
+</code></pre>
+<h3 id="method-2-ceda-interactive">Method 2: CEDA (Interactive)</h3>
+<p>Execute CEDA commands interactively:</p>
+<pre><code>CEDA
+DEFINE GROUP(CARDDEMO)
+DEFINE PROGRAM(...) GROUP(CARDDEMO)
+[Continue with all definitions]
+INSTALL GROUP(CARDDEMO)
+</code></pre>
+<h3 id="method-3-batch-ceda">Method 3: Batch CEDA</h3>
+<p>Create a batch job with CEDA commands:</p>
+<pre><code class="language-jcl">//CEDA     EXEC PGM=DFHCSDUP
+//STEPLIB  DD DSN=CICS.SDFHLOAD,DISP=SHR
+//DFHCSD   DD DSN=CICS.DFHCSD,DISP=SHR
+//SYSPRINT DD SYSOUT=*
+//SYSIN    DD *
+  CEDA DEFINE GROUP(CARDDEMO)
+  CEDA DEFINE PROGRAM(COSGN00C) GROUP(CARDDEMO) ...
+  [All definitions]
+  CEDA INSTALL GROUP(CARDDEMO)
+/*
+</code></pre>
+<h2 id="verification">Verification</h2>
+<h3 id="verify-resource-installation">Verify Resource Installation</h3>
+<p><strong>Check Group:</strong></p>
+<pre><code>CEMT INQUIRE GROUP(CARDDEMO)
+</code></pre>
+<p><strong>Check Programs:</strong></p>
+<pre><code>CEMT INQUIRE PROGRAM(COSGN00C)
+CEMT INQUIRE PROGRAM(COACTVWC)
+</code></pre>
+<p><strong>Check Transactions:</strong></p>
+<pre><code>CEMT INQUIRE TRANSACTION(CC00)
+CEMT INQUIRE TRANSACTION(CAVW)
+</code></pre>
+<p><strong>Check Files:</strong></p>
+<pre><code>CEMT INQUIRE FILE(ACCTDAT)
+CEMT INQUIRE FILE(CARDDAT)
+</code></pre>
+<p><strong>Check Mapsets:</strong></p>
+<pre><code>CEMT INQUIRE MAPSET(COSGN00)
+</code></pre>
+<h3 id="test-access">Test Access</h3>
+<p><strong>Test Sign-On:</strong></p>
+<pre><code>Clear screen
+Enter: CC00
+Should display sign-on screen
+</code></pre>
+<p><strong>Test File Access:</strong></p>
+<pre><code>CEMT SET FILE(ACCTDAT) OPEN
+CEMT INQUIRE FILE(ACCTDAT)
+Should show OPEN status
+</code></pre>
+<h3 id="common-verification-issues">Common Verification Issues</h3>
+<p><strong>Issue: Resource not found</strong>
+- Verify resource is defined: <code>CEDA VIEW GROUP(CARDDEMO)</code>
+- Install if not installed: <code>CEDA INSTALL GROUP(CARDDEMO)</code></p>
+<p><strong>Issue: Program not found</strong>
+- Check load library in DFHRPL
+- Verify program compiled successfully
+- Execute NEWCOPY if needed</p>
+<p><strong>Issue: File not open</strong>
+- Open file: <code>CEMT SET FILE(ACCTDAT) OPEN</code>
+- Check VSAM file exists and is cataloged</p>
+<hr />
+<p><strong>Navigation</strong>: <a href="../Home/">Home</a> | <a href="../Installation-Guide/">Installation Guide</a> | <a href="../Technical-Components/">Technical Components</a> | <a href="../Troubleshooting/">Troubleshooting</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

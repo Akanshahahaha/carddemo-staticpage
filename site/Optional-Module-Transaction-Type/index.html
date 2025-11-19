@@ -1,0 +1,2925 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Optional-Module-Authorization/">
+      
+      
+        <link rel="next" href="../Optional-Module-VSAM-MQ/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Transaction Type - AWS Mainframe Modernization Card Demo - Deep Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#optional-module-transaction-type-management-db2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-header__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AWS Mainframe Modernization Card Demo - Deep Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Transaction Type
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-nav__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AWS Mainframe Modernization Card Demo - Deep Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quick-Start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Admin-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Batch-Processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technical-Components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CICS-Configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CICS Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optional Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Optional Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transaction Type
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transaction Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technologies-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technologies Used
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#online-transaction-type-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Online Transaction Type Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db2-integration-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB2 Integration Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-db2-database-and-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Create DB2 Database and Tables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-upload-source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Upload Source Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-precompile-and-compile-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Precompile and Compile Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-define-cics-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Define CICS Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-extract-initial-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Extract Initial Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-enable-admin-menu-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Enable Admin Menu Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-test-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Test Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cotrtlic-transaction-type-listupdatedelete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COTRTLIC - Transaction Type List/Update/Delete
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cotrtupc-transaction-type-addedit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COTRTUPC - Transaction Type Add/Edit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobtupdt-batch-maintenance-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBTUPDT - Batch Maintenance Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copybooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copybooks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Copybooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transaction-type-copybooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Type Copybooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bms-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BMS Maps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BMS Maps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cotrtli-transaction-type-list-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COTRTLI - Transaction Type List Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cotrtup-transaction-type-addedit-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COTRTUP - Transaction Type Add/Edit Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Models
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#db2-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB2 Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DB2 Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transaction_type-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TRANSACTION_TYPE Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction_type_category-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TRANSACTION_TYPE_CATEGORY Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indexes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listing-transaction-types-ctli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listing Transaction Types (CTLI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-transaction-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating Transaction Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-transaction-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting Transaction Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-transaction-type-cttu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Transaction Type (CTTU)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editing-transaction-type-cttu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Editing Transaction Type (CTTU)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#db2-precompiler-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB2 Precompiler Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlca-sql-communication-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLCA (SQL Communication Area)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cursor-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cursor Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integration-with-base-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration with Base Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-menu-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Menu Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-schedule-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Schedule Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-VSAM-MQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VSAM-MQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technologies-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technologies Used
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#online-transaction-type-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Online Transaction Type Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db2-integration-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB2 Integration Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-db2-database-and-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Create DB2 Database and Tables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-upload-source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Upload Source Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-precompile-and-compile-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Precompile and Compile Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-define-cics-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Define CICS Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-extract-initial-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Extract Initial Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-enable-admin-menu-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Enable Admin Menu Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-test-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Test Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cotrtlic-transaction-type-listupdatedelete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COTRTLIC - Transaction Type List/Update/Delete
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cotrtupc-transaction-type-addedit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COTRTUPC - Transaction Type Add/Edit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobtupdt-batch-maintenance-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBTUPDT - Batch Maintenance Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copybooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copybooks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Copybooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transaction-type-copybooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Type Copybooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bms-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BMS Maps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BMS Maps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cotrtli-transaction-type-list-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COTRTLI - Transaction Type List Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cotrtup-transaction-type-addedit-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COTRTUP - Transaction Type Add/Edit Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Models
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#db2-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB2 Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DB2 Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transaction_type-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TRANSACTION_TYPE Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction_type_category-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TRANSACTION_TYPE_CATEGORY Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indexes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listing-transaction-types-ctli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listing Transaction Types (CTLI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-transaction-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating Transaction Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-transaction-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting Transaction Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-transaction-type-cttu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Transaction Type (CTTU)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editing-transaction-type-cttu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Editing Transaction Type (CTTU)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#db2-precompiler-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB2 Precompiler Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlca-sql-communication-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLCA (SQL Communication Area)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cursor-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cursor Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integration-with-base-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration with Base Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-menu-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Menu Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-schedule-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Schedule Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="optional-module-transaction-type-management-db2">Optional Module: Transaction Type Management (DB2)</h1>
+<p>Complete documentation for the Transaction Type Management optional module, which adds DB2-based transaction type maintenance capabilities.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#module-overview">Module Overview</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#components">Components</a></li>
+<li><a href="#data-models">Data Models</a></li>
+<li><a href="#user-guide">User Guide</a></li>
+<li><a href="#technical-details">Technical Details</a></li>
+<li><a href="#integration">Integration</a></li>
+</ul>
+<h2 id="module-overview">Module Overview</h2>
+<p>The Transaction Type Management module is an optional extension that demonstrates DB2 integration patterns using embedded static SQL. This module allows administrators to maintain transaction type reference data in DB2 tables, providing a more robust and relational approach to managing transaction metadata.</p>
+<h3 id="business-value">Business Value</h3>
+<ul>
+<li><strong>Centralized Reference Data</strong>: Single source of truth for transaction types</li>
+<li><strong>Relational Data Management</strong>: Leverage DB2 capabilities for data integrity</li>
+<li><strong>Online and Batch Maintenance</strong>: Flexible data management options</li>
+<li><strong>Data Synchronization</strong>: Extract DB2 data to VSAM for transaction processing</li>
+<li><strong>DB2 Integration Patterns</strong>: Demonstrates various DB2 programming techniques</li>
+</ul>
+<h3 id="technologies-used">Technologies Used</h3>
+<ul>
+<li><strong>COBOL</strong>: Business logic with embedded SQL</li>
+<li><strong>CICS</strong>: Online transaction processing</li>
+<li><strong>DB2</strong>: Relational database for transaction types</li>
+<li><strong>VSAM</strong>: Synchronized reference data for transaction processing</li>
+<li><strong>JCL</strong>: Batch data extraction and maintenance</li>
+</ul>
+<h2 id="features">Features</h2>
+<h3 id="online-transaction-type-management">Online Transaction Type Management</h3>
+<ol>
+<li><strong>Transaction Type List (CTLI)</strong></li>
+<li>Browse all transaction types</li>
+<li>Forward and backward paging with cursors</li>
+<li>Inline updates of descriptions</li>
+<li>Delete transaction types</li>
+<li>
+<p>Referential integrity checking</p>
+</li>
+<li>
+<p><strong>Transaction Type Add/Edit (CTTU)</strong></p>
+</li>
+<li>Add new transaction types</li>
+<li>Edit existing transaction type descriptions</li>
+<li>Validate transaction type codes</li>
+<li>Associate with categories</li>
+</ol>
+<h3 id="batch-processing">Batch Processing</h3>
+<ol>
+<li><strong>Database Creation (CREADB21)</strong></li>
+<li>Create DB2 database and tables</li>
+<li>Load initial transaction type data</li>
+<li>
+<p>Set up referential integrity constraints</p>
+</li>
+<li>
+<p><strong>Data Extraction (TRANEXTR)</strong></p>
+</li>
+<li>Extract transaction types from DB2</li>
+<li>Generate VSAM-compatible files</li>
+<li>
+<p>Synchronize with transaction processing system</p>
+</li>
+<li>
+<p><strong>Batch Maintenance (MNTTRDB2)</strong></p>
+</li>
+<li>Bulk updates to transaction types</li>
+<li>Data validation and error handling</li>
+</ol>
+<h3 id="db2-integration-patterns">DB2 Integration Patterns</h3>
+<ul>
+<li><strong>Static Embedded SQL</strong>: SQL statements embedded in COBOL</li>
+<li><strong>Cursor Processing</strong>: Forward and backward cursor navigation</li>
+<li><strong>CRUD Operations</strong>: Complete Create, Read, Update, Delete</li>
+<li><strong>Transaction Management</strong>: Commit/rollback handling</li>
+<li><strong>Error Handling</strong>: SQLCA error checking</li>
+<li><strong>Host Variables</strong>: COBOL-DB2 data exchange</li>
+</ul>
+<h2 id="architecture">Architecture</h2>
+<h3 id="component-architecture">Component Architecture</h3>
+<pre><code>┌──────────────────┐
+│  Admin User      │
+│  (CICS Terminal) │
+└────────┬─────────┘
+         │
+         ▼
+┌──────────────────┐
+│ CICS Transactions│
+│  CTLI / CTTU     │
+└────────┬─────────┘
+         │
+         ▼
+┌──────────────────┐
+│ COBOL Programs   │
+│ COTRTLIC/COTRTUPC│
+│ (Embedded SQL)   │
+└────────┬─────────┘
+         │
+         ▼
+┌──────────────────┐
+│ DB2 Subsystem    │
+│ CARDDEMO Database│
+└────────┬─────────┘
+         │
+         ├─→ TRANSACTION_TYPE Table
+         │
+         └─→ TRANSACTION_TYPE_CATEGORY Table
+
+┌──────────────────┐
+│ Batch Job        │
+│ TRANEXTR         │
+└────────┬─────────┘
+         │
+         ├─→ DB2 (Extract)
+         │
+         └─→ VSAM Files (Load)
+</code></pre>
+<h3 id="data-flow">Data Flow</h3>
+<p><strong>Online Updates:</strong>
+1. User enters transaction via CTLI or CTTU
+2. COBOL program executes embedded SQL
+3. DB2 updates transaction type tables
+4. Changes committed to database
+5. Confirmation displayed to user</p>
+<p><strong>Batch Synchronization:</strong>
+1. TRANEXTR job executes
+2. Extracts data from DB2 tables
+3. Formats data for VSAM
+4. Loads TRANTYPE and TRANCATG VSAM files
+5. Transaction processing uses updated reference data</p>
+<h2 id="installation">Installation</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ol>
+<li><strong>Base CardDemo</strong>: Installed and operational</li>
+<li><strong>DB2 Subsystem</strong>: Configured and accessible</li>
+<li><strong>CICS with DB2</strong>: CICS-DB2 attachment configured</li>
+<li><strong>DB2 Precompiler</strong>: Available for COBOL compilation</li>
+</ol>
+<h3 id="installation-steps">Installation Steps</h3>
+<h4 id="step-1-create-db2-database-and-tables">Step 1: Create DB2 Database and Tables</h4>
+<p>Submit the CREADB21 job to create the database and tables:</p>
+<pre><code>Submit: AWS.M2.CARDDEMO.JCL(CREADB21)
+</code></pre>
+<p>This job executes DDL to create:
+- CARDDEMO database
+- TRANSACTION_TYPE table
+- TRANSACTION_TYPE_CATEGORY table
+- Indexes
+- Referential integrity constraints</p>
+<p><strong>DDL Location</strong>: <code>app/app-transaction-type-db2/ddl/</code></p>
+<h4 id="step-2-upload-source-code">Step 2: Upload Source Code</h4>
+<p>Upload module source code to mainframe datasets:</p>
+<pre><code>app/app-transaction-type-db2/cbl/     → CARDDEMO.CBL
+app/app-transaction-type-db2/cpy/     → CARDDEMO.CPY
+app/app-transaction-type-db2/bms/     → CARDDEMO.BMS
+app/app-transaction-type-db2/jcl/     → CARDDEMO.JCL
+app/app-transaction-type-db2/dcl/     → DB2 declarations
+app/app-transaction-type-db2/ddl/     → DB2 DDL
+</code></pre>
+<h4 id="step-3-precompile-and-compile-programs">Step 3: Precompile and Compile Programs</h4>
+<p><strong>Precompile COBOL programs with DB2:</strong></p>
+<pre><code class="language-jcl">//PRECOMP  EXEC PGM=DSNHPC,PARM='HOST(COBOL)'
+//STEPLIB  DD DSN=DB2.SDSNLOAD,DISP=SHR
+//DBRMLIB  DD DSN=CARDDEMO.DBRMLIB,DISP=SHR
+//SYSIN    DD DSN=CARDDEMO.CBL(COTRTLIC),DISP=SHR
+//SYSCIN   DD DSN=&amp;&amp;SYSCIN,DISP=(MOD,PASS)
+</code></pre>
+<p><strong>Compile precompiled source:</strong></p>
+<pre><code class="language-jcl">//COMPILE  EXEC PGM=IGYCRCTL
+//STEPLIB  DD DSN=COBOL.SIGYCOMP,DISP=SHR
+//SYSIN    DD DSN=&amp;&amp;SYSCIN,DISP=(OLD,DELETE)
+//SYSLIN   DD DSN=&amp;&amp;LOADSET,DISP=(MOD,PASS)
+</code></pre>
+<p><strong>Bind DB2 Plan:</strong></p>
+<pre><code class="language-jcl">//BIND     EXEC PGM=IKJEFT01
+//SYSTSPRT DD SYSOUT=*
+//SYSTSIN  DD *
+  DSN SYSTEM(DB2P)
+  BIND PLAN(CARDDEMO) -
+       MEMBER(COTRTLIC,COTRTUPC) -
+       ACTION(REPLACE) -
+       ISOLATION(CS) -
+       VALIDATE(BIND) -
+       RELEASE(COMMIT)
+  END
+/*
+</code></pre>
+<p>Programs to compile:
+- <strong>COTRTLIC</strong>: Transaction type list/update/delete
+- <strong>COTRTUPC</strong>: Transaction type add/edit
+- <strong>COBTUPDT</strong>: Batch maintenance program</p>
+<h4 id="step-4-define-cics-resources">Step 4: Define CICS Resources</h4>
+<p><strong>Programs:</strong></p>
+<pre><code>CEDA DEFINE PROGRAM(COTRTLIC) GROUP(CARDDEMO) LANGUAGE(COBOL)
+CEDA DEFINE PROGRAM(COTRTUPC) GROUP(CARDDEMO) LANGUAGE(COBOL)
+</code></pre>
+<p><strong>Mapsets:</strong></p>
+<pre><code>CEDA DEFINE MAPSET(COTRTLI) GROUP(CARDDEMO)
+CEDA DEFINE MAPSET(COTRTUP) GROUP(CARDDEMO)
+</code></pre>
+<p><strong>Transactions:</strong></p>
+<pre><code>CEDA DEFINE TRANSACTION(CTLI) GROUP(CARDDEMO) PROGRAM(COTRTLIC)
+CEDA DEFINE TRANSACTION(CTTU) GROUP(CARDDEMO) PROGRAM(COTRTUPC)
+</code></pre>
+<p><strong>DB2 Resources:</strong></p>
+<pre><code>CEDA DEFINE DB2CONN(DB2CONN1) GROUP(CARDDEMO) +
+  DB2GROUPID(DB2GROUP) +
+  CONNECTST(YES)
+
+CEDA DEFINE DB2ENTRY(CARDDEMO) GROUP(CARDDEMO) +
+  PLAN(CARDDEMO) +
+  THREADLIMIT(50) +
+  THREADWAIT(YES)
+
+CEDA DEFINE DB2TRAN(CTLITRAN) GROUP(CARDDEMO) +
+  ENTRY(CARDDEMO) +
+  TRANSID(CTLI)
+
+CEDA DEFINE DB2TRAN(CTTUTRAN) GROUP(CARDDEMO) +
+  ENTRY(CARDDEMO) +
+  TRANSID(CTTU)
+</code></pre>
+<p><strong>Install Resources:</strong></p>
+<pre><code>CEDA INSTALL GROUP(CARDDEMO)
+</code></pre>
+<h4 id="step-5-extract-initial-data">Step 5: Extract Initial Data</h4>
+<p>Run TRANEXTR to extract DB2 data to VSAM:</p>
+<pre><code>Submit: AWS.M2.CARDDEMO.JCL(TRANEXTR)
+</code></pre>
+<p>This creates VSAM files that transaction processing uses.</p>
+<h4 id="step-6-enable-admin-menu-options">Step 6: Enable Admin Menu Options</h4>
+<p>Options 5 and 6 will now be available in the Admin Menu (CA00):
+- Option 5: Transaction Type List (CTLI)
+- Option 6: Transaction Type Add/Edit (CTTU)</p>
+<h4 id="step-7-test-installation">Step 7: Test Installation</h4>
+<ol>
+<li>Sign on as admin (ADMIN001/PASSWORD)</li>
+<li>Access Admin Menu (CA00)</li>
+<li>Select Option 5 (CTLI)</li>
+<li>Verify transaction types display</li>
+<li>Test update and delete functions</li>
+<li>Select Option 6 (CTTU)</li>
+<li>Test add and edit functions</li>
+</ol>
+<h2 id="components">Components</h2>
+<h3 id="programs">Programs</h3>
+<h4 id="cotrtlic-transaction-type-listupdatedelete">COTRTLIC - Transaction Type List/Update/Delete</h4>
+<ul>
+<li><strong>Transaction</strong>: CTLI</li>
+<li><strong>BMS Map</strong>: COTRTLI</li>
+<li><strong>Function</strong>: List, update, and delete transaction types</li>
+<li><strong>Database</strong>: DB2 TRANSACTION_TYPE table</li>
+<li><strong>Features</strong>:</li>
+<li>Forward/backward cursor paging</li>
+<li>Inline description updates</li>
+<li>Delete with referential integrity check</li>
+<li>Error handling with SQLCA</li>
+</ul>
+<p><strong>Key SQL Operations:</strong></p>
+<pre><code class="language-cobol">* Declare cursor for paging
+EXEC SQL
+    DECLARE TRAN_TYPE_CURSOR CURSOR FOR
+    SELECT TR_TYPE, TR_DESCRIPTION
+    FROM CARDDEMO.TRANSACTION_TYPE
+    ORDER BY TR_TYPE
+END-EXEC.
+
+* Open cursor
+EXEC SQL
+    OPEN TRAN_TYPE_CURSOR
+END-EXEC.
+
+* Fetch next row
+EXEC SQL
+    FETCH NEXT TRAN_TYPE_CURSOR
+    INTO :WS-TR-TYPE, :WS-TR-DESCRIPTION
+END-EXEC.
+
+* Update transaction type
+EXEC SQL
+    UPDATE CARDDEMO.TRANSACTION_TYPE
+    SET TR_DESCRIPTION = :WS-NEW-DESCRIPTION
+    WHERE TR_TYPE = :WS-TR-TYPE
+END-EXEC.
+
+* Delete transaction type
+EXEC SQL
+    DELETE FROM CARDDEMO.TRANSACTION_TYPE
+    WHERE TR_TYPE = :WS-TR-TYPE
+END-EXEC.
+</code></pre>
+<h4 id="cotrtupc-transaction-type-addedit">COTRTUPC - Transaction Type Add/Edit</h4>
+<ul>
+<li><strong>Transaction</strong>: CTTU</li>
+<li><strong>BMS Map</strong>: COTRTUP</li>
+<li><strong>Function</strong>: Add new or edit existing transaction types</li>
+<li><strong>Database</strong>: DB2 TRANSACTION_TYPE table</li>
+<li><strong>Features</strong>:</li>
+<li>Add new transaction types</li>
+<li>Edit existing descriptions</li>
+<li>Validate transaction type codes</li>
+<li>Category association</li>
+</ul>
+<p><strong>Key SQL Operations:</strong></p>
+<pre><code class="language-cobol">* Insert new transaction type
+EXEC SQL
+    INSERT INTO CARDDEMO.TRANSACTION_TYPE
+    (TR_TYPE, TR_DESCRIPTION)
+    VALUES (:WS-TR-TYPE, :WS-TR-DESCRIPTION)
+END-EXEC.
+
+* Select for update
+EXEC SQL
+    SELECT TR_TYPE, TR_DESCRIPTION
+    INTO :WS-TR-TYPE, :WS-TR-DESCRIPTION
+    FROM CARDDEMO.TRANSACTION_TYPE
+    WHERE TR_TYPE = :WS-INPUT-TYPE
+END-EXEC.
+
+* Update transaction type
+EXEC SQL
+    UPDATE CARDDEMO.TRANSACTION_TYPE
+    SET TR_DESCRIPTION = :WS-NEW-DESCRIPTION
+    WHERE TR_TYPE = :WS-TR-TYPE
+END-EXEC.
+</code></pre>
+<h4 id="cobtupdt-batch-maintenance-program">COBTUPDT - Batch Maintenance Program</h4>
+<ul>
+<li><strong>Job</strong>: MNTTRDB2</li>
+<li><strong>Function</strong>: Batch updates to transaction types</li>
+<li><strong>Database</strong>: DB2 TRANSACTION_TYPE table</li>
+<li><strong>Processing</strong>:</li>
+<li>Read input file with updates</li>
+<li>Validate transaction type codes</li>
+<li>Execute updates in DB2</li>
+<li>Generate update report</li>
+</ul>
+<h3 id="copybooks">Copybooks</h3>
+<h4 id="transaction-type-copybooks">Transaction Type Copybooks</h4>
+<ul>
+<li><strong>DCLTRAN</strong>: DB2 table declarations</li>
+<li><strong>TRANTYPECPY</strong>: Transaction type structure</li>
+<li><strong>TRANCATCPY</strong>: Transaction category structure</li>
+</ul>
+<h3 id="bms-maps">BMS Maps</h3>
+<h4 id="cotrtli-transaction-type-list-map">COTRTLI - Transaction Type List Map</h4>
+<ul>
+<li>Display area for transaction type list</li>
+<li>Action fields for update/delete</li>
+<li>PF keys for paging and navigation</li>
+</ul>
+<h4 id="cotrtup-transaction-type-addedit-map">COTRTUP - Transaction Type Add/Edit Map</h4>
+<ul>
+<li>Input fields for transaction type code</li>
+<li>Input field for description</li>
+<li>Category selection</li>
+<li>Function keys for save/cancel</li>
+</ul>
+<h2 id="data-models">Data Models</h2>
+<h3 id="db2-tables">DB2 Tables</h3>
+<h4 id="transaction_type-table">TRANSACTION_TYPE Table</h4>
+<pre><code class="language-sql">CREATE TABLE CARDDEMO.TRANSACTION_TYPE
+(TR_TYPE              CHAR(2)      NOT NULL,
+ TR_DESCRIPTION       VARCHAR(50)  NOT NULL,
+ PRIMARY KEY (TR_TYPE))
+IN CARDDEMO.CARDTS;
+</code></pre>
+<p><strong>Columns:</strong>
+- <strong>TR_TYPE</strong>: 2-character transaction type code (PK)
+- <strong>TR_DESCRIPTION</strong>: Description of transaction type</p>
+<p><strong>Sample Data:</strong></p>
+<pre><code>TR_TYPE  TR_DESCRIPTION
+-------  ------------------
+PUR      Purchase
+PAY      Payment
+ADJ      Adjustment
+FEE      Fee
+INT      Interest
+REF      Refund
+RET      Return
+</code></pre>
+<h4 id="transaction_type_category-table">TRANSACTION_TYPE_CATEGORY Table</h4>
+<pre><code class="language-sql">CREATE TABLE CARDDEMO.TRANSACTION_TYPE_CATEGORY
+(TRC_TYPE_CODE        CHAR(2)      NOT NULL,
+ TRC_TYPE_CATEGORY    CHAR(4)      NOT NULL,
+ TRC_CAT_DATA         VARCHAR(50)  NOT NULL,
+ PRIMARY KEY (TRC_TYPE_CODE, TRC_TYPE_CATEGORY),
+ FOREIGN KEY (TRC_TYPE_CODE) 
+   REFERENCES CARDDEMO.TRANSACTION_TYPE(TR_TYPE)
+   ON DELETE RESTRICT)
+IN CARDDEMO.CARDTS;
+</code></pre>
+<p><strong>Columns:</strong>
+- <strong>TRC_TYPE_CODE</strong>: Transaction type code (PK, FK)
+- <strong>TRC_TYPE_CATEGORY</strong>: Category code (PK)
+- <strong>TRC_CAT_DATA</strong>: Category description</p>
+<p><strong>Referential Integrity:</strong>
+- Foreign key from TRC_TYPE_CODE to TR_TYPE
+- DELETE RESTRICT prevents deletion of types with categories</p>
+<p><strong>Sample Data:</strong></p>
+<pre><code>TRC_TYPE_CODE  TRC_TYPE_CATEGORY  TRC_CAT_DATA
+-------------  -----------------  ----------------
+PUR            5411               Grocery Stores
+PUR            5812               Restaurants
+PUR            5541               Gas Stations
+PAY            0000               Payment
+</code></pre>
+<h3 id="indexes">Indexes</h3>
+<pre><code class="language-sql">CREATE UNIQUE INDEX CARDDEMO.XTRANTYPE
+ON CARDDEMO.TRANSACTION_TYPE (TR_TYPE ASC)
+USING STOGROUP CARDDEMOSG;
+
+CREATE UNIQUE INDEX CARDDEMO.XTRANTCAT
+ON CARDDEMO.TRANSACTION_TYPE_CATEGORY 
+(TRC_TYPE_CODE ASC, TRC_TYPE_CATEGORY ASC)
+USING STOGROUP CARDDEMOSG;
+</code></pre>
+<h2 id="user-guide">User Guide</h2>
+<h3 id="listing-transaction-types-ctli">Listing Transaction Types (CTLI)</h3>
+<ol>
+<li>Sign on as admin</li>
+<li>Access Admin Menu (CA00)</li>
+<li>Select Option 5 or enter <code>CTLI</code></li>
+<li>Transaction type list displays</li>
+</ol>
+<p><strong>Screen Layout:</strong></p>
+<pre><code>Type  Description
+----  ---------------------
+PUR   Purchase
+PAY   Payment
+ADJ   Adjustment
+FEE   Fee
+INT   Interest
+
+Action: U=Update D=Delete
+PF7=Backward PF8=Forward PF3=Exit
+</code></pre>
+<p><strong>Actions:</strong>
+- Enter 'U' next to a type to update description
+- Enter 'D' next to a type to delete
+- Press <strong>PF7</strong> for previous page
+- Press <strong>PF8</strong> for next page
+- Press <strong>PF3</strong> to exit</p>
+<h3 id="updating-transaction-type">Updating Transaction Type</h3>
+<ol>
+<li>From CTLI screen, enter 'U' next to transaction type</li>
+<li>Modify the description field</li>
+<li>Press <strong>Enter</strong> to save</li>
+<li>Confirmation message displays</li>
+</ol>
+<p><strong>Business Rules:</strong>
+- Description cannot be blank
+- Changes are immediate
+- No undo available</p>
+<h3 id="deleting-transaction-type">Deleting Transaction Type</h3>
+<ol>
+<li>From CTLI screen, enter 'D' next to transaction type</li>
+<li>Press <strong>Enter</strong></li>
+<li>Confirmation prompt displays</li>
+<li>Enter 'Y' to confirm or 'N' to cancel</li>
+<li>Deletion processes if no referential integrity violations</li>
+</ol>
+<p><strong>Business Rules:</strong>
+- Cannot delete if categories exist
+- Cannot delete if transactions exist with this type
+- Deletion is permanent</p>
+<h3 id="adding-transaction-type-cttu">Adding Transaction Type (CTTU)</h3>
+<ol>
+<li>Access Admin Menu (CA00)</li>
+<li>Select Option 6 or enter <code>CTTU</code></li>
+<li>Enter new transaction type code (2 characters)</li>
+<li>Enter description</li>
+<li>Press <strong>Enter</strong> to save</li>
+</ol>
+<p><strong>Screen Layout:</strong></p>
+<pre><code>Add Transaction Type
+
+Transaction Type Code: __
+Description: _____________________________
+
+PF3=Cancel PF5=Clear
+</code></pre>
+<p><strong>Business Rules:</strong>
+- Type code must be 2 characters
+- Type code must be unique
+- Description is required
+- Type code cannot be changed after creation</p>
+<h3 id="editing-transaction-type-cttu">Editing Transaction Type (CTTU)</h3>
+<ol>
+<li>Enter <code>CTTU</code></li>
+<li>Enter existing transaction type code</li>
+<li>Press <strong>Enter</strong> to retrieve</li>
+<li>Modify description</li>
+<li>Press <strong>Enter</strong> to save</li>
+</ol>
+<p><strong>Business Rules:</strong>
+- Only description can be modified
+- Type code cannot be changed</p>
+<h2 id="technical-details">Technical Details</h2>
+<h3 id="db2-precompiler-options">DB2 Precompiler Options</h3>
+<pre><code>DSNHPC PARM='HOST(COBOL),APOSTSQL,STDSQL(YES)'
+</code></pre>
+<p><strong>Options:</strong>
+- <strong>HOST(COBOL)</strong>: COBOL host language
+- <strong>APOSTSQL</strong>: Use apostrophes for SQL strings
+- <strong>STDSQL(YES)</strong>: Use standard SQL</p>
+<h3 id="sqlca-sql-communication-area">SQLCA (SQL Communication Area)</h3>
+<p>All programs include SQLCA for error handling:</p>
+<pre><code class="language-cobol">EXEC SQL
+    INCLUDE SQLCA
+END-EXEC.
+
+* Check SQL return code
+IF SQLCODE NOT = 0
+    PERFORM ERROR-HANDLING
+END-IF.
+</code></pre>
+<p><strong>Common SQLCODE Values:</strong>
+- <strong>0</strong>: Successful execution
+- <strong>100</strong>: No data found
+- <strong>-803</strong>: Duplicate key violation
+- <strong>-911</strong>: Deadlock or timeout
+- <strong>-913</strong>: Resource unavailable</p>
+<h3 id="cursor-processing">Cursor Processing</h3>
+<p><strong>Forward Paging:</strong></p>
+<pre><code class="language-cobol">EXEC SQL
+    FETCH NEXT TRAN_TYPE_CURSOR
+    INTO :WS-TR-TYPE, :WS-TR-DESCRIPTION
+END-EXEC.
+</code></pre>
+<p><strong>Backward Paging:</strong></p>
+<pre><code class="language-cobol">EXEC SQL
+    FETCH PRIOR TRAN_TYPE_CURSOR
+    INTO :WS-TR-TYPE, :WS-TR-DESCRIPTION
+END-EXEC.
+</code></pre>
+<p><strong>Cursor Positioning:</strong></p>
+<pre><code class="language-cobol">EXEC SQL
+    FETCH FIRST TRAN_TYPE_CURSOR
+    INTO :WS-TR-TYPE, :WS-TR-DESCRIPTION
+END-EXEC.
+
+EXEC SQL
+    FETCH LAST TRAN_TYPE_CURSOR
+    INTO :WS-TR-TYPE, :WS-TR-DESCRIPTION
+END-EXEC.
+</code></pre>
+<h3 id="transaction-management">Transaction Management</h3>
+<p><strong>Commit:</strong></p>
+<pre><code class="language-cobol">EXEC SQL
+    COMMIT
+END-EXEC.
+</code></pre>
+<p><strong>Rollback:</strong></p>
+<pre><code class="language-cobol">EXEC SQL
+    ROLLBACK
+END-EXEC.
+</code></pre>
+<p><strong>CICS Syncpoint:</strong></p>
+<pre><code class="language-cobol">EXEC CICS SYNCPOINT
+END-EXEC.
+</code></pre>
+<h3 id="host-variables">Host Variables</h3>
+<p><strong>Declaration:</strong></p>
+<pre><code class="language-cobol">01  WS-TR-TYPE              PIC X(02).
+01  WS-TR-DESCRIPTION       PIC X(50).
+</code></pre>
+<p><strong>Usage in SQL:</strong></p>
+<pre><code class="language-cobol">EXEC SQL
+    SELECT TR_TYPE, TR_DESCRIPTION
+    INTO :WS-TR-TYPE, :WS-TR-DESCRIPTION
+    FROM CARDDEMO.TRANSACTION_TYPE
+    WHERE TR_TYPE = :WS-INPUT-TYPE
+END-EXEC.
+</code></pre>
+<h2 id="integration">Integration</h2>
+<h3 id="integration-with-base-application">Integration with Base Application</h3>
+<p><strong>Data Synchronization:</strong></p>
+<p>The TRANEXTR job extracts transaction types from DB2 and creates VSAM files:</p>
+<pre><code>DB2 TRANSACTION_TYPE → TRANTYPE.PS → TRANTYPE.VSAM.KSDS
+DB2 TRANSACTION_TYPE_CATEGORY → TRANCATG.PS → TRANCATG.VSAM.KSDS
+</code></pre>
+<p><strong>Batch Job Flow:</strong>
+1. TRANEXTR extracts data from DB2
+2. Formats data for VSAM
+3. TRANTYPE job loads VSAM file
+4. TRANCATG job loads VSAM file
+5. Transaction processing uses VSAM files</p>
+<p><strong>Why Dual Storage?</strong>
+- <strong>DB2</strong>: Administrative maintenance, relational integrity
+- <strong>VSAM</strong>: High-performance transaction processing
+- <strong>Best of Both</strong>: Flexibility and performance</p>
+<h3 id="admin-menu-integration">Admin Menu Integration</h3>
+<p>Options 5 and 6 are added to the Admin Menu (CA00):</p>
+<pre><code class="language-cobol">05  ADMIN-MENU-OPTIONS.
+    10  OPTION-05          PIC X(50) VALUE
+        '5. Transaction Type List'.
+    10  OPTION-06          PIC X(50) VALUE
+        '6. Transaction Type Add/Edit'.
+</code></pre>
+<h3 id="batch-schedule-integration">Batch Schedule Integration</h3>
+<p>TRANEXTR should run daily after transaction posting:</p>
+<pre><code>Daily Batch Sequence:
+1. CLOSEFIL
+2. TRANBKP
+3. POSTTRAN
+4. TRANEXTR  ← Extract DB2 data
+5. TRANCATG  ← Load VSAM
+6. TRANTYPE  ← Load VSAM
+7. COMBTRAN
+8. TRANIDX
+9. OPENFIL
+</code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="common-issues">Common Issues</h3>
+<p><strong>Issue: SQLCODE -803 (Duplicate Key)</strong>
+- <strong>Cause</strong>: Attempting to insert duplicate transaction type
+- <strong>Solution</strong>: Check if type already exists, use update instead</p>
+<p><strong>Issue: SQLCODE -911 (Deadlock)</strong>
+- <strong>Cause</strong>: Multiple users updating same record
+- <strong>Solution</strong>: Retry transaction, implement wait logic</p>
+<p><strong>Issue: SQLCODE -913 (Resource Unavailable)</strong>
+- <strong>Cause</strong>: DB2 resource limit reached
+- <strong>Solution</strong>: Check DB2 configuration, increase thread limit</p>
+<p><strong>Issue: Cannot delete transaction type</strong>
+- <strong>Cause</strong>: Referential integrity constraint
+- <strong>Solution</strong>: Delete dependent categories first, or keep type and mark inactive</p>
+<p><strong>Issue: DB2 connection fails</strong>
+- <strong>Cause</strong>: DB2 subsystem not available or CICS-DB2 attachment issue
+- <strong>Solution</strong>: Check DB2 status, verify CICS-DB2 connection</p>
+<p><strong>Issue: Cursor not scrolling</strong>
+- <strong>Cause</strong>: Cursor not declared as scrollable
+- <strong>Solution</strong>: Verify cursor declaration includes scrollable option</p>
+<h3 id="performance-considerations">Performance Considerations</h3>
+<p><strong>Cursor Performance:</strong>
+- Use appropriate fetch size
+- Close cursors when done
+- Consider result set size</p>
+<p><strong>Index Usage:</strong>
+- Ensure indexes are used in queries
+- Run RUNSTATS regularly
+- Monitor access paths</p>
+<p><strong>Connection Pooling:</strong>
+- Configure appropriate thread limits
+- Monitor thread usage
+- Adjust based on workload</p>
+<hr />
+<p><strong>Navigation</strong>: <a href="../Home/">Home</a> | <a href="../Home/#optional-modules">Optional Modules</a> | <a href="../Installation-Guide/">Installation Guide</a> | <a href="../Technical-Components/">Technical Components</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

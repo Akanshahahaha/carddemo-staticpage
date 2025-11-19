@@ -1,0 +1,28 @@
+site_name: "AWS Mainframe Modernization Card Demo - Deep Wiki"
+
+theme:
+  name: material
+
+docs_dir: wiki
+
+nav:
+  - Home: Home.md
+  - README: README.md
+  - Architecture: Architecture.md
+  - Installation Guide: Installation-Guide.md
+  - Quick Start: Quick-Start.md
+  - User Guide: User-Guide.md
+  - Admin Guide: Admin-Guide.md
+  - Batch Processing: Batch-Processing.md
+  - Technical Components: Technical-Components.md
+  - Data Models: Data-Models.md
+  - CICS Configuration: CICS-Configuration.md
+  - Optional Modules:
+      - Authorization: Optional-Module-Authorization.md
+      - Transaction Type: Optional-Module-Transaction-Type.md
+      - VSAM-MQ: Optional-Module-VSAM-MQ.md
+  - Troubleshooting: Troubleshooting.md
+  - FAQ: FAQ.md
+  - Glossary: Glossary.md
+  - Contributing: Contributing.md
+

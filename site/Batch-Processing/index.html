@@ -1,0 +1,2475 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Admin-Guide/">
+      
+      
+        <link rel="next" href="../Technical-Components/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Batch Processing - AWS Mainframe Modernization Card Demo - Deep Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#batch-processing-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-header__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AWS Mainframe Modernization Card Demo - Deep Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Batch Processing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-nav__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AWS Mainframe Modernization Card Demo - Deep Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quick-Start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Admin-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch Processing
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-processing-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Processing Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Batch Processing Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batch-vs-online-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch vs Online Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Window
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-job-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Job Catalog
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Batch Job Catalog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialization-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initialization Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-loading-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Loading Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daily-processing-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Daily Processing Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monthly-processing-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monthly Processing Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-module-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Module Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utility-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utility Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daily-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Daily Processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Daily Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#daily-batch-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Daily Batch Sequence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#job-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Job Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#closefil-close-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLOSEFIL - Close Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tranbkp-backup-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TRANBKP - Backup Transactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posttran-post-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POSTTRAN - Post Transactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combtran-combine-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMBTRAN - Combine Transactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tranidx-rebuild-transaction-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TRANIDX - Rebuild Transaction Index
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openfil-open-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OPENFIL - Open Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monthly-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monthly Processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monthly Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monthly-batch-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monthly Batch Sequence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#job-details_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Job Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intcalc-interest-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INTCALC - Interest Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creastmt-create-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CREASTMT - Create Statements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-execution-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job Execution Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Job Execution Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#submitting-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submitting Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-job-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring Job Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifying-job-completion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying Job Completion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job Dependencies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Job Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependency-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallel Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-and-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring and Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring and Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recovery-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recovery Procedures
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Optimization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tuning-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tuning Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technical-Components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CICS-Configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CICS Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optional Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Optional Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Transaction-Type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transaction Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-VSAM-MQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VSAM-MQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-processing-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Processing Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Batch Processing Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batch-vs-online-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch vs Online Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Window
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-job-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Job Catalog
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Batch Job Catalog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialization-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initialization Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-loading-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Loading Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daily-processing-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Daily Processing Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monthly-processing-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monthly Processing Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-module-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Module Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utility-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utility Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daily-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Daily Processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Daily Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#daily-batch-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Daily Batch Sequence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#job-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Job Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#closefil-close-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLOSEFIL - Close Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tranbkp-backup-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TRANBKP - Backup Transactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posttran-post-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POSTTRAN - Post Transactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combtran-combine-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMBTRAN - Combine Transactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tranidx-rebuild-transaction-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TRANIDX - Rebuild Transaction Index
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openfil-open-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OPENFIL - Open Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monthly-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monthly Processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monthly Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monthly-batch-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monthly Batch Sequence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#job-details_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Job Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intcalc-interest-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INTCALC - Interest Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creastmt-create-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CREASTMT - Create Statements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-execution-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job Execution Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Job Execution Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#submitting-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submitting Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-job-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring Job Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifying-job-completion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying Job Completion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job Dependencies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Job Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependency-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallel Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-and-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring and Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring and Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recovery-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recovery Procedures
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Optimization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tuning-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tuning Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="batch-processing-guide">Batch Processing Guide</h1>
+<p>Comprehensive guide to CardDemo batch processing, including job execution, scheduling, and troubleshooting.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#batch-processing-overview">Batch Processing Overview</a></li>
+<li><a href="#batch-job-catalog">Batch Job Catalog</a></li>
+<li><a href="#daily-processing">Daily Processing</a></li>
+<li><a href="#monthly-processing">Monthly Processing</a></li>
+<li><a href="#job-execution-guide">Job Execution Guide</a></li>
+<li><a href="#job-dependencies">Job Dependencies</a></li>
+<li><a href="#monitoring-and-troubleshooting">Monitoring and Troubleshooting</a></li>
+<li><a href="#performance-optimization">Performance Optimization</a></li>
+</ul>
+<h2 id="batch-processing-overview">Batch Processing Overview</h2>
+<p>CardDemo uses batch processing for:
+- Transaction posting and reconciliation
+- Interest calculations
+- Statement generation
+- Data maintenance and backup
+- File reorganization
+- Report generation</p>
+<h3 id="batch-vs-online-processing">Batch vs Online Processing</h3>
+<p><strong>Online Processing (CICS):</strong>
+- Real-time transaction processing
+- Interactive user interface
+- Immediate response required
+- Concurrent file access</p>
+<p><strong>Batch Processing (JCL):</strong>
+- Scheduled background processing
+- Large volume data processing
+- No user interaction
+- Exclusive file access</p>
+<h3 id="batch-window">Batch Window</h3>
+<p>Batch jobs typically run during off-peak hours when online users are not active.</p>
+<p><strong>Recommended Schedule:</strong>
+- <strong>Daily Jobs</strong>: 2:00 AM - 6:00 AM
+- <strong>Monthly Jobs</strong>: First Sunday of month, 1:00 AM - 8:00 AM</p>
+<h2 id="batch-job-catalog">Batch Job Catalog</h2>
+<h3 id="initialization-jobs">Initialization Jobs</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Job Name</th>
+<th style="text-align: left;">Program</th>
+<th style="text-align: left;">Purpose</th>
+<th style="text-align: left;">Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">DUSRSECJ</td>
+<td style="text-align: left;">IEBGENER</td>
+<td style="text-align: left;">Initial load of user security file</td>
+<td style="text-align: left;">One-time / As needed</td>
+</tr>
+<tr>
+<td style="text-align: left;">DEFGDGB</td>
+<td style="text-align: left;">IDCAMS</td>
+<td style="text-align: left;">Setup GDG bases</td>
+<td style="text-align: left;">One-time</td>
+</tr>
+<tr>
+<td style="text-align: left;">DEFGDGD</td>
+<td style="text-align: left;">IDCAMS</td>
+<td style="text-align: left;">Setup GDG bases for DB2</td>
+<td style="text-align: left;">One-time (if using DB2)</td>
+</tr>
+<tr>
+<td style="text-align: left;">CLOSEFIL</td>
+<td style="text-align: left;">IEFBR14</td>
+<td style="text-align: left;">Close VSAM files in CICS</td>
+<td style="text-align: left;">Before batch processing</td>
+</tr>
+<tr>
+<td style="text-align: left;">OPENFIL</td>
+<td style="text-align: left;">IEFBR14</td>
+<td style="text-align: left;">Open VSAM files in CICS</td>
+<td style="text-align: left;">After batch processing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="data-loading-jobs">Data Loading Jobs</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Job Name</th>
+<th style="text-align: left;">Program</th>
+<th style="text-align: left;">Purpose</th>
+<th style="text-align: left;">Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ACCTFILE</td>
+<td style="text-align: left;">IDCAMS</td>
+<td style="text-align: left;">Load/refresh Account master</td>
+<td style="text-align: left;">Initial / As needed</td>
+</tr>
+<tr>
+<td style="text-align: left;">CARDFILE</td>
+<td style="text-align: left;">IDCAMS</td>
+<td style="text-align: left;">Load/refresh Card master</td>
+<td style="text-align: left;">Initial / As needed</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUSTFILE</td>
+<td style="text-align: left;">IDCAMS</td>
+<td style="text-align: left;">Load/refresh Customer master</td>
+<td style="text-align: left;">Initial / As needed</td>
+</tr>
+<tr>
+<td style="text-align: left;">XREFFILE</td>
+<td style="text-align: left;">IDCAMS</td>
+<td style="text-align: left;">Load account-card cross reference</td>
+<td style="text-align: left;">Initial / As needed</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRANFILE</td>
+<td style="text-align: left;">IDCAMS</td>
+<td style="text-align: left;">Load transaction master file</td>
+<td style="text-align: left;">Initial / As needed</td>
+</tr>
+<tr>
+<td style="text-align: left;">DISCGRP</td>
+<td style="text-align: left;">IDCAMS</td>
+<td style="text-align: left;">Load disclosure group file</td>
+<td style="text-align: left;">Initial / As needed</td>
+</tr>
+<tr>
+<td style="text-align: left;">TCATBALF</td>
+<td style="text-align: left;">IDCAMS</td>
+<td style="text-align: left;">Load transaction category balance</td>
+<td style="text-align: left;">Initial / As needed</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRANCATG</td>
+<td style="text-align: left;">IDCAMS</td>
+<td style="text-align: left;">Load transaction category types</td>
+<td style="text-align: left;">Initial / As needed</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRANTYPE</td>
+<td style="text-align: left;">IDCAMS</td>
+<td style="text-align: left;">Load transaction type file</td>
+<td style="text-align: left;">Initial / As needed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="daily-processing-jobs">Daily Processing Jobs</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Job Name</th>
+<th style="text-align: left;">Program</th>
+<th style="text-align: left;">Purpose</th>
+<th style="text-align: left;">Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">CLOSEFIL</td>
+<td style="text-align: left;">IEFBR14</td>
+<td style="text-align: left;">Close files for batch</td>
+<td style="text-align: left;">Daily (before batch)</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRANBKP</td>
+<td style="text-align: left;">IDCAMS</td>
+<td style="text-align: left;">Backup transaction database</td>
+<td style="text-align: left;">Daily</td>
+</tr>
+<tr>
+<td style="text-align: left;">POSTTRAN</td>
+<td style="text-align: left;">CBTRN02C</td>
+<td style="text-align: left;">Post daily transactions</td>
+<td style="text-align: left;">Daily</td>
+</tr>
+<tr>
+<td style="text-align: left;">COMBTRAN</td>
+<td style="text-align: left;">SORT</td>
+<td style="text-align: left;">Combine transaction files</td>
+<td style="text-align: left;">Daily</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRANIDX</td>
+<td style="text-align: left;">IDCAMS</td>
+<td style="text-align: left;">Rebuild transaction alternate index</td>
+<td style="text-align: left;">Daily</td>
+</tr>
+<tr>
+<td style="text-align: left;">OPENFIL</td>
+<td style="text-align: left;">IEFBR14</td>
+<td style="text-align: left;">Open files for CICS</td>
+<td style="text-align: left;">Daily (after batch)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="monthly-processing-jobs">Monthly Processing Jobs</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Job Name</th>
+<th style="text-align: left;">Program</th>
+<th style="text-align: left;">Purpose</th>
+<th style="text-align: left;">Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">INTCALC</td>
+<td style="text-align: left;">CBACT04C</td>
+<td style="text-align: left;">Calculate interest charges</td>
+<td style="text-align: left;">Monthly</td>
+</tr>
+<tr>
+<td style="text-align: left;">CREASTMT</td>
+<td style="text-align: left;">CBSTM03A</td>
+<td style="text-align: left;">Generate account statements</td>
+<td style="text-align: left;">Monthly</td>
+</tr>
+</tbody>
+</table>
+<h3 id="optional-module-jobs">Optional Module Jobs</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Job Name</th>
+<th style="text-align: left;">Program</th>
+<th style="text-align: left;">Purpose</th>
+<th style="text-align: left;">Module</th>
+<th style="text-align: left;">Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">CREADB21</td>
+<td style="text-align: left;">DSNTEP4</td>
+<td style="text-align: left;">Create DB2 database and load tables</td>
+<td style="text-align: left;">DB2 Transaction Type</td>
+<td style="text-align: left;">One-time</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRANEXTR</td>
+<td style="text-align: left;">DSNTIAUL</td>
+<td style="text-align: left;">Extract DB2 data for transaction types</td>
+<td style="text-align: left;">DB2 Transaction Type</td>
+<td style="text-align: left;">Daily</td>
+</tr>
+<tr>
+<td style="text-align: left;">MNTTRDB2</td>
+<td style="text-align: left;">COBTUPDT</td>
+<td style="text-align: left;">Maintain transaction type table</td>
+<td style="text-align: left;">DB2 Transaction Type</td>
+<td style="text-align: left;">As needed</td>
+</tr>
+<tr>
+<td style="text-align: left;">CBPAUP0J</td>
+<td style="text-align: left;">CBPAUP0C</td>
+<td style="text-align: left;">Purge expired authorizations</td>
+<td style="text-align: left;">IMS-DB2-MQ Auth</td>
+<td style="text-align: left;">Daily</td>
+</tr>
+</tbody>
+</table>
+<h3 id="utility-jobs">Utility Jobs</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Job Name</th>
+<th style="text-align: left;">Program</th>
+<th style="text-align: left;">Purpose</th>
+<th style="text-align: left;">Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">WAITSTEP</td>
+<td style="text-align: left;">COBSWAIT</td>
+<td style="text-align: left;">Wait for specified time</td>
+<td style="text-align: left;">As needed</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRANREPT</td>
+<td style="text-align: left;">CBTRN03C</td>
+<td style="text-align: left;">Generate transaction report</td>
+<td style="text-align: left;">On demand</td>
+</tr>
+<tr>
+<td style="text-align: left;">ESDSRRDS</td>
+<td style="text-align: left;">IDCAMS</td>
+<td style="text-align: left;">Create ESDS and RRDS VSAM files</td>
+<td style="text-align: left;">As needed</td>
+</tr>
+</tbody>
+</table>
+<h2 id="daily-processing">Daily Processing</h2>
+<h3 id="daily-batch-sequence">Daily Batch Sequence</h3>
+<p>Execute jobs in this order for daily processing:</p>
+<pre><code>1. CLOSEFIL   - Close files (2:00 AM)
+2. TRANBKP    - Backup transactions (2:05 AM)
+3. POSTTRAN   - Post transactions (2:15 AM)
+4. COMBTRAN   - Combine transactions (3:00 AM)
+5. TRANIDX    - Rebuild index (3:30 AM)
+6. TRANEXTR   - Extract DB2 data (4:00 AM) [if using DB2 module]
+7. TRANCATG   - Update transaction categories (4:15 AM)
+8. TRANTYPE   - Update transaction types (4:20 AM)
+9. CBPAUP0J   - Purge authorizations (4:30 AM) [if using Auth module]
+10. OPENFIL   - Open files (5:00 AM)
+</code></pre>
+<h3 id="job-details">Job Details</h3>
+<h4 id="closefil-close-files">CLOSEFIL - Close Files</h4>
+<p><strong>Purpose</strong>: Closes all VSAM files to allow exclusive batch access.</p>
+<p><strong>JCL:</strong></p>
+<pre><code class="language-jcl">//CLOSEFIL JOB ...
+//STEP1    EXEC PGM=IEFBR14
+//ACCTDAT  DD DSN=AWS.M2.CARDDEMO.ACCTDAT.VSAM.KSDS,
+//            DISP=OLD
+//CARDDAT  DD DSN=AWS.M2.CARDDEMO.CARDDAT.VSAM.KSDS,
+//            DISP=OLD
+// ... (all VSAM files)
+</code></pre>
+<p><strong>Expected RC</strong>: 0</p>
+<p><strong>Notes</strong>: Must complete before any other batch jobs access VSAM files.</p>
+<h4 id="tranbkp-backup-transactions">TRANBKP - Backup Transactions</h4>
+<p><strong>Purpose</strong>: Creates backup copy of transaction file.</p>
+<p><strong>Program</strong>: IDCAMS</p>
+<p><strong>Input</strong>: TRANSACT.VSAM.KSDS</p>
+<p><strong>Output</strong>: TRANSACT.BACKUP.GDG(+1)</p>
+<p><strong>Expected RC</strong>: 0</p>
+<p><strong>Notes</strong>: Backup is kept for 7 generations.</p>
+<h4 id="posttran-post-transactions">POSTTRAN - Post Transactions</h4>
+<p><strong>Purpose</strong>: Posts daily transactions to account balances.</p>
+<p><strong>Program</strong>: CBTRN02C (COBOL)</p>
+<p><strong>Input Files:</strong>
+- DALYTRAN.PS (daily transactions)
+- ACCTDAT.VSAM.KSDS (account master)
+- TRANSACT.VSAM.KSDS (transaction file)</p>
+<p><strong>Output Files:</strong>
+- Updated ACCTDAT.VSAM.KSDS
+- Updated TRANSACT.VSAM.KSDS
+- POSTTRAN.REPORT (posting report)</p>
+<p><strong>Processing Logic:</strong>
+1. Read daily transaction file
+2. Validate each transaction
+3. Update account balance
+4. Write to transaction history
+5. Generate posting report</p>
+<p><strong>Expected RC</strong>: 0</p>
+<p><strong>Error Handling:</strong>
+- Invalid transactions written to error file
+- Processing continues for valid transactions
+- Summary report shows counts and totals</p>
+<h4 id="combtran-combine-transactions">COMBTRAN - Combine Transactions</h4>
+<p><strong>Purpose</strong>: Combines and sorts transaction files.</p>
+<p><strong>Program</strong>: SORT</p>
+<p><strong>Input Files:</strong>
+- TRANSACT.VSAM.KSDS
+- DALYTRAN.PS</p>
+<p><strong>Output</strong>: Sorted combined transaction file</p>
+<p><strong>Sort Keys:</strong>
+- Primary: Card Number
+- Secondary: Transaction Date (descending)</p>
+<p><strong>Expected RC</strong>: 0</p>
+<h4 id="tranidx-rebuild-transaction-index">TRANIDX - Rebuild Transaction Index</h4>
+<p><strong>Purpose</strong>: Rebuilds alternate index on transaction file.</p>
+<p><strong>Program</strong>: IDCAMS</p>
+<p><strong>Commands:</strong></p>
+<pre><code>DELETE AWS.M2.CARDDEMO.TRANSACT.AIX
+DEFINE AIX (...)
+BLDINDEX INDATASET(AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS) ...
+</code></pre>
+<p><strong>Expected RC</strong>: 0</p>
+<p><strong>Notes</strong>: Improves query performance for card number searches.</p>
+<h4 id="openfil-open-files">OPENFIL - Open Files</h4>
+<p><strong>Purpose</strong>: Reopens VSAM files for CICS access.</p>
+<p><strong>JCL:</strong></p>
+<pre><code class="language-jcl">//OPENFIL  JOB ...
+//STEP1    EXEC PGM=IEFBR14
+//ACCTDAT  DD DSN=AWS.M2.CARDDEMO.ACCTDAT.VSAM.KSDS,
+//            DISP=SHR
+// ... (all VSAM files)
+</code></pre>
+<p><strong>Expected RC</strong>: 0</p>
+<p><strong>Notes</strong>: Must complete before CICS users can access files.</p>
+<h2 id="monthly-processing">Monthly Processing</h2>
+<h3 id="monthly-batch-sequence">Monthly Batch Sequence</h3>
+<p>Execute these jobs in addition to daily jobs on the first of each month:</p>
+<pre><code>1. CLOSEFIL   - Close files
+2. TRANBKP    - Backup transactions
+3. POSTTRAN   - Post transactions
+4. INTCALC    - Calculate interest (NEW)
+5. CREASTMT   - Generate statements (NEW)
+6. COMBTRAN   - Combine transactions
+7. TRANIDX    - Rebuild index
+8. OPENFIL    - Open files
+</code></pre>
+<h3 id="job-details_1">Job Details</h3>
+<h4 id="intcalc-interest-calculation">INTCALC - Interest Calculation</h4>
+<p><strong>Purpose</strong>: Calculates and posts monthly interest charges.</p>
+<p><strong>Program</strong>: CBACT04C (COBOL)</p>
+<p><strong>Input Files:</strong>
+- ACCTDAT.VSAM.KSDS (account master)
+- TRANSACT.VSAM.KSDS (transaction file)</p>
+<p><strong>Output Files:</strong>
+- Updated ACCTDAT.VSAM.KSDS (with interest charges)
+- Updated TRANSACT.VSAM.KSDS (interest transactions)
+- INTCALC.REPORT (interest calculation report)</p>
+<p><strong>Processing Logic:</strong>
+1. Read all active accounts
+2. Calculate average daily balance
+3. Apply interest rate based on account type
+4. Post interest transaction
+5. Update account balance
+6. Generate summary report</p>
+<p><strong>Interest Calculation:</strong></p>
+<pre><code>Interest = (Average Daily Balance × Annual Rate) / 12
+</code></pre>
+<p><strong>Expected RC</strong>: 0</p>
+<p><strong>Report Contents:</strong>
+- Account count processed
+- Total interest charged
+- Account-by-account detail</p>
+<h4 id="creastmt-create-statements">CREASTMT - Create Statements</h4>
+<p><strong>Purpose</strong>: Generates monthly account statements.</p>
+<p><strong>Program</strong>: CBSTM03A (COBOL)</p>
+<p><strong>Input Files:</strong>
+- ACCTDAT.VSAM.KSDS (account master)
+- CARDDAT.VSAM.KSDS (card master)
+- CUSTDAT.VSAM.KSDS (customer master)
+- TRANSACT.VSAM.KSDS (transaction file)</p>
+<p><strong>Output Files:</strong>
+- STATEMENT.GDG(+1) (statement file)
+- CREASTMT.REPORT (generation report)</p>
+<p><strong>Processing Logic:</strong>
+1. Read all active accounts
+2. Retrieve customer information
+3. Retrieve all transactions for billing period
+4. Calculate totals and balances
+5. Format statement
+6. Write to statement file</p>
+<p><strong>Statement Contents:</strong>
+- Account summary
+- Previous balance
+- Payments and credits
+- Purchases and debits
+- Interest charges
+- New balance
+- Minimum payment due
+- Payment due date
+- Transaction detail</p>
+<p><strong>Expected RC</strong>: 0</p>
+<h2 id="job-execution-guide">Job Execution Guide</h2>
+<h3 id="submitting-jobs">Submitting Jobs</h3>
+<p><strong>Using TSO/ISPF:</strong></p>
+<pre><code>1. TSO ISPF 3.4
+2. Navigate to AWS.M2.CARDDEMO.JCL
+3. Select job member
+4. Enter 'S' (Submit)
+5. Job submitted to JES
+</code></pre>
+<p><strong>Using JCL:</strong></p>
+<pre><code>//SUBMIT   EXEC PGM=IEBGENER
+//SYSUT1   DD DSN=AWS.M2.CARDDEMO.JCL(POSTTRAN),DISP=SHR
+//SYSUT2   DD SYSOUT=(A,INTRDR)
+//SYSPRINT DD SYSOUT=*
+</code></pre>
+<h3 id="monitoring-job-execution">Monitoring Job Execution</h3>
+<p><strong>Check Job Status:</strong></p>
+<pre><code>1. Enter SDSF or equivalent
+2. Filter by job name
+3. Check status (ACTIVE, OUTPUT, ABEND)
+4. View return code
+</code></pre>
+<p><strong>View Job Output:</strong></p>
+<pre><code>1. Select job in SDSF
+2. Enter 'S' to view output
+3. Review SYSOUT datasets
+4. Check for error messages
+</code></pre>
+<h3 id="verifying-job-completion">Verifying Job Completion</h3>
+<p><strong>Success Indicators:</strong>
+- Return Code: 0000
+- No error messages in SYSOUT
+- Expected output files created
+- Record counts match expectations</p>
+<p><strong>Check Return Codes:</strong></p>
+<pre><code>RC=0000  - Successful completion
+RC=0004  - Warning (review output)
+RC=0008  - Error (job failed)
+RC=0012  - Severe error
+RC=Sxxx  - System abend
+RC=Uxxx  - User abend
+</code></pre>
+<h2 id="job-dependencies">Job Dependencies</h2>
+<h3 id="dependency-chart">Dependency Chart</h3>
+<pre><code>CLOSEFIL
+    ↓
+TRANBKP
+    ↓
+POSTTRAN ──→ COMBTRAN ──→ TRANIDX
+    ↓            ↓
+INTCALC      TRANEXTR
+    ↓            ↓
+CREASTMT     TRANCATG
+                 ↓
+             TRANTYPE
+                 ↓
+             CBPAUP0J
+                 ↓
+             OPENFIL
+</code></pre>
+<h3 id="critical-dependencies">Critical Dependencies</h3>
+<ol>
+<li><strong>CLOSEFIL must complete</strong> before any file access</li>
+<li><strong>TRANBKP must complete</strong> before POSTTRAN</li>
+<li><strong>POSTTRAN must complete</strong> before INTCALC</li>
+<li><strong>INTCALC must complete</strong> before CREASTMT</li>
+<li><strong>All processing must complete</strong> before OPENFIL</li>
+</ol>
+<h3 id="parallel-execution">Parallel Execution</h3>
+<p>These jobs can run in parallel (after POSTTRAN):
+- COMBTRAN
+- TRANEXTR
+- INTCALC (if not dependent on COMBTRAN)</p>
+<h2 id="monitoring-and-troubleshooting">Monitoring and Troubleshooting</h2>
+<h3 id="common-issues">Common Issues</h3>
+<p><strong>Issue: Job Abends with S806</strong>
+- <strong>Cause</strong>: Program not found
+- <strong>Solution</strong>: Verify load library in STEPLIB</p>
+<p><strong>Issue: Job Abends with S013</strong>
+- <strong>Cause</strong>: File not found or not cataloged
+- <strong>Solution</strong>: Verify dataset exists and is cataloged</p>
+<p><strong>Issue: Job Abends with S213</strong>
+- <strong>Cause</strong>: File already open or in use
+- <strong>Solution</strong>: Verify CLOSEFIL completed, check for CICS file locks</p>
+<p><strong>Issue: Job Abends with S222</strong>
+- <strong>Cause</strong>: Operator cancel
+- <strong>Solution</strong>: Check with operations, resubmit if appropriate</p>
+<p><strong>Issue: Job Abends with S322</strong>
+- <strong>Cause</strong>: CPU time limit exceeded
+- <strong>Solution</strong>: Increase TIME parameter in JCL</p>
+<p><strong>Issue: Job Abends with SB37</strong>
+- <strong>Cause</strong>: Out of space
+- <strong>Solution</strong>: Increase SPACE allocation or delete old datasets</p>
+<h3 id="performance-issues">Performance Issues</h3>
+<p><strong>Slow Transaction Posting:</strong>
+- Check VSAM file CI/CA splits
+- Consider file reorganization
+- Review buffer allocations</p>
+<p><strong>Long-Running Jobs:</strong>
+- Review program logic
+- Check for unnecessary I/O
+- Consider parallel processing</p>
+<h3 id="recovery-procedures">Recovery Procedures</h3>
+<p><strong>If POSTTRAN Fails:</strong>
+1. Review error messages
+2. Correct data issues
+3. Restore from TRANBKP if needed
+4. Rerun POSTTRAN
+5. Continue with remaining jobs</p>
+<p><strong>If INTCALC Fails:</strong>
+1. Review calculation errors
+2. Correct account data
+3. Rerun INTCALC
+4. Verify balances before CREASTMT</p>
+<p><strong>If OPENFIL Fails:</strong>
+1. Check file status
+2. Manually open files via CEMT
+3. Investigate root cause</p>
+<h2 id="performance-optimization">Performance Optimization</h2>
+<h3 id="best-practices">Best Practices</h3>
+<ol>
+<li><strong>Schedule Appropriately</strong>: Run during off-peak hours</li>
+<li><strong>Monitor Resources</strong>: Track CPU, I/O, and elapsed time</li>
+<li><strong>Optimize File Access</strong>: Use appropriate buffer sizes</li>
+<li><strong>Reorganize Files</strong>: Periodically reorganize VSAM files</li>
+<li><strong>Parallel Processing</strong>: Run independent jobs in parallel</li>
+<li><strong>Archive Old Data</strong>: Move historical data to archive files</li>
+</ol>
+<h3 id="tuning-parameters">Tuning Parameters</h3>
+<p><strong>VSAM Buffers:</strong></p>
+<pre><code>//ACCTDAT  DD DSN=...,DISP=SHR,
+//            AMP=('BUFNI=10,BUFND=20')
+</code></pre>
+<p><strong>Sort Work Files:</strong></p>
+<pre><code>//SORTWK01 DD UNIT=SYSDA,SPACE=(CYL,(50,10))
+//SORTWK02 DD UNIT=SYSDA,SPACE=(CYL,(50,10))
+//SORTWK03 DD UNIT=SYSDA,SPACE=(CYL,(50,10))
+</code></pre>
+<p><strong>Region Size:</strong></p>
+<pre><code>//JOBNAME  JOB ...,REGION=32M
+</code></pre>
+<hr />
+<p><strong>Navigation</strong>: <a href="../Home/">Home</a> | <a href="../Installation-Guide/">Installation Guide</a> | <a href="../Technical-Components/">Technical Components</a> | <a href="../Troubleshooting/">Troubleshooting</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

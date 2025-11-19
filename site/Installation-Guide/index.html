@@ -1,0 +1,2708 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Architecture/">
+      
+      
+        <link rel="next" href="../Quick-Start/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Installation Guide - AWS Mainframe Modernization Card Demo - Deep Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installation-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-header__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AWS Mainframe Modernization Card Demo - Deep Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Installation Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-nav__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AWS Mainframe Modernization Card Demo - Deep Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mainframe-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mainframe Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skills-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skills Required
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-environment-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Environment Preparation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Environment Preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-clone-the-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Clone the Repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-review-the-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Review the Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-define-your-high-level-qualifier-hlq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Define Your High Level Qualifier (HLQ)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-dataset-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Dataset Creation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Dataset Creation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-source-code-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Source Code Datasets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-sample-dataset-allocation-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Sample Dataset Allocation Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-data-file-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Data File Datasets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-source-code-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Source Code Upload
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Source Code Upload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-upload-source-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Upload Source Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-verify-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Verify Upload
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-sample-data-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Sample Data Upload
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Sample Data Upload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-upload-sample-data-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Upload Sample Data Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-verify-data-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Verify Data Upload
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-environment-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Environment Initialization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Environment Initialization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-update-jcl-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Update JCL Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-execute-initialization-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Execute Initialization Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-verify-job-completion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Verify Job Completion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-program-compilation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Program Compilation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 6: Program Compilation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-compilation-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Compilation Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-compile-assembler-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Compile Assembler Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-compile-bms-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Compile BMS Maps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-compile-cobol-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Compile COBOL Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-verify-compilation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Verify Compilation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-cics-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: CICS Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 7: CICS Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-define-cics-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Define CICS Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-define-resource-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Define Resource Groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-define-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Define Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-define-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Define Transactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-define-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 Define Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76-install-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6 Install Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8: Verification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 8: Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-access-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Access the Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-test-user-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Test User Login
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-verify-core-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Verify Core Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-run-test-batch-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Run Test Batch Job
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-module-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Module Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Module Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#db2-transaction-type-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB2 Transaction Type Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ims-db2-mq-credit-card-authorizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMS-DB2-MQ Credit Card Authorizations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vsam-mq-account-extractions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM-MQ Account Extractions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Help
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quick-Start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Admin-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Batch-Processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technical-Components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CICS-Configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CICS Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optional Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Optional Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Transaction-Type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transaction Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-VSAM-MQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VSAM-MQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mainframe-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mainframe Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skills-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skills Required
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-environment-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Environment Preparation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Environment Preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-clone-the-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Clone the Repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-review-the-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Review the Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-define-your-high-level-qualifier-hlq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Define Your High Level Qualifier (HLQ)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-dataset-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Dataset Creation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Dataset Creation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-source-code-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Source Code Datasets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-sample-dataset-allocation-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Sample Dataset Allocation Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-data-file-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Data File Datasets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-source-code-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Source Code Upload
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Source Code Upload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-upload-source-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Upload Source Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-verify-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Verify Upload
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-sample-data-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Sample Data Upload
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Sample Data Upload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-upload-sample-data-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Upload Sample Data Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-verify-data-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Verify Data Upload
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-environment-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Environment Initialization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Environment Initialization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-update-jcl-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Update JCL Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-execute-initialization-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Execute Initialization Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-verify-job-completion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Verify Job Completion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-program-compilation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Program Compilation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 6: Program Compilation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-compilation-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Compilation Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-compile-assembler-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Compile Assembler Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-compile-bms-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Compile BMS Maps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-compile-cobol-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Compile COBOL Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-verify-compilation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Verify Compilation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-cics-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: CICS Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 7: CICS Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-define-cics-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Define CICS Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-define-resource-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Define Resource Groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-define-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Define Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-define-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Define Transactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-define-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 Define Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76-install-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6 Install Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8: Verification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 8: Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-access-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Access the Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-test-user-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Test User Login
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-verify-core-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Verify Core Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-run-test-batch-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Run Test Batch Job
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-module-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Module Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Module Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#db2-transaction-type-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB2 Transaction Type Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ims-db2-mq-credit-card-authorizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMS-DB2-MQ Credit Card Authorizations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vsam-mq-account-extractions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM-MQ Account Extractions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Help
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="installation-guide">Installation Guide</h1>
+<p>This comprehensive guide walks you through the complete installation process for CardDemo, from prerequisites to final verification.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#installation-overview">Installation Overview</a></li>
+<li><a href="#step-1-environment-preparation">Step 1: Environment Preparation</a></li>
+<li><a href="#step-2-dataset-creation">Step 2: Dataset Creation</a></li>
+<li><a href="#step-3-source-code-upload">Step 3: Source Code Upload</a></li>
+<li><a href="#step-4-sample-data-upload">Step 4: Sample Data Upload</a></li>
+<li><a href="#step-5-environment-initialization">Step 5: Environment Initialization</a></li>
+<li><a href="#step-6-program-compilation">Step 6: Program Compilation</a></li>
+<li><a href="#step-7-cics-configuration">Step 7: CICS Configuration</a></li>
+<li><a href="#step-8-verification">Step 8: Verification</a></li>
+<li><a href="#optional-module-installation">Optional Module Installation</a></li>
+<li><a href="#troubleshooting-installation">Troubleshooting Installation</a></li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before beginning the installation, ensure you have the following:</p>
+<h3 id="mainframe-environment">Mainframe Environment</h3>
+<ul>
+<li>z/OS operating system</li>
+<li>CICS Transaction Server</li>
+<li>VSAM support</li>
+<li>JCL execution capability</li>
+<li>File transfer capability (FTP, SFTP, or similar)</li>
+</ul>
+<h3 id="optional-components">Optional Components</h3>
+<p>For optional modules, you'll also need:
+- <strong>DB2</strong>: For Transaction Type Management module
+- <strong>IMS DB</strong>: For Credit Card Authorizations module
+- <strong>MQ</strong>: For Authorization and Account Extraction modules</p>
+<h3 id="access-requirements">Access Requirements</h3>
+<ul>
+<li>TSO/ISPF access</li>
+<li>Authority to create datasets</li>
+<li>Authority to define CICS resources</li>
+<li>Authority to submit JCL jobs</li>
+<li>File transfer access between local and mainframe</li>
+</ul>
+<h3 id="skills-required">Skills Required</h3>
+<ul>
+<li>Basic mainframe navigation</li>
+<li>Understanding of TSO/ISPF</li>
+<li>Familiarity with JCL</li>
+<li>Basic CICS administration knowledge</li>
+</ul>
+<h2 id="installation-overview">Installation Overview</h2>
+<p>The installation process follows these major phases:</p>
+<ol>
+<li><strong>Preparation</strong>: Clone repository and prepare environment</li>
+<li><strong>Dataset Setup</strong>: Create mainframe datasets</li>
+<li><strong>Code Upload</strong>: Transfer source code to mainframe</li>
+<li><strong>Data Upload</strong>: Transfer sample data files</li>
+<li><strong>Initialization</strong>: Execute setup JCL jobs</li>
+<li><strong>Compilation</strong>: Compile COBOL programs</li>
+<li><strong>CICS Setup</strong>: Configure CICS resources</li>
+<li><strong>Verification</strong>: Test the installation</li>
+</ol>
+<p><strong>Estimated Time</strong>: 2-4 hours for base installation</p>
+<h2 id="step-1-environment-preparation">Step 1: Environment Preparation</h2>
+<h3 id="11-clone-the-repository">1.1 Clone the Repository</h3>
+<p>Clone the CardDemo repository to your local development environment:</p>
+<pre><code class="language-bash">git clone https://github.com/aws-samples/aws-mainframe-modernization-carddemo.git
+cd aws-mainframe-modernization-carddemo
+</code></pre>
+<h3 id="12-review-the-structure">1.2 Review the Structure</h3>
+<p>Familiarize yourself with the repository structure:</p>
+<pre><code>app/
+├── asm/        # Assembler programs
+├── bms/        # BMS map definitions
+├── cbl/        # COBOL programs
+├── cpy/        # Copybooks
+├── cpy-bms/    # BMS copybooks
+├── csd/        # CICS resource definitions
+├── data/       # Sample data files
+├── jcl/        # JCL jobs
+├── maclib/     # Macro libraries
+└── proc/       # JCL procedures
+</code></pre>
+<h3 id="13-define-your-high-level-qualifier-hlq">1.3 Define Your High Level Qualifier (HLQ)</h3>
+<p>Choose a High Level Qualifier for your datasets. This guide uses <code>AWS.M2</code> as an example, but you should use your organization's naming convention.</p>
+<p><strong>Example HLQ</strong>: <code>AWS.M2</code></p>
+<h2 id="step-2-dataset-creation">Step 2: Dataset Creation</h2>
+<p>Create the following datasets on your mainframe system. Replace <code>AWS.M2</code> with your chosen HLQ.</p>
+<h3 id="21-source-code-datasets">2.1 Source Code Datasets</h3>
+<p>Create these datasets with <strong>FB (Fixed Block)</strong> format and <strong>LRECL=80</strong>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Dataset Name</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Format</th>
+<th style="text-align: right;">LRECL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">AWS.M2.CARDDEMO.JCL</td>
+<td style="text-align: left;">JCL jobs</td>
+<td style="text-align: left;">FB</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr>
+<td style="text-align: left;">AWS.M2.CARDDEMO.PROC</td>
+<td style="text-align: left;">JCL procedures</td>
+<td style="text-align: left;">FB</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr>
+<td style="text-align: left;">AWS.M2.CARDDEMO.CBL</td>
+<td style="text-align: left;">COBOL programs</td>
+<td style="text-align: left;">FB</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr>
+<td style="text-align: left;">AWS.M2.CARDDEMO.CPY</td>
+<td style="text-align: left;">Copybooks</td>
+<td style="text-align: left;">FB</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr>
+<td style="text-align: left;">AWS.M2.CARDDEMO.BMS</td>
+<td style="text-align: left;">BMS maps</td>
+<td style="text-align: left;">FB</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr>
+<td style="text-align: left;">AWS.M2.CARDDEMO.ASM</td>
+<td style="text-align: left;">Assembler programs</td>
+<td style="text-align: left;">FB</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr>
+<td style="text-align: left;">AWS.M2.CARDDEMO.MACLIB</td>
+<td style="text-align: left;">Macro library</td>
+<td style="text-align: left;">FB</td>
+<td style="text-align: right;">80</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-sample-dataset-allocation-commands">2.2 Sample Dataset Allocation Commands</h3>
+<p>Using ISPF 3.2 (Dataset Utility):</p>
+<pre><code>ALLOCATE DATASET('AWS.M2.CARDDEMO.JCL')
+  SPACE(10,5) TRACKS
+  RECFM(F,B) LRECL(80) BLKSIZE(27920)
+  DSORG(PO) DSNTYPE(LIBRARY)
+</code></pre>
+<p>Or using JCL:</p>
+<pre><code class="language-jcl">//ALLOC    EXEC PGM=IEFBR14
+//DD1      DD DSN=AWS.M2.CARDDEMO.JCL,
+//            DISP=(NEW,CATLG,DELETE),
+//            SPACE=(TRK,(10,5,20)),
+//            DCB=(RECFM=FB,LRECL=80,BLKSIZE=27920),
+//            DSNTYPE=LIBRARY
+</code></pre>
+<h3 id="23-data-file-datasets">2.3 Data File Datasets</h3>
+<p>Create these datasets for sample data:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Dataset Name</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Copybook</th>
+<th style="text-align: left;">Format</th>
+<th style="text-align: right;">LRECL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">AWS.M2.CARDDEMO.USRSEC.PS</td>
+<td style="text-align: left;">User Security</td>
+<td style="text-align: left;">CSUSR01Y</td>
+<td style="text-align: left;">FB</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr>
+<td style="text-align: left;">AWS.M2.CARDDEMO.ACCTDATA.PS</td>
+<td style="text-align: left;">Account Data</td>
+<td style="text-align: left;">CVACT01Y</td>
+<td style="text-align: left;">FB</td>
+<td style="text-align: right;">300</td>
+</tr>
+<tr>
+<td style="text-align: left;">AWS.M2.CARDDEMO.CARDDATA.PS</td>
+<td style="text-align: left;">Card Data</td>
+<td style="text-align: left;">CVACT02Y</td>
+<td style="text-align: left;">FB</td>
+<td style="text-align: right;">150</td>
+</tr>
+<tr>
+<td style="text-align: left;">AWS.M2.CARDDEMO.CUSTDATA.PS</td>
+<td style="text-align: left;">Customer Data</td>
+<td style="text-align: left;">CVCUS01Y</td>
+<td style="text-align: left;">FB</td>
+<td style="text-align: right;">500</td>
+</tr>
+<tr>
+<td style="text-align: left;">AWS.M2.CARDDEMO.CARDXREF.PS</td>
+<td style="text-align: left;">Card Cross Reference</td>
+<td style="text-align: left;">CVACT03Y</td>
+<td style="text-align: left;">FB</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr>
+<td style="text-align: left;">AWS.M2.CARDDEMO.DALYTRAN.PS.INIT</td>
+<td style="text-align: left;">Transaction Init</td>
+<td style="text-align: left;">CVTRA06Y</td>
+<td style="text-align: left;">FB</td>
+<td style="text-align: right;">350</td>
+</tr>
+<tr>
+<td style="text-align: left;">AWS.M2.CARDDEMO.DALYTRAN.PS</td>
+<td style="text-align: left;">Transaction Data</td>
+<td style="text-align: left;">CVTRA06Y</td>
+<td style="text-align: left;">FB</td>
+<td style="text-align: right;">350</td>
+</tr>
+<tr>
+<td style="text-align: left;">AWS.M2.CARDDEMO.DISCGRP.PS</td>
+<td style="text-align: left;">Disclosure Groups</td>
+<td style="text-align: left;">CVTRA02Y</td>
+<td style="text-align: left;">FB</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr>
+<td style="text-align: left;">AWS.M2.CARDDEMO.TRANCATG.PS</td>
+<td style="text-align: left;">Transaction Categories</td>
+<td style="text-align: left;">CVTRA04Y</td>
+<td style="text-align: left;">FB</td>
+<td style="text-align: right;">60</td>
+</tr>
+<tr>
+<td style="text-align: left;">AWS.M2.CARDDEMO.TRANTYPE.PS</td>
+<td style="text-align: left;">Transaction Types</td>
+<td style="text-align: left;">CVTRA03Y</td>
+<td style="text-align: left;">FB</td>
+<td style="text-align: right;">60</td>
+</tr>
+<tr>
+<td style="text-align: left;">AWS.M2.CARDDEMO.TCATBALF.PS</td>
+<td style="text-align: left;">Category Balance</td>
+<td style="text-align: left;">CVTRA01Y</td>
+<td style="text-align: left;">FB</td>
+<td style="text-align: right;">50</td>
+</tr>
+</tbody>
+</table>
+<h2 id="step-3-source-code-upload">Step 3: Source Code Upload</h2>
+<h3 id="31-upload-source-files">3.1 Upload Source Files</h3>
+<p>Transfer the source code from your local repository to the mainframe datasets:</p>
+<p><strong>Using FTP:</strong></p>
+<pre><code class="language-bash">ftp mainframe.example.com
+quote site recfm=fb lrecl=80 blksize=27920
+cd 'AWS.M2.CARDDEMO.CBL'
+mput app/cbl/*.cbl
+cd 'AWS.M2.CARDDEMO.CPY'
+mput app/cpy/*.cpy
+cd 'AWS.M2.CARDDEMO.BMS'
+mput app/bms/*.bms
+cd 'AWS.M2.CARDDEMO.JCL'
+mput app/jcl/*.jcl
+cd 'AWS.M2.CARDDEMO.ASM'
+mput app/asm/*.asm
+</code></pre>
+<p><strong>Using SFTP or File Transfer Tool:</strong></p>
+<p>Use your organization's preferred file transfer method, ensuring:
+- Text mode transfer for source code
+- Proper EBCDIC conversion
+- Correct record format preservation</p>
+<h3 id="32-verify-upload">3.2 Verify Upload</h3>
+<p>Check that all files were transferred successfully:</p>
+<pre><code>TSO ISPF 3.4
+Enter: AWS.M2.CARDDEMO.*
+</code></pre>
+<p>Verify member counts:
+- CBL: 29 members
+- JCL: 33 members
+- CPY: Multiple copybooks
+- BMS: Multiple map definitions</p>
+<h2 id="step-4-sample-data-upload">Step 4: Sample Data Upload</h2>
+<h3 id="41-upload-sample-data-files">4.1 Upload Sample Data Files</h3>
+<p>Transfer sample data from <code>app/data/EBCDIC/</code> to the mainframe:</p>
+<p><strong>Important</strong>: Use <strong>binary transfer mode</strong> to preserve data integrity.</p>
+<pre><code class="language-bash">ftp mainframe.example.com
+binary
+put app/data/EBCDIC/USRSEC.txt 'AWS.M2.CARDDEMO.USRSEC.PS'
+put app/data/EBCDIC/ACCTDATA.txt 'AWS.M2.CARDDEMO.ACCTDATA.PS'
+put app/data/EBCDIC/CARDDATA.txt 'AWS.M2.CARDDEMO.CARDDATA.PS'
+put app/data/EBCDIC/CUSTDATA.txt 'AWS.M2.CARDDEMO.CUSTDATA.PS'
+put app/data/EBCDIC/CARDXREF.txt 'AWS.M2.CARDDEMO.CARDXREF.PS'
+put app/data/EBCDIC/DALYTRAN.txt 'AWS.M2.CARDDEMO.DALYTRAN.PS.INIT'
+put app/data/EBCDIC/DISCGRP.txt 'AWS.M2.CARDDEMO.DISCGRP.PS'
+put app/data/EBCDIC/TRANCATG.txt 'AWS.M2.CARDDEMO.TRANCATG.PS'
+put app/data/EBCDIC/TRANTYPE.txt 'AWS.M2.CARDDEMO.TRANTYPE.PS'
+put app/data/EBCDIC/TCATBALF.txt 'AWS.M2.CARDDEMO.TCATBALF.PS'
+</code></pre>
+<h3 id="42-verify-data-upload">4.2 Verify Data Upload</h3>
+<p>Browse the datasets to verify data was uploaded correctly:</p>
+<pre><code>TSO ISPF 1 (Browse)
+Enter: 'AWS.M2.CARDDEMO.USRSEC.PS'
+</code></pre>
+<p>Check for readable data in EBCDIC format.</p>
+<h2 id="step-5-environment-initialization">Step 5: Environment Initialization</h2>
+<p>Execute the initialization JCL jobs in the specified sequence. Each job must complete successfully before proceeding to the next.</p>
+<h3 id="51-update-jcl-parameters">5.1 Update JCL Parameters</h3>
+<p>Before submitting jobs, update the HLQ in each JCL:</p>
+<ol>
+<li>Edit each JCL member</li>
+<li>Change all occurrences of the HLQ to match your environment</li>
+<li>Update CICS region name if different</li>
+<li>Update VSAM catalog name if required</li>
+</ol>
+<h3 id="52-execute-initialization-jobs">5.2 Execute Initialization Jobs</h3>
+<p>Submit the following jobs in order:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Order</th>
+<th style="text-align: left;">Jobname</th>
+<th style="text-align: left;">Purpose</th>
+<th style="text-align: left;">Expected RC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">DUSRSECJ</td>
+<td style="text-align: left;">Sets up user security VSAM file</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">CLOSEFIL</td>
+<td style="text-align: left;">Closes files opened by CICS</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">ACCTFILE</td>
+<td style="text-align: left;">Loads Account database</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">CARDFILE</td>
+<td style="text-align: left;">Loads Card database</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">CUSTFILE</td>
+<td style="text-align: left;">Creates customer database</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">XREFFILE</td>
+<td style="text-align: left;">Loads cross reference</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">TRANFILE</td>
+<td style="text-align: left;">Copies initial Transaction file</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">DISCGRP</td>
+<td style="text-align: left;">Copies Disclosure Group file</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">TCATBALF</td>
+<td style="text-align: left;">Copies TCATBALF file</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">TRANCATG</td>
+<td style="text-align: left;">Copies transaction category file</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">TRANTYPE</td>
+<td style="text-align: left;">Copies transaction type file</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">OPENFIL</td>
+<td style="text-align: left;">Makes files available to CICS</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">DEFGDGB</td>
+<td style="text-align: left;">Defines GDG Base</td>
+<td style="text-align: left;">0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-verify-job-completion">5.3 Verify Job Completion</h3>
+<p>For each job:
+1. Check the job output for RC=0000
+2. Review SYSOUT for any error messages
+3. Verify VSAM files were created successfully</p>
+<p><strong>Check VSAM Files:</strong></p>
+<pre><code>TSO ISPF 3.4
+Enter: AWS.M2.CARDDEMO.*.VSAM.*
+</code></pre>
+<p>You should see:
+- ACCTDAT.VSAM.KSDS
+- CARDDAT.VSAM.KSDS
+- CUSTDAT.VSAM.KSDS
+- CARDXREF.VSAM.KSDS
+- TRANSACT.VSAM.KSDS
+- USRSEC.VSAM.KSDS
+- And others</p>
+<h2 id="step-6-program-compilation">Step 6: Program Compilation</h2>
+<h3 id="61-compilation-overview">6.1 Compilation Overview</h3>
+<p>CardDemo programs must be compiled in the following order:
+1. Assembler programs (utilities)
+2. BMS maps
+3. COBOL programs</p>
+<h3 id="62-compile-assembler-programs">6.2 Compile Assembler Programs</h3>
+<p>Submit compilation JCL for assembler programs:</p>
+<pre><code>Submit: AWS.M2.CARDDEMO.JCL(ASMCOMP)
+</code></pre>
+<p>Programs to compile:
+- MVSWAIT: Timer control utility
+- COBDATFT: Date format conversion utility</p>
+<h3 id="63-compile-bms-maps">6.3 Compile BMS Maps</h3>
+<p>Submit BMS compilation JCL:</p>
+<pre><code>Submit: AWS.M2.CARDDEMO.JCL(BMSCOMP)
+</code></pre>
+<p>This compiles all BMS maps and generates symbolic copybooks.</p>
+<h3 id="64-compile-cobol-programs">6.4 Compile COBOL Programs</h3>
+<p>Submit COBOL compilation JCL for each program or use batch compilation:</p>
+<pre><code>Submit: AWS.M2.CARDDEMO.JCL(CBLCOMP)
+</code></pre>
+<p><strong>Online Programs to Compile:</strong>
+- COSGN00C (Sign-on)
+- COMEN01C (Main Menu)
+- COACTVWC (Account View)
+- COACTUPC (Account Update)
+- COCRDLIC (Card List)
+- COCRDSLC (Card View)
+- COCRDUPC (Card Update)
+- COTRN00C (Transaction List)
+- COTRN01C (Transaction View)
+- COTRN02C (Transaction Add)
+- CORPT00C (Reports)
+- COBIL00C (Bill Payment)
+- COADM01C (Admin Menu)
+- COUSR00C-03C (User Management)</p>
+<p><strong>Batch Programs to Compile:</strong>
+- CBTRN02C (Transaction Posting)
+- CBACT04C (Interest Calculation)
+- CBSTM03A (Statement Generation)
+- CBTRN03C (Transaction Report)</p>
+<h3 id="65-verify-compilation">6.5 Verify Compilation</h3>
+<p>Check that all programs compiled successfully:</p>
+<pre><code>TSO ISPF 3.4
+Enter: AWS.M2.CARDDEMO.LOADLIB
+</code></pre>
+<p>Verify all load modules are present with recent timestamps.</p>
+<h2 id="step-7-cics-configuration">Step 7: CICS Configuration</h2>
+<h3 id="71-define-cics-resources">7.1 Define CICS Resources</h3>
+<p>You have two options for defining CICS resources:</p>
+<p><strong>Option 1: Use DFHCSDUP (Recommended)</strong></p>
+<p>Submit the DFHCSDUP JCL with the CSD file:</p>
+<pre><code>Submit: AWS.M2.CARDDEMO.CSD(DFHCSDUP)
+</code></pre>
+<p>This automatically defines all required resources.</p>
+<p><strong>Option 2: Manual Definition via CEDA</strong></p>
+<p>Use CEDA transaction to manually define resources. See <a href="../CICS-Configuration/">CICS Configuration</a> for detailed commands.</p>
+<h3 id="72-define-resource-groups">7.2 Define Resource Groups</h3>
+<p>Define the CARDDEMO resource group:</p>
+<pre><code>CEDA DEFINE GROUP(CARDDEMO) LIST(CARDLIST)
+</code></pre>
+<h3 id="73-define-programs">7.3 Define Programs</h3>
+<p>Define all COBOL programs:</p>
+<pre><code>CEDA DEFINE PROGRAM(COSGN00C) GROUP(CARDDEMO) LANGUAGE(COBOL)
+CEDA DEFINE PROGRAM(COMEN01C) GROUP(CARDDEMO) LANGUAGE(COBOL)
+... (repeat for all programs)
+</code></pre>
+<h3 id="74-define-transactions">7.4 Define Transactions</h3>
+<p>Define all transactions:</p>
+<pre><code>CEDA DEFINE TRANSACTION(CC00) GROUP(CARDDEMO) PROGRAM(COSGN00C)
+CEDA DEFINE TRANSACTION(CM00) GROUP(CARDDEMO) PROGRAM(COMEN01C)
+... (repeat for all transactions)
+</code></pre>
+<h3 id="75-define-files">7.5 Define Files</h3>
+<p>Define all VSAM files:</p>
+<pre><code>CEDA DEFINE FILE(ACCTDAT) GROUP(CARDDEMO) DSNAME(AWS.M2.CARDDEMO.ACCTDAT.VSAM.KSDS)
+CEDA DEFINE FILE(CARDDAT) GROUP(CARDDEMO) DSNAME(AWS.M2.CARDDEMO.CARDDAT.VSAM.KSDS)
+... (repeat for all files)
+</code></pre>
+<h3 id="76-install-resources">7.6 Install Resources</h3>
+<p>Install the CARDDEMO group:</p>
+<pre><code>CEDA INSTALL GROUP(CARDDEMO)
+</code></pre>
+<p>Verify installation:</p>
+<pre><code>CEMT INQUIRE PROGRAM(COSGN00C)
+CEMT INQUIRE TRANSACTION(CC00)
+CEMT INQUIRE FILE(ACCTDAT)
+</code></pre>
+<h2 id="step-8-verification">Step 8: Verification</h2>
+<h3 id="81-access-the-application">8.1 Access the Application</h3>
+<ol>
+<li>Clear your CICS terminal</li>
+<li>Enter transaction: <code>CC00</code></li>
+<li>You should see the CardDemo sign-on screen</li>
+</ol>
+<h3 id="82-test-user-login">8.2 Test User Login</h3>
+<p><strong>Admin User:</strong>
+- User ID: <code>ADMIN001</code>
+- Password: <code>PASSWORD</code></p>
+<p><strong>Regular User:</strong>
+- User ID: <code>USER0001</code>
+- Password: <code>PASSWORD</code></p>
+<h3 id="83-verify-core-functions">8.3 Verify Core Functions</h3>
+<p>Test each major function:
+1. Sign-on (CC00)
+2. Main Menu (CM00)
+3. Account View (CAVW)
+4. Card List (CCLI)
+5. Transaction List (CT00)</p>
+<h3 id="84-run-test-batch-job">8.4 Run Test Batch Job</h3>
+<p>Submit a test batch job:</p>
+<pre><code>Submit: AWS.M2.CARDDEMO.JCL(POSTTRAN)
+</code></pre>
+<p>Verify it completes successfully.</p>
+<h2 id="optional-module-installation">Optional Module Installation</h2>
+<p>After completing the base installation, you can install optional modules:</p>
+<h3 id="db2-transaction-type-management">DB2 Transaction Type Management</h3>
+<p>See: <a href="../Optional-Module-Transaction-Type/">Optional Module - Transaction Type Management</a></p>
+<h3 id="ims-db2-mq-credit-card-authorizations">IMS-DB2-MQ Credit Card Authorizations</h3>
+<p>See: <a href="../Optional-Module-Authorization/">Optional Module - Credit Card Authorizations</a></p>
+<h3 id="vsam-mq-account-extractions">VSAM-MQ Account Extractions</h3>
+<p>See: <a href="../Optional-Module-VSAM-MQ/">Optional Module - Account Extractions</a></p>
+<h2 id="troubleshooting-installation">Troubleshooting Installation</h2>
+<h3 id="common-issues">Common Issues</h3>
+<p><strong>Issue: JCL Job Fails with S806</strong>
+- <strong>Cause</strong>: Program not found in load library
+- <strong>Solution</strong>: Verify compilation completed successfully and load library is in STEPLIB</p>
+<p><strong>Issue: CICS Transaction ABEND AFCF</strong>
+- <strong>Cause</strong>: File not found or not open
+- <strong>Solution</strong>: Check file definitions and ensure OPENFIL job ran successfully</p>
+<p><strong>Issue: VSAM File Not Found</strong>
+- <strong>Cause</strong>: Dataset not cataloged or incorrect name
+- <strong>Solution</strong>: Verify dataset name matches CICS file definition</p>
+<p><strong>Issue: Compilation Errors</strong>
+- <strong>Cause</strong>: Missing copybooks or incorrect library concatenation
+- <strong>Solution</strong>: Verify SYSLIB DD statements include all copybook libraries</p>
+<h3 id="getting-help">Getting Help</h3>
+<p>If you encounter issues not covered here:
+1. Check the <a href="../Troubleshooting/">Troubleshooting</a> page
+2. Review the <a href="../FAQ/">FAQ</a>
+3. Consult CICS and z/OS system logs
+4. Raise an issue in the GitHub repository</p>
+<h2 id="next-steps">Next Steps</h2>
+<p>After successful installation:
+1. Review the <a href="../User-Guide/">User Guide</a> to understand application features
+2. Read the <a href="../Admin-Guide/">Admin Guide</a> for administrative functions
+3. Explore <a href="../Batch-Processing/">Batch Processing</a> for batch job details
+4. Consider installing <a href="../Home/#optional-modules">Optional Modules</a></p>
+<hr />
+<p><strong>Navigation</strong>: <a href="../Home/">Home</a> | <a href="../Quick-Start/">Quick Start</a> | <a href="../CICS-Configuration/">CICS Configuration</a> | <a href="../Troubleshooting/">Troubleshooting</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

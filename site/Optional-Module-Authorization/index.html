@@ -1,0 +1,2604 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../CICS-Configuration/">
+      
+      
+        <link rel="next" href="../Optional-Module-Transaction-Type/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Authorization - AWS Mainframe Modernization Card Demo - Deep Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#optional-module-credit-card-authorizations-ims-db2-mq" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-header__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AWS Mainframe Modernization Card Demo - Deep Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Authorization
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-nav__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AWS Mainframe Modernization Card Demo - Deep Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quick-Start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Admin-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Batch-Processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technical-Components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CICS-Configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CICS Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optional Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Optional Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technologies-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technologies Used
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authorization-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authorization-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-ims-database-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: IMS Database Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-db2-table-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: DB2 Table Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-mq-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: MQ Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-upload-source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Upload Source Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-compile-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Compile Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-define-cics-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Define CICS Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-enable-main-menu-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Enable Main Menu Option
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-test-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8: Test Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copaua0c-authorization-request-processor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COPAUA0C - Authorization Request Processor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copaus0c-authorization-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COPAUS0C - Authorization Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copaus1c-authorization-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COPAUS1C - Authorization Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copaus2c-fraud-marking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COPAUS2C - Fraud Marking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cbpaup0c-authorization-purge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CBPAUP0C - Authorization Purge
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copybooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copybooks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Copybooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cipausmy-authorization-summary-segment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CIPAUSMY - Authorization Summary Segment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cipaudty-authorization-details-segment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CIPAUDTY - Authorization Details Segment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ccpaurqy-authorization-request-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CCPAURQY - Authorization Request Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ccpaurly-authorization-response-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CCPAURLY - Authorization Response Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Models
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ims-db-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMS DB Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mq-message-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MQ Message Formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewing-pending-authorizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewing Pending Authorizations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-authorization-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewing Authorization Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-purge-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Purge Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ims-db-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMS DB Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db2-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB2 Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mq-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MQ Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Transaction-Type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transaction Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-VSAM-MQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VSAM-MQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technologies-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technologies Used
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authorization-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authorization-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-ims-database-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: IMS Database Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-db2-table-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: DB2 Table Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-mq-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: MQ Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-upload-source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Upload Source Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-compile-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Compile Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-define-cics-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Define CICS Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-enable-main-menu-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Enable Main Menu Option
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-test-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8: Test Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copaua0c-authorization-request-processor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COPAUA0C - Authorization Request Processor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copaus0c-authorization-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COPAUS0C - Authorization Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copaus1c-authorization-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COPAUS1C - Authorization Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copaus2c-fraud-marking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COPAUS2C - Fraud Marking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cbpaup0c-authorization-purge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CBPAUP0C - Authorization Purge
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copybooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copybooks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Copybooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cipausmy-authorization-summary-segment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CIPAUSMY - Authorization Summary Segment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cipaudty-authorization-details-segment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CIPAUDTY - Authorization Details Segment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ccpaurqy-authorization-request-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CCPAURQY - Authorization Request Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ccpaurly-authorization-response-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CCPAURLY - Authorization Response Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Models
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ims-db-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMS DB Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mq-message-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MQ Message Formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewing-pending-authorizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewing Pending Authorizations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-authorization-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewing Authorization Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-purge-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Purge Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ims-db-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMS DB Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db2-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB2 Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mq-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MQ Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="optional-module-credit-card-authorizations-ims-db2-mq">Optional Module: Credit Card Authorizations (IMS-DB2-MQ)</h1>
+<p>Complete documentation for the Credit Card Authorizations optional module, which adds real-time authorization processing using IMS DB, DB2, and MQ.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#module-overview">Module Overview</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#components">Components</a></li>
+<li><a href="#data-models">Data Models</a></li>
+<li><a href="#user-guide">User Guide</a></li>
+<li><a href="#technical-details">Technical Details</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+<h2 id="module-overview">Module Overview</h2>
+<p>The Credit Card Authorizations module enhances CardDemo with comprehensive real-time authorization processing capabilities. This module simulates real-world credit card authorization flows from initial merchant request to approval/decline decisions, including fraud detection.</p>
+<h3 id="business-value">Business Value</h3>
+<ul>
+<li><strong>Real-time Processing</strong>: Immediate authorization decisions via MQ messaging</li>
+<li><strong>Fraud Detection</strong>: Identify and flag suspicious transactions</li>
+<li><strong>Authorization History</strong>: Complete audit trail of all authorization requests</li>
+<li><strong>Multi-Database Integration</strong>: Demonstrates IMS DB and DB2 integration patterns</li>
+<li><strong>Asynchronous Processing</strong>: MQ-based request/response architecture</li>
+</ul>
+<h3 id="technologies-used">Technologies Used</h3>
+<ul>
+<li><strong>COBOL</strong>: Business logic implementation</li>
+<li><strong>CICS</strong>: Transaction processing and screen management</li>
+<li><strong>IMS DB</strong>: Hierarchical database for authorization storage (HIDAM)</li>
+<li><strong>DB2</strong>: Relational database for fraud analytics</li>
+<li><strong>MQ</strong>: Message queuing for authorization requests/responses</li>
+<li><strong>VSAM</strong>: Account and customer data access</li>
+</ul>
+<h2 id="features">Features</h2>
+<h3 id="authorization-processing">Authorization Processing</h3>
+<ol>
+<li><strong>Real-time Authorization Requests</strong></li>
+<li>Receive authorization requests via MQ</li>
+<li>Validate card and account status</li>
+<li>Apply business rules for approval/decline</li>
+<li>Send response via MQ</li>
+<li>
+<p>Store authorization details in IMS DB</p>
+</li>
+<li>
+<p><strong>Authorization Inquiry</strong></p>
+</li>
+<li>View pending authorizations by account</li>
+<li>Display authorization summary</li>
+<li>View detailed authorization information</li>
+<li>
+<p>Navigate through multiple authorizations</p>
+</li>
+<li>
+<p><strong>Fraud Detection</strong></p>
+</li>
+<li>Mark suspicious transactions as fraudulent</li>
+<li>Store fraud cases in DB2 for analytics</li>
+<li>
+<p>Track fraud patterns and trends</p>
+</li>
+<li>
+<p><strong>Batch Processing</strong></p>
+</li>
+<li>Daily purge of expired authorizations</li>
+<li>Adjust available credit for unmatched authorizations</li>
+<li>Generate authorization reports</li>
+</ol>
+<h2 id="architecture">Architecture</h2>
+<h3 id="authorization-flow">Authorization Flow</h3>
+<pre><code>┌──────────────┐
+│ POS System / │
+│ Cloud Client │
+└──────┬───────┘
+       │ MQ Request
+       ▼
+┌──────────────────┐
+│ MQ Request Queue │
+│ AWS.M2.CARDDEMO. │
+│ PAUTH.REQUEST    │
+└──────┬───────────┘
+       │ Trigger
+       ▼
+┌──────────────────┐
+│ CICS Transaction │
+│ CP00 (COPAUA0C)  │
+└──────┬───────────┘
+       │
+       ├─→ VSAM (Card/Account Validation)
+       │
+       ├─→ IMS DB (Store Authorization)
+       │
+       └─→ MQ Response Queue
+           │
+           ▼
+       ┌──────────────────┐
+       │ MQ Response Queue│
+       │ AWS.M2.CARDDEMO. │
+       │ PAUTH.REPLY      │
+       └──────────────────┘
+
+┌──────────────────┐
+│ User Inquiry     │
+│ CPVS/CPVD        │
+└──────┬───────────┘
+       │
+       ├─→ IMS DB (Read Authorizations)
+       │
+       └─→ DB2 (Fraud Marking)
+</code></pre>
+<h3 id="component-integration">Component Integration</h3>
+<p><strong>MQ Integration:</strong>
+- Request queue for incoming authorization requests
+- Reply queue for authorization responses
+- Trigger-based CICS transaction initiation</p>
+<p><strong>IMS DB Integration:</strong>
+- HIDAM database structure
+- Root segment: Authorization Summary
+- Child segment: Authorization Details
+- BMP and online PSBs</p>
+<p><strong>DB2 Integration:</strong>
+- AUTHFRDS table for fraud tracking
+- Embedded SQL in COBOL
+- Two-phase commit with IMS</p>
+<p><strong>VSAM Integration:</strong>
+- Read card and account data
+- Validate credit limits
+- Check card status</p>
+<h2 id="installation">Installation</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ol>
+<li><strong>Base CardDemo</strong>: Must be installed and operational</li>
+<li><strong>IMS DB</strong>: IMS database subsystem configured</li>
+<li><strong>DB2</strong>: DB2 subsystem configured</li>
+<li><strong>MQ</strong>: IBM MQ configured and accessible from CICS</li>
+<li><strong>CICS</strong>: CICS with IMS DB, DB2, and MQ support</li>
+</ol>
+<h3 id="installation-steps">Installation Steps</h3>
+<h4 id="step-1-ims-database-setup">Step 1: IMS Database Setup</h4>
+<p>Work with your IMS database administrator to create the necessary databases.</p>
+<p><strong>Create DBDs (Database Definitions):</strong></p>
+<p>Located in <code>app/app-authorization-ims-db2-mq/ims/</code>:
+- <strong>DBPAUTP0</strong>: HIDAM primary database
+- <strong>DBPAUTX0</strong>: HIDAM index database</p>
+<p><strong>Create PSBs (Program Specification Blocks):</strong>
+- <strong>PSBPAUTB</strong>: BMP PSB for batch processing
+- <strong>PSBPAUTL</strong>: PSB for online processing</p>
+<p><strong>Allocate Datasets:</strong></p>
+<pre><code>DDPAUTP0 - Primary database dataset
+DDPAUTX0 - Index database dataset
+</code></pre>
+<h4 id="step-2-db2-table-setup">Step 2: DB2 Table Setup</h4>
+<p>Execute the following DDL to create the fraud tracking table:</p>
+<pre><code class="language-sql">CREATE TABLE CARDDEMO.AUTHFRDS                   
+(CARD_NUM              CHAR(16)    NOT NULL,
+ AUTH_TS                TIMESTAMP   NOT NULL,
+ AUTH_TYPE              CHAR(4)             ,
+ CARD_EXPIRY_DATE       CHAR(4)             ,
+ MESSAGE_TYPE           CHAR(6)             ,
+ MESSAGE_SOURCE         CHAR(6)             ,
+ AUTH_ID_CODE           CHAR(6)             ,
+ AUTH_RESP_CODE         CHAR(2)             ,
+ AUTH_RESP_REASON       CHAR(4)             ,
+ PROCESSING_CODE        CHAR(6)             ,
+ TRANSACTION_AMT        DECIMAL(12,2)       ,
+ APPROVED_AMT           DECIMAL(12,2)       ,
+ MERCHANT_CATAGORY_CODE CHAR(4)             ,
+ ACQR_COUNTRY_CODE      CHAR(3)             ,
+ POS_ENTRY_MODE         SMALLINT            ,
+ MERCHANT_ID            CHAR(15)            ,
+ MERCHANT_NAME          VARCHAR(22)         ,
+ MERCHANT_CITY          CHAR(13)            ,
+ MERCHANT_STATE         CHAR(02)            ,
+ MERCHANT_ZIP           CHAR(09)            ,
+ TRANSACTION_ID         CHAR(15)            ,
+ MATCH_STATUS           CHAR(1)             ,
+ AUTH_FRAUD             CHAR(1)             ,
+ FRAUD_RPT_DATE         DATE                ,
+ ACCT_ID                DECIMAL(11)         ,
+ CUST_ID                DECIMAL(9)          ,
+ PRIMARY KEY(CARD_NUM,AUTH_TS))
+IN AWSTSFRD.AWSTSFRD;
+
+CREATE UNIQUE INDEX CARDDEMO.XAUTHFRD           
+ON CARDDEMO.AUTHFRDS                         
+(CARD_NUM ASC, AUTH_TS DESC)             
+USING STOGROUP AWSTSSG                     
+COPY YES;
+</code></pre>
+<p><strong>Important</strong>: Update the DB2 schema name in program COPAUS2C.cbl to match your environment.</p>
+<h4 id="step-3-mq-configuration">Step 3: MQ Configuration</h4>
+<p>Define MQ queues for authorization processing:</p>
+<pre><code>DEFINE QLOCAL('AWS.M2.CARDDEMO.PAUTH.REQUEST') REPLACE +
+  DESCR('CardDemo Authorization Request Queue') +
+  DEFPSIST(YES) +
+  MAXDEPTH(5000)
+
+DEFINE QLOCAL('AWS.M2.CARDDEMO.PAUTH.REPLY') REPLACE +
+  DESCR('CardDemo Authorization Reply Queue') +
+  DEFPSIST(YES) +
+  MAXDEPTH(5000)
+</code></pre>
+<p><strong>Configure MQ Trigger:</strong></p>
+<pre><code>DEFINE PROCESS('CARDDEMO.AUTH.PROCESS') REPLACE +
+  DESCR('CardDemo Authorization Process') +
+  APPLTYPE(CICS) +
+  APPLICID('CP00')
+
+ALTER QLOCAL('AWS.M2.CARDDEMO.PAUTH.REQUEST') +
+  PROCESS('CARDDEMO.AUTH.PROCESS') +
+  TRIGGER +
+  TRIGTYPE(FIRST) +
+  INITQ('SYSTEM.CICS.INITQUEUE')
+</code></pre>
+<h4 id="step-4-upload-source-code">Step 4: Upload Source Code</h4>
+<p>Upload the module source code to mainframe datasets:</p>
+<pre><code>app/app-authorization-ims-db2-mq/cbl/    → CARDDEMO.CBL
+app/app-authorization-ims-db2-mq/cpy/    → CARDDEMO.CPY
+app/app-authorization-ims-db2-mq/bms/    → CARDDEMO.BMS
+app/app-authorization-ims-db2-mq/jcl/    → CARDDEMO.JCL
+app/app-authorization-ims-db2-mq/ddl/    → DB2 DDL
+app/app-authorization-ims-db2-mq/ims/    → IMS DBD/PSB
+</code></pre>
+<h4 id="step-5-compile-programs">Step 5: Compile Programs</h4>
+<p>Compile programs with appropriate options:</p>
+<p><strong>CICS-IMS Programs:</strong>
+- COPAUA0C (MQ trigger program)
+- COPAUS0C (Authorization summary)
+- COPAUS1C (Authorization details)</p>
+<p><strong>CICS-DB2 Programs:</strong>
+- COPAUS2C (Fraud marking)</p>
+<p><strong>Batch-IMS Programs:</strong>
+- CBPAUP0C (Authorization purge)</p>
+<p>Use compilation JCL templates provided in the module.</p>
+<h4 id="step-6-define-cics-resources">Step 6: Define CICS Resources</h4>
+<p><strong>Programs:</strong></p>
+<pre><code>CEDA DEFINE PROGRAM(COPAUA0C) GROUP(CARDDEMO) LANGUAGE(COBOL)
+CEDA DEFINE PROGRAM(COPAUS0C) GROUP(CARDDEMO) LANGUAGE(COBOL)
+CEDA DEFINE PROGRAM(COPAUS1C) GROUP(CARDDEMO) LANGUAGE(COBOL)
+CEDA DEFINE PROGRAM(COPAUS2C) GROUP(CARDDEMO) LANGUAGE(COBOL)
+</code></pre>
+<p><strong>Mapsets:</strong></p>
+<pre><code>CEDA DEFINE MAPSET(COPAU00) GROUP(CARDDEMO)
+CEDA DEFINE MAPSET(COPAU01) GROUP(CARDDEMO)
+</code></pre>
+<p><strong>Transactions:</strong></p>
+<pre><code>CEDA DEFINE TRANSACTION(CP00) GROUP(CARDDEMO) PROGRAM(COPAUA0C)
+CEDA DEFINE TRANSACTION(CPVS) GROUP(CARDDEMO) PROGRAM(COPAUS0C)
+CEDA DEFINE TRANSACTION(CPVD) GROUP(CARDDEMO) PROGRAM(COPAUS1C)
+</code></pre>
+<p><strong>DB2 Resources:</strong></p>
+<pre><code>CEDA DEFINE DB2ENTRY(DB201PLN) GROUP(CARDDEMO) PLAN(CARDDEMO)
+CEDA DEFINE DB2TRAN(CPVDTRAN) ENTRY(DB201PLN) TRANSID(CPVD) GROUP(CARDDEMO)
+</code></pre>
+<p><strong>Install Resources:</strong></p>
+<pre><code>CEDA INSTALL GROUP(CARDDEMO)
+</code></pre>
+<h4 id="step-7-enable-main-menu-option">Step 7: Enable Main Menu Option</h4>
+<p>The Pending Authorizations option (Option 11) will now be available in the Main Menu.</p>
+<h4 id="step-8-test-installation">Step 8: Test Installation</h4>
+<ol>
+<li>Send a test authorization request via MQ</li>
+<li>Verify authorization is processed</li>
+<li>Check IMS DB for stored authorization</li>
+<li>View authorization via CPVS transaction</li>
+<li>Test fraud marking functionality</li>
+</ol>
+<h2 id="components">Components</h2>
+<h3 id="programs">Programs</h3>
+<h4 id="copaua0c-authorization-request-processor">COPAUA0C - Authorization Request Processor</h4>
+<ul>
+<li><strong>Type</strong>: CICS Online (MQ Trigger)</li>
+<li><strong>Transaction</strong>: CP00</li>
+<li><strong>Function</strong>: Process authorization requests from MQ</li>
+<li><strong>Databases</strong>: IMS DB (write), VSAM (read)</li>
+<li><strong>Processing</strong>:</li>
+<li>Read authorization request from MQ</li>
+<li>Validate card number and expiration</li>
+<li>Retrieve account and customer data from VSAM</li>
+<li>Apply business rules for approval/decline</li>
+<li>Store authorization in IMS DB</li>
+<li>Send response to MQ reply queue</li>
+</ul>
+<h4 id="copaus0c-authorization-summary">COPAUS0C - Authorization Summary</h4>
+<ul>
+<li><strong>Type</strong>: CICS Online</li>
+<li><strong>Transaction</strong>: CPVS</li>
+<li><strong>BMS Map</strong>: COPAU00</li>
+<li><strong>Function</strong>: Display pending authorizations for an account</li>
+<li><strong>Databases</strong>: IMS DB (read), VSAM (read)</li>
+<li><strong>Features</strong>: Paging, selection for details</li>
+</ul>
+<h4 id="copaus1c-authorization-details">COPAUS1C - Authorization Details</h4>
+<ul>
+<li><strong>Type</strong>: CICS Online</li>
+<li><strong>Transaction</strong>: CPVD</li>
+<li><strong>BMS Map</strong>: COPAU01</li>
+<li><strong>Function</strong>: Display detailed authorization information</li>
+<li><strong>Databases</strong>: IMS DB (read)</li>
+<li><strong>Features</strong>: Fraud marking (PF5)</li>
+</ul>
+<h4 id="copaus2c-fraud-marking">COPAUS2C - Fraud Marking</h4>
+<ul>
+<li><strong>Type</strong>: CICS Online (Called)</li>
+<li><strong>Function</strong>: Mark authorization as fraudulent</li>
+<li><strong>Databases</strong>: DB2 (write)</li>
+<li><strong>Processing</strong>: Insert fraud record into AUTHFRDS table</li>
+</ul>
+<h4 id="cbpaup0c-authorization-purge">CBPAUP0C - Authorization Purge</h4>
+<ul>
+<li><strong>Type</strong>: Batch (BMP)</li>
+<li><strong>Job</strong>: CBPAUP0J</li>
+<li><strong>Function</strong>: Purge expired authorizations</li>
+<li><strong>Databases</strong>: IMS DB (delete)</li>
+<li><strong>Processing</strong>:</li>
+<li>Read all authorizations</li>
+<li>Identify expired authorizations (&gt; 30 days)</li>
+<li>Delete expired records</li>
+<li>Adjust available credit if unmatched</li>
+</ul>
+<h3 id="copybooks">Copybooks</h3>
+<h4 id="cipausmy-authorization-summary-segment">CIPAUSMY - Authorization Summary Segment</h4>
+<ul>
+<li>IMS segment definition for authorization summary</li>
+<li>Root segment in HIDAM database</li>
+</ul>
+<h4 id="cipaudty-authorization-details-segment">CIPAUDTY - Authorization Details Segment</h4>
+<ul>
+<li>IMS segment definition for authorization details</li>
+<li>Child segment in HIDAM database</li>
+</ul>
+<h4 id="ccpaurqy-authorization-request-structure">CCPAURQY - Authorization Request Structure</h4>
+<ul>
+<li>MQ message format for authorization requests</li>
+<li>CSV format parsing</li>
+</ul>
+<h4 id="ccpaurly-authorization-response-structure">CCPAURLY - Authorization Response Structure</h4>
+<ul>
+<li>MQ message format for authorization responses</li>
+<li>CSV format generation</li>
+</ul>
+<h2 id="data-models">Data Models</h2>
+<h3 id="ims-db-structure">IMS DB Structure</h3>
+<p><strong>Database</strong>: DBPAUTP0 (HIDAM)</p>
+<p><strong>Segments:</strong></p>
+<p><strong>PAUTSUM0 (Root Segment):</strong></p>
+<pre><code>01  PEND-AUTH-SUMMARY.
+    05  PAUTH-ACCT-ID              PIC 9(11).
+    05  PAUTH-CARD-NUM             PIC 9(16).
+    05  PAUTH-COUNT                PIC 9(03).
+    05  PAUTH-LAST-AUTH-TS         PIC X(26).
+</code></pre>
+<p><strong>PAUTDTL1 (Child Segment):</strong></p>
+<pre><code>01  PEND-AUTH-DETAIL.
+    05  PAUTH-DTL-AUTH-TS          PIC X(26).
+    05  PAUTH-DTL-AUTH-TYPE        PIC X(04).
+    05  PAUTH-DTL-CARD-EXPIRY      PIC X(04).
+    05  PAUTH-DTL-MSG-TYPE         PIC X(06).
+    05  PAUTH-DTL-MSG-SOURCE       PIC X(06).
+    05  PAUTH-DTL-PROC-CODE        PIC X(06).
+    05  PAUTH-DTL-TRAN-AMT         PIC S9(10)V99 COMP-3.
+    05  PAUTH-DTL-MERCHANT-CAT     PIC X(04).
+    05  PAUTH-DTL-ACQR-COUNTRY     PIC X(03).
+    05  PAUTH-DTL-POS-ENTRY        PIC 9(04).
+    05  PAUTH-DTL-MERCHANT-ID      PIC X(15).
+    05  PAUTH-DTL-MERCHANT-NAME    PIC X(22).
+    05  PAUTH-DTL-MERCHANT-CITY    PIC X(13).
+    05  PAUTH-DTL-MERCHANT-STATE   PIC X(02).
+    05  PAUTH-DTL-MERCHANT-ZIP     PIC X(09).
+    05  PAUTH-DTL-TRAN-ID          PIC X(15).
+    05  PAUTH-DTL-AUTH-ID          PIC X(06).
+    05  PAUTH-DTL-AUTH-RESP-CD     PIC X(02).
+    05  PAUTH-DTL-AUTH-RESP-REASON PIC X(04).
+    05  PAUTH-DTL-APPROVED-AMT     PIC S9(10)V99 COMP-3.
+</code></pre>
+<h3 id="mq-message-formats">MQ Message Formats</h3>
+<p><strong>Authorization Request (CSV Format):</strong></p>
+<pre><code>AUTH-DATE,AUTH-TIME,CARD-NUM,AUTH-TYPE,CARD-EXPIRY-DATE,
+MESSAGE-TYPE,MESSAGE-SOURCE,PROCESSING-CODE,TRANSACTION-AMT,
+MERCHANT-CATEGORY-CODE,ACQR-COUNTRY-CODE,POS-ENTRY-MODE,
+MERCHANT-ID,MERCHANT-NAME,MERCHANT-CITY,MERCHANT-STATE,
+MERCHANT-ZIP,TRANSACTION-ID
+</code></pre>
+<p><strong>Authorization Response (CSV Format):</strong></p>
+<pre><code>CARD-NUM,TRANSACTION-ID,AUTH-ID-CODE,AUTH-RESP-CODE,
+AUTH-RESP-REASON,APPROVED-AMT
+</code></pre>
+<p><strong>Response Codes:</strong>
+- <strong>00</strong>: Approved
+- <strong>05</strong>: Declined - Insufficient Funds
+- <strong>14</strong>: Declined - Invalid Card
+- <strong>54</strong>: Declined - Expired Card
+- <strong>57</strong>: Declined - Transaction Not Permitted</p>
+<h2 id="user-guide">User Guide</h2>
+<h3 id="viewing-pending-authorizations">Viewing Pending Authorizations</h3>
+<ol>
+<li>From Main Menu, select Option 11 (Pending Authorizations)</li>
+<li>Or enter transaction: <code>CPVS</code></li>
+<li>Enter Account Number</li>
+<li>Press <strong>Enter</strong></li>
+<li>List of pending authorizations displays</li>
+</ol>
+<p><strong>Screen Fields:</strong>
+- Authorization ID
+- Card Number
+- Authorization Date/Time
+- Merchant Name
+- Amount
+- Status</p>
+<p><strong>Actions:</strong>
+- Enter 'S' next to authorization to view details
+- Use PF7/PF8 to page through list</p>
+<h3 id="viewing-authorization-details">Viewing Authorization Details</h3>
+<ol>
+<li>Select authorization from summary screen</li>
+<li>Or enter transaction: <code>CPVD</code> with authorization ID</li>
+<li>Complete authorization details display</li>
+</ol>
+<p><strong>Information Shown:</strong>
+- Authorization timestamp
+- Card and account information
+- Transaction amount
+- Merchant details (name, city, state, ZIP)
+- Authorization response code
+- Approval/decline reason</p>
+<p><strong>Fraud Marking:</strong>
+- Press <strong>PF5</strong> to mark as fraudulent
+- Confirmation prompt displays
+- Record inserted into DB2 AUTHFRDS table
+- Fraud indicator set in IMS DB</p>
+<h3 id="batch-purge-process">Batch Purge Process</h3>
+<p><strong>Job</strong>: CBPAUP0J</p>
+<p><strong>Schedule</strong>: Daily (recommended)</p>
+<p><strong>Processing:</strong>
+1. Reads all authorizations from IMS DB
+2. Identifies authorizations older than 30 days
+3. Deletes expired authorizations
+4. Adjusts available credit for unmatched authorizations
+5. Generates purge report</p>
+<p><strong>Submit:</strong></p>
+<pre><code>Submit: AWS.M2.CARDDEMO.JCL(CBPAUP0J)
+</code></pre>
+<h2 id="technical-details">Technical Details</h2>
+<h3 id="business-rules">Business Rules</h3>
+<p><strong>Authorization Approval Logic:</strong></p>
+<ol>
+<li><strong>Card Validation</strong>:</li>
+<li>Card must exist in CARDDAT</li>
+<li>Card must be active</li>
+<li>
+<p>Card must not be expired</p>
+</li>
+<li>
+<p><strong>Credit Limit Check</strong>:</p>
+</li>
+<li>Transaction amount + current balance ≤ credit limit</li>
+<li>
+<p>Available credit must be sufficient</p>
+</li>
+<li>
+<p><strong>Fraud Checks</strong>:</p>
+</li>
+<li>Unusual transaction patterns</li>
+<li>High-risk merchant categories</li>
+<li>Geographic anomalies</li>
+</ol>
+<p><strong>Approval</strong>: All checks pass → Response code 00
+<strong>Decline</strong>: Any check fails → Appropriate decline code</p>
+<h3 id="ims-db-operations">IMS DB Operations</h3>
+<p><strong>Insert Authorization:</strong></p>
+<pre><code class="language-cobol">CALL 'CBLTDLI' USING DLI-ISRT
+                     PSBPAUTL
+                     PAUTSUM0-SEGMENT
+                     PAUTSUM0-DATA.
+</code></pre>
+<p><strong>Read Authorization:</strong></p>
+<pre><code class="language-cobol">CALL 'CBLTDLI' USING DLI-GU
+                     PSBPAUTL
+                     PAUTSUM0-SEGMENT
+                     PAUTSUM0-DATA
+                     PAUTSUM0-SSA.
+</code></pre>
+<p><strong>Delete Authorization:</strong></p>
+<pre><code class="language-cobol">CALL 'CBLTDLI' USING DLI-DLET
+                     PSBPAUTB
+                     PAUTSUM0-SEGMENT.
+</code></pre>
+<h3 id="db2-operations">DB2 Operations</h3>
+<p><strong>Insert Fraud Record:</strong></p>
+<pre><code class="language-cobol">EXEC SQL
+    INSERT INTO CARDDEMO.AUTHFRDS
+    (CARD_NUM, AUTH_TS, AUTH_TYPE, ...)
+    VALUES
+    (:WS-CARD-NUM, :WS-AUTH-TS, :WS-AUTH-TYPE, ...)
+END-EXEC.
+</code></pre>
+<h3 id="mq-operations">MQ Operations</h3>
+<p><strong>Read Request:</strong></p>
+<pre><code class="language-cobol">EXEC CICS READQ TS
+    QUEUE('AWS.M2.CARDDEMO.PAUTH.REQUEST')
+    INTO(WS-REQUEST-MSG)
+    LENGTH(WS-MSG-LEN)
+END-EXEC.
+</code></pre>
+<p><strong>Write Response:</strong></p>
+<pre><code class="language-cobol">EXEC CICS WRITEQ TS
+    QUEUE('AWS.M2.CARDDEMO.PAUTH.REPLY')
+    FROM(WS-RESPONSE-MSG)
+    LENGTH(WS-MSG-LEN)
+END-EXEC.
+</code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="common-issues">Common Issues</h3>
+<p><strong>Issue: Authorization requests not processing</strong>
+- Check MQ trigger is active
+- Verify CP00 transaction is enabled
+- Check IMS DB is available
+- Review CICS logs for errors</p>
+<p><strong>Issue: Cannot view authorizations (CPVS)</strong>
+- Verify IMS DB is open
+- Check PSB is allocated
+- Verify account has authorizations</p>
+<p><strong>Issue: Fraud marking fails</strong>
+- Check DB2 connection
+- Verify AUTHFRDS table exists
+- Check DB2 plan is bound
+- Review SQLCA for error codes</p>
+<p><strong>Issue: Batch purge fails</strong>
+- Verify IMS DB is available for batch
+- Check BMP region is configured
+- Review job output for IMS status codes</p>
+<h3 id="error-codes">Error Codes</h3>
+<p><strong>IMS Status Codes:</strong>
+- <strong>GE</strong>: Segment not found
+- <strong>GB</strong>: End of database
+- <strong>II</strong>: Invalid SSA
+- <strong>DA</strong>: Key out of sequence</p>
+<p><strong>DB2 SQL Codes:</strong>
+- <strong>-803</strong>: Duplicate key
+- <strong>-911</strong>: Deadlock
+- <strong>-913</strong>: Resource unavailable</p>
+<hr />
+<p><strong>Navigation</strong>: <a href="../Home/">Home</a> | <a href="../Home/#optional-modules">Optional Modules</a> | <a href="../Installation-Guide/">Installation Guide</a> | <a href="../Technical-Components/">Technical Components</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

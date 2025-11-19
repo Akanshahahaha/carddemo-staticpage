@@ -1,0 +1,2116 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Technical-Components/">
+      
+      
+        <link rel="next" href="../CICS-Configuration/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Data Models - AWS Mainframe Modernization Card Demo - Deep Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-models" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-header__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AWS Mainframe Modernization Card Demo - Deep Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data Models
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-nav__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AWS Mainframe Modernization Card Demo - Deep Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quick-Start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Admin-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Batch-Processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technical-Components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-model-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Model Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Model Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-storage-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Storage Technologies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entity-relationship-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entity Relationship Diagram
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Entity Relationship Diagram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cardinality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cardinality
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vsam-file-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM File Structures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VSAM File Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custdat-customer-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CUSTDAT - Customer Master
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acctdat-account-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ACCTDAT - Account Master
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carddat-card-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CARDDAT - Card Master
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cardxref-card-cross-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CARDXREF - Card Cross Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transact-transaction-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TRANSACT - Transaction File
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usrsec-user-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USRSEC - User Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-layouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Record Layouts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Record Layouts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-types-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Types Used
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-naming-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Field Naming Conventions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Relationships
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Relationships">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customer-to-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer to Account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-to-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account to Card
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-to-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card to Transaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-reference-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Reference Relationships
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-validation-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Validation Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Validation Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customer-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sample Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Customer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Card
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Transaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample User
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-volume-estimates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Volume Estimates
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CICS-Configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CICS Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optional Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Optional Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Transaction-Type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transaction Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-VSAM-MQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VSAM-MQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-model-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Model Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Model Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-storage-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Storage Technologies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entity-relationship-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entity Relationship Diagram
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Entity Relationship Diagram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cardinality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cardinality
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vsam-file-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM File Structures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VSAM File Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custdat-customer-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CUSTDAT - Customer Master
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acctdat-account-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ACCTDAT - Account Master
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carddat-card-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CARDDAT - Card Master
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cardxref-card-cross-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CARDXREF - Card Cross Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transact-transaction-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TRANSACT - Transaction File
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usrsec-user-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USRSEC - User Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-layouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Record Layouts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Record Layouts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-types-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Types Used
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-naming-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Field Naming Conventions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Relationships
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Relationships">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customer-to-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer to Account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-to-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account to Card
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-to-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card to Transaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-reference-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Reference Relationships
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-validation-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Validation Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Validation Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customer-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sample Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Customer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Card
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Transaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample User
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-volume-estimates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Volume Estimates
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="data-models">Data Models</h1>
+<p>Comprehensive documentation of all data structures, file layouts, and relationships in CardDemo.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#data-model-overview">Data Model Overview</a></li>
+<li><a href="#entity-relationship-diagram">Entity Relationship Diagram</a></li>
+<li><a href="#vsam-file-structures">VSAM File Structures</a></li>
+<li><a href="#record-layouts">Record Layouts</a></li>
+<li><a href="#data-relationships">Data Relationships</a></li>
+<li><a href="#data-validation-rules">Data Validation Rules</a></li>
+<li><a href="#sample-data">Sample Data</a></li>
+</ul>
+<h2 id="data-model-overview">Data Model Overview</h2>
+<p>CardDemo uses a relational-style data model implemented in VSAM files. The model supports:
+- Customer information management
+- Account and card relationships
+- Transaction processing and history
+- User security and access control
+- Reference data for transaction types and categories</p>
+<h3 id="data-storage-technologies">Data Storage Technologies</h3>
+<p><strong>Primary Storage (VSAM):</strong>
+- Customer Master (CUSTDAT)
+- Account Master (ACCTDAT)
+- Card Master (CARDDAT)
+- Card Cross Reference (CARDXREF)
+- Transaction File (TRANSACT)
+- User Security (USRSEC)
+- Reference Files (TRANTYPE, TRANCATG, DISCGRP, TCATBALF)</p>
+<p><strong>Optional Storage:</strong>
+- DB2: Transaction types, fraud tracking
+- IMS DB: Authorization details
+- MQ: Message queuing</p>
+<h2 id="entity-relationship-diagram">Entity Relationship Diagram</h2>
+<pre><code>┌─────────────┐
+│  CUSTOMER   │
+│ (CUSTDAT)   │
+└──────┬──────┘
+       │ 1
+       │
+       │ N
+┌──────┴──────┐
+│   ACCOUNT   │
+│  (ACCTDAT)  │
+└──────┬──────┘
+       │ 1
+       │
+       │ N
+┌──────┴──────┐         ┌─────────────┐
+│    CARD     │────N────│ TRANSACTION │
+│ (CARDDAT)   │    1    │ (TRANSACT)  │
+└─────────────┘         └─────────────┘
+
+┌─────────────┐
+│  CARDXREF   │  (Cross Reference)
+│ Account-Card│
+│  -Customer  │
+└─────────────┘
+
+┌─────────────┐
+│   USRSEC    │  (User Security)
+└─────────────┘
+
+┌─────────────┐
+│  TRANTYPE   │  (Transaction Types)
+└─────────────┘
+
+┌─────────────┐
+│  TRANCATG   │  (Transaction Categories)
+└─────────────┘
+</code></pre>
+<h3 id="cardinality">Cardinality</h3>
+<ul>
+<li>One CUSTOMER can have many ACCOUNTs (1:N)</li>
+<li>One ACCOUNT can have many CARDs (1:N)</li>
+<li>One CARD can have many TRANSACTIONs (1:N)</li>
+<li>CARDXREF maintains the many-to-many relationships</li>
+</ul>
+<h2 id="vsam-file-structures">VSAM File Structures</h2>
+<h3 id="custdat-customer-master">CUSTDAT - Customer Master</h3>
+<p><strong>File Organization:</strong> KSDS (Key-Sequenced Data Set)</p>
+<p><strong>Key Structure:</strong>
+- Primary Key: Customer ID (9 bytes, position 1-9)
+- Key Type: Numeric
+- Uniqueness: Unique</p>
+<p><strong>File Attributes:</strong>
+- Record Length: 500 bytes (Fixed)
+- CI Size: 4096 bytes
+- CA Size: 1 cylinder
+- SHAREOPTIONS: (2,3)</p>
+<p><strong>Copybook:</strong> CVCUS01Y</p>
+<p><strong>Record Layout:</strong></p>
+<pre><code>01  CUSTOMER-RECORD.
+    05  CUST-ID                    PIC 9(09).
+    05  CUST-FIRST-NAME            PIC X(25).
+    05  CUST-MIDDLE-NAME           PIC X(25).
+    05  CUST-LAST-NAME             PIC X(25).
+    05  CUST-ADDR-LINE-1           PIC X(50).
+    05  CUST-ADDR-LINE-2           PIC X(50).
+    05  CUST-ADDR-LINE-3           PIC X(50).
+    05  CUST-ADDR-STATE-CD         PIC X(02).
+    05  CUST-ADDR-COUNTRY-CD       PIC X(03).
+    05  CUST-ADDR-ZIP              PIC X(10).
+    05  CUST-PHONE-NUM-1           PIC X(15).
+    05  CUST-PHONE-NUM-2           PIC X(15).
+    05  CUST-SSN                   PIC 9(09).
+    05  CUST-GOVT-ISSUED-ID        PIC X(20).
+    05  CUST-DOB-YYYY-MM-DD        PIC X(10).
+    05  CUST-EFT-ACCOUNT-ID        PIC X(10).
+    05  CUST-PRI-CARD-HOLDER-IND   PIC X(01).
+    05  CUST-FICO-CREDIT-SCORE     PIC 9(03).
+    05  FILLER                     PIC X(168).
+</code></pre>
+<h3 id="acctdat-account-master">ACCTDAT - Account Master</h3>
+<p><strong>File Organization:</strong> KSDS</p>
+<p><strong>Key Structure:</strong>
+- Primary Key: Account ID (11 bytes, position 1-11)
+- Key Type: Numeric
+- Uniqueness: Unique</p>
+<p><strong>File Attributes:</strong>
+- Record Length: 300 bytes (Fixed)
+- CI Size: 4096 bytes
+- SHAREOPTIONS: (2,3)</p>
+<p><strong>Copybook:</strong> CVACT01Y</p>
+<p><strong>Record Layout:</strong></p>
+<pre><code>01  ACCOUNT-RECORD.
+    05  ACCT-ID                    PIC 9(11).
+    05  ACCT-ACTIVE-STATUS         PIC X(01).
+        88  ACCT-ACTIVE            VALUE 'Y'.
+        88  ACCT-INACTIVE          VALUE 'N'.
+    05  ACCT-CURR-BAL              PIC S9(10)V99 COMP-3.
+    05  ACCT-CREDIT-LIMIT          PIC S9(10)V99 COMP-3.
+    05  ACCT-CASH-CREDIT-LIMIT     PIC S9(10)V99 COMP-3.
+    05  ACCT-OPEN-DATE             PIC X(10).
+    05  ACCT-EXPIRATION-DATE       PIC X(10).
+    05  ACCT-REISSUE-DATE          PIC X(10).
+    05  ACCT-CURR-CYC-CREDIT       PIC S9(10)V99 COMP-3.
+    05  ACCT-CURR-CYC-DEBIT        PIC S9(10)V99 COMP-3.
+    05  ACCT-ADDR-ZIP              PIC X(10).
+    05  ACCT-GROUP-ID              PIC X(10).
+    05  FILLER                     PIC X(178).
+</code></pre>
+<h3 id="carddat-card-master">CARDDAT - Card Master</h3>
+<p><strong>File Organization:</strong> KSDS</p>
+<p><strong>Key Structure:</strong>
+- Primary Key: Card Number (16 bytes, position 1-16)
+- Key Type: Numeric
+- Uniqueness: Unique</p>
+<p><strong>File Attributes:</strong>
+- Record Length: 150 bytes (Fixed)
+- CI Size: 4096 bytes
+- SHAREOPTIONS: (2,3)</p>
+<p><strong>Copybook:</strong> CVACT02Y</p>
+<p><strong>Record Layout:</strong></p>
+<pre><code>01  CARD-RECORD.
+    05  CARD-NUM                   PIC 9(16).
+    05  CARD-ACCT-ID               PIC 9(11).
+    05  CARD-CVV-CD                PIC 9(03).
+    05  CARD-EMBOSSED-NAME         PIC X(50).
+    05  CARD-EXPIRATION-DATE       PIC X(10).
+    05  CARD-ACTIVE-STATUS         PIC X(01).
+        88  CARD-ACTIVE            VALUE 'Y'.
+        88  CARD-INACTIVE          VALUE 'N'.
+    05  FILLER                     PIC X(59).
+</code></pre>
+<h3 id="cardxref-card-cross-reference">CARDXREF - Card Cross Reference</h3>
+<p><strong>File Organization:</strong> KSDS</p>
+<p><strong>Key Structure:</strong>
+- Primary Key: Composite (36 bytes)
+  - Account ID (11 bytes)
+  - Card Number (16 bytes)
+  - Customer ID (9 bytes)
+- Uniqueness: Unique</p>
+<p><strong>File Attributes:</strong>
+- Record Length: 50 bytes (Fixed)
+- CI Size: 4096 bytes
+- SHAREOPTIONS: (2,3)</p>
+<p><strong>Copybook:</strong> CVACT03Y</p>
+<p><strong>Record Layout:</strong></p>
+<pre><code>01  CARD-XREF-RECORD.
+    05  XREF-ACCT-ID               PIC 9(11).
+    05  XREF-CARD-NUM              PIC 9(16).
+    05  XREF-CUST-ID               PIC 9(09).
+    05  FILLER                     PIC X(14).
+</code></pre>
+<h3 id="transact-transaction-file">TRANSACT - Transaction File</h3>
+<p><strong>File Organization:</strong> KSDS with AIX (Alternate Index)</p>
+<p><strong>Primary Key:</strong>
+- Transaction ID (15 bytes, position 1-15)
+- Key Type: Alphanumeric
+- Uniqueness: Unique</p>
+<p><strong>Alternate Index:</strong>
+- Card Number (16 bytes) + Transaction Date (10 bytes)
+- Allows efficient retrieval by card number</p>
+<p><strong>File Attributes:</strong>
+- Record Length: 350 bytes (Fixed)
+- CI Size: 8192 bytes
+- SHAREOPTIONS: (2,3)</p>
+<p><strong>Copybook:</strong> CVTRA05Y (Online), CVTRA06Y (Batch)</p>
+<p><strong>Record Layout:</strong></p>
+<pre><code>01  TRANSACTION-RECORD.
+    05  TRAN-ID                    PIC X(16).
+    05  TRAN-TYPE-CD               PIC X(02).
+    05  TRAN-CAT-CD                PIC 9(04).
+    05  TRAN-SOURCE                PIC X(10).
+    05  TRAN-DESC                  PIC X(100).
+    05  TRAN-AMT                   PIC S9(09)V99 COMP-3.
+    05  TRAN-CARD-NUM              PIC 9(16).
+    05  TRAN-MERCHANT-ID           PIC 9(09).
+    05  TRAN-MERCHANT-NAME         PIC X(50).
+    05  TRAN-MERCHANT-CITY         PIC X(50).
+    05  TRAN-MERCHANT-ZIP          PIC X(10).
+    05  TRAN-ORIG-TS               PIC X(26).
+    05  TRAN-PROC-TS               PIC X(26).
+    05  FILLER                     PIC X(??).
+</code></pre>
+<h3 id="usrsec-user-security">USRSEC - User Security</h3>
+<p><strong>File Organization:</strong> KSDS</p>
+<p><strong>Key Structure:</strong>
+- Primary Key: User ID (8 bytes, position 1-8)
+- Key Type: Alphanumeric
+- Uniqueness: Unique</p>
+<p><strong>File Attributes:</strong>
+- Record Length: 80 bytes (Fixed)
+- CI Size: 4096 bytes
+- SHAREOPTIONS: (2,3)</p>
+<p><strong>Copybook:</strong> CSUSR01Y</p>
+<p><strong>Record Layout:</strong></p>
+<pre><code>01  USER-SECURITY-RECORD.
+    05  SEC-USR-ID                 PIC X(08).
+    05  SEC-USR-FNAME              PIC X(20).
+    05  SEC-USR-LNAME              PIC X(20).
+    05  SEC-USR-PWD                PIC X(08).
+    05  SEC-USR-TYPE               PIC X(01).
+        88  SEC-USR-TYPE-ADMIN     VALUE 'A'.
+        88  SEC-USR-TYPE-USER      VALUE 'U'.
+    05  SEC-USR-FILLER             PIC X(23).
+</code></pre>
+<h2 id="record-layouts">Record Layouts</h2>
+<h3 id="data-types-used">Data Types Used</h3>
+<p><strong>COBOL Data Types:</strong>
+- <strong>PIC 9(n)</strong>: Numeric (display)
+- <strong>PIC X(n)</strong>: Alphanumeric
+- <strong>PIC S9(n)V99</strong>: Signed numeric with 2 decimal places
+- <strong>COMP-3</strong>: Packed decimal (efficient storage)
+- <strong>COMP</strong>: Binary</p>
+<p><strong>Date Formats:</strong>
+- Standard: YYYY-MM-DD (10 bytes)
+- Timestamp: YYYY-MM-DD-HH.MM.SS.NNNNNN (26 bytes)</p>
+<p><strong>Amount Formats:</strong>
+- Currency: S9(10)V99 COMP-3 (up to $99,999,999.99)
+- Percentages: S9(03)V99 (up to 999.99%)</p>
+<h3 id="field-naming-conventions">Field Naming Conventions</h3>
+<p><strong>Prefixes:</strong>
+- CUST-: Customer fields
+- ACCT-: Account fields
+- CARD-: Card fields
+- TRAN-: Transaction fields
+- SEC-: Security fields
+- XREF-: Cross-reference fields</p>
+<p><strong>Suffixes:</strong>
+- -ID: Identifier
+- -NUM: Number
+- -CD: Code
+- -IND: Indicator
+- -TS: Timestamp
+- -AMT: Amount
+- -DATE: Date field</p>
+<h2 id="data-relationships">Data Relationships</h2>
+<h3 id="customer-to-account">Customer to Account</h3>
+<p><strong>Relationship Type:</strong> One-to-Many</p>
+<p><strong>Implementation:</strong>
+- Customer ID stored in CARDXREF
+- Account ID stored in CARDXREF
+- Join via CARDXREF to link customers to accounts</p>
+<p><strong>Business Rules:</strong>
+- One customer can have multiple accounts
+- Each account belongs to one primary customer
+- Joint accounts supported via multiple CARDXREF records</p>
+<h3 id="account-to-card">Account to Card</h3>
+<p><strong>Relationship Type:</strong> One-to-Many</p>
+<p><strong>Implementation:</strong>
+- Account ID stored in CARD-ACCT-ID field
+- Direct relationship via account ID</p>
+<p><strong>Business Rules:</strong>
+- One account can have multiple cards
+- Each card belongs to exactly one account
+- Card number is globally unique</p>
+<h3 id="card-to-transaction">Card to Transaction</h3>
+<p><strong>Relationship Type:</strong> One-to-Many</p>
+<p><strong>Implementation:</strong>
+- Card Number stored in TRAN-CARD-NUM field
+- Alternate index on card number for efficient access</p>
+<p><strong>Business Rules:</strong>
+- One card can have many transactions
+- Each transaction belongs to exactly one card
+- Transaction ID is globally unique</p>
+<h3 id="cross-reference-relationships">Cross-Reference Relationships</h3>
+<p><strong>CARDXREF Purpose:</strong>
+- Links Account, Card, and Customer
+- Supports multiple cards per account
+- Supports multiple customers per account (joint accounts)</p>
+<p><strong>Query Patterns:</strong>
+- Find all cards for an account
+- Find all accounts for a customer
+- Find customer for a card</p>
+<h2 id="data-validation-rules">Data Validation Rules</h2>
+<h3 id="customer-data">Customer Data</h3>
+<p><strong>Customer ID:</strong>
+- Format: 9 digits
+- Range: 000000001 - 999999999
+- Uniqueness: Must be unique</p>
+<p><strong>Name Fields:</strong>
+- First Name: 1-25 characters, required
+- Last Name: 1-25 characters, required
+- Middle Name: 0-25 characters, optional</p>
+<p><strong>Address:</strong>
+- Address lines: Up to 50 characters each
+- State: 2-character code
+- Country: 3-character code
+- ZIP: Up to 10 characters</p>
+<p><strong>SSN:</strong>
+- Format: 9 digits
+- Uniqueness: Should be unique (not enforced)</p>
+<p><strong>FICO Score:</strong>
+- Range: 300-850
+- Default: 0 (not scored)</p>
+<h3 id="account-data">Account Data</h3>
+<p><strong>Account ID:</strong>
+- Format: 11 digits
+- Range: 00000000001 - 99999999999
+- Uniqueness: Must be unique</p>
+<p><strong>Balances:</strong>
+- Current Balance: -$99,999,999.99 to $99,999,999.99
+- Credit Limit: $0.00 to $99,999,999.99
+- Cash Credit Limit: $0.00 to Credit Limit</p>
+<p><strong>Status:</strong>
+- Values: 'Y' (Active), 'N' (Inactive)
+- Default: 'Y'</p>
+<p><strong>Dates:</strong>
+- Open Date: Required, format YYYY-MM-DD
+- Expiration Date: Required, must be &gt; Open Date
+- Reissue Date: Optional</p>
+<h3 id="card-data">Card Data</h3>
+<p><strong>Card Number:</strong>
+- Format: 16 digits
+- Validation: Luhn algorithm (checksum)
+- Uniqueness: Must be unique</p>
+<p><strong>CVV:</strong>
+- Format: 3 digits
+- Range: 000-999</p>
+<p><strong>Expiration Date:</strong>
+- Format: MM/YY or YYYY-MM-DD
+- Must be future date</p>
+<p><strong>Status:</strong>
+- Values: 'Y' (Active), 'N' (Inactive), 'B' (Blocked), 'E' (Expired)
+- Default: 'Y'</p>
+<h3 id="transaction-data">Transaction Data</h3>
+<p><strong>Transaction ID:</strong>
+- Format: 16 characters alphanumeric
+- Uniqueness: Must be unique
+- Generation: System-generated</p>
+<p><strong>Transaction Type:</strong>
+- Format: 2 characters
+- Valid values: PUR, PAY, ADJ, FEE, INT, etc.
+- Must exist in TRANTYPE file</p>
+<p><strong>Amount:</strong>
+- Range: -$999,999.99 to $999,999.99
+- Precision: 2 decimal places
+- Positive: Charges (purchases, fees)
+- Negative: Credits (payments, adjustments)</p>
+<p><strong>Merchant Information:</strong>
+- Merchant ID: 9 digits
+- Merchant Name: Up to 50 characters
+- Merchant City: Up to 50 characters
+- Merchant ZIP: Up to 10 characters</p>
+<h2 id="sample-data">Sample Data</h2>
+<h3 id="sample-customer">Sample Customer</h3>
+<pre><code>Customer ID: 000000001
+First Name: John
+Middle Name: Michael
+Last Name: Doe
+Address Line 1: 123 Main Street
+Address Line 2: Apt 4B
+City: New York
+State: NY
+ZIP: 10001
+Phone: 212-555-1234
+SSN: 123456789
+DOB: 1980-05-15
+FICO Score: 720
+</code></pre>
+<h3 id="sample-account">Sample Account</h3>
+<pre><code>Account ID: 00000000001
+Status: Active (Y)
+Current Balance: $1,234.56
+Credit Limit: $5,000.00
+Cash Credit Limit: $1,000.00
+Open Date: 2020-01-15
+Expiration Date: 2025-01-15
+Current Cycle Credit: $0.00
+Current Cycle Debit: $234.56
+</code></pre>
+<h3 id="sample-card">Sample Card</h3>
+<pre><code>Card Number: 4000123456789010
+Account ID: 00000000001
+CVV: 123
+Embossed Name: JOHN M DOE
+Expiration Date: 2025-12-31
+Status: Active (Y)
+</code></pre>
+<h3 id="sample-transaction">Sample Transaction</h3>
+<pre><code>Transaction ID: T000000000000001
+Type: PUR (Purchase)
+Category: 5411 (Grocery)
+Description: GROCERY STORE PURCHASE
+Amount: $45.67
+Card Number: 4000123456789010
+Merchant ID: 123456789
+Merchant Name: ABC Grocery Store
+Merchant City: New York
+Merchant ZIP: 10001
+Transaction Date: 2025-11-15
+Processing Date: 2025-11-15
+</code></pre>
+<h3 id="sample-user">Sample User</h3>
+<pre><code>User ID: USER0001
+First Name: John
+Last Name: Doe
+Password: ******** (encrypted)
+User Type: U (User)
+Status: Active
+Last Login: 2025-11-15
+</code></pre>
+<h2 id="data-volume-estimates">Data Volume Estimates</h2>
+<p><strong>Typical Production Volumes:</strong>
+- Customers: 100,000 - 1,000,000
+- Accounts: 150,000 - 1,500,000
+- Cards: 200,000 - 2,000,000
+- Transactions: 1,000,000 - 10,000,000 per month
+- Users: 100 - 1,000</p>
+<p><strong>Storage Requirements:</strong>
+- CUSTDAT: ~500 MB per 1M customers
+- ACCTDAT: ~300 MB per 1M accounts
+- CARDDAT: ~150 MB per 1M cards
+- TRANSACT: ~3.5 GB per 10M transactions</p>
+<hr />
+<p><strong>Navigation</strong>: <a href="../Home/">Home</a> | <a href="../Architecture/">Architecture</a> | <a href="../Technical-Components/">Technical Components</a> | <a href="API-Reference.md">API Reference</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
