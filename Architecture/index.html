@@ -1,0 +1,2162 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../Installation-Guide/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Architecture - AWS Mainframe Modernization Card Demo - Deep Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#carddemo-architecture" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-header__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AWS Mainframe Modernization Card Demo - Deep Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-nav__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AWS Mainframe Modernization Card Demo - Deep Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#high-level-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Level Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-architectural-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Architectural Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Layers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Layers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#presentation-layer-bms-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Presentation Layer (BMS Maps)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-logic-layer-cobol-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Logic Layer (COBOL Programs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-access-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Access Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-application-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Application Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Application Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bill-payment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bill Payment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reporting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-module-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Module Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Module Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#credit-card-authorizations-ims-db2-mq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credit Card Authorizations (IMS-DB2-MQ)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-type-management-db2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Type Management (DB2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-extractions-vsam-mq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Extractions (VSAM-MQ)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vsam-file-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM File Organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Relationships
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copybook-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copybook Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processing-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processing Flows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Processing Flows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#online-transaction-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Online Transaction Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-processing-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Processing Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization-flow-optional-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization Flow (Optional Module)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-module-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Module Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Module Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integration-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-independence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Independence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#online-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Online Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scalability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scalability
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quick-Start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Admin-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Batch-Processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technical-Components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CICS-Configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CICS Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optional Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Optional Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Transaction-Type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transaction Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-VSAM-MQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VSAM-MQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#high-level-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Level Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-architectural-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Architectural Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Layers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Layers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#presentation-layer-bms-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Presentation Layer (BMS Maps)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-logic-layer-cobol-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Logic Layer (COBOL Programs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-access-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Access Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-application-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Application Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Application Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bill-payment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bill Payment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reporting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-module-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Module Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Module Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#credit-card-authorizations-ims-db2-mq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credit Card Authorizations (IMS-DB2-MQ)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-type-management-db2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Type Management (DB2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-extractions-vsam-mq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Extractions (VSAM-MQ)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vsam-file-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM File Organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Relationships
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copybook-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copybook Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processing-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processing Flows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Processing Flows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#online-transaction-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Online Transaction Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-processing-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Processing Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization-flow-optional-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization Flow (Optional Module)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-module-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Module Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Module Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integration-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-independence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Independence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#online-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Online Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scalability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scalability
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="carddemo-architecture">CardDemo Architecture</h1>
+<p>This page provides a comprehensive overview of the CardDemo application architecture, including system design, component interactions, data flow, and technical patterns.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#system-overview">System Overview</a></li>
+<li><a href="#application-layers">Application Layers</a></li>
+<li><a href="#component-architecture">Component Architecture</a></li>
+<li><a href="#data-architecture">Data Architecture</a></li>
+<li><a href="#processing-flows">Processing Flows</a></li>
+<li><a href="#security-architecture">Security Architecture</a></li>
+<li><a href="#optional-module-integration">Optional Module Integration</a></li>
+</ul>
+<h2 id="system-overview">System Overview</h2>
+<p>CardDemo is a multi-tier mainframe application built using traditional mainframe technologies. The architecture follows classic mainframe patterns with clear separation between online transaction processing (OLTP) and batch processing.</p>
+<h3 id="high-level-architecture">High-Level Architecture</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│                    User Interface Layer                      │
+│                    (CICS + BMS Screens)                      │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│                  Application Logic Layer                     │
+│                    (COBOL Programs)                          │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
+│  │   Online     │  │    Batch     │  │   Utility    │     │
+│  │  Programs    │  │   Programs   │  │   Programs   │     │
+│  └──────────────┘  └──────────────┘  └──────────────┘     │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    Data Access Layer                         │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
+│  │   VSAM   │  │   DB2    │  │  IMS DB  │  │    MQ    │   │
+│  │  (Base)  │  │(Optional)│  │(Optional)│  │(Optional)│   │
+│  └──────────┘  └──────────┘  └──────────┘  └──────────┘   │
+└─────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="key-architectural-principles">Key Architectural Principles</h3>
+<ol>
+<li><strong>Separation of Concerns</strong>: Clear separation between presentation (BMS), business logic (COBOL), and data access (VSAM/DB2/IMS)</li>
+<li><strong>Transaction Integrity</strong>: ACID properties maintained through CICS transaction management</li>
+<li><strong>Batch/Online Separation</strong>: Distinct processing modes with file locking mechanisms</li>
+<li><strong>Modular Design</strong>: Core application with optional pluggable modules</li>
+<li><strong>Data Independence</strong>: Copybook-based data definitions for consistency</li>
+</ol>
+<h2 id="application-layers">Application Layers</h2>
+<h3 id="presentation-layer-bms-maps">Presentation Layer (BMS Maps)</h3>
+<p>The presentation layer uses Basic Mapping Support (BMS) to define screen layouts and handle terminal I/O.</p>
+<p><strong>Key Components:</strong>
+- <strong>BMS Maps</strong>: Screen definitions in assembler format
+- <strong>Symbolic Maps</strong>: COBOL copybooks generated from BMS maps
+- <strong>Screen Flow</strong>: Navigation between screens via PF keys and menu selections</p>
+<p><strong>BMS Map Categories:</strong>
+- Sign-on and menu screens (COSGN00, COMEN01)
+- Account management screens (COACTVW, COACTUP)
+- Card management screens (COCRDLI, COCRDSL, COCRDUP)
+- Transaction screens (COTRN00, COTRN01, COTRN02)
+- Report screens (CORPT00)
+- Bill payment screens (COBIL00)
+- Admin screens (COADM01, COUSR00-03)</p>
+<h3 id="application-logic-layer-cobol-programs">Application Logic Layer (COBOL Programs)</h3>
+<p>The business logic layer implements all application functionality using COBOL programs.</p>
+<p><strong>Program Categories:</strong></p>
+<ol>
+<li><strong>Online Programs (CICS)</strong></li>
+<li>Conversational programs for user interaction</li>
+<li>Pseudo-conversational design for efficiency</li>
+<li>COMMAREA for data passing between screens</li>
+<li>
+<p>CICS API calls for terminal I/O, file access, and program control</p>
+</li>
+<li>
+<p><strong>Batch Programs (JCL)</strong></p>
+</li>
+<li>Sequential file processing</li>
+<li>VSAM file maintenance</li>
+<li>Report generation</li>
+<li>
+<p>Data transformation and loading</p>
+</li>
+<li>
+<p><strong>Utility Programs (Assembler)</strong></p>
+</li>
+<li>MVSWAIT: Timer control for batch jobs</li>
+<li>COBDATFT: Date format conversion utility</li>
+</ol>
+<p><strong>Programming Patterns:</strong>
+- Structured COBOL with proper paragraph organization
+- Error handling with CICS HANDLE CONDITION
+- Copybook inclusion for data structures
+- Standard naming conventions (CO<em> for online, CB</em> for batch)</p>
+<h3 id="data-access-layer">Data Access Layer</h3>
+<p>The data layer provides persistent storage using multiple technologies.</p>
+<p><strong>Primary Storage (VSAM):</strong>
+- KSDS (Key-Sequenced Data Sets) for indexed access
+- AIX (Alternate Index) for secondary key access
+- ESDS/RRDS for specialized use cases</p>
+<p><strong>Optional Storage:</strong>
+- DB2 for relational data (transaction types, fraud tracking)
+- IMS DB for hierarchical data (authorization details)
+- MQ for asynchronous messaging</p>
+<h2 id="component-architecture">Component Architecture</h2>
+<h3 id="core-application-components">Core Application Components</h3>
+<h4 id="user-management">User Management</h4>
+<ul>
+<li><strong>Programs</strong>: COSGN00C (sign-on), COUSR00C-03C (user CRUD)</li>
+<li><strong>Data</strong>: USRSEC VSAM file</li>
+<li><strong>Security</strong>: RACF integration for authentication</li>
+</ul>
+<h4 id="account-management">Account Management</h4>
+<ul>
+<li><strong>Programs</strong>: COACTVWC (view), COACTUPC (update)</li>
+<li><strong>Data</strong>: ACCTDAT VSAM file</li>
+<li><strong>Features</strong>: Account inquiry, balance viewing, credit limit management</li>
+</ul>
+<h4 id="card-management">Card Management</h4>
+<ul>
+<li><strong>Programs</strong>: COCRDLIC (list), COCRDSLC (view), COCRDUPC (update)</li>
+<li><strong>Data</strong>: CARDDAT VSAM file, CARDXREF for cross-reference</li>
+<li><strong>Features</strong>: Card issuance, status management, expiration tracking</li>
+</ul>
+<h4 id="transaction-processing">Transaction Processing</h4>
+<ul>
+<li><strong>Online Programs</strong>: COTRN00C (list), COTRN01C (view), COTRN02C (add)</li>
+<li><strong>Batch Programs</strong>: CBTRN02C (post transactions), CBTRN03C (reports)</li>
+<li><strong>Data</strong>: TRANSACT VSAM file with AIX</li>
+<li><strong>Features</strong>: Transaction entry, posting, reporting</li>
+</ul>
+<h4 id="bill-payment">Bill Payment</h4>
+<ul>
+<li><strong>Programs</strong>: COBIL00C</li>
+<li><strong>Data</strong>: TRANSACT VSAM file</li>
+<li><strong>Features</strong>: Payment processing, balance updates</li>
+</ul>
+<h4 id="reporting">Reporting</h4>
+<ul>
+<li><strong>Programs</strong>: CORPT00C (online), CBSTM03A (batch statements)</li>
+<li><strong>Data</strong>: TRANSACT VSAM file</li>
+<li><strong>Features</strong>: Transaction reports, account statements</li>
+</ul>
+<h3 id="optional-module-components">Optional Module Components</h3>
+<h4 id="credit-card-authorizations-ims-db2-mq">Credit Card Authorizations (IMS-DB2-MQ)</h4>
+<ul>
+<li><strong>Programs</strong>: COPAUA0C (MQ processor), COPAUS0C/1C (inquiry), CBPAUP0C (purge)</li>
+<li><strong>Data</strong>: IMS HIDAM database, DB2 fraud table, MQ queues</li>
+<li><strong>Integration</strong>: Real-time authorization via MQ, fraud detection with DB2</li>
+</ul>
+<h4 id="transaction-type-management-db2">Transaction Type Management (DB2)</h4>
+<ul>
+<li><strong>Programs</strong>: COTRTUPC (add/edit), COTRTLIC (list/delete), COBTUPDT (batch)</li>
+<li><strong>Data</strong>: DB2 transaction type tables</li>
+<li><strong>Integration</strong>: DB2 embedded SQL with cursor processing</li>
+</ul>
+<h4 id="account-extractions-vsam-mq">Account Extractions (VSAM-MQ)</h4>
+<ul>
+<li><strong>Programs</strong>: CODATE01 (date inquiry), COACCT01 (account inquiry)</li>
+<li><strong>Data</strong>: VSAM files, MQ queues</li>
+<li><strong>Integration</strong>: MQ request/response patterns</li>
+</ul>
+<h2 id="data-architecture">Data Architecture</h2>
+<h3 id="vsam-file-organization">VSAM File Organization</h3>
+<p>CardDemo uses VSAM as its primary data store with the following organization:</p>
+<pre><code>ACCTDAT (Account Master)
+  Key: Account ID (11 digits)
+  Contains: Account details, balances, credit limits
+
+CARDDAT (Card Master)
+  Key: Card Number (16 digits)
+  Contains: Card details, status, expiration
+
+CUSTDAT (Customer Master)
+  Key: Customer ID (9 digits)
+  Contains: Customer personal information
+
+CARDXREF (Cross Reference)
+  Key: Composite key
+  Contains: Account-Card-Customer relationships
+
+TRANSACT (Transaction File)
+  Key: Transaction ID
+  AIX: Card Number, Date
+  Contains: Transaction details, amounts, merchants
+
+USRSEC (User Security)
+  Key: User ID
+  Contains: User credentials, roles, permissions
+
+TRANTYPE (Transaction Types)
+  Key: Transaction Type Code
+  Contains: Transaction type descriptions
+
+TRANCATG (Transaction Categories)
+  Key: Category Code
+  Contains: Category descriptions
+</code></pre>
+<h3 id="data-relationships">Data Relationships</h3>
+<pre><code>CUSTOMER (1) ──── (N) ACCOUNT (1) ──── (N) CARD
+                                │
+                                └──── (N) TRANSACTION
+</code></pre>
+<h3 id="copybook-structure">Copybook Structure</h3>
+<p>All data structures are defined in copybooks located in <code>app/cpy/</code>:</p>
+<ul>
+<li><strong>CSUSR01Y</strong>: User security record</li>
+<li><strong>CVACT01Y</strong>: Account data record</li>
+<li><strong>CVACT02Y</strong>: Card data record</li>
+<li><strong>CVCUS01Y</strong>: Customer data record</li>
+<li><strong>CVACT03Y</strong>: Card cross-reference record</li>
+<li><strong>CVTRA05Y</strong>: Transaction record (online)</li>
+<li><strong>CVTRA06Y</strong>: Transaction record (batch)</li>
+</ul>
+<h2 id="processing-flows">Processing Flows</h2>
+<h3 id="online-transaction-flow">Online Transaction Flow</h3>
+<pre><code>1. User enters transaction (CC00 - Sign-on)
+2. CICS receives terminal input
+3. BMS map receives and formats data
+4. COBOL program processes request
+5. VSAM files accessed for data
+6. Business logic applied
+7. Response formatted via BMS
+8. Screen displayed to user
+</code></pre>
+<h3 id="batch-processing-flow">Batch Processing Flow</h3>
+<pre><code>1. JCL job submitted
+2. CLOSEFIL closes CICS files
+3. Batch programs execute:
+   - Read input files
+   - Process records
+   - Update VSAM files
+   - Generate reports
+4. OPENFIL reopens files for CICS
+5. Job completion notification
+</code></pre>
+<h3 id="authorization-flow-optional-module">Authorization Flow (Optional Module)</h3>
+<pre><code>1. POS system sends MQ message
+2. MQ trigger starts CICS transaction (CP00)
+3. COPAUA0C program processes request:
+   - Validates card via VSAM
+   - Retrieves customer data
+   - Applies business rules
+   - Stores in IMS DB
+4. Response sent via MQ
+5. User can view via CPVS/CPVD
+6. Fraud marking updates DB2
+</code></pre>
+<h2 id="security-architecture">Security Architecture</h2>
+<h3 id="authentication">Authentication</h3>
+<ul>
+<li>User credentials stored in USRSEC VSAM file</li>
+<li>Password validation at sign-on (COSGN00C)</li>
+<li>Session management via CICS</li>
+</ul>
+<h3 id="authorization">Authorization</h3>
+<ul>
+<li>Role-based access control (User vs Admin)</li>
+<li>Transaction-level security via CICS</li>
+<li>RACF integration for system-level security</li>
+</ul>
+<h3 id="data-security">Data Security</h3>
+<ul>
+<li>Encrypted password storage</li>
+<li>Audit trail in transaction records</li>
+<li>File-level access control via VSAM</li>
+</ul>
+<h2 id="optional-module-integration">Optional Module Integration</h2>
+<h3 id="integration-points">Integration Points</h3>
+<ol>
+<li><strong>Admin Menu Extension</strong>: Optional modules add menu items to CA00</li>
+<li><strong>Data Synchronization</strong>: TRANEXTR job extracts DB2 data to VSAM</li>
+<li><strong>Message Queue Integration</strong>: MQ queues for asynchronous processing</li>
+<li><strong>Database Integration</strong>: DB2 and IMS DB for specialized storage</li>
+</ol>
+<h3 id="module-independence">Module Independence</h3>
+<p>Each optional module is designed to be independently installable:
+- Core application functions without optional modules
+- Optional modules enhance but don't replace core functionality
+- Shared copybooks ensure data compatibility
+- Separate CICS resource groups for easy management</p>
+<h2 id="performance-considerations">Performance Considerations</h2>
+<h3 id="online-performance">Online Performance</h3>
+<ul>
+<li>Pseudo-conversational programming for CICS efficiency</li>
+<li>Indexed VSAM access for fast lookups</li>
+<li>Minimal COMMAREA size for reduced overhead</li>
+<li>Efficient screen navigation</li>
+</ul>
+<h3 id="batch-performance">Batch Performance</h3>
+<ul>
+<li>Sequential file processing for throughput</li>
+<li>Batch window management with CLOSEFIL/OPENFIL</li>
+<li>Sort utilities for data organization</li>
+<li>GDG for backup and recovery</li>
+</ul>
+<h2 id="scalability">Scalability</h2>
+<p>CardDemo demonstrates scalability patterns:
+- CICS transaction routing for workload distribution
+- VSAM file sharing across regions
+- Batch job parallelization opportunities
+- Optional module architecture for feature growth</p>
+<hr />
+<p><strong>Navigation</strong>: <a href="../Home/">Home</a> | <a href="../Installation-Guide/">Installation Guide</a> | <a href="../Technical-Components/">Technical Components</a> | <a href="../Data-Models/">Data Models</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

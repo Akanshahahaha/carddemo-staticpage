@@ -1,0 +1,2196 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../User-Guide/">
+      
+      
+        <link rel="next" href="../Batch-Processing/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Admin Guide - AWS Mainframe Modernization Card Demo - Deep Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#admin-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-header__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AWS Mainframe Modernization Card Demo - Deep Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Admin Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-nav__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AWS Mainframe Modernization Card Demo - Deep Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quick-Start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admin-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Access
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Admin Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#admin-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Credentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-sign-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Sign-On
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-privileges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Privileges
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admin-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Menu
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Admin Menu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-admin-menu-ca00" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing Admin Menu (CA00)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-menu-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Menu Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-users-cu00" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List Users (CU00)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-user-cu01" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add User (CU01)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-user-cu02" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update User (CU02)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-user-cu03" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delete User (CU03)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transaction-type-management-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Type Management (Optional)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transaction Type Management (Optional)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transaction-type-list-ctli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Type List (CTLI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-type-addedit-cttu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Type Add/Edit (CTTU)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Maintenance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-job-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Job Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cics-resource-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CICS Resource Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-administration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Administration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Administration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#password-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audit-trail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audit Trail
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-and-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring and Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring and Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-health-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Health Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-log-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Log Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-management_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-maintenance_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Batch-Processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technical-Components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CICS-Configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CICS Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optional Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Optional Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Transaction-Type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transaction Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-VSAM-MQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VSAM-MQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admin-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Access
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Admin Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#admin-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Credentials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-sign-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Sign-On
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-privileges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Privileges
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admin-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Menu
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Admin Menu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-admin-menu-ca00" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing Admin Menu (CA00)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-menu-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Menu Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-users-cu00" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List Users (CU00)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-user-cu01" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add User (CU01)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-user-cu02" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update User (CU02)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-user-cu03" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delete User (CU03)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transaction-type-management-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Type Management (Optional)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transaction Type Management (Optional)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transaction-type-list-ctli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Type List (CTLI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-type-addedit-cttu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Type Add/Edit (CTTU)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Maintenance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-job-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Job Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cics-resource-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CICS Resource Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-administration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Administration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Administration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#password-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audit-trail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audit Trail
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-and-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring and Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring and Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-health-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Health Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-log-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Log Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-management_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-maintenance_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="admin-guide">Admin Guide</h1>
+<p>Complete guide for CardDemo administrators. This guide covers all administrative functions, user management, system configuration, and maintenance tasks.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#admin-access">Admin Access</a></li>
+<li><a href="#admin-menu">Admin Menu</a></li>
+<li><a href="#user-management">User Management</a></li>
+<li><a href="#transaction-type-management-optional">Transaction Type Management</a></li>
+<li><a href="#system-maintenance">System Maintenance</a></li>
+<li><a href="#security-administration">Security Administration</a></li>
+<li><a href="#monitoring-and-troubleshooting">Monitoring and Troubleshooting</a></li>
+<li><a href="#best-practices">Best Practices</a></li>
+</ul>
+<h2 id="admin-access">Admin Access</h2>
+<h3 id="admin-credentials">Admin Credentials</h3>
+<p>Admin users have elevated privileges to manage users and system configuration.</p>
+<p><strong>Default Admin Account:</strong>
+- User ID: <code>ADMIN001</code>
+- Password: <code>PASSWORD</code></p>
+<p><strong>Important</strong>: Change default passwords immediately after installation.</p>
+<h3 id="admin-sign-on">Admin Sign-On</h3>
+<ol>
+<li>Enter transaction: <code>CC00</code></li>
+<li>Enter Admin User ID</li>
+<li>Enter Admin Password</li>
+<li>Press <strong>Enter</strong></li>
+<li>You'll see the Main Menu with admin options available</li>
+</ol>
+<h3 id="admin-privileges">Admin Privileges</h3>
+<p>Admin users can:
+- Create, update, and delete user accounts
+- Manage transaction types (with optional DB2 module)
+- View all accounts and transactions
+- Access system configuration
+- Generate administrative reports
+- Perform system maintenance tasks</p>
+<h2 id="admin-menu">Admin Menu</h2>
+<h3 id="accessing-admin-menu-ca00">Accessing Admin Menu (CA00)</h3>
+<p>From the Main Menu:
+1. Select Option 12 (Admin Menu)
+2. Or enter transaction: <code>CA00</code></p>
+<p><img alt="Admin Menu" src="../diagrams/Admin-Menu.png" /></p>
+<h3 id="admin-menu-options">Admin Menu Options</h3>
+<p><strong>User Management:</strong>
+1. <strong>List Users</strong> (CU00) - View all system users
+2. <strong>Add User</strong> (CU01) - Create new user account
+3. <strong>Update User</strong> (CU02) - Modify user information
+4. <strong>Delete User</strong> (CU03) - Remove user account</p>
+<p><strong>Transaction Type Management</strong> (Optional DB2 Module):
+5. <strong>Transaction Type List</strong> (CTLI) - List/update/delete transaction types
+6. <strong>Transaction Type Add/Edit</strong> (CTTU) - Add or edit transaction types</p>
+<p><strong>Function Keys:</strong>
+- <strong>PF3</strong>: Return to Main Menu
+- <strong>PF4</strong>: Return to previous screen</p>
+<h2 id="user-management">User Management</h2>
+<h3 id="list-users-cu00">List Users (CU00)</h3>
+<p>View all users in the system with their details.</p>
+<p><strong>How to Access:</strong>
+- Admin Menu → Option 1
+- Or enter transaction: <code>CU00</code></p>
+<p><strong>Displayed Information:</strong>
+- User ID
+- User Name
+- User Type (User/Admin)
+- Status (Active/Inactive)
+- Last Login Date</p>
+<p><strong>Actions:</strong>
+- <strong>S</strong> (Select): View user details
+- <strong>U</strong> (Update): Update user information
+- <strong>D</strong> (Delete): Delete user account</p>
+<p><strong>Function Keys:</strong>
+- <strong>PF7</strong>: Page backward
+- <strong>PF8</strong>: Page forward
+- <strong>PF3</strong>: Return to Admin Menu</p>
+<p><strong>Example:</strong></p>
+<pre><code>User ID    Name              Type    Status    Last Login
+ADMIN001   System Admin      Admin   Active    2025-11-18
+USER0001   John Doe          User    Active    2025-11-17
+USER0002   Jane Smith        User    Active    2025-11-16
+USER0003   Bob Johnson       User    Inactive  2025-11-10
+</code></pre>
+<h3 id="add-user-cu01">Add User (CU01)</h3>
+<p>Create a new user account.</p>
+<p><strong>How to Access:</strong>
+- Admin Menu → Option 2
+- Or enter transaction: <code>CU01</code></p>
+<p><strong>Required Fields:</strong>
+- <strong>User ID</strong>: Unique 8-character identifier (uppercase)
+- <strong>User Name</strong>: Full name (up to 50 characters)
+- <strong>Password</strong>: Initial password (8 characters minimum)
+- <strong>User Type</strong>: USER or ADMIN
+- <strong>Status</strong>: ACTIVE or INACTIVE</p>
+<p><strong>Optional Fields:</strong>
+- Email Address
+- Phone Number
+- Department
+- Notes</p>
+<p><strong>Add Process:</strong>
+1. Enter all required fields
+2. Press <strong>Enter</strong> to validate
+3. Review information
+4. Press <strong>Enter</strong> to create user
+5. Confirmation message with User ID will display</p>
+<p><strong>Function Keys:</strong>
+- <strong>Enter</strong>: Validate / Create user
+- <strong>PF3</strong>: Cancel and return to Admin Menu
+- <strong>PF5</strong>: Clear form</p>
+<p><strong>Business Rules:</strong>
+- User ID must be unique
+- User ID cannot be changed after creation
+- Password must meet complexity requirements
+- Admin users should be limited to authorized personnel
+- New users are created with ACTIVE status by default</p>
+<p><strong>Password Requirements:</strong>
+- Minimum 8 characters
+- Must contain at least one letter
+- Must contain at least one number
+- Case-sensitive</p>
+<p><strong>Example:</strong></p>
+<pre><code>User ID: USER0010
+User Name: Alice Williams
+Password: ********
+User Type: USER
+Status: ACTIVE
+Email: alice.williams@example.com
+</code></pre>
+<h3 id="update-user-cu02">Update User (CU02)</h3>
+<p>Modify existing user information.</p>
+<p><strong>How to Access:</strong>
+- Admin Menu → Option 3
+- Or enter transaction: <code>CU02</code>
+- Or select 'U' from User List</p>
+<p><strong>Input Fields:</strong>
+- <strong>User ID</strong>: Enter user ID to update</p>
+<p><strong>Updatable Fields:</strong>
+- User Name
+- Password (if resetting)
+- User Type
+- Status
+- Email Address
+- Phone Number
+- Department
+- Notes</p>
+<p><strong>Update Process:</strong>
+1. Enter User ID
+2. Press <strong>Enter</strong> to retrieve user
+3. Modify desired fields
+4. Press <strong>Enter</strong> to save changes
+5. Confirmation message will display</p>
+<p><strong>Function Keys:</strong>
+- <strong>Enter</strong>: Retrieve user / Save changes
+- <strong>PF3</strong>: Return to Admin Menu without saving
+- <strong>PF5</strong>: Reset password</p>
+<p><strong>Common Update Scenarios:</strong></p>
+<p><strong>Reset Password:</strong>
+1. Retrieve user
+2. Press <strong>PF5</strong> (Reset Password)
+3. Enter new password
+4. Confirm new password
+5. Press <strong>Enter</strong> to save</p>
+<p><strong>Unlock Account:</strong>
+1. Retrieve user
+2. Change Status to ACTIVE
+3. Press <strong>Enter</strong> to save</p>
+<p><strong>Change User Type:</strong>
+1. Retrieve user
+2. Change User Type (USER/ADMIN)
+3. Press <strong>Enter</strong> to save
+4. User must sign off and sign on again for changes to take effect</p>
+<p><strong>Deactivate User:</strong>
+1. Retrieve user
+2. Change Status to INACTIVE
+3. Press <strong>Enter</strong> to save
+4. User will not be able to sign on</p>
+<h3 id="delete-user-cu03">Delete User (CU03)</h3>
+<p>Remove a user account from the system.</p>
+<p><strong>How to Access:</strong>
+- Admin Menu → Option 4
+- Or enter transaction: <code>CU03</code>
+- Or select 'D' from User List</p>
+<p><strong>Input Fields:</strong>
+- <strong>User ID</strong>: Enter user ID to delete</p>
+<p><strong>Delete Process:</strong>
+1. Enter User ID
+2. Press <strong>Enter</strong> to retrieve user
+3. Review user information
+4. Press <strong>Enter</strong> to confirm deletion
+5. Confirmation prompt will display
+6. Enter 'Y' to confirm or 'N' to cancel
+7. Deletion confirmation message will display</p>
+<p><strong>Function Keys:</strong>
+- <strong>Enter</strong>: Retrieve user / Confirm deletion
+- <strong>PF3</strong>: Cancel and return to Admin Menu</p>
+<p><strong>Business Rules:</strong>
+- Cannot delete currently signed-on users
+- Cannot delete the last admin user
+- Deletion is permanent and cannot be undone
+- Consider deactivating instead of deleting for audit purposes</p>
+<p><strong>Warning</strong>: Deleting a user does not delete their transaction history or associated data.</p>
+<h2 id="transaction-type-management-optional">Transaction Type Management (Optional)</h2>
+<p>These functions are available only if the DB2 Transaction Type Management optional module is installed.</p>
+<h3 id="transaction-type-list-ctli">Transaction Type List (CTLI)</h3>
+<p>List, update, and delete transaction types.</p>
+<p><strong>How to Access:</strong>
+- Admin Menu → Option 5
+- Or enter transaction: <code>CTLI</code></p>
+<p><strong>Displayed Information:</strong>
+- Transaction Type Code (2 characters)
+- Transaction Description
+- Category Code
+- Status</p>
+<p><strong>Actions:</strong>
+- <strong>U</strong> (Update): Update transaction type description
+- <strong>D</strong> (Delete): Delete transaction type</p>
+<p><strong>Function Keys:</strong>
+- <strong>PF7</strong>: Page backward
+- <strong>PF8</strong>: Page forward
+- <strong>PF3</strong>: Return to Admin Menu</p>
+<p><strong>Update Process:</strong>
+1. Enter 'U' next to transaction type
+2. Modify description
+3. Press <strong>Enter</strong> to save</p>
+<p><strong>Delete Process:</strong>
+1. Enter 'D' next to transaction type
+2. Press <strong>Enter</strong>
+3. Confirm deletion
+4. Transaction type will be deleted if not in use</p>
+<p><strong>Business Rules:</strong>
+- Cannot delete transaction types with existing transactions
+- Transaction type codes cannot be changed
+- Changes are immediately reflected in DB2</p>
+<p>See <a href="../Optional-Module-Transaction-Type/">Optional Module - Transaction Type Management</a> for details.</p>
+<h3 id="transaction-type-addedit-cttu">Transaction Type Add/Edit (CTTU)</h3>
+<p>Add new transaction types or edit existing ones.</p>
+<p><strong>How to Access:</strong>
+- Admin Menu → Option 6
+- Or enter transaction: <code>CTTU</code></p>
+<p><strong>Fields:</strong>
+- <strong>Transaction Type Code</strong>: 2-character code (for new types)
+- <strong>Transaction Description</strong>: Description (up to 50 characters)
+- <strong>Category Code</strong>: Associated category
+- <strong>Status</strong>: ACTIVE or INACTIVE</p>
+<p><strong>Add Process:</strong>
+1. Enter new Transaction Type Code
+2. Enter Description
+3. Select Category Code
+4. Press <strong>Enter</strong> to save</p>
+<p><strong>Edit Process:</strong>
+1. Enter existing Transaction Type Code
+2. Press <strong>Enter</strong> to retrieve
+3. Modify Description or Category
+4. Press <strong>Enter</strong> to save</p>
+<p><strong>Function Keys:</strong>
+- <strong>Enter</strong>: Retrieve / Save
+- <strong>PF3</strong>: Cancel and return to Admin Menu
+- <strong>PF5</strong>: Clear form</p>
+<h2 id="system-maintenance">System Maintenance</h2>
+<h3 id="file-management">File Management</h3>
+<p><strong>Close Files for Batch Processing:</strong></p>
+<pre><code>Submit: CLOSEFIL job
+</code></pre>
+<p>This closes all VSAM files to allow batch jobs to run.</p>
+<p><strong>Open Files After Batch:</strong></p>
+<pre><code>Submit: OPENFIL job
+</code></pre>
+<p>This reopens VSAM files for CICS access.</p>
+<p><strong>Important</strong>: Always close files before running batch jobs and reopen them afterward.</p>
+<h3 id="batch-job-monitoring">Batch Job Monitoring</h3>
+<p>Monitor batch jobs through:
+1. JES2/JES3 job queue
+2. SDSF or equivalent job monitoring tool
+3. Job output and return codes</p>
+<p><strong>Critical Batch Jobs:</strong>
+- <strong>POSTTRAN</strong>: Transaction posting (daily)
+- <strong>INTCALC</strong>: Interest calculation (monthly)
+- <strong>CREASTMT</strong>: Statement generation (monthly)
+- <strong>CBPAUP0J</strong>: Authorization purge (daily, if using optional module)</p>
+<h3 id="cics-resource-management">CICS Resource Management</h3>
+<p><strong>Check File Status:</strong></p>
+<pre><code>CEMT INQUIRE FILE(ACCTDAT)
+</code></pre>
+<p><strong>Check Transaction Status:</strong></p>
+<pre><code>CEMT INQUIRE TRANSACTION(CC00)
+</code></pre>
+<p><strong>Check Program Status:</strong></p>
+<pre><code>CEMT INQUIRE PROGRAM(COSGN00C)
+</code></pre>
+<p><strong>Refresh Program:</strong></p>
+<pre><code>CEMT SET PROGRAM(COSGN00C) NEWCOPY
+</code></pre>
+<p><strong>Enable/Disable Transaction:</strong></p>
+<pre><code>CEMT SET TRANSACTION(CC00) ENABLED
+CEMT SET TRANSACTION(CC00) DISABLED
+</code></pre>
+<h3 id="database-maintenance">Database Maintenance</h3>
+<p><strong>VSAM File Backup:</strong></p>
+<pre><code>Submit: TRANBKP job (Transaction backup)
+</code></pre>
+<p><strong>VSAM File Reorganization:</strong>
+Periodically reorganize VSAM files for optimal performance:
+1. Close files (CLOSEFIL)
+2. Run IDCAMS REPRO to backup
+3. Delete and redefine VSAM cluster
+4. Restore data from backup
+5. Rebuild alternate indexes
+6. Open files (OPENFIL)</p>
+<p><strong>DB2 Maintenance</strong> (if using optional modules):
+- Run RUNSTATS on tables
+- Reorganize tables as needed
+- Backup DB2 tables regularly</p>
+<h2 id="security-administration">Security Administration</h2>
+<h3 id="password-management">Password Management</h3>
+<p><strong>Password Policy:</strong>
+- Minimum 8 characters
+- Must be changed every 90 days (configurable)
+- Cannot reuse last 5 passwords
+- Locked after 3 failed attempts</p>
+<p><strong>Reset User Password:</strong>
+1. Access CU02 (Update User)
+2. Enter User ID
+3. Press PF5 (Reset Password)
+4. Enter new password
+5. Confirm and save</p>
+<p><strong>Unlock User Account:</strong>
+1. Access CU02 (Update User)
+2. Enter User ID
+3. Change Status to ACTIVE
+4. Save changes</p>
+<h3 id="access-control">Access Control</h3>
+<p><strong>User Type Permissions:</strong></p>
+<p><strong>Regular Users:</strong>
+- View own accounts and cards
+- View own transactions
+- Make payments
+- Generate reports for own accounts</p>
+<p><strong>Admin Users:</strong>
+- All regular user permissions
+- Create/update/delete users
+- View all accounts and transactions
+- Manage transaction types
+- System configuration</p>
+<h3 id="audit-trail">Audit Trail</h3>
+<p>Transaction history provides audit trail:
+- All transactions are logged
+- User ID captured for each transaction
+- Timestamps recorded
+- Changes to user accounts logged</p>
+<p><strong>View Audit Information:</strong>
+1. Access transaction history (CT00)
+2. Filter by user or date range
+3. Review transaction details</p>
+<h2 id="monitoring-and-troubleshooting">Monitoring and Troubleshooting</h2>
+<h3 id="system-health-checks">System Health Checks</h3>
+<p><strong>Daily Checks:</strong>
+- Verify all CICS files are open
+- Check batch job completion
+- Review error logs
+- Monitor user activity</p>
+<p><strong>Weekly Checks:</strong>
+- Review VSAM file space utilization
+- Check for locked user accounts
+- Review transaction volumes
+- Verify backup completion</p>
+<p><strong>Monthly Checks:</strong>
+- Review user access rights
+- Audit admin activities
+- Check for inactive users
+- Review system performance</p>
+<h3 id="common-issues">Common Issues</h3>
+<p><strong>Issue: Users Cannot Sign On</strong>
+- Check USRSEC file is open
+- Verify CICS region is active
+- Check user account status
+- Verify password is correct</p>
+<p><strong>Issue: Transaction Fails</strong>
+- Check VSAM file status
+- Verify file is not closed for batch
+- Check for file space issues
+- Review CICS logs for errors</p>
+<p><strong>Issue: Batch Job Fails</strong>
+- Verify files are closed (CLOSEFIL)
+- Check for file locks
+- Review JCL for errors
+- Check dataset availability</p>
+<p><strong>Issue: Performance Degradation</strong>
+- Check VSAM file fragmentation
+- Review CICS region storage
+- Monitor transaction volumes
+- Check for long-running transactions</p>
+<h3 id="error-log-review">Error Log Review</h3>
+<p><strong>CICS Error Logs:</strong></p>
+<pre><code>CEMT INQUIRE TASK
+CEMT INQUIRE TRANSACTION(CC00)
+</code></pre>
+<p><strong>Review CICS Messages:</strong>
+Check CICS message log for:
+- ABEND codes
+- File errors
+- Program errors
+- Security violations</p>
+<p><strong>JCL Job Output:</strong>
+Review SYSOUT for:
+- Return codes
+- Error messages
+- Warning messages
+- Completion statistics</p>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="user-management_1">User Management</h3>
+<ol>
+<li><strong>Use Strong Passwords</strong>: Enforce password complexity requirements</li>
+<li><strong>Limit Admin Access</strong>: Grant admin privileges only when necessary</li>
+<li><strong>Regular Audits</strong>: Review user accounts quarterly</li>
+<li><strong>Deactivate vs Delete</strong>: Deactivate users instead of deleting for audit trail</li>
+<li><strong>Document Changes</strong>: Maintain log of user account changes</li>
+</ol>
+<h3 id="system-maintenance_1">System Maintenance</h3>
+<ol>
+<li><strong>Regular Backups</strong>: Backup VSAM files daily</li>
+<li><strong>Batch Window</strong>: Schedule batch jobs during off-peak hours</li>
+<li><strong>File Management</strong>: Always close files before batch, reopen after</li>
+<li><strong>Monitor Space</strong>: Check VSAM file space utilization regularly</li>
+<li><strong>Test Changes</strong>: Test in development before production</li>
+</ol>
+<h3 id="security">Security</h3>
+<ol>
+<li><strong>Change Default Passwords</strong>: Immediately after installation</li>
+<li><strong>Limit Admin Users</strong>: Minimize number of admin accounts</li>
+<li><strong>Review Access</strong>: Audit user access regularly</li>
+<li><strong>Monitor Activity</strong>: Review transaction logs for suspicious activity</li>
+<li><strong>Secure Credentials</strong>: Store passwords securely</li>
+</ol>
+<h3 id="performance">Performance</h3>
+<ol>
+<li><strong>Reorganize Files</strong>: Reorganize VSAM files periodically</li>
+<li><strong>Monitor Transactions</strong>: Track transaction response times</li>
+<li><strong>Optimize Batch</strong>: Schedule batch jobs efficiently</li>
+<li><strong>Review Logs</strong>: Check for performance warnings</li>
+<li><strong>Capacity Planning</strong>: Monitor growth and plan for capacity</li>
+</ol>
+<h3 id="documentation">Documentation</h3>
+<ol>
+<li><strong>Maintain Runbooks</strong>: Document operational procedures</li>
+<li><strong>Record Changes</strong>: Log all configuration changes</li>
+<li><strong>Update Contacts</strong>: Keep emergency contact list current</li>
+<li><strong>Document Issues</strong>: Record problems and resolutions</li>
+<li><strong>Training</strong>: Ensure backup admins are trained</li>
+</ol>
+<hr />
+<p><strong>Navigation</strong>: <a href="../Home/">Home</a> | <a href="../User-Guide/">User Guide</a> | <a href="../CICS-Configuration/">CICS Configuration</a> | <a href="../Troubleshooting/">Troubleshooting</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

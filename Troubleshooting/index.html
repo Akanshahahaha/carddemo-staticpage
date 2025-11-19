@@ -1,0 +1,2764 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Optional-Module-VSAM-MQ/">
+      
+      
+        <link rel="next" href="../FAQ/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Troubleshooting - AWS Mainframe Modernization Card Demo - Deep Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#troubleshooting-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-header__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AWS Mainframe Modernization Card Demo - Deep Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Troubleshooting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-nav__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AWS Mainframe Modernization Card Demo - Deep Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quick-Start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Admin-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Batch-Processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technical-Components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CICS-Configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CICS Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optional Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Optional Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Transaction-Type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transaction Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-VSAM-MQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VSAM-MQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-troubleshooting-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Troubleshooting Approach
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Troubleshooting Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#systematic-debugging-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systematic Debugging Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-log-locations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Log Locations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-dataset-creation-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Dataset Creation Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-file-transfer-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: File Transfer Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-jcl-job-fails-during-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: JCL Job Fails During Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-program-compilation-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Program Compilation Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cics-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CICS Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CICS Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-transaction-abend-afcf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Transaction ABEND AFCF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-transaction-abend-asra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Transaction ABEND ASRA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-transaction-abend-aeiv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Transaction ABEND AEIV
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-cannot-access-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Cannot Access Transaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-program-not-found-pgmiderr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Program Not Found (PGMIDERR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vsam-file-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM File Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VSAM File Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-file-not-found-s013" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: File Not Found (S013)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-file-in-use-s213" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: File In Use (S213)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-out-of-space-sb37-sd37-se37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Out of Space (SB37, SD37, SE37)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-vsam-logic-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: VSAM Logic Error
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-job-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Job Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Batch Job Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-job-fails-with-s806" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Job Fails with S806
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-job-fails-with-s0c7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Job Fails with S0C7
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-job-runs-too-long" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Job Runs Too Long
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-sort-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Sort Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-access-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Access Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Access Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-cannot-sign-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Cannot Sign On
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-access-denied-to-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Access Denied to Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transaction-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transaction Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-transaction-not-posting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Transaction Not Posting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-duplicate-transaction-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Duplicate Transaction ID
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-module-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Module Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Module Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ims-db2-mq-authorization-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMS-DB2-MQ Authorization Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db2-transaction-type-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB2 Transaction Type Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vsam-mq-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM-MQ Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-slow-response-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Slow Response Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-high-cpu-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: High CPU Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-code-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Code Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Code Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cics-abend-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CICS ABEND Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jcl-return-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JCL Return Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vsam-return-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM Return Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db2-sql-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB2 SQL Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-troubleshooting-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Troubleshooting Approach
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Troubleshooting Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#systematic-debugging-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systematic Debugging Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-log-locations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Log Locations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-dataset-creation-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Dataset Creation Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-file-transfer-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: File Transfer Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-jcl-job-fails-during-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: JCL Job Fails During Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-program-compilation-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Program Compilation Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cics-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CICS Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CICS Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-transaction-abend-afcf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Transaction ABEND AFCF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-transaction-abend-asra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Transaction ABEND ASRA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-transaction-abend-aeiv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Transaction ABEND AEIV
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-cannot-access-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Cannot Access Transaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-program-not-found-pgmiderr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Program Not Found (PGMIDERR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vsam-file-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM File Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VSAM File Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-file-not-found-s013" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: File Not Found (S013)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-file-in-use-s213" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: File In Use (S213)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-out-of-space-sb37-sd37-se37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Out of Space (SB37, SD37, SE37)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-vsam-logic-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: VSAM Logic Error
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-job-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Job Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Batch Job Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-job-fails-with-s806" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Job Fails with S806
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-job-fails-with-s0c7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Job Fails with S0C7
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-job-runs-too-long" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Job Runs Too Long
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-sort-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Sort Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-access-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Access Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Access Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-cannot-sign-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Cannot Sign On
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-access-denied-to-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Access Denied to Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transaction-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transaction Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-transaction-not-posting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Transaction Not Posting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-duplicate-transaction-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Duplicate Transaction ID
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-module-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Module Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Module Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ims-db2-mq-authorization-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMS-DB2-MQ Authorization Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db2-transaction-type-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB2 Transaction Type Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vsam-mq-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM-MQ Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-slow-response-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Slow Response Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-high-cpu-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: High CPU Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-code-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Code Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Code Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cics-abend-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CICS ABEND Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jcl-return-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JCL Return Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vsam-return-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM Return Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db2-sql-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DB2 SQL Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="troubleshooting-guide">Troubleshooting Guide</h1>
+<p>Comprehensive troubleshooting guide for CardDemo issues, errors, and common problems.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#general-troubleshooting-approach">General Troubleshooting Approach</a></li>
+<li><a href="#installation-issues">Installation Issues</a></li>
+<li><a href="#cics-issues">CICS Issues</a></li>
+<li><a href="#vsam-file-issues">VSAM File Issues</a></li>
+<li><a href="#batch-job-issues">Batch Job Issues</a></li>
+<li><a href="#user-access-issues">User Access Issues</a></li>
+<li><a href="#transaction-issues">Transaction Issues</a></li>
+<li><a href="#optional-module-issues">Optional Module Issues</a></li>
+<li><a href="#performance-issues">Performance Issues</a></li>
+<li><a href="#error-code-reference">Error Code Reference</a></li>
+</ul>
+<h2 id="general-troubleshooting-approach">General Troubleshooting Approach</h2>
+<h3 id="systematic-debugging-process">Systematic Debugging Process</h3>
+<ol>
+<li><strong>Identify the Problem</strong></li>
+<li>What is the error message?</li>
+<li>When does it occur?</li>
+<li>Can you reproduce it?</li>
+<li>
+<p>What changed recently?</p>
+</li>
+<li>
+<p><strong>Gather Information</strong></p>
+</li>
+<li>Check CICS logs</li>
+<li>Review job output</li>
+<li>Check file status</li>
+<li>
+<p>Review system messages</p>
+</li>
+<li>
+<p><strong>Analyze the Data</strong></p>
+</li>
+<li>Look for patterns</li>
+<li>Check timestamps</li>
+<li>Review related components</li>
+<li>
+<p>Verify configurations</p>
+</li>
+<li>
+<p><strong>Implement Solution</strong></p>
+</li>
+<li>Test in development first</li>
+<li>Document the fix</li>
+<li>Verify resolution</li>
+<li>
+<p>Monitor for recurrence</p>
+</li>
+<li>
+<p><strong>Prevent Recurrence</strong></p>
+</li>
+<li>Update documentation</li>
+<li>Implement monitoring</li>
+<li>Train team members</li>
+<li>Review procedures</li>
+</ol>
+<h3 id="key-log-locations">Key Log Locations</h3>
+<p><strong>CICS Logs:</strong>
+- CICS message log (MSGUSR)
+- CICS transaction dump
+- CICS trace</p>
+<p><strong>Batch Logs:</strong>
+- JES job output (SDSF)
+- SYSOUT datasets
+- Job return codes</p>
+<p><strong>System Logs:</strong>
+- z/OS system log
+- VSAM error messages
+- DB2 logs (if applicable)
+- IMS logs (if applicable)</p>
+<h2 id="installation-issues">Installation Issues</h2>
+<h3 id="issue-dataset-creation-fails">Issue: Dataset Creation Fails</h3>
+<p><strong>Symptoms:</strong>
+- Cannot allocate dataset
+- Space allocation error
+- Catalog error</p>
+<p><strong>Possible Causes:</strong>
+- Insufficient DASD space
+- Invalid dataset name
+- Catalog full
+- Duplicate dataset name</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Check available space:
+   LISTCAT SPACE
+
+2. Verify dataset name format:
+   - Must follow naming conventions
+   - Check HLQ permissions
+
+3. Delete existing dataset if duplicate:
+   DELETE 'AWS.M2.CARDDEMO.JCL'
+
+4. Increase space allocation:
+   SPACE=(CYL,(20,10)) instead of (10,5)
+</code></pre>
+<h3 id="issue-file-transfer-fails">Issue: File Transfer Fails</h3>
+<p><strong>Symptoms:</strong>
+- Files not uploaded
+- Incorrect record format
+- Data corruption</p>
+<p><strong>Possible Causes:</strong>
+- Wrong transfer mode (binary vs text)
+- Incorrect LRECL
+- EBCDIC conversion issues
+- Network problems</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Use correct transfer mode:
+   - Text mode for source code
+   - Binary mode for data files
+
+2. Verify LRECL matches:
+   quote site recfm=fb lrecl=80
+
+3. Check file contents after transfer:
+   Browse dataset in ISPF
+
+4. Retry transfer if network issue
+</code></pre>
+<h3 id="issue-jcl-job-fails-during-initialization">Issue: JCL Job Fails During Initialization</h3>
+<p><strong>Symptoms:</strong>
+- DUSRSECJ fails
+- ACCTFILE fails
+- VSAM file not created</p>
+<p><strong>Possible Causes:</strong>
+- Incorrect dataset names in JCL
+- VSAM catalog issues
+- Insufficient permissions
+- Missing input data</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Update HLQ in JCL:
+   Edit all occurrences of AWS.M2 to your HLQ
+
+2. Check VSAM catalog:
+   LISTCAT ENTRIES('AWS.M2.CARDDEMO.*')
+
+3. Verify input data exists:
+   Check AWS.M2.CARDDEMO.USRSEC.PS
+
+4. Review job output for specific error
+</code></pre>
+<h3 id="issue-program-compilation-fails">Issue: Program Compilation Fails</h3>
+<p><strong>Symptoms:</strong>
+- Compilation errors
+- Missing copybooks
+- Link edit fails</p>
+<p><strong>Possible Causes:</strong>
+- Copybook not found
+- Syntax errors in source
+- Missing libraries
+- Incorrect compiler options</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Verify SYSLIB includes copybook library:
+   //SYSLIB DD DSN=AWS.M2.CARDDEMO.CPY,DISP=SHR
+
+2. Check for syntax errors:
+   Review compiler output
+
+3. Verify all copybooks exist:
+   Check CPY dataset
+
+4. Check compiler options:
+   PARM='LIB,OBJECT,MAP'
+</code></pre>
+<h2 id="cics-issues">CICS Issues</h2>
+<h3 id="issue-transaction-abend-afcf">Issue: Transaction ABEND AFCF</h3>
+<p><strong>Symptoms:</strong>
+- Transaction fails with AFCF
+- File not found error</p>
+<p><strong>Possible Causes:</strong>
+- File not defined in CICS
+- File not open
+- Incorrect file name
+- File not cataloged</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Check file definition:
+   CEMT INQUIRE FILE(ACCTDAT)
+
+2. Open file if closed:
+   CEMT SET FILE(ACCTDAT) OPEN
+
+3. Verify file name in program matches CICS definition
+
+4. Check VSAM file is cataloged:
+   LISTCAT ENT('AWS.M2.CARDDEMO.ACCTDAT.VSAM.KSDS')
+</code></pre>
+<h3 id="issue-transaction-abend-asra">Issue: Transaction ABEND ASRA</h3>
+<p><strong>Symptoms:</strong>
+- Program check
+- Data exception
+- Protection exception</p>
+<p><strong>Possible Causes:</strong>
+- Invalid data in field
+- Array bounds exceeded
+- Null pointer reference
+- Division by zero</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Review transaction dump:
+   CEMT INQUIRE TASK
+   Look for PSW and registers
+
+2. Check data values:
+   Review COMMAREA contents
+
+3. Verify array subscripts:
+   Check OCCURS DEPENDING ON
+
+4. Add data validation:
+   IF field IS NUMERIC
+</code></pre>
+<h3 id="issue-transaction-abend-aeiv">Issue: Transaction ABEND AEIV</h3>
+<p><strong>Symptoms:</strong>
+- Invalid request
+- CICS command error</p>
+<p><strong>Possible Causes:</strong>
+- Invalid CICS command
+- Wrong command syntax
+- Resource not available
+- Invalid parameter</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Review CICS command:
+   Check EXEC CICS syntax
+
+2. Verify resource exists:
+   CEMT INQ FILE/PROG/TRAN
+
+3. Check RESP code:
+   Add RESP(WS-RESP) to command
+
+4. Review CICS manual for correct syntax
+</code></pre>
+<h3 id="issue-cannot-access-transaction">Issue: Cannot Access Transaction</h3>
+<p><strong>Symptoms:</strong>
+- Transaction not found
+- TRANSIDERR</p>
+<p><strong>Possible Causes:</strong>
+- Transaction not defined
+- Transaction not installed
+- Transaction disabled
+- Security restriction</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Check transaction definition:
+   CEMT INQUIRE TRANSACTION(CC00)
+
+2. Install transaction if not installed:
+   CEDA INSTALL TRANSACTION(CC00) GROUP(CARDDEMO)
+
+3. Enable transaction if disabled:
+   CEMT SET TRANSACTION(CC00) ENABLED
+
+4. Check RACF permissions
+</code></pre>
+<h3 id="issue-program-not-found-pgmiderr">Issue: Program Not Found (PGMIDERR)</h3>
+<p><strong>Symptoms:</strong>
+- Program not found error
+- ABEND APCT</p>
+<p><strong>Possible Causes:</strong>
+- Program not defined
+- Program not in load library
+- NEWCOPY needed
+- Wrong program name</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Check program definition:
+   CEMT INQUIRE PROGRAM(COSGN00C)
+
+2. Verify program in load library:
+   Check DFHRPL concatenation
+
+3. Execute NEWCOPY:
+   CEMT SET PROGRAM(COSGN00C) NEWCOPY
+
+4. Verify program name spelling
+</code></pre>
+<h2 id="vsam-file-issues">VSAM File Issues</h2>
+<h3 id="issue-file-not-found-s013">Issue: File Not Found (S013)</h3>
+<p><strong>Symptoms:</strong>
+- JCL fails with S013
+- File not cataloged</p>
+<p><strong>Possible Causes:</strong>
+- File not created
+- File deleted
+- Wrong dataset name
+- Catalog issue</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Check if file exists:
+   LISTCAT ENT('AWS.M2.CARDDEMO.ACCTDAT.VSAM.KSDS')
+
+2. Create file if missing:
+   Submit ACCTFILE job
+
+3. Verify dataset name in JCL
+
+4. Recatalog if needed:
+   DEFINE NONVSAM (...)
+</code></pre>
+<h3 id="issue-file-in-use-s213">Issue: File In Use (S213)</h3>
+<p><strong>Symptoms:</strong>
+- Cannot open file
+- File already open
+- Enqueue failure</p>
+<p><strong>Possible Causes:</strong>
+- File open in CICS
+- Batch job has file open
+- Previous job didn't close file
+- VSAM lock</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Check CICS file status:
+   CEMT INQUIRE FILE(ACCTDAT)
+
+2. Close file in CICS:
+   CEMT SET FILE(ACCTDAT) CLOSED
+
+3. Check for batch jobs:
+   Display active jobs in SDSF
+
+4. Force close if necessary:
+   IDCAMS VERIFY
+</code></pre>
+<h3 id="issue-out-of-space-sb37-sd37-se37">Issue: Out of Space (SB37, SD37, SE37)</h3>
+<p><strong>Symptoms:</strong>
+- File full
+- Cannot extend
+- Space allocation error</p>
+<p><strong>Possible Causes:</strong>
+- Primary space exhausted
+- Secondary extents exhausted
+- Volume full
+- No space on volume</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Check space usage:
+   LISTCAT ENT('file.name') ALL
+
+2. Delete and redefine with more space:
+   DELETE file.name
+   DEFINE CLUSTER (... CYL(50,10))
+
+3. Move to larger volume
+
+4. Compress file if KSDS:
+   REPRO INFILE(...) OUTFILE(...)
+</code></pre>
+<h3 id="issue-vsam-logic-error">Issue: VSAM Logic Error</h3>
+<p><strong>Symptoms:</strong>
+- Invalid request
+- Sequence error
+- Duplicate key</p>
+<p><strong>Possible Causes:</strong>
+- Writing out of sequence
+- Duplicate key insert
+- Invalid key
+- File not properly opened</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Check key sequence:
+   Verify records are in order
+
+2. Check for duplicate keys:
+   Verify key uniqueness
+
+3. Verify file opened correctly:
+   Check OPEN mode (INPUT/OUTPUT/I-O)
+
+4. Review program logic
+</code></pre>
+<h2 id="batch-job-issues">Batch Job Issues</h2>
+<h3 id="issue-job-fails-with-s806">Issue: Job Fails with S806</h3>
+<p><strong>Symptoms:</strong>
+- Program not found
+- Load module missing</p>
+<p><strong>Possible Causes:</strong>
+- Program not compiled
+- Wrong load library
+- Program name misspelled
+- STEPLIB missing</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Verify program exists:
+   Check load library for member
+
+2. Add STEPLIB if missing:
+   //STEPLIB DD DSN=AWS.M2.CARDDEMO.LOADLIB,DISP=SHR
+
+3. Recompile program if missing
+
+4. Check program name spelling in JCL
+</code></pre>
+<h3 id="issue-job-fails-with-s0c7">Issue: Job Fails with S0C7</h3>
+<p><strong>Symptoms:</strong>
+- Data exception
+- Invalid numeric data</p>
+<p><strong>Possible Causes:</strong>
+- Non-numeric data in numeric field
+- Uninitialized field
+- Data corruption
+- Wrong data format</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Check input data:
+   Browse input file for invalid data
+
+2. Initialize fields:
+   INITIALIZE WS-NUMERIC-FIELD
+
+3. Validate data before use:
+   IF field IS NUMERIC
+
+4. Check data conversion:
+   Verify COMP-3 fields
+</code></pre>
+<h3 id="issue-job-runs-too-long">Issue: Job Runs Too Long</h3>
+<p><strong>Symptoms:</strong>
+- Job exceeds time limit
+- S322 abend
+- Performance degradation</p>
+<p><strong>Possible Causes:</strong>
+- Inefficient program logic
+- Large data volume
+- VSAM file fragmentation
+- Insufficient buffers</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Increase TIME parameter:
+   //JOBNAME JOB ...,TIME=30
+
+2. Optimize program:
+   Review logic for inefficiencies
+
+3. Reorganize VSAM files:
+   REPRO to defragment
+
+4. Increase buffer allocation:
+   AMP=('BUFNI=20,BUFND=40')
+</code></pre>
+<h3 id="issue-sort-fails">Issue: Sort Fails</h3>
+<p><strong>Symptoms:</strong>
+- Sort step fails
+- Insufficient sort work space</p>
+<p><strong>Possible Causes:</strong>
+- Not enough SORTWK files
+- SORTWK space too small
+- Invalid sort keys
+- Memory issues</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Add more SORTWK files:
+   //SORTWK01-04 DD ...
+
+2. Increase SORTWK space:
+   SPACE=(CYL,(100,20))
+
+3. Verify sort keys:
+   Check SORT FIELDS parameter
+
+4. Increase region size:
+   REGION=64M
+</code></pre>
+<h2 id="user-access-issues">User Access Issues</h2>
+<h3 id="issue-cannot-sign-on">Issue: Cannot Sign On</h3>
+<p><strong>Symptoms:</strong>
+- Invalid user ID or password
+- Sign-on rejected</p>
+<p><strong>Possible Causes:</strong>
+- Wrong credentials
+- Account locked
+- Account inactive
+- USRSEC file issue</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Verify credentials:
+   Check user ID and password
+
+2. Check account status:
+   Browse USRSEC file
+
+3. Unlock account:
+   Use CU02 to update status
+
+4. Verify USRSEC file is open:
+   CEMT INQ FILE(USRSEC)
+</code></pre>
+<h3 id="issue-access-denied-to-function">Issue: Access Denied to Function</h3>
+<p><strong>Symptoms:</strong>
+- Cannot access admin functions
+- Transaction not authorized</p>
+<p><strong>Possible Causes:</strong>
+- User not admin
+- Wrong user type
+- Security restriction
+- Transaction disabled</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Check user type:
+   Browse USRSEC record
+
+2. Update user type if needed:
+   Use CU02 to change to ADMIN
+
+3. Check transaction security:
+   CEMT INQ TRAN(CA00)
+
+4. Verify RACF permissions
+</code></pre>
+<h2 id="transaction-issues">Transaction Issues</h2>
+<h3 id="issue-transaction-not-posting">Issue: Transaction Not Posting</h3>
+<p><strong>Symptoms:</strong>
+- Transaction entered but not saved
+- Balance not updated</p>
+<p><strong>Possible Causes:</strong>
+- Validation error
+- File update failed
+- Insufficient credit
+- Program logic error</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Check validation messages:
+   Review screen for errors
+
+2. Verify credit limit:
+   Check available credit
+
+3. Check file status:
+   CEMT INQ FILE(TRANSACT)
+
+4. Review program logic:
+   Check COTRN02C program
+</code></pre>
+<h3 id="issue-duplicate-transaction-id">Issue: Duplicate Transaction ID</h3>
+<p><strong>Symptoms:</strong>
+- Transaction ID already exists
+- Duplicate key error</p>
+<p><strong>Possible Causes:</strong>
+- ID generation logic error
+- Concurrent transactions
+- System clock issue</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Review ID generation:
+   Check transaction ID logic
+
+2. Add timestamp to ID:
+   Include microseconds
+
+3. Implement locking:
+   Use ENQ/DEQ
+
+4. Retry with new ID
+</code></pre>
+<h2 id="optional-module-issues">Optional Module Issues</h2>
+<h3 id="ims-db2-mq-authorization-module">IMS-DB2-MQ Authorization Module</h3>
+<p><strong>Issue: Authorization not processing</strong></p>
+<pre><code>1. Check MQ queues:
+   DISPLAY QUEUE(AWS.M2.CARDDEMO.PAUTH.REQUEST)
+
+2. Verify IMS DB is available:
+   /DIS DB DBPAUTP0
+
+3. Check DB2 connection:
+   CEMT INQ DB2CONN
+
+4. Review CP00 transaction status:
+   CEMT INQ TRAN(CP00)
+</code></pre>
+<h3 id="db2-transaction-type-module">DB2 Transaction Type Module</h3>
+<p><strong>Issue: Cannot access transaction types</strong></p>
+<pre><code>1. Check DB2 connection:
+   CEMT INQ DB2CONN
+
+2. Verify DB2 plan bound:
+   DISPLAY PLAN(CARDDEMO)
+
+3. Check table exists:
+   SELECT * FROM CARDDEMO.TRANSACTION_TYPE
+
+4. Verify DB2ENTRY defined:
+   CEMT INQ DB2ENTRY(CARDDEMO)
+</code></pre>
+<h3 id="vsam-mq-module">VSAM-MQ Module</h3>
+<p><strong>Issue: MQ messages not processing</strong></p>
+<pre><code>1. Check MQ connection:
+   CEMT INQ MQCONN
+
+2. Verify queues exist:
+   DISPLAY QUEUE(CARDDEMO.REQUEST.QUEUE)
+
+3. Check queue depth:
+   DISPLAY QUEUE(...) CURDEPTH
+
+4. Verify CICS-MQ bridge:
+   Check MQCONN resource
+</code></pre>
+<h2 id="performance-issues">Performance Issues</h2>
+<h3 id="issue-slow-response-time">Issue: Slow Response Time</h3>
+<p><strong>Symptoms:</strong>
+- Transactions take too long
+- Screen updates slow
+- Timeouts occurring</p>
+<p><strong>Possible Causes:</strong>
+- VSAM file fragmentation
+- Insufficient CICS resources
+- Network latency
+- High system load</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Reorganize VSAM files:
+   Submit reorganization jobs
+
+2. Increase CICS resources:
+   Adjust MXT, MAXTASK
+
+3. Check system load:
+   Review RMF reports
+
+4. Optimize programs:
+   Review program efficiency
+</code></pre>
+<h3 id="issue-high-cpu-usage">Issue: High CPU Usage</h3>
+<p><strong>Symptoms:</strong>
+- CPU utilization high
+- System slow
+- Batch jobs delayed</p>
+<p><strong>Possible Causes:</strong>
+- Inefficient programs
+- Looping code
+- Large data volumes
+- Insufficient tuning</p>
+<p><strong>Solutions:</strong></p>
+<pre><code>1. Identify CPU-intensive programs:
+   Review SMF records
+
+2. Optimize program logic:
+   Eliminate unnecessary loops
+
+3. Tune VSAM buffers:
+   Adjust BUFNI/BUFND
+
+4. Schedule batch appropriately:
+   Avoid peak hours
+</code></pre>
+<h2 id="error-code-reference">Error Code Reference</h2>
+<h3 id="cics-abend-codes">CICS ABEND Codes</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Code</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Common Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">AFCF</td>
+<td style="text-align: left;">File control error</td>
+<td style="text-align: left;">File not open or not found</td>
+</tr>
+<tr>
+<td style="text-align: left;">ASRA</td>
+<td style="text-align: left;">Program check</td>
+<td style="text-align: left;">Data exception, protection exception</td>
+</tr>
+<tr>
+<td style="text-align: left;">AEIV</td>
+<td style="text-align: left;">Invalid request</td>
+<td style="text-align: left;">Wrong CICS command syntax</td>
+</tr>
+<tr>
+<td style="text-align: left;">APCT</td>
+<td style="text-align: left;">Program control error</td>
+<td style="text-align: left;">Program not found</td>
+</tr>
+<tr>
+<td style="text-align: left;">AKCP</td>
+<td style="text-align: left;">Task control error</td>
+<td style="text-align: left;">Invalid task operation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="jcl-return-codes">JCL Return Codes</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Code</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">0000</td>
+<td style="text-align: left;">Successful</td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr>
+<td style="text-align: left;">0004</td>
+<td style="text-align: left;">Warning</td>
+<td style="text-align: left;">Review output</td>
+</tr>
+<tr>
+<td style="text-align: left;">0008</td>
+<td style="text-align: left;">Error</td>
+<td style="text-align: left;">Fix and rerun</td>
+</tr>
+<tr>
+<td style="text-align: left;">0012</td>
+<td style="text-align: left;">Severe error</td>
+<td style="text-align: left;">Investigate cause</td>
+</tr>
+<tr>
+<td style="text-align: left;">S806</td>
+<td style="text-align: left;">Program not found</td>
+<td style="text-align: left;">Check STEPLIB</td>
+</tr>
+<tr>
+<td style="text-align: left;">S013</td>
+<td style="text-align: left;">File not found</td>
+<td style="text-align: left;">Check dataset name</td>
+</tr>
+<tr>
+<td style="text-align: left;">S213</td>
+<td style="text-align: left;">File in use</td>
+<td style="text-align: left;">Close file</td>
+</tr>
+<tr>
+<td style="text-align: left;">S222</td>
+<td style="text-align: left;">Operator cancel</td>
+<td style="text-align: left;">Check with operations</td>
+</tr>
+<tr>
+<td style="text-align: left;">S322</td>
+<td style="text-align: left;">Time limit exceeded</td>
+<td style="text-align: left;">Increase TIME</td>
+</tr>
+<tr>
+<td style="text-align: left;">SB37</td>
+<td style="text-align: left;">Out of space</td>
+<td style="text-align: left;">Increase allocation</td>
+</tr>
+<tr>
+<td style="text-align: left;">S0C7</td>
+<td style="text-align: left;">Data exception</td>
+<td style="text-align: left;">Check numeric data</td>
+</tr>
+</tbody>
+</table>
+<h3 id="vsam-return-codes">VSAM Return Codes</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Code</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">Successful</td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">Duplicate key</td>
+<td style="text-align: left;">Check for duplicates</td>
+</tr>
+<tr>
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">Record not found</td>
+<td style="text-align: left;">Verify key</td>
+</tr>
+<tr>
+<td style="text-align: left;">24</td>
+<td style="text-align: left;">Out of space</td>
+<td style="text-align: left;">Increase space</td>
+</tr>
+<tr>
+<td style="text-align: left;">28</td>
+<td style="text-align: left;">File not open</td>
+<td style="text-align: left;">Open file</td>
+</tr>
+<tr>
+<td style="text-align: left;">92</td>
+<td style="text-align: left;">Logic error</td>
+<td style="text-align: left;">Check program logic</td>
+</tr>
+</tbody>
+</table>
+<h3 id="db2-sql-codes">DB2 SQL Codes</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Code</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">Successful</td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">No data found</td>
+<td style="text-align: left;">Check query</td>
+</tr>
+<tr>
+<td style="text-align: left;">-803</td>
+<td style="text-align: left;">Duplicate key</td>
+<td style="text-align: left;">Check uniqueness</td>
+</tr>
+<tr>
+<td style="text-align: left;">-911</td>
+<td style="text-align: left;">Deadlock</td>
+<td style="text-align: left;">Retry transaction</td>
+</tr>
+<tr>
+<td style="text-align: left;">-913</td>
+<td style="text-align: left;">Resource unavailable</td>
+<td style="text-align: left;">Wait and retry</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Navigation</strong>: <a href="../Home/">Home</a> | <a href="../Installation-Guide/">Installation Guide</a> | <a href="../FAQ/">FAQ</a> | <a href="../Technical-Components/">Technical Components</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

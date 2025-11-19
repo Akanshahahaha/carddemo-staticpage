@@ -1,0 +1,2216 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Glossary/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Contributing - AWS Mainframe Modernization Card Demo - Deep Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#contributing-to-carddemo" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-header__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AWS Mainframe Modernization Card Demo - Deep Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Contributing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-nav__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AWS Mainframe Modernization Card Demo - Deep Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quick-Start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Admin-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Batch-Processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technical-Components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CICS-Configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CICS Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optional Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Optional Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Transaction-Type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transaction Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-VSAM-MQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VSAM-MQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-of-conduct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code of Conduct
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code of Conduct">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#our-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Our Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-contribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Contribute
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Contribute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-of-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types of Contributions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Development Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#development-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coding-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coding Standards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coding Standards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cobol-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jcl-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JCL Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bms-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BMS Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Guidelines
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Guidelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regression-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regression Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submitting-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submitting Changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Submitting Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pull-request-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull Request Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commit-message-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commit Message Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-naming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch Naming
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wiki-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wiki Updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Comments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readme-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        README Updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Community
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Community">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Help
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reporting-bugs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reporting Bugs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature Requests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recognition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recognition
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-of-conduct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code of Conduct
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code of Conduct">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#our-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Our Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-contribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Contribute
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Contribute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-of-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types of Contributions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Development Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#development-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coding-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coding Standards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coding Standards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cobol-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBOL Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jcl-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JCL Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bms-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BMS Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Guidelines
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Guidelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regression-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regression Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submitting-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submitting Changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Submitting Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pull-request-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull Request Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commit-message-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commit Message Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-naming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch Naming
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wiki-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wiki Updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Comments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readme-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        README Updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Community
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Community">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Help
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reporting-bugs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reporting Bugs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature Requests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recognition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recognition
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="contributing-to-carddemo">Contributing to CardDemo</h1>
+<p>Thank you for your interest in contributing to CardDemo! This guide will help you get started with contributing to the project.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#code-of-conduct">Code of Conduct</a></li>
+<li><a href="#how-to-contribute">How to Contribute</a></li>
+<li><a href="#development-setup">Development Setup</a></li>
+<li><a href="#coding-standards">Coding Standards</a></li>
+<li><a href="#testing-guidelines">Testing Guidelines</a></li>
+<li><a href="#submitting-changes">Submitting Changes</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#community">Community</a></li>
+</ul>
+<h2 id="code-of-conduct">Code of Conduct</h2>
+<p>By participating in this project, you agree to maintain a respectful and inclusive environment for all contributors.</p>
+<h3 id="our-standards">Our Standards</h3>
+<ul>
+<li>Be respectful and inclusive</li>
+<li>Welcome newcomers and help them learn</li>
+<li>Focus on constructive feedback</li>
+<li>Respect differing viewpoints and experiences</li>
+<li>Accept responsibility and apologize for mistakes</li>
+</ul>
+<h2 id="how-to-contribute">How to Contribute</h2>
+<h3 id="types-of-contributions">Types of Contributions</h3>
+<p><strong>Code Contributions:</strong>
+- Bug fixes
+- New features
+- Performance improvements
+- Code refactoring</p>
+<p><strong>Documentation:</strong>
+- Wiki improvements
+- Code comments
+- README updates
+- Tutorial creation</p>
+<p><strong>Testing:</strong>
+- Test case creation
+- Bug reporting
+- Test automation</p>
+<p><strong>Community:</strong>
+- Answering questions
+- Reviewing pull requests
+- Sharing use cases</p>
+<h3 id="getting-started">Getting Started</h3>
+<ol>
+<li>
+<p><strong>Fork the Repository</strong>
+   <code>bash
+   # Fork on GitHub, then clone your fork
+   git clone https://github.com/YOUR-USERNAME/aws-mainframe-modernization-carddemo.git
+   cd aws-mainframe-modernization-carddemo</code></p>
+</li>
+<li>
+<p><strong>Create a Branch</strong>
+   <code>bash
+   git checkout -b feature/your-feature-name
+   # or
+   git checkout -b fix/your-bug-fix</code></p>
+</li>
+<li>
+<p><strong>Make Your Changes</strong></p>
+</li>
+<li>Follow coding standards</li>
+<li>Add tests if applicable</li>
+<li>
+<p>Update documentation</p>
+</li>
+<li>
+<p><strong>Test Your Changes</strong></p>
+</li>
+<li>Compile all programs</li>
+<li>Run existing tests</li>
+<li>
+<p>Test manually in CICS</p>
+</li>
+<li>
+<p><strong>Commit Your Changes</strong>
+   <code>bash
+   git add .
+   git commit -m "Description of your changes"</code></p>
+</li>
+<li>
+<p><strong>Push to Your Fork</strong>
+   <code>bash
+   git push origin feature/your-feature-name</code></p>
+</li>
+<li>
+<p><strong>Create Pull Request</strong></p>
+</li>
+<li>Go to the original repository</li>
+<li>Click "New Pull Request"</li>
+<li>Select your branch</li>
+<li>Fill in the PR template</li>
+</ol>
+<h2 id="development-setup">Development Setup</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Access to z/OS mainframe environment</li>
+<li>CICS Transaction Server</li>
+<li>COBOL compiler</li>
+<li>TSO/ISPF access</li>
+<li>Git client</li>
+</ul>
+<h3 id="local-development">Local Development</h3>
+<ol>
+<li>
+<p><strong>Clone Repository</strong>
+   <code>bash
+   git clone https://github.com/aws-samples/aws-mainframe-modernization-carddemo.git</code></p>
+</li>
+<li>
+<p><strong>Review Structure</strong>
+   <code>app/
+   ├── cbl/          - COBOL programs
+   ├── cpy/          - Copybooks
+   ├── bms/          - BMS maps
+   ├── jcl/          - JCL jobs
+   ├── asm/          - Assembler programs
+   └── data/         - Sample data</code></p>
+</li>
+<li>
+<p><strong>Set Up Environment</strong></p>
+</li>
+<li>Create datasets with your HLQ</li>
+<li>Upload source code</li>
+<li>Compile programs</li>
+<li>Define CICS resources</li>
+</ol>
+<h3 id="development-workflow">Development Workflow</h3>
+<ol>
+<li><strong>Make Changes Locally</strong></li>
+<li>Edit files in your local repository</li>
+<li>
+<p>Test syntax if possible</p>
+</li>
+<li>
+<p><strong>Upload to Mainframe</strong></p>
+</li>
+<li>Transfer files to mainframe datasets</li>
+<li>Use text mode for source code</li>
+<li>
+<p>Use binary mode for data</p>
+</li>
+<li>
+<p><strong>Compile and Test</strong></p>
+</li>
+<li>Compile modified programs</li>
+<li>Test in CICS</li>
+<li>
+<p>Run batch jobs if applicable</p>
+</li>
+<li>
+<p><strong>Iterate</strong></p>
+</li>
+<li>Fix issues</li>
+<li>Recompile</li>
+<li>Retest</li>
+</ol>
+<h2 id="coding-standards">Coding Standards</h2>
+<h3 id="cobol-standards">COBOL Standards</h3>
+<p><strong>Program Structure:</strong></p>
+<pre><code class="language-cobol">IDENTIFICATION DIVISION.
+PROGRAM-ID. PROGRAMNAME.
+AUTHOR. YOUR-NAME.
+DATE-WRITTEN. YYYY-MM-DD.
+
+ENVIRONMENT DIVISION.
+
+DATA DIVISION.
+WORKING-STORAGE SECTION.
+LINKAGE SECTION.
+
+PROCEDURE DIVISION.
+    PERFORM MAIN-PROCESS
+    GOBACK.
+
+MAIN-PROCESS.
+    [Main logic here]
+    .
+</code></pre>
+<p><strong>Naming Conventions:</strong>
+- Programs: CO prefix for online, CB for batch
+- Paragraphs: Descriptive names with hyphens
+- Variables: WS- prefix for working storage
+- Constants: Use 88-level conditions</p>
+<p><strong>Code Style:</strong>
+- Indent 4 spaces per level
+- Use structured programming (no GO TO except GOBACK)
+- One statement per line
+- Meaningful variable names
+- Comments for complex logic</p>
+<p><strong>Error Handling:</strong></p>
+<pre><code class="language-cobol">EXEC CICS READ
+    FILE('ACCTDAT')
+    INTO(ACCOUNT-RECORD)
+    RIDFLD(WS-ACCOUNT-ID)
+    RESP(WS-RESP)
+END-EXEC.
+
+EVALUATE WS-RESP
+    WHEN DFHRESP(NORMAL)
+        PERFORM PROCESS-ACCOUNT
+    WHEN DFHRESP(NOTFND)
+        PERFORM ACCOUNT-NOT-FOUND
+    WHEN OTHER
+        PERFORM HANDLE-ERROR
+END-EVALUATE.
+</code></pre>
+<h3 id="jcl-standards">JCL Standards</h3>
+<p><strong>Job Card:</strong></p>
+<pre><code class="language-jcl">//JOBNAME  JOB (ACCT),'DESCRIPTION',
+//         CLASS=A,
+//         MSGCLASS=X,
+//         MSGLEVEL=(1,1),
+//         NOTIFY=&amp;SYSUID
+</code></pre>
+<p><strong>Step Structure:</strong></p>
+<pre><code class="language-jcl">//STEP01   EXEC PGM=PROGRAMNAME
+//STEPLIB  DD DSN=LOAD.LIBRARY,DISP=SHR
+//SYSOUT   DD SYSOUT=*
+//INPUT    DD DSN=INPUT.FILE,DISP=SHR
+//OUTPUT   DD DSN=OUTPUT.FILE,DISP=(NEW,CATLG,DELETE),
+//            SPACE=(CYL,(10,5)),
+//            DCB=(RECFM=FB,LRECL=80,BLKSIZE=0)
+</code></pre>
+<h3 id="bms-standards">BMS Standards</h3>
+<p><strong>Map Definition:</strong></p>
+<pre><code>MAPNAME  DFHMSD TYPE=&amp;SYSPARM,                                         X
+               MODE=INOUT,                                             X
+               LANG=COBOL,                                             X
+               CTRL=(FREEKB,FRSET),                                    X
+               STORAGE=AUTO,                                           X
+               TIOAPFX=YES
+
+MAP01    DFHMDI SIZE=(24,80),                                          X
+               LINE=1,                                                 X
+               COLUMN=1
+
+         DFHMDF POS=(1,1),                                             X
+               LENGTH=20,                                              X
+               ATTRB=(PROT,BRT),                                       X
+               INITIAL='SCREEN TITLE'
+</code></pre>
+<h3 id="documentation-standards">Documentation Standards</h3>
+<p><strong>Program Header:</strong></p>
+<pre><code class="language-cobol">      *****************************************************************
+      * PROGRAM NAME: PROGRAMNAME
+      * DESCRIPTION:  Brief description of program purpose
+      * AUTHOR:       Your Name
+      * DATE:         YYYY-MM-DD
+      *
+      * INPUTS:       List of input files/parameters
+      * OUTPUTS:      List of output files
+      *
+      * CHANGE HISTORY:
+      * DATE       AUTHOR      DESCRIPTION
+      * ---------- ----------- ---------------------------------------
+      * YYYY-MM-DD Your Name   Initial version
+      *****************************************************************
+</code></pre>
+<p><strong>Paragraph Comments:</strong></p>
+<pre><code class="language-cobol">      *****************************************************************
+      * PARAGRAPH: PROCESS-ACCOUNT
+      * PURPOSE:   Process account record and update balance
+      * CALLED BY: MAIN-PROCESS
+      *****************************************************************
+       PROCESS-ACCOUNT.
+</code></pre>
+<h2 id="testing-guidelines">Testing Guidelines</h2>
+<h3 id="unit-testing">Unit Testing</h3>
+<p><strong>Test Each Program:</strong>
+- Test with valid data
+- Test with invalid data
+- Test boundary conditions
+- Test error conditions</p>
+<p><strong>Test Checklist:</strong>
+- [ ] Program compiles without errors
+- [ ] Program links successfully
+- [ ] All file operations work
+- [ ] Error handling works correctly
+- [ ] Screen displays correctly (for online programs)
+- [ ] Data validation works
+- [ ] Business logic is correct</p>
+<h3 id="integration-testing">Integration Testing</h3>
+<p><strong>Test Interactions:</strong>
+- Test transaction flows
+- Test file sharing
+- Test batch job sequences
+- Test optional module integration</p>
+<h3 id="regression-testing">Regression Testing</h3>
+<p><strong>Before Submitting:</strong>
+- Run existing test cases
+- Verify no existing functionality broken
+- Test related components
+- Check performance impact</p>
+<h3 id="test-documentation">Test Documentation</h3>
+<p>Document your tests:</p>
+<pre><code>Test Case: TC001 - Account View
+Description: Verify account view displays correct information
+Prerequisites: Account 00000000001 exists
+Steps:
+  1. Sign on as USER0001
+  2. Enter transaction CAVW
+  3. Enter account number 00000000001
+  4. Press Enter
+Expected Result: Account details display correctly
+Actual Result: [Pass/Fail]
+</code></pre>
+<h2 id="submitting-changes">Submitting Changes</h2>
+<h3 id="pull-request-process">Pull Request Process</h3>
+<ol>
+<li><strong>Update Documentation</strong></li>
+<li>Update README if needed</li>
+<li>Update wiki pages</li>
+<li>
+<p>Add code comments</p>
+</li>
+<li>
+<p><strong>Create Pull Request</strong></p>
+</li>
+<li>Use descriptive title</li>
+<li>Fill in PR template</li>
+<li>
+<p>Reference related issues</p>
+</li>
+<li>
+<p><strong>PR Template</strong>
+   ```markdown
+   ## Description
+   Brief description of changes</p>
+</li>
+</ol>
+<p>## Type of Change
+   - [ ] Bug fix
+   - [ ] New feature
+   - [ ] Documentation update
+   - [ ] Performance improvement</p>
+<p>## Testing
+   - [ ] Unit tests pass
+   - [ ] Integration tests pass
+   - [ ] Manual testing completed</p>
+<p>## Checklist
+   - [ ] Code follows style guidelines
+   - [ ] Documentation updated
+   - [ ] No new warnings
+   - [ ] Tests added/updated
+   ```</p>
+<ol>
+<li><strong>Code Review</strong></li>
+<li>Address reviewer comments</li>
+<li>Make requested changes</li>
+<li>
+<p>Update PR as needed</p>
+</li>
+<li>
+<p><strong>Merge</strong></p>
+</li>
+<li>Maintainer will merge when approved</li>
+<li>Delete your branch after merge</li>
+</ol>
+<h3 id="commit-message-guidelines">Commit Message Guidelines</h3>
+<p><strong>Format:</strong></p>
+<pre><code>&lt;type&gt;: &lt;subject&gt;
+
+&lt;body&gt;
+
+&lt;footer&gt;
+</code></pre>
+<p><strong>Types:</strong>
+- feat: New feature
+- fix: Bug fix
+- docs: Documentation
+- style: Formatting
+- refactor: Code restructuring
+- test: Adding tests
+- chore: Maintenance</p>
+<p><strong>Example:</strong></p>
+<pre><code>feat: Add transaction search by date range
+
+- Added date range input fields to CT00 screen
+- Updated COTRN00C program to filter by date
+- Added date validation logic
+- Updated user guide documentation
+
+Closes #123
+</code></pre>
+<h3 id="branch-naming">Branch Naming</h3>
+<p><strong>Convention:</strong>
+- feature/description - New features
+- fix/description - Bug fixes
+- docs/description - Documentation
+- refactor/description - Code refactoring</p>
+<p><strong>Examples:</strong>
+- feature/add-transaction-search
+- fix/account-balance-calculation
+- docs/update-installation-guide
+- refactor/optimize-vsam-access</p>
+<h2 id="documentation">Documentation</h2>
+<h3 id="wiki-updates">Wiki Updates</h3>
+<p>When adding features:
+1. Update relevant wiki pages
+2. Add new pages if needed
+3. Update navigation links
+4. Add examples and screenshots</p>
+<h3 id="code-comments">Code Comments</h3>
+<p><strong>When to Comment:</strong>
+- Complex algorithms
+- Business rules
+- Non-obvious logic
+- Workarounds
+- TODO items</p>
+<p><strong>When Not to Comment:</strong>
+- Obvious code
+- Self-explanatory logic
+- Redundant information</p>
+<h3 id="readme-updates">README Updates</h3>
+<p>Update README.md for:
+- New features
+- Changed requirements
+- New dependencies
+- Installation changes</p>
+<h2 id="community">Community</h2>
+<h3 id="getting-help">Getting Help</h3>
+<p><strong>Resources:</strong>
+- GitHub Issues
+- Wiki documentation
+- Code comments
+- Community discussions</p>
+<p><strong>Asking Questions:</strong>
+- Search existing issues first
+- Provide context and details
+- Include error messages
+- Share relevant code snippets</p>
+<h3 id="reporting-bugs">Reporting Bugs</h3>
+<p><strong>Bug Report Template:</strong></p>
+<pre><code class="language-markdown">## Bug Description
+Clear description of the bug
+
+## Steps to Reproduce
+1. Step one
+2. Step two
+3. Step three
+
+## Expected Behavior
+What should happen
+
+## Actual Behavior
+What actually happens
+
+## Environment
+- z/OS version:
+- CICS version:
+- CardDemo version:
+
+## Additional Context
+Screenshots, logs, etc.
+</code></pre>
+<h3 id="feature-requests">Feature Requests</h3>
+<p><strong>Feature Request Template:</strong></p>
+<pre><code class="language-markdown">## Feature Description
+Clear description of the feature
+
+## Use Case
+Why is this feature needed?
+
+## Proposed Solution
+How should it work?
+
+## Alternatives Considered
+Other approaches considered
+
+## Additional Context
+Mockups, examples, etc.
+</code></pre>
+<h3 id="code-review">Code Review</h3>
+<p><strong>As a Reviewer:</strong>
+- Be constructive and respectful
+- Focus on code quality
+- Suggest improvements
+- Approve when satisfied</p>
+<p><strong>As an Author:</strong>
+- Respond to all comments
+- Make requested changes
+- Explain your decisions
+- Thank reviewers</p>
+<h2 id="recognition">Recognition</h2>
+<p>Contributors will be recognized in:
+- CONTRIBUTORS.md file
+- Release notes
+- Project documentation</p>
+<p>Thank you for contributing to CardDemo!</p>
+<hr />
+<p><strong>Navigation</strong>: <a href="../Home/">Home</a> | <a href="Development-Guide.md">Development Guide</a> | <a href="Testing-Guide.md">Testing Guide</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

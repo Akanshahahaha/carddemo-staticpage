@@ -1,0 +1,2529 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Optional-Module-Transaction-Type/">
+      
+      
+        <link rel="next" href="../Troubleshooting/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>VSAM-MQ - AWS Mainframe Modernization Card Demo - Deep Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#optional-module-account-extractions-vsam-mq" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-header__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AWS Mainframe Modernization Card Demo - Deep Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              VSAM-MQ
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-nav__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AWS Mainframe Modernization Card Demo - Deep Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quick-Start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Admin-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Batch-Processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technical-Components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CICS-Configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CICS Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optional Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Optional Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Transaction-Type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transaction Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VSAM-MQ
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VSAM-MQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technologies-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technologies Used
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-date-inquiry-cdrd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Date Inquiry (CDRD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-details-inquiry-cdra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Details Inquiry (CDRA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Message Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-configure-mq-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Configure MQ Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-upload-source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Upload Source Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-compile-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Compile Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-define-cics-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Define CICS Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-test-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Test Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#codate01-system-date-inquiry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CODATE01 - System Date Inquiry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coacct01-account-details-inquiry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COACCT01 - Account Details Inquiry
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Message Formats
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Message Formats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#date-request-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Date Request Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date-response-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Date Response Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-request-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Request Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-response-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Response Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-date-inquiry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Date Inquiry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-details-inquiry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Details Inquiry
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mq-operations-in-cobol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MQ Operations in COBOL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-correlation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Message Correlation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vsam-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-patterns_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requestresponse-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request/Response Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publishsubscribe-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publish/Subscribe Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Message Transformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technologies-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technologies Used
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-date-inquiry-cdrd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Date Inquiry (CDRD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-details-inquiry-cdra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Details Inquiry (CDRA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Message Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-configure-mq-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Configure MQ Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-upload-source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Upload Source Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-compile-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Compile Programs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-define-cics-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Define CICS Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-test-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Test Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#codate01-system-date-inquiry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CODATE01 - System Date Inquiry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coacct01-account-details-inquiry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COACCT01 - Account Details Inquiry
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Message Formats
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Message Formats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#date-request-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Date Request Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date-response-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Date Response Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-request-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Request Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-response-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Response Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-date-inquiry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Date Inquiry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-details-inquiry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Details Inquiry
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mq-operations-in-cobol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MQ Operations in COBOL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-correlation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Message Correlation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vsam-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-patterns_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requestresponse-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request/Response Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publishsubscribe-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publish/Subscribe Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Message Transformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="optional-module-account-extractions-vsam-mq">Optional Module: Account Extractions (VSAM-MQ)</h1>
+<p>Complete documentation for the Account Extractions optional module, which demonstrates MQ integration for data extraction and inquiry.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#module-overview">Module Overview</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#components">Components</a></li>
+<li><a href="#message-formats">Message Formats</a></li>
+<li><a href="#usage-guide">Usage Guide</a></li>
+<li><a href="#technical-details">Technical Details</a></li>
+</ul>
+<h2 id="module-overview">Module Overview</h2>
+<p>The Account Extractions module is an optional extension that demonstrates integration between VSAM and IBM MQ. This module enables the extraction and transmission of account data through MQ channels, showcasing asynchronous processing patterns commonly used in mainframe environments.</p>
+<h3 id="business-value">Business Value</h3>
+<ul>
+<li><strong>Asynchronous Communication</strong>: Non-blocking data exchange via MQ</li>
+<li><strong>System Integration</strong>: Connect mainframe applications with distributed systems</li>
+<li><strong>Data Extraction</strong>: Extract account and system data on demand</li>
+<li><strong>Request/Response Pattern</strong>: Demonstrate MQ request/response architecture</li>
+<li><strong>Loose Coupling</strong>: Independent system communication</li>
+</ul>
+<h3 id="technologies-used">Technologies Used</h3>
+<ul>
+<li><strong>COBOL</strong>: Business logic implementation</li>
+<li><strong>CICS</strong>: Transaction processing</li>
+<li><strong>VSAM</strong>: Data source for account information</li>
+<li><strong>MQ</strong>: Message queuing for asynchronous communication</li>
+</ul>
+<h2 id="features">Features</h2>
+<h3 id="system-date-inquiry-cdrd">System Date Inquiry (CDRD)</h3>
+<p>Query the system date through an MQ request/response pattern:
+- Send date request via MQ
+- Receive system date in response
+- Demonstrates simple MQ communication</p>
+<h3 id="account-details-inquiry-cdra">Account Details Inquiry (CDRA)</h3>
+<p>Retrieve account information through MQ channels:
+- Send account inquiry request with account number
+- Retrieve complete account details from VSAM
+- Receive account data in response message
+- Demonstrates data extraction via MQ</p>
+<h3 id="integration-patterns">Integration Patterns</h3>
+<ul>
+<li><strong>Request/Response</strong>: Synchronous-style communication using asynchronous MQ</li>
+<li><strong>Message Correlation</strong>: Correlate requests with responses</li>
+<li><strong>Data Transformation</strong>: Convert VSAM data to message format</li>
+<li><strong>Error Handling</strong>: Proper error handling for MQ operations</li>
+</ul>
+<h2 id="architecture">Architecture</h2>
+<h3 id="component-architecture">Component Architecture</h3>
+<pre><code>┌──────────────────┐
+│ External System  │
+│ / Client App     │
+└────────┬─────────┘
+         │
+         ▼
+┌──────────────────┐
+│ MQ Request Queue │
+│ CARDDEMO.REQUEST │
+└────────┬─────────┘
+         │
+         ▼
+┌──────────────────┐
+│ CICS Transaction │
+│ CDRD / CDRA      │
+└────────┬─────────┘
+         │
+         ├─→ VSAM Files (Read Account Data)
+         │
+         └─→ MQ Response Queue
+             │
+             ▼
+         ┌──────────────────┐
+         │ MQ Response Queue│
+         │ CARDDEMO.RESPONSE│
+         └──────────────────┘
+</code></pre>
+<h3 id="message-flow">Message Flow</h3>
+<p><strong>Date Inquiry Flow:</strong></p>
+<pre><code>1. Client sends date request → Request Queue
+2. CDRD transaction triggered
+3. Retrieves system date
+4. Sends response → Response Queue
+5. Client receives date response
+</code></pre>
+<p><strong>Account Inquiry Flow:</strong></p>
+<pre><code>1. Client sends account request → Request Queue
+2. CDRA transaction triggered
+3. Reads account from VSAM
+4. Formats account data
+5. Sends response → Response Queue
+6. Client receives account data
+</code></pre>
+<h2 id="installation">Installation</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ol>
+<li><strong>Base CardDemo</strong>: Installed and operational</li>
+<li><strong>IBM MQ</strong>: Configured and accessible from CICS</li>
+<li><strong>CICS with MQ</strong>: CICS-MQ bridge configured</li>
+<li><strong>MQ Queues</strong>: Request and response queues defined</li>
+</ol>
+<h3 id="installation-steps">Installation Steps</h3>
+<h4 id="step-1-configure-mq-resources">Step 1: Configure MQ Resources</h4>
+<p>Define MQ queues for CardDemo:</p>
+<pre><code>DEFINE QLOCAL('CARDDEMO.REQUEST.QUEUE') REPLACE +
+  DESCR('CardDemo Request Queue') +
+  DEFPSIST(YES) +
+  MAXDEPTH(5000) +
+  USAGE(NORMAL)
+
+DEFINE QLOCAL('CARDDEMO.RESPONSE.QUEUE') REPLACE +
+  DESCR('CardDemo Response Queue') +
+  DEFPSIST(YES) +
+  MAXDEPTH(5000) +
+  USAGE(NORMAL)
+</code></pre>
+<h4 id="step-2-upload-source-code">Step 2: Upload Source Code</h4>
+<p>Upload module source code to mainframe datasets:</p>
+<pre><code>app/app-vsam-mq/cbl/     → CARDDEMO.CBL
+app/app-vsam-mq/csd/     → CICS resource definitions
+</code></pre>
+<p>Programs to upload:
+- <strong>CODATE01</strong>: System date inquiry
+- <strong>COACCT01</strong>: Account details inquiry</p>
+<h4 id="step-3-compile-programs">Step 3: Compile Programs</h4>
+<p>Compile COBOL programs with MQ support:</p>
+<pre><code class="language-jcl">//COMPILE  EXEC PGM=IGYCRCTL,PARM='LIB,OBJECT,MAP'
+//STEPLIB  DD DSN=COBOL.SIGYCOMP,DISP=SHR
+//SYSLIB   DD DSN=CARDDEMO.CPY,DISP=SHR
+//         DD DSN=MQ.SCSQCOBC,DISP=SHR
+//SYSIN    DD DSN=CARDDEMO.CBL(CODATE01),DISP=SHR
+//SYSLIN   DD DSN=&amp;&amp;LOADSET,DISP=(MOD,PASS)
+//SYSPRINT DD SYSOUT=*
+</code></pre>
+<p>Link with MQ libraries:</p>
+<pre><code class="language-jcl">//LINK     EXEC PGM=IEWL,PARM='LIST,XREF,LET'
+//SYSLIB   DD DSN=MQ.SCSQLOAD,DISP=SHR
+//         DD DSN=CICS.SDFHLOAD,DISP=SHR
+//SYSLMOD  DD DSN=CARDDEMO.LOADLIB,DISP=SHR
+//SYSLIN   DD DSN=&amp;&amp;LOADSET,DISP=(OLD,DELETE)
+//SYSPRINT DD SYSOUT=*
+</code></pre>
+<h4 id="step-4-define-cics-resources">Step 4: Define CICS Resources</h4>
+<p><strong>Programs:</strong></p>
+<pre><code>CEDA DEFINE PROGRAM(CODATE01) GROUP(CARDDEMO) LANGUAGE(COBOL)
+CEDA DEFINE PROGRAM(COACCT01) GROUP(CARDDEMO) LANGUAGE(COBOL)
+</code></pre>
+<p><strong>Transactions:</strong></p>
+<pre><code>CEDA DEFINE TRANSACTION(CDRD) GROUP(CARDDEMO) PROGRAM(CODATE01)
+CEDA DEFINE TRANSACTION(CDRA) GROUP(CARDDEMO) PROGRAM(COACCT01)
+</code></pre>
+<p><strong>MQ Connection:</strong></p>
+<pre><code>CEDA DEFINE MQCONN(MQ01) GROUP(CARDDEMO) +
+  MQNAME(MQ.QUEUE.MANAGER) +
+  INITQNAME(SYSTEM.CICS.INITQUEUE)
+</code></pre>
+<p><strong>MQ Queues:</strong></p>
+<pre><code>CEDA DEFINE MQQUEUE(CARDREQ) GROUP(CARDDEMO) +
+  QNAME(CARDDEMO.REQUEST.QUEUE) +
+  DESCRIPTION(CardDemo Request Queue)
+
+CEDA DEFINE MQQUEUE(CARDRES) GROUP(CARDDEMO) +
+  QNAME(CARDDEMO.RESPONSE.QUEUE) +
+  DESCRIPTION(CardDemo Response Queue)
+</code></pre>
+<p><strong>Install Resources:</strong></p>
+<pre><code>CEDA INSTALL GROUP(CARDDEMO)
+</code></pre>
+<h4 id="step-5-test-installation">Step 5: Test Installation</h4>
+<p><strong>Test Date Inquiry:</strong>
+1. Send test message to request queue
+2. Execute CDRD transaction
+3. Verify response in response queue</p>
+<p><strong>Test Account Inquiry:</strong>
+1. Send account request with account number
+2. Execute CDRA transaction
+3. Verify account data in response</p>
+<h2 id="components">Components</h2>
+<h3 id="programs">Programs</h3>
+<h4 id="codate01-system-date-inquiry">CODATE01 - System Date Inquiry</h4>
+<ul>
+<li><strong>Transaction</strong>: CDRD</li>
+<li><strong>Function</strong>: Retrieve and return system date via MQ</li>
+<li><strong>Input</strong>: Date request message from MQ</li>
+<li><strong>Output</strong>: Date response message to MQ</li>
+<li><strong>Processing</strong>:</li>
+<li>Read request from MQ request queue</li>
+<li>Get system date</li>
+<li>Format date response</li>
+<li>Write response to MQ response queue</li>
+</ul>
+<p><strong>COBOL Structure:</strong></p>
+<pre><code class="language-cobol">IDENTIFICATION DIVISION.
+PROGRAM-ID. CODATE01.
+
+DATA DIVISION.
+WORKING-STORAGE SECTION.
+01  WS-REQUEST-MSG.
+    05  WS-REQUEST-TYPE        PIC X(04).
+    05  WS-REQUEST-ID          PIC X(08).
+
+01  WS-RESPONSE-MSG.
+    05  WS-RESPONSE-TYPE       PIC X(04).
+    05  WS-RESPONSE-ID         PIC X(08).
+    05  WS-SYSTEM-DATE         PIC X(10).
+
+PROCEDURE DIVISION.
+    PERFORM READ-MQ-REQUEST
+    PERFORM GET-SYSTEM-DATE
+    PERFORM SEND-MQ-RESPONSE
+    GOBACK.
+</code></pre>
+<h4 id="coacct01-account-details-inquiry">COACCT01 - Account Details Inquiry</h4>
+<ul>
+<li><strong>Transaction</strong>: CDRA</li>
+<li><strong>Function</strong>: Retrieve account details from VSAM and return via MQ</li>
+<li><strong>Input</strong>: Account request message with account number</li>
+<li><strong>Output</strong>: Account data response message</li>
+<li><strong>Files Accessed</strong>: ACCTDAT (VSAM)</li>
+<li><strong>Processing</strong>:</li>
+<li>Read request from MQ request queue</li>
+<li>Extract account number from request</li>
+<li>Read account record from VSAM</li>
+<li>Format account data for response</li>
+<li>Write response to MQ response queue</li>
+</ul>
+<p><strong>COBOL Structure:</strong></p>
+<pre><code class="language-cobol">IDENTIFICATION DIVISION.
+PROGRAM-ID. COACCT01.
+
+DATA DIVISION.
+WORKING-STORAGE SECTION.
+01  WS-ACCT-REQUEST-MSG.
+    05  WS-REQUEST-TYPE        PIC X(04).
+    05  WS-REQUEST-ID          PIC X(08).
+    05  WS-ACCOUNT-NUMBER      PIC X(11).
+
+01  WS-ACCT-RESPONSE-MSG.
+    05  WS-RESPONSE-TYPE       PIC X(04).
+    05  WS-RESPONSE-ID         PIC X(08).
+    05  WS-ACCOUNT-DATA        PIC X(300).
+
+PROCEDURE DIVISION.
+    PERFORM READ-MQ-REQUEST
+    PERFORM READ-VSAM-ACCOUNT
+    PERFORM FORMAT-RESPONSE
+    PERFORM SEND-MQ-RESPONSE
+    GOBACK.
+</code></pre>
+<h2 id="message-formats">Message Formats</h2>
+<h3 id="date-request-message">Date Request Message</h3>
+<p><strong>Format:</strong></p>
+<pre><code>01  DATE-REQUEST-MSG.
+    05  REQUEST-TYPE           PIC X(04) VALUE 'DATE'.
+    05  REQUEST-ID             PIC X(08).
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code>DATE12345678
+</code></pre>
+<p><strong>Fields:</strong>
+- <strong>REQUEST-TYPE</strong>: 'DATE' (4 bytes)
+- <strong>REQUEST-ID</strong>: Unique request identifier (8 bytes)</p>
+<h3 id="date-response-message">Date Response Message</h3>
+<p><strong>Format:</strong></p>
+<pre><code>01  DATE-RESPONSE-MSG.
+    05  RESPONSE-TYPE          PIC X(04) VALUE 'DATE'.
+    05  RESPONSE-ID            PIC X(08).
+    05  SYSTEM-DATE            PIC X(10).
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code>DATE123456782025-11-18
+</code></pre>
+<p><strong>Fields:</strong>
+- <strong>RESPONSE-TYPE</strong>: 'DATE' (4 bytes)
+- <strong>RESPONSE-ID</strong>: Matches request ID (8 bytes)
+- <strong>SYSTEM-DATE</strong>: YYYY-MM-DD format (10 bytes)</p>
+<h3 id="account-request-message">Account Request Message</h3>
+<p><strong>Format:</strong></p>
+<pre><code>01  ACCT-REQUEST-MSG.
+    05  REQUEST-TYPE           PIC X(04) VALUE 'ACCT'.
+    05  REQUEST-ID             PIC X(08).
+    05  ACCOUNT-NUMBER         PIC X(11).
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code>ACCT1234567800000000001
+</code></pre>
+<p><strong>Fields:</strong>
+- <strong>REQUEST-TYPE</strong>: 'ACCT' (4 bytes)
+- <strong>REQUEST-ID</strong>: Unique request identifier (8 bytes)
+- <strong>ACCOUNT-NUMBER</strong>: Account ID (11 bytes)</p>
+<h3 id="account-response-message">Account Response Message</h3>
+<p><strong>Format:</strong></p>
+<pre><code>01  ACCT-RESPONSE-MSG.
+    05  RESPONSE-TYPE          PIC X(04) VALUE 'ACCT'.
+    05  RESPONSE-ID            PIC X(08).
+    05  RESPONSE-CODE          PIC X(02).
+    05  ACCOUNT-DATA           PIC X(300).
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code>ACCT1234567800[account data 300 bytes]
+</code></pre>
+<p><strong>Fields:</strong>
+- <strong>RESPONSE-TYPE</strong>: 'ACCT' (4 bytes)
+- <strong>RESPONSE-ID</strong>: Matches request ID (8 bytes)
+- <strong>RESPONSE-CODE</strong>: '00' = Success, '01' = Not Found, '99' = Error (2 bytes)
+- <strong>ACCOUNT-DATA</strong>: Account record data (300 bytes)</p>
+<p><strong>Response Codes:</strong>
+- <strong>00</strong>: Success - Account found
+- <strong>01</strong>: Account not found
+- <strong>99</strong>: System error</p>
+<h2 id="usage-guide">Usage Guide</h2>
+<h3 id="system-date-inquiry">System Date Inquiry</h3>
+<p><strong>Using CICS Transaction:</strong></p>
+<ol>
+<li>Execute transaction: <code>CDRD</code></li>
+<li>Transaction reads from request queue</li>
+<li>Returns date to response queue</li>
+</ol>
+<p><strong>Using MQ Client:</strong></p>
+<pre><code class="language-python">import pymqi
+
+# Connect to queue manager
+qmgr = pymqi.connect('MQ.QUEUE.MANAGER')
+
+# Put request message
+request_queue = pymqi.Queue(qmgr, 'CARDDEMO.REQUEST.QUEUE')
+request_msg = 'DATE12345678'
+request_queue.put(request_msg)
+
+# Get response message
+response_queue = pymqi.Queue(qmgr, 'CARDDEMO.RESPONSE.QUEUE')
+response_msg = response_queue.get()
+print(f&quot;System Date: {response_msg[12:22]}&quot;)
+
+# Disconnect
+qmgr.disconnect()
+</code></pre>
+<h3 id="account-details-inquiry">Account Details Inquiry</h3>
+<p><strong>Using CICS Transaction:</strong></p>
+<ol>
+<li>Execute transaction: <code>CDRA</code></li>
+<li>Transaction reads account request from queue</li>
+<li>Retrieves account from VSAM</li>
+<li>Returns account data to response queue</li>
+</ol>
+<p><strong>Using MQ Client:</strong></p>
+<pre><code class="language-python">import pymqi
+
+# Connect to queue manager
+qmgr = pymqi.connect('MQ.QUEUE.MANAGER')
+
+# Put request message
+request_queue = pymqi.Queue(qmgr, 'CARDDEMO.REQUEST.QUEUE')
+account_number = '00000000001'
+request_msg = f'ACCT12345678{account_number}'
+request_queue.put(request_msg)
+
+# Get response message
+response_queue = pymqi.Queue(qmgr, 'CARDDEMO.RESPONSE.QUEUE')
+response_msg = response_queue.get()
+
+# Parse response
+response_code = response_msg[12:14]
+if response_code == '00':
+    account_data = response_msg[14:314]
+    print(f&quot;Account Data: {account_data}&quot;)
+else:
+    print(f&quot;Error: {response_code}&quot;)
+
+# Disconnect
+qmgr.disconnect()
+</code></pre>
+<h2 id="technical-details">Technical Details</h2>
+<h3 id="mq-operations-in-cobol">MQ Operations in COBOL</h3>
+<p><strong>Read from Queue:</strong></p>
+<pre><code class="language-cobol">EXEC CICS READQ TS
+    QUEUE('CARDDEMO.REQUEST.QUEUE')
+    INTO(WS-REQUEST-MSG)
+    LENGTH(WS-MSG-LEN)
+    RESP(WS-RESP)
+END-EXEC.
+
+IF WS-RESP NOT = DFHRESP(NORMAL)
+    PERFORM ERROR-HANDLING
+END-IF.
+</code></pre>
+<p><strong>Write to Queue:</strong></p>
+<pre><code class="language-cobol">EXEC CICS WRITEQ TS
+    QUEUE('CARDDEMO.RESPONSE.QUEUE')
+    FROM(WS-RESPONSE-MSG)
+    LENGTH(WS-MSG-LEN)
+    RESP(WS-RESP)
+END-EXEC.
+
+IF WS-RESP NOT = DFHRESP(NORMAL)
+    PERFORM ERROR-HANDLING
+END-IF.
+</code></pre>
+<h3 id="message-correlation">Message Correlation</h3>
+<p><strong>Request ID Generation:</strong></p>
+<pre><code class="language-cobol">MOVE FUNCTION CURRENT-DATE TO WS-TIMESTAMP.
+STRING WS-TIMESTAMP(1:8) DELIMITED BY SIZE
+       WS-TIMESTAMP(9:6) DELIMITED BY SIZE
+       INTO WS-REQUEST-ID.
+</code></pre>
+<p><strong>Response Correlation:</strong></p>
+<pre><code class="language-cobol">MOVE WS-REQUEST-ID TO WS-RESPONSE-ID.
+</code></pre>
+<h3 id="vsam-access">VSAM Access</h3>
+<p><strong>Read Account:</strong></p>
+<pre><code class="language-cobol">EXEC CICS READ
+    FILE('ACCTDAT')
+    INTO(ACCOUNT-RECORD)
+    RIDFLD(WS-ACCOUNT-NUMBER)
+    RESP(WS-RESP)
+END-EXEC.
+
+EVALUATE WS-RESP
+    WHEN DFHRESP(NORMAL)
+        MOVE '00' TO WS-RESPONSE-CODE
+        MOVE ACCOUNT-RECORD TO WS-ACCOUNT-DATA
+    WHEN DFHRESP(NOTFND)
+        MOVE '01' TO WS-RESPONSE-CODE
+    WHEN OTHER
+        MOVE '99' TO WS-RESPONSE-CODE
+END-EVALUATE.
+</code></pre>
+<h3 id="error-handling">Error Handling</h3>
+<p><strong>MQ Error Handling:</strong></p>
+<pre><code class="language-cobol">IF WS-RESP NOT = DFHRESP(NORMAL)
+    EVALUATE WS-RESP
+        WHEN DFHRESP(QIDERR)
+            MOVE 'Queue not found' TO WS-ERROR-MSG
+        WHEN DFHRESP(ITEMERR)
+            MOVE 'No messages available' TO WS-ERROR-MSG
+        WHEN DFHRESP(LENGERR)
+            MOVE 'Message length error' TO WS-ERROR-MSG
+        WHEN OTHER
+            MOVE 'Unknown MQ error' TO WS-ERROR-MSG
+    END-EVALUATE
+    PERFORM LOG-ERROR
+END-IF.
+</code></pre>
+<p><strong>VSAM Error Handling:</strong></p>
+<pre><code class="language-cobol">IF WS-RESP NOT = DFHRESP(NORMAL)
+    EVALUATE WS-RESP
+        WHEN DFHRESP(NOTFND)
+            MOVE 'Account not found' TO WS-ERROR-MSG
+        WHEN DFHRESP(NOTOPEN)
+            MOVE 'File not open' TO WS-ERROR-MSG
+        WHEN OTHER
+            MOVE 'VSAM error' TO WS-ERROR-MSG
+    END-EVALUATE
+    PERFORM LOG-ERROR
+END-IF.
+</code></pre>
+<h3 id="performance-considerations">Performance Considerations</h3>
+<p><strong>Queue Depth Monitoring:</strong>
+- Monitor request queue depth
+- Implement queue depth alerts
+- Scale processing based on load</p>
+<p><strong>Message Persistence:</strong>
+- Use persistent messages for critical data
+- Non-persistent for high-volume, low-priority</p>
+<p><strong>Connection Pooling:</strong>
+- Reuse MQ connections
+- Configure appropriate connection limits</p>
+<h2 id="integration-patterns_1">Integration Patterns</h2>
+<h3 id="requestresponse-pattern">Request/Response Pattern</h3>
+<p><strong>Synchronous-Style Communication:</strong>
+1. Client sends request
+2. Client waits for response
+3. Server processes request
+4. Server sends response
+5. Client receives response</p>
+<p><strong>Implementation:</strong>
+- Use correlation ID to match requests/responses
+- Set appropriate timeout values
+- Handle timeout scenarios</p>
+<h3 id="publishsubscribe-pattern">Publish/Subscribe Pattern</h3>
+<p><strong>Extension Possibility:</strong>
+- Define topics for account updates
+- Publish account changes
+- Subscribers receive notifications</p>
+<h3 id="message-transformation">Message Transformation</h3>
+<p><strong>VSAM to Message:</strong></p>
+<pre><code class="language-cobol">MOVE ACCT-ID TO MSG-ACCT-ID.
+MOVE ACCT-CURR-BAL TO MSG-BALANCE.
+MOVE ACCT-CREDIT-LIMIT TO MSG-CREDIT-LIMIT.
+</code></pre>
+<p><strong>Message to VSAM:</strong></p>
+<pre><code class="language-cobol">MOVE MSG-ACCT-ID TO ACCT-ID.
+MOVE MSG-BALANCE TO ACCT-CURR-BAL.
+MOVE MSG-CREDIT-LIMIT TO ACCT-CREDIT-LIMIT.
+</code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="common-issues">Common Issues</h3>
+<p><strong>Issue: Messages not appearing in queue</strong>
+- Check queue definition
+- Verify queue is not full (MAXDEPTH)
+- Check MQ channel status
+- Verify application has PUT authority</p>
+<p><strong>Issue: Cannot read from queue</strong>
+- Verify queue exists
+- Check GET authority
+- Ensure messages are available
+- Check queue is not disabled</p>
+<p><strong>Issue: CICS-MQ connection fails</strong>
+- Verify MQ queue manager is running
+- Check CICS-MQ bridge configuration
+- Verify MQCONN resource is installed
+- Check MQ channel is active</p>
+<p><strong>Issue: Account not found</strong>
+- Verify account number format (11 digits)
+- Check ACCTDAT file is open
+- Verify account exists in VSAM
+- Check file access permissions</p>
+<h3 id="debugging-tips">Debugging Tips</h3>
+<p><strong>Enable MQ Tracing:</strong></p>
+<pre><code>ALTER QMGR TRACE(ON)
+</code></pre>
+<p><strong>Check Queue Status:</strong></p>
+<pre><code>DISPLAY QUEUE(CARDDEMO.REQUEST.QUEUE) ALL
+</code></pre>
+<p><strong>Monitor Queue Depth:</strong></p>
+<pre><code>DISPLAY QUEUE(CARDDEMO.REQUEST.QUEUE) CURDEPTH
+</code></pre>
+<p><strong>Check CICS Resources:</strong></p>
+<pre><code>CEMT INQUIRE MQCONN
+CEMT INQUIRE MQQUEUE(CARDREQ)
+</code></pre>
+<hr />
+<p><strong>Navigation</strong>: <a href="../Home/">Home</a> | <a href="../Home/#optional-modules">Optional Modules</a> | <a href="../Installation-Guide/">Installation Guide</a> | <a href="../Technical-Components/">Technical Components</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

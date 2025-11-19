@@ -1,0 +1,3317 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Batch-Processing/">
+      
+      
+        <link rel="next" href="../Data-Models/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Technical Components - AWS Mainframe Modernization Card Demo - Deep Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#technical-components" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-header__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AWS Mainframe Modernization Card Demo - Deep Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Technical Components
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-nav__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AWS Mainframe Modernization Card Demo - Deep Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quick-Start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Admin-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Batch-Processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Components
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#online-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Online Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Online Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sign-on-and-menu-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sign-On and Menu Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sign-On and Menu Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cosgn00c-sign-on-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COSGN00C - Sign-On Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comen01c-main-menu-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMEN01C - Main Menu Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-management-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Management Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Account Management Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coactvwc-account-view-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COACTVWC - Account View Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coactupc-account-update-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COACTUPC - Account Update Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-management-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card Management Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Card Management Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cocrdlic-card-list-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COCRDLIC - Card List Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cocrdslc-card-view-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COCRDSLC - Card View Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cocrdupc-card-update-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COCRDUPC - Card Update Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-management-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Management Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transaction Management Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cotrn00c-transaction-list-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COTRN00C - Transaction List Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cotrn01c-transaction-view-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COTRN01C - Transaction View Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cotrn02c-transaction-add-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COTRN02C - Transaction Add Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bill-payment-and-report-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bill Payment and Report Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bill Payment and Report Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cobil00c-bill-payment-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBIL00C - Bill Payment Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#corpt00c-report-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CORPT00C - Report Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Admin Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coadm01c-admin-menu-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COADM01C - Admin Menu Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cousr00c-user-list-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COUSR00C - User List Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cousr01c-user-add-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COUSR01C - User Add Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cousr02c-user-update-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COUSR02C - User Update Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cousr03c-user-delete-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COUSR03C - User Delete Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Batch Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transaction-processing-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Processing Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transaction Processing Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cbtrn02c-transaction-posting-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CBTRN02C - Transaction Posting Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cbtrn03c-transaction-report-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CBTRN03C - Transaction Report Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-processing-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Processing Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Account Processing Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cbact04c-interest-calculation-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CBACT04C - Interest Calculation Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cbstm03a-statement-generation-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CBSTM03A - Statement Generation Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utility-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utility Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Utility Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assembler-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assembler Utilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assembler Utilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mvswait-timer-control-utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MVSWAIT - Timer Control Utility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobdatft-date-format-conversion-utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBDATFT - Date Format Conversion Utility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bms-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BMS Maps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BMS Maps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#map-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Map Inventory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Map Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copybooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copybooks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Copybooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-structure-copybooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Structure Copybooks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Structure Copybooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#csusr01y-user-security-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSUSR01Y - User Security Record
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cvact01y-account-data-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CVACT01Y - Account Data Record
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cvact02y-card-data-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CVACT02Y - Card Data Record
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cvcus01y-customer-data-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CVCUS01Y - Customer Data Record
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cvact03y-card-cross-reference-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CVACT03Y - Card Cross Reference Record
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cvtra05y-transaction-record-online" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CVTRA05Y - Transaction Record (Online)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cvtra06y-transaction-record-batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CVTRA06Y - Transaction Record (Batch)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bms-copybooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BMS Copybooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-storage-copybooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working Storage Copybooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vsam-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VSAM Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acctdat-account-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ACCTDAT - Account Master
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carddat-card-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CARDDAT - Card Master
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custdat-customer-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CUSTDAT - Customer Master
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cardxref-card-cross-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CARDXREF - Card Cross Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transact-transaction-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TRANSACT - Transaction File
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usrsec-user-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USRSEC - User Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Attributes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cics-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CICS Transactions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CICS Transactions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transaction-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Definitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Attributes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jcl-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JCL Jobs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JCL Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#job-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job Categories
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#program-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Program Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Program Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming Conventions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programming-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programming Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CICS-Configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CICS Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optional Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Optional Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Transaction-Type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transaction Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-VSAM-MQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VSAM-MQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#online-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Online Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Online Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sign-on-and-menu-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sign-On and Menu Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sign-On and Menu Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cosgn00c-sign-on-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COSGN00C - Sign-On Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comen01c-main-menu-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMEN01C - Main Menu Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-management-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Management Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Account Management Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coactvwc-account-view-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COACTVWC - Account View Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coactupc-account-update-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COACTUPC - Account Update Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-management-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card Management Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Card Management Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cocrdlic-card-list-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COCRDLIC - Card List Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cocrdslc-card-view-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COCRDSLC - Card View Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cocrdupc-card-update-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COCRDUPC - Card Update Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-management-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Management Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transaction Management Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cotrn00c-transaction-list-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COTRN00C - Transaction List Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cotrn01c-transaction-view-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COTRN01C - Transaction View Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cotrn02c-transaction-add-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COTRN02C - Transaction Add Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bill-payment-and-report-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bill Payment and Report Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bill Payment and Report Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cobil00c-bill-payment-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBIL00C - Bill Payment Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#corpt00c-report-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CORPT00C - Report Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Admin Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coadm01c-admin-menu-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COADM01C - Admin Menu Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cousr00c-user-list-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COUSR00C - User List Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cousr01c-user-add-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COUSR01C - User Add Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cousr02c-user-update-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COUSR02C - User Update Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cousr03c-user-delete-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COUSR03C - User Delete Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Batch Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transaction-processing-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Processing Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transaction Processing Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cbtrn02c-transaction-posting-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CBTRN02C - Transaction Posting Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cbtrn03c-transaction-report-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CBTRN03C - Transaction Report Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-processing-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Processing Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Account Processing Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cbact04c-interest-calculation-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CBACT04C - Interest Calculation Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cbstm03a-statement-generation-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CBSTM03A - Statement Generation Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utility-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utility Programs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Utility Programs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assembler-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assembler Utilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assembler Utilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mvswait-timer-control-utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MVSWAIT - Timer Control Utility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobdatft-date-format-conversion-utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COBDATFT - Date Format Conversion Utility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bms-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BMS Maps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BMS Maps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#map-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Map Inventory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Map Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copybooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copybooks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Copybooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-structure-copybooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Structure Copybooks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Structure Copybooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#csusr01y-user-security-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSUSR01Y - User Security Record
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cvact01y-account-data-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CVACT01Y - Account Data Record
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cvact02y-card-data-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CVACT02Y - Card Data Record
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cvcus01y-customer-data-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CVCUS01Y - Customer Data Record
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cvact03y-card-cross-reference-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CVACT03Y - Card Cross Reference Record
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cvtra05y-transaction-record-online" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CVTRA05Y - Transaction Record (Online)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cvtra06y-transaction-record-batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CVTRA06Y - Transaction Record (Batch)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bms-copybooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BMS Copybooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-storage-copybooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working Storage Copybooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vsam-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM Files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VSAM Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acctdat-account-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ACCTDAT - Account Master
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carddat-card-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CARDDAT - Card Master
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custdat-customer-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CUSTDAT - Customer Master
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cardxref-card-cross-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CARDXREF - Card Cross Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transact-transaction-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TRANSACT - Transaction File
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usrsec-user-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USRSEC - User Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Attributes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cics-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CICS Transactions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CICS Transactions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transaction-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Definitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Attributes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jcl-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JCL Jobs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JCL Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#job-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job Categories
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#program-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Program Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Program Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming Conventions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programming-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programming Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="technical-components">Technical Components</h1>
+<p>Comprehensive reference for all CardDemo technical components including programs, files, copybooks, and resources.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#online-programs">Online Programs</a></li>
+<li><a href="#batch-programs">Batch Programs</a></li>
+<li><a href="#utility-programs">Utility Programs</a></li>
+<li><a href="#bms-maps">BMS Maps</a></li>
+<li><a href="#copybooks">Copybooks</a></li>
+<li><a href="#vsam-files">VSAM Files</a></li>
+<li><a href="#cics-transactions">CICS Transactions</a></li>
+<li><a href="#jcl-jobs">JCL Jobs</a></li>
+<li><a href="#program-specifications">Program Specifications</a></li>
+</ul>
+<h2 id="online-programs">Online Programs</h2>
+<h3 id="sign-on-and-menu-programs">Sign-On and Menu Programs</h3>
+<h4 id="cosgn00c-sign-on-program">COSGN00C - Sign-On Program</h4>
+<ul>
+<li><strong>Transaction</strong>: CC00</li>
+<li><strong>BMS Map</strong>: COSGN00</li>
+<li><strong>Function</strong>: User authentication and sign-on</li>
+<li><strong>Files Accessed</strong>: USRSEC (User Security)</li>
+<li><strong>Processing</strong>:</li>
+<li>Validates user credentials</li>
+<li>Checks account status</li>
+<li>Establishes user session</li>
+<li>Routes to main menu on success</li>
+<li><strong>Error Handling</strong>: Invalid credentials, locked accounts, system errors</li>
+</ul>
+<h4 id="comen01c-main-menu-program">COMEN01C - Main Menu Program</h4>
+<ul>
+<li><strong>Transaction</strong>: CM00</li>
+<li><strong>BMS Map</strong>: COMEN01</li>
+<li><strong>Function</strong>: Main menu display and navigation</li>
+<li><strong>Processing</strong>:</li>
+<li>Displays menu options based on user type</li>
+<li>Routes to selected function</li>
+<li>Maintains session context</li>
+<li><strong>User Types</strong>: Regular users see options 1-11, Admin users see option 12</li>
+</ul>
+<h3 id="account-management-programs">Account Management Programs</h3>
+<h4 id="coactvwc-account-view-program">COACTVWC - Account View Program</h4>
+<ul>
+<li><strong>Transaction</strong>: CAVW</li>
+<li><strong>BMS Map</strong>: COACTVW</li>
+<li><strong>Function</strong>: Display account details</li>
+<li><strong>Files Accessed</strong>: ACCTDAT, CUSTDAT</li>
+<li><strong>Input</strong>: Account Number (11 digits)</li>
+<li><strong>Output</strong>: Account details, balances, customer information</li>
+<li><strong>Processing</strong>:</li>
+<li>Validates account number</li>
+<li>Retrieves account record</li>
+<li>Retrieves customer record</li>
+<li>Formats and displays data</li>
+</ul>
+<h4 id="coactupc-account-update-program">COACTUPC - Account Update Program</h4>
+<ul>
+<li><strong>Transaction</strong>: CAUP</li>
+<li><strong>BMS Map</strong>: COACTUP</li>
+<li><strong>Function</strong>: Update account information</li>
+<li><strong>Files Accessed</strong>: ACCTDAT (update)</li>
+<li><strong>Updatable Fields</strong>: Credit limit, cash credit limit, status</li>
+<li><strong>Processing</strong>:</li>
+<li>Retrieves account for update</li>
+<li>Validates changes</li>
+<li>Updates account record</li>
+<li>Logs changes</li>
+<li><strong>Business Rules</strong>: Credit limit validation, status change rules</li>
+</ul>
+<h3 id="card-management-programs">Card Management Programs</h3>
+<h4 id="cocrdlic-card-list-program">COCRDLIC - Card List Program</h4>
+<ul>
+<li><strong>Transaction</strong>: CCLI</li>
+<li><strong>BMS Map</strong>: COCRDLI</li>
+<li><strong>Function</strong>: List cards for an account</li>
+<li><strong>Files Accessed</strong>: CARDDAT, CARDXREF</li>
+<li><strong>Input</strong>: Account Number</li>
+<li><strong>Output</strong>: List of cards with status</li>
+<li><strong>Processing</strong>:</li>
+<li>Retrieves cross-reference records</li>
+<li>Retrieves card records</li>
+<li>Formats list display</li>
+<li>Supports paging (PF7/PF8)</li>
+</ul>
+<h4 id="cocrdslc-card-view-program">COCRDSLC - Card View Program</h4>
+<ul>
+<li><strong>Transaction</strong>: CCDL</li>
+<li><strong>BMS Map</strong>: COCRDSL</li>
+<li><strong>Function</strong>: Display card details</li>
+<li><strong>Files Accessed</strong>: CARDDAT</li>
+<li><strong>Input</strong>: Card Number (16 digits)</li>
+<li><strong>Output</strong>: Complete card information</li>
+<li><strong>Processing</strong>:</li>
+<li>Validates card number</li>
+<li>Retrieves card record</li>
+<li>Formats and displays data</li>
+</ul>
+<h4 id="cocrdupc-card-update-program">COCRDUPC - Card Update Program</h4>
+<ul>
+<li><strong>Transaction</strong>: CCUP</li>
+<li><strong>BMS Map</strong>: COCRDUP</li>
+<li><strong>Function</strong>: Update card information</li>
+<li><strong>Files Accessed</strong>: CARDDAT (update)</li>
+<li><strong>Updatable Fields</strong>: Status, expiration date, cardholder name</li>
+<li><strong>Processing</strong>:</li>
+<li>Retrieves card for update</li>
+<li>Validates changes</li>
+<li>Updates card record</li>
+<li>Logs changes</li>
+</ul>
+<h3 id="transaction-management-programs">Transaction Management Programs</h3>
+<h4 id="cotrn00c-transaction-list-program">COTRN00C - Transaction List Program</h4>
+<ul>
+<li><strong>Transaction</strong>: CT00</li>
+<li><strong>BMS Map</strong>: COTRN00</li>
+<li><strong>Function</strong>: List transactions for a card</li>
+<li><strong>Files Accessed</strong>: TRANSACT (via AIX)</li>
+<li><strong>Input</strong>: Card Number, optional date range</li>
+<li><strong>Output</strong>: Transaction list</li>
+<li><strong>Processing</strong>:</li>
+<li>Uses alternate index for card number access</li>
+<li>Filters by date range if specified</li>
+<li>Supports paging</li>
+<li>Sorts by date descending</li>
+</ul>
+<h4 id="cotrn01c-transaction-view-program">COTRN01C - Transaction View Program</h4>
+<ul>
+<li><strong>Transaction</strong>: CT01</li>
+<li><strong>BMS Map</strong>: COTRN01</li>
+<li><strong>Function</strong>: Display transaction details</li>
+<li><strong>Files Accessed</strong>: TRANSACT</li>
+<li><strong>Input</strong>: Transaction ID</li>
+<li><strong>Output</strong>: Complete transaction information</li>
+<li><strong>Processing</strong>:</li>
+<li>Retrieves transaction record</li>
+<li>Formats merchant information</li>
+<li>Displays authorization details</li>
+</ul>
+<h4 id="cotrn02c-transaction-add-program">COTRN02C - Transaction Add Program</h4>
+<ul>
+<li><strong>Transaction</strong>: CT02</li>
+<li><strong>BMS Map</strong>: COTRN02</li>
+<li><strong>Function</strong>: Add new transaction</li>
+<li><strong>Files Accessed</strong>: TRANSACT (add), CARDDAT (read), ACCTDAT (update)</li>
+<li><strong>Input</strong>: Transaction details</li>
+<li><strong>Processing</strong>:</li>
+<li>Validates card status</li>
+<li>Checks available credit</li>
+<li>Generates transaction ID</li>
+<li>Writes transaction record</li>
+<li>Updates account balance</li>
+<li><strong>Business Rules</strong>: Credit limit checking, card status validation</li>
+</ul>
+<h3 id="bill-payment-and-report-programs">Bill Payment and Report Programs</h3>
+<h4 id="cobil00c-bill-payment-program">COBIL00C - Bill Payment Program</h4>
+<ul>
+<li><strong>Transaction</strong>: CB00</li>
+<li><strong>BMS Map</strong>: COBIL00</li>
+<li><strong>Function</strong>: Process bill payments</li>
+<li><strong>Files Accessed</strong>: ACCTDAT (update), TRANSACT (add)</li>
+<li><strong>Input</strong>: Account, card, payment amount</li>
+<li><strong>Processing</strong>:</li>
+<li>Validates payment amount</li>
+<li>Creates payment transaction</li>
+<li>Updates account balance</li>
+<li>Updates available credit</li>
+<li><strong>Business Rules</strong>: Payment validation, balance checking</li>
+</ul>
+<h4 id="corpt00c-report-program">CORPT00C - Report Program</h4>
+<ul>
+<li><strong>Transaction</strong>: CR00</li>
+<li><strong>BMS Map</strong>: CORPT00</li>
+<li><strong>Function</strong>: Generate transaction reports</li>
+<li><strong>Files Accessed</strong>: TRANSACT, ACCTDAT</li>
+<li><strong>Report Types</strong>: Account summary, transaction detail, category summary</li>
+<li><strong>Processing</strong>:</li>
+<li>Filters transactions by criteria</li>
+<li>Aggregates data</li>
+<li>Formats report output</li>
+<li>Supports paging</li>
+</ul>
+<h3 id="admin-programs">Admin Programs</h3>
+<h4 id="coadm01c-admin-menu-program">COADM01C - Admin Menu Program</h4>
+<ul>
+<li><strong>Transaction</strong>: CA00</li>
+<li><strong>BMS Map</strong>: COADM01</li>
+<li><strong>Function</strong>: Admin menu display</li>
+<li><strong>Processing</strong>:</li>
+<li>Verifies admin privileges</li>
+<li>Displays admin options</li>
+<li>Routes to admin functions</li>
+</ul>
+<h4 id="cousr00c-user-list-program">COUSR00C - User List Program</h4>
+<ul>
+<li><strong>Transaction</strong>: CU00</li>
+<li><strong>BMS Map</strong>: COUSR00</li>
+<li><strong>Function</strong>: List all users</li>
+<li><strong>Files Accessed</strong>: USRSEC</li>
+<li><strong>Output</strong>: User list with details</li>
+<li><strong>Processing</strong>:</li>
+<li>Retrieves all user records</li>
+<li>Formats list display</li>
+<li>Supports paging</li>
+</ul>
+<h4 id="cousr01c-user-add-program">COUSR01C - User Add Program</h4>
+<ul>
+<li><strong>Transaction</strong>: CU01</li>
+<li><strong>BMS Map</strong>: COUSR01</li>
+<li><strong>Function</strong>: Create new user</li>
+<li><strong>Files Accessed</strong>: USRSEC (add)</li>
+<li><strong>Input</strong>: User details</li>
+<li><strong>Processing</strong>:</li>
+<li>Validates user ID uniqueness</li>
+<li>Validates password requirements</li>
+<li>Creates user record</li>
+<li>Logs creation</li>
+</ul>
+<h4 id="cousr02c-user-update-program">COUSR02C - User Update Program</h4>
+<ul>
+<li><strong>Transaction</strong>: CU02</li>
+<li><strong>BMS Map</strong>: COUSR02</li>
+<li><strong>Function</strong>: Update user information</li>
+<li><strong>Files Accessed</strong>: USRSEC (update)</li>
+<li><strong>Processing</strong>:</li>
+<li>Retrieves user for update</li>
+<li>Validates changes</li>
+<li>Updates user record</li>
+<li>Supports password reset</li>
+</ul>
+<h4 id="cousr03c-user-delete-program">COUSR03C - User Delete Program</h4>
+<ul>
+<li><strong>Transaction</strong>: CU03</li>
+<li><strong>BMS Map</strong>: COUSR03</li>
+<li><strong>Function</strong>: Delete user account</li>
+<li><strong>Files Accessed</strong>: USRSEC (delete)</li>
+<li><strong>Processing</strong>:</li>
+<li>Validates deletion rules</li>
+<li>Confirms deletion</li>
+<li>Deletes user record</li>
+<li>Logs deletion</li>
+</ul>
+<h2 id="batch-programs">Batch Programs</h2>
+<h3 id="transaction-processing-programs">Transaction Processing Programs</h3>
+<h4 id="cbtrn02c-transaction-posting-program">CBTRN02C - Transaction Posting Program</h4>
+<ul>
+<li><strong>Job</strong>: POSTTRAN</li>
+<li><strong>Function</strong>: Post daily transactions to accounts</li>
+<li><strong>Input Files</strong>: DALYTRAN.PS, ACCTDAT, TRANSACT</li>
+<li><strong>Output Files</strong>: Updated ACCTDAT, Updated TRANSACT, POSTTRAN.REPORT</li>
+<li><strong>Processing Logic</strong>:</li>
+<li>Read daily transaction file</li>
+<li>Validate each transaction</li>
+<li>Update account balance</li>
+<li>Write to transaction history</li>
+<li>Generate posting report</li>
+<li><strong>Error Handling</strong>: Invalid transactions logged, processing continues</li>
+</ul>
+<h4 id="cbtrn03c-transaction-report-program">CBTRN03C - Transaction Report Program</h4>
+<ul>
+<li><strong>Job</strong>: TRANREPT</li>
+<li><strong>Function</strong>: Generate transaction reports</li>
+<li><strong>Input Files</strong>: TRANSACT, ACCTDAT</li>
+<li><strong>Output Files</strong>: TRANREPT.REPORT</li>
+<li><strong>Processing</strong>: Aggregates and formats transaction data</li>
+</ul>
+<h3 id="account-processing-programs">Account Processing Programs</h3>
+<h4 id="cbact04c-interest-calculation-program">CBACT04C - Interest Calculation Program</h4>
+<ul>
+<li><strong>Job</strong>: INTCALC</li>
+<li><strong>Function</strong>: Calculate and post monthly interest</li>
+<li><strong>Input Files</strong>: ACCTDAT, TRANSACT</li>
+<li><strong>Output Files</strong>: Updated ACCTDAT, Updated TRANSACT, INTCALC.REPORT</li>
+<li><strong>Processing Logic</strong>:</li>
+<li>Calculate average daily balance</li>
+<li>Apply interest rate</li>
+<li>Post interest transaction</li>
+<li>Update account balance</li>
+<li><strong>Interest Formula</strong>: (Average Daily Balance × Annual Rate) / 12</li>
+</ul>
+<h4 id="cbstm03a-statement-generation-program">CBSTM03A - Statement Generation Program</h4>
+<ul>
+<li><strong>Job</strong>: CREASTMT</li>
+<li><strong>Function</strong>: Generate monthly statements</li>
+<li><strong>Input Files</strong>: ACCTDAT, CARDDAT, CUSTDAT, TRANSACT</li>
+<li><strong>Output Files</strong>: STATEMENT.GDG(+1), CREASTMT.REPORT</li>
+<li><strong>Processing Logic</strong>:</li>
+<li>Read all active accounts</li>
+<li>Retrieve transactions for period</li>
+<li>Calculate totals</li>
+<li>Format statement</li>
+<li>Write to output file</li>
+</ul>
+<h2 id="utility-programs">Utility Programs</h2>
+<h3 id="assembler-utilities">Assembler Utilities</h3>
+<h4 id="mvswait-timer-control-utility">MVSWAIT - Timer Control Utility</h4>
+<ul>
+<li><strong>Language</strong>: Assembler</li>
+<li><strong>Function</strong>: Wait for specified time period</li>
+<li><strong>Usage</strong>: Called from batch jobs to introduce delays</li>
+<li><strong>Parameters</strong>: Wait time in seconds</li>
+<li><strong>Purpose</strong>: Coordinate batch job timing</li>
+</ul>
+<h4 id="cobdatft-date-format-conversion-utility">COBDATFT - Date Format Conversion Utility</h4>
+<ul>
+<li><strong>Language</strong>: Assembler</li>
+<li><strong>Function</strong>: Convert date formats</li>
+<li><strong>Input</strong>: Date in various formats</li>
+<li><strong>Output</strong>: Standardized date format</li>
+<li><strong>Usage</strong>: Called from COBOL programs for date conversion</li>
+</ul>
+<h2 id="bms-maps">BMS Maps</h2>
+<h3 id="map-inventory">Map Inventory</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Map Name</th>
+<th style="text-align: left;">Program</th>
+<th style="text-align: left;">Transaction</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">COSGN00</td>
+<td style="text-align: left;">COSGN00C</td>
+<td style="text-align: left;">CC00</td>
+<td style="text-align: left;">Sign-on screen</td>
+</tr>
+<tr>
+<td style="text-align: left;">COMEN01</td>
+<td style="text-align: left;">COMEN01C</td>
+<td style="text-align: left;">CM00</td>
+<td style="text-align: left;">Main menu</td>
+</tr>
+<tr>
+<td style="text-align: left;">COACTVW</td>
+<td style="text-align: left;">COACTVWC</td>
+<td style="text-align: left;">CAVW</td>
+<td style="text-align: left;">Account view</td>
+</tr>
+<tr>
+<td style="text-align: left;">COACTUP</td>
+<td style="text-align: left;">COACTUPC</td>
+<td style="text-align: left;">CAUP</td>
+<td style="text-align: left;">Account update</td>
+</tr>
+<tr>
+<td style="text-align: left;">COCRDLI</td>
+<td style="text-align: left;">COCRDLIC</td>
+<td style="text-align: left;">CCLI</td>
+<td style="text-align: left;">Card list</td>
+</tr>
+<tr>
+<td style="text-align: left;">COCRDSL</td>
+<td style="text-align: left;">COCRDSLC</td>
+<td style="text-align: left;">CCDL</td>
+<td style="text-align: left;">Card view</td>
+</tr>
+<tr>
+<td style="text-align: left;">COCRDUP</td>
+<td style="text-align: left;">COCRDUPC</td>
+<td style="text-align: left;">CCUP</td>
+<td style="text-align: left;">Card update</td>
+</tr>
+<tr>
+<td style="text-align: left;">COTRN00</td>
+<td style="text-align: left;">COTRN00C</td>
+<td style="text-align: left;">CT00</td>
+<td style="text-align: left;">Transaction list</td>
+</tr>
+<tr>
+<td style="text-align: left;">COTRN01</td>
+<td style="text-align: left;">COTRN01C</td>
+<td style="text-align: left;">CT01</td>
+<td style="text-align: left;">Transaction view</td>
+</tr>
+<tr>
+<td style="text-align: left;">COTRN02</td>
+<td style="text-align: left;">COTRN02C</td>
+<td style="text-align: left;">CT02</td>
+<td style="text-align: left;">Transaction add</td>
+</tr>
+<tr>
+<td style="text-align: left;">CORPT00</td>
+<td style="text-align: left;">CORPT00C</td>
+<td style="text-align: left;">CR00</td>
+<td style="text-align: left;">Reports</td>
+</tr>
+<tr>
+<td style="text-align: left;">COBIL00</td>
+<td style="text-align: left;">COBIL00C</td>
+<td style="text-align: left;">CB00</td>
+<td style="text-align: left;">Bill payment</td>
+</tr>
+<tr>
+<td style="text-align: left;">COADM01</td>
+<td style="text-align: left;">COADM01C</td>
+<td style="text-align: left;">CA00</td>
+<td style="text-align: left;">Admin menu</td>
+</tr>
+<tr>
+<td style="text-align: left;">COUSR00</td>
+<td style="text-align: left;">COUSR00C</td>
+<td style="text-align: left;">CU00</td>
+<td style="text-align: left;">User list</td>
+</tr>
+<tr>
+<td style="text-align: left;">COUSR01</td>
+<td style="text-align: left;">COUSR01C</td>
+<td style="text-align: left;">CU01</td>
+<td style="text-align: left;">User add</td>
+</tr>
+<tr>
+<td style="text-align: left;">COUSR02</td>
+<td style="text-align: left;">COUSR02C</td>
+<td style="text-align: left;">CU02</td>
+<td style="text-align: left;">User update</td>
+</tr>
+<tr>
+<td style="text-align: left;">COUSR03</td>
+<td style="text-align: left;">COUSR03C</td>
+<td style="text-align: left;">CU03</td>
+<td style="text-align: left;">User delete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="map-characteristics">Map Characteristics</h3>
+<p><strong>Standard Features:</strong>
+- 24x80 character display
+- Function key support (PF3, PF4, PF7, PF8, PF12)
+- Field attributes (protected, unprotected, numeric)
+- Color support (where available)
+- Cursor positioning</p>
+<h2 id="copybooks">Copybooks</h2>
+<h3 id="data-structure-copybooks">Data Structure Copybooks</h3>
+<h4 id="csusr01y-user-security-record">CSUSR01Y - User Security Record</h4>
+<ul>
+<li><strong>File</strong>: USRSEC</li>
+<li><strong>Length</strong>: 80 bytes</li>
+<li><strong>Key</strong>: User ID (8 bytes)</li>
+<li><strong>Fields</strong>: User ID, Password, User Type, Status, Last Login</li>
+</ul>
+<h4 id="cvact01y-account-data-record">CVACT01Y - Account Data Record</h4>
+<ul>
+<li><strong>File</strong>: ACCTDAT</li>
+<li><strong>Length</strong>: 300 bytes</li>
+<li><strong>Key</strong>: Account ID (11 bytes)</li>
+<li><strong>Fields</strong>: Account details, balances, credit limits, dates</li>
+</ul>
+<h4 id="cvact02y-card-data-record">CVACT02Y - Card Data Record</h4>
+<ul>
+<li><strong>File</strong>: CARDDAT</li>
+<li><strong>Length</strong>: 150 bytes</li>
+<li><strong>Key</strong>: Card Number (16 bytes)</li>
+<li><strong>Fields</strong>: Card details, status, expiration, cardholder name</li>
+</ul>
+<h4 id="cvcus01y-customer-data-record">CVCUS01Y - Customer Data Record</h4>
+<ul>
+<li><strong>File</strong>: CUSTDAT</li>
+<li><strong>Length</strong>: 500 bytes</li>
+<li><strong>Key</strong>: Customer ID (9 bytes)</li>
+<li><strong>Fields</strong>: Customer personal information, address, contact</li>
+</ul>
+<h4 id="cvact03y-card-cross-reference-record">CVACT03Y - Card Cross Reference Record</h4>
+<ul>
+<li><strong>File</strong>: CARDXREF</li>
+<li><strong>Length</strong>: 50 bytes</li>
+<li><strong>Key</strong>: Composite (Account + Card + Customer)</li>
+<li><strong>Fields</strong>: Account ID, Card Number, Customer ID</li>
+</ul>
+<h4 id="cvtra05y-transaction-record-online">CVTRA05Y - Transaction Record (Online)</h4>
+<ul>
+<li><strong>File</strong>: TRANSACT</li>
+<li><strong>Length</strong>: 350 bytes</li>
+<li><strong>Key</strong>: Transaction ID</li>
+<li><strong>Fields</strong>: Transaction details, amounts, merchant info, dates</li>
+</ul>
+<h4 id="cvtra06y-transaction-record-batch">CVTRA06Y - Transaction Record (Batch)</h4>
+<ul>
+<li><strong>File</strong>: DALYTRAN</li>
+<li><strong>Length</strong>: 350 bytes</li>
+<li><strong>Fields</strong>: Same as CVTRA05Y, used for batch input</li>
+</ul>
+<h3 id="bms-copybooks">BMS Copybooks</h3>
+<p>Generated from BMS maps, located in <code>app/cpy-bms/</code>:
+- Symbolic map definitions
+- Field definitions
+- Attribute byte definitions</p>
+<h3 id="working-storage-copybooks">Working Storage Copybooks</h3>
+<p>Common working storage structures:
+- Date/time formats
+- Error messages
+- Constants
+- Common calculations</p>
+<h2 id="vsam-files">VSAM Files</h2>
+<h3 id="file-specifications">File Specifications</h3>
+<h4 id="acctdat-account-master">ACCTDAT - Account Master</h4>
+<ul>
+<li><strong>Organization</strong>: KSDS (Key-Sequenced Data Set)</li>
+<li><strong>Key</strong>: Account ID (11 bytes, position 1)</li>
+<li><strong>Record Length</strong>: 300 bytes</li>
+<li><strong>Access</strong>: Random and sequential</li>
+<li><strong>Usage</strong>: Online and batch</li>
+</ul>
+<h4 id="carddat-card-master">CARDDAT - Card Master</h4>
+<ul>
+<li><strong>Organization</strong>: KSDS</li>
+<li><strong>Key</strong>: Card Number (16 bytes, position 1)</li>
+<li><strong>Record Length</strong>: 150 bytes</li>
+<li><strong>Access</strong>: Random</li>
+<li><strong>Usage</strong>: Online and batch</li>
+</ul>
+<h4 id="custdat-customer-master">CUSTDAT - Customer Master</h4>
+<ul>
+<li><strong>Organization</strong>: KSDS</li>
+<li><strong>Key</strong>: Customer ID (9 bytes, position 1)</li>
+<li><strong>Record Length</strong>: 500 bytes</li>
+<li><strong>Access</strong>: Random</li>
+<li><strong>Usage</strong>: Online and batch</li>
+</ul>
+<h4 id="cardxref-card-cross-reference">CARDXREF - Card Cross Reference</h4>
+<ul>
+<li><strong>Organization</strong>: KSDS</li>
+<li><strong>Key</strong>: Composite key (36 bytes)</li>
+<li><strong>Record Length</strong>: 50 bytes</li>
+<li><strong>Access</strong>: Random and sequential</li>
+<li><strong>Usage</strong>: Online</li>
+</ul>
+<h4 id="transact-transaction-file">TRANSACT - Transaction File</h4>
+<ul>
+<li><strong>Organization</strong>: KSDS with AIX</li>
+<li><strong>Primary Key</strong>: Transaction ID (15 bytes)</li>
+<li><strong>Alternate Key</strong>: Card Number + Date</li>
+<li><strong>Record Length</strong>: 350 bytes</li>
+<li><strong>Access</strong>: Random and sequential</li>
+<li><strong>Usage</strong>: Online and batch</li>
+</ul>
+<h4 id="usrsec-user-security">USRSEC - User Security</h4>
+<ul>
+<li><strong>Organization</strong>: KSDS</li>
+<li><strong>Key</strong>: User ID (8 bytes, position 1)</li>
+<li><strong>Record Length</strong>: 80 bytes</li>
+<li><strong>Access</strong>: Random</li>
+<li><strong>Usage</strong>: Online</li>
+</ul>
+<h3 id="file-attributes">File Attributes</h3>
+<p><strong>Buffer Specifications:</strong>
+- BUFNI: Number of index buffers
+- BUFND: Number of data buffers
+- Typical: BUFNI=10, BUFND=20 for online access</p>
+<p><strong>Sharing:</strong>
+- SHAREOPTIONS(2,3) for CICS access
+- Exclusive access for batch</p>
+<h2 id="cics-transactions">CICS Transactions</h2>
+<h3 id="transaction-definitions">Transaction Definitions</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Transaction</th>
+<th style="text-align: left;">Program</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">CC00</td>
+<td style="text-align: left;">COSGN00C</td>
+<td style="text-align: left;">Sign-on</td>
+<td style="text-align: left;">High</td>
+</tr>
+<tr>
+<td style="text-align: left;">CM00</td>
+<td style="text-align: left;">COMEN01C</td>
+<td style="text-align: left;">Main menu</td>
+<td style="text-align: left;">High</td>
+</tr>
+<tr>
+<td style="text-align: left;">CAVW</td>
+<td style="text-align: left;">COACTVWC</td>
+<td style="text-align: left;">Account view</td>
+<td style="text-align: left;">Normal</td>
+</tr>
+<tr>
+<td style="text-align: left;">CAUP</td>
+<td style="text-align: left;">COACTUPC</td>
+<td style="text-align: left;">Account update</td>
+<td style="text-align: left;">Normal</td>
+</tr>
+<tr>
+<td style="text-align: left;">CCLI</td>
+<td style="text-align: left;">COCRDLIC</td>
+<td style="text-align: left;">Card list</td>
+<td style="text-align: left;">Normal</td>
+</tr>
+<tr>
+<td style="text-align: left;">CCDL</td>
+<td style="text-align: left;">COCRDSLC</td>
+<td style="text-align: left;">Card view</td>
+<td style="text-align: left;">Normal</td>
+</tr>
+<tr>
+<td style="text-align: left;">CCUP</td>
+<td style="text-align: left;">COCRDUPC</td>
+<td style="text-align: left;">Card update</td>
+<td style="text-align: left;">Normal</td>
+</tr>
+<tr>
+<td style="text-align: left;">CT00</td>
+<td style="text-align: left;">COTRN00C</td>
+<td style="text-align: left;">Transaction list</td>
+<td style="text-align: left;">Normal</td>
+</tr>
+<tr>
+<td style="text-align: left;">CT01</td>
+<td style="text-align: left;">COTRN01C</td>
+<td style="text-align: left;">Transaction view</td>
+<td style="text-align: left;">Normal</td>
+</tr>
+<tr>
+<td style="text-align: left;">CT02</td>
+<td style="text-align: left;">COTRN02C</td>
+<td style="text-align: left;">Transaction add</td>
+<td style="text-align: left;">Normal</td>
+</tr>
+<tr>
+<td style="text-align: left;">CR00</td>
+<td style="text-align: left;">CORPT00C</td>
+<td style="text-align: left;">Reports</td>
+<td style="text-align: left;">Low</td>
+</tr>
+<tr>
+<td style="text-align: left;">CB00</td>
+<td style="text-align: left;">COBIL00C</td>
+<td style="text-align: left;">Bill payment</td>
+<td style="text-align: left;">Normal</td>
+</tr>
+<tr>
+<td style="text-align: left;">CA00</td>
+<td style="text-align: left;">COADM01C</td>
+<td style="text-align: left;">Admin menu</td>
+<td style="text-align: left;">High</td>
+</tr>
+<tr>
+<td style="text-align: left;">CU00</td>
+<td style="text-align: left;">COUSR00C</td>
+<td style="text-align: left;">User list</td>
+<td style="text-align: left;">Normal</td>
+</tr>
+<tr>
+<td style="text-align: left;">CU01</td>
+<td style="text-align: left;">COUSR01C</td>
+<td style="text-align: left;">User add</td>
+<td style="text-align: left;">Normal</td>
+</tr>
+<tr>
+<td style="text-align: left;">CU02</td>
+<td style="text-align: left;">COUSR02C</td>
+<td style="text-align: left;">User update</td>
+<td style="text-align: left;">Normal</td>
+</tr>
+<tr>
+<td style="text-align: left;">CU03</td>
+<td style="text-align: left;">COUSR03C</td>
+<td style="text-align: left;">User delete</td>
+<td style="text-align: left;">Normal</td>
+</tr>
+</tbody>
+</table>
+<h3 id="transaction-attributes">Transaction Attributes</h3>
+<p><strong>Standard Attributes:</strong>
+- TASKDATALOC(ANY)
+- TASKDATAKEY(USER)
+- RUNAWAY(SYSTEM)
+- SPURGE(YES)
+- TPURGE(YES)</p>
+<h2 id="jcl-jobs">JCL Jobs</h2>
+<h3 id="job-categories">Job Categories</h3>
+<p><strong>Initialization Jobs:</strong>
+- DUSRSECJ, DEFGDGB, DEFGDGD, CLOSEFIL, OPENFIL</p>
+<p><strong>Data Loading Jobs:</strong>
+- ACCTFILE, CARDFILE, CUSTFILE, XREFFILE, TRANFILE, DISCGRP, TCATBALF, TRANCATG, TRANTYPE</p>
+<p><strong>Daily Processing Jobs:</strong>
+- TRANBKP, POSTTRAN, COMBTRAN, TRANIDX</p>
+<p><strong>Monthly Processing Jobs:</strong>
+- INTCALC, CREASTMT</p>
+<p><strong>Utility Jobs:</strong>
+- WAITSTEP, TRANREPT, ESDSRRDS</p>
+<p>See <a href="../Batch-Processing/">Batch Processing</a> for detailed job information.</p>
+<h2 id="program-specifications">Program Specifications</h2>
+<h3 id="naming-conventions">Naming Conventions</h3>
+<p><strong>Online Programs:</strong>
+- Prefix: CO (CICS Online)
+- Example: COSGN00C, COACTVWC</p>
+<p><strong>Batch Programs:</strong>
+- Prefix: CB (COBOL Batch)
+- Example: CBTRN02C, CBACT04C</p>
+<p><strong>BMS Maps:</strong>
+- Prefix: CO
+- Example: COSGN00, COACTVW</p>
+<p><strong>Copybooks:</strong>
+- Suffix: Y
+- Example: CSUSR01Y, CVACT01Y</p>
+<h3 id="programming-standards">Programming Standards</h3>
+<p><strong>COBOL Standards:</strong>
+- COBOL 85 or later
+- Structured programming
+- Proper error handling
+- Copybook usage for data structures
+- Standard paragraph naming</p>
+<p><strong>CICS Standards:</strong>
+- Pseudo-conversational design
+- COMMAREA for data passing
+- HANDLE CONDITION for error handling
+- Proper resource management</p>
+<p><strong>Documentation:</strong>
+- Program header with purpose
+- Paragraph descriptions
+- Complex logic commented
+- Change history maintained</p>
+<hr />
+<p><strong>Navigation</strong>: <a href="../Home/">Home</a> | <a href="../Architecture/">Architecture</a> | <a href="../Data-Models/">Data Models</a> | <a href="API-Reference.md">API Reference</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
