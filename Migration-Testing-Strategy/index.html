@@ -1,0 +1,4094 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://akanshahahaha.github.io/carddemo-staticpage/Migration-Testing-Strategy/">
+      
+      
+        <link rel="prev" href="../Migration-Data-Dictionary/">
+      
+      
+        <link rel="next" href="../Troubleshooting/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Testing Strategy - AWS Mainframe Modernization Card Demo - Deep Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#migration-testing-strategy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-header__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AWS Mainframe Modernization Card Demo - Deep Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Testing Strategy
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-nav__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AWS Mainframe Modernization Card Demo - Deep Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quick-Start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Admin-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Batch-Processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technical-Components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CICS-Configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CICS Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optional Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Optional Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Transaction-Type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transaction Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-VSAM-MQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VSAM-MQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Migration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Migration-Plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Migration-Technical-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Migration-Data-Dictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Dictionary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing Strategy
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-coverage-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Coverage Goals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Phases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Phases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-component-testing-during-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Component Testing (During Development)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-integration-testing-per-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Integration Testing (Per Phase)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-system-testing-end-to-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: System Testing (End-to-End)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-performance-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Performance Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-security-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: Security Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-6-user-acceptance-testing-uat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 6: User Acceptance Testing (UAT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-7-parallel-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 7: Parallel Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unit Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-testing-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Testing Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unit-testing-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Testing Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unit-test-coverage-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Test Coverage Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integration-testing-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Testing Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Integration Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Integration Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-to-service-integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service-to-Service Integration Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-queue-integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Message Queue Integration Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#end-to-end-test-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        End-to-End Test Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="End-to-End Test Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-complete-customer-onboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 1: Complete Customer Onboarding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-transaction-processing-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 2: Transaction Processing Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-3-user-management-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 3: User Management Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-test-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Test Automation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-testing-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Testing Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-test-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Test Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Test Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-test-normal-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Load Test: Normal Load
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stress-test-peak-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stress Test: Peak Load
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endurance-test-sustained-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endurance Test: Sustained Load
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jmeter-test-plan-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JMeter Test Plan Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-testing-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Testing Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Test Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Test Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-scanning-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Scanning Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-migration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Migration Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Migration Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-migration-test-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Migration Test Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-migration-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Migration Test Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Migration Test Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-case-1-record-count-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Case 1: Record Count Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-case-2-data-accuracy-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Case 2: Data Accuracy Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-case-3-referential-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Case 3: Referential Integrity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-case-4-business-rule-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Case 4: Business Rule Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-migration-reconciliation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Migration Reconciliation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-acceptance-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Acceptance Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Acceptance Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uat-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UAT Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uat-test-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UAT Test Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UAT Test Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-customer-service-representative-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 1: Customer Service Representative Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-account-manager-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 2: Account Manager Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uat-feedback-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UAT Feedback Collection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Automation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Automation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-automation-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Automation Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Environments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Environments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-data-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Data Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Data Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-data-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Data Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-masking-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Masking Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-data-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Data Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-coverage-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Coverage Goals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Phases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Phases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-component-testing-during-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Component Testing (During Development)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-integration-testing-per-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Integration Testing (Per Phase)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-system-testing-end-to-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: System Testing (End-to-End)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-performance-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Performance Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-security-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: Security Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-6-user-acceptance-testing-uat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 6: User Acceptance Testing (UAT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-7-parallel-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 7: Parallel Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unit Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-testing-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Testing Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unit-testing-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Testing Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unit-test-coverage-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Test Coverage Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integration-testing-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Testing Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Integration Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Integration Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-to-service-integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service-to-Service Integration Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-queue-integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Message Queue Integration Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#end-to-end-test-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        End-to-End Test Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="End-to-End Test Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-complete-customer-onboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 1: Complete Customer Onboarding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-transaction-processing-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 2: Transaction Processing Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-3-user-management-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 3: User Management Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-test-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Test Automation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-testing-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Testing Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-test-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Test Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Test Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-test-normal-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Load Test: Normal Load
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stress-test-peak-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stress Test: Peak Load
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endurance-test-sustained-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endurance Test: Sustained Load
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jmeter-test-plan-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JMeter Test Plan Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-testing-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Testing Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Test Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Test Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-scanning-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Scanning Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-migration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Migration Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Migration Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-migration-test-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Migration Test Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-migration-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Migration Test Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Migration Test Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-case-1-record-count-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Case 1: Record Count Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-case-2-data-accuracy-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Case 2: Data Accuracy Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-case-3-referential-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Case 3: Referential Integrity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-case-4-business-rule-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Case 4: Business Rule Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-migration-reconciliation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Migration Reconciliation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-acceptance-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Acceptance Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Acceptance Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uat-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UAT Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uat-test-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UAT Test Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UAT Test Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-customer-service-representative-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 1: Customer Service Representative Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-account-manager-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 2: Account Manager Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uat-feedback-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UAT Feedback Collection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Automation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Automation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-automation-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Automation Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Environments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Environments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-data-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Data Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Data Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-data-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Data Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-masking-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Masking Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-data-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Data Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="migration-testing-strategy">Migration Testing Strategy</h1>
+<p>Comprehensive testing strategy for the CardDemo mainframe to microservices migration.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#testing-overview">Testing Overview</a></li>
+<li><a href="#testing-phases">Testing Phases</a></li>
+<li><a href="#unit-testing">Unit Testing</a></li>
+<li><a href="#integration-testing">Integration Testing</a></li>
+<li><a href="#system-testing">System Testing</a></li>
+<li><a href="#performance-testing">Performance Testing</a></li>
+<li><a href="#security-testing">Security Testing</a></li>
+<li><a href="#data-migration-testing">Data Migration Testing</a></li>
+<li><a href="#user-acceptance-testing">User Acceptance Testing</a></li>
+<li><a href="#test-automation">Test Automation</a></li>
+<li><a href="#test-environments">Test Environments</a></li>
+<li><a href="#test-data-management">Test Data Management</a></li>
+</ul>
+<h2 id="testing-overview">Testing Overview</h2>
+<h3 id="testing-objectives">Testing Objectives</h3>
+<ol>
+<li><strong>Functional Correctness</strong>: Verify all business logic migrated correctly</li>
+<li><strong>Data Integrity</strong>: Ensure data accuracy and consistency</li>
+<li><strong>Performance</strong>: Meet or exceed mainframe performance</li>
+<li><strong>Security</strong>: Validate authentication, authorization, and data protection</li>
+<li><strong>Integration</strong>: Verify service-to-service communication</li>
+<li><strong>User Experience</strong>: Ensure usability and accessibility</li>
+<li><strong>Reliability</strong>: Validate system stability and error handling</li>
+</ol>
+<h3 id="testing-principles">Testing Principles</h3>
+<ol>
+<li><strong>Shift-Left Testing</strong>: Test early and often</li>
+<li><strong>Test Automation</strong>: Automate wherever possible</li>
+<li><strong>Continuous Testing</strong>: Integrate with CI/CD pipeline</li>
+<li><strong>Risk-Based Testing</strong>: Focus on high-risk areas</li>
+<li><strong>Parallel Testing</strong>: Run mainframe and microservices in parallel</li>
+<li><strong>Traceability</strong>: Link tests to requirements</li>
+</ol>
+<h3 id="test-coverage-goals">Test Coverage Goals</h3>
+<ul>
+<li><strong>Unit Tests</strong>: 80%+ code coverage</li>
+<li><strong>Integration Tests</strong>: All service interactions</li>
+<li><strong>API Tests</strong>: All REST endpoints</li>
+<li><strong>E2E Tests</strong>: Critical user journeys</li>
+<li><strong>Performance Tests</strong>: All major transactions</li>
+<li><strong>Security Tests</strong>: All authentication/authorization paths</li>
+</ul>
+<h2 id="testing-phases">Testing Phases</h2>
+<h3 id="phase-1-component-testing-during-development">Phase 1: Component Testing (During Development)</h3>
+<p><strong>Timeline</strong>: Throughout development (Months 1-16)</p>
+<p><strong>Activities</strong>:
+- Unit testing of individual classes and methods
+- Component testing of microservices
+- Mock external dependencies
+- Test-driven development (TDD) where appropriate</p>
+<p><strong>Entry Criteria</strong>:
+- Code complete for component
+- Unit test framework set up</p>
+<p><strong>Exit Criteria</strong>:
+- 80%+ code coverage
+- All unit tests passing
+- Code review completed</p>
+<h3 id="phase-2-integration-testing-per-phase">Phase 2: Integration Testing (Per Phase)</h3>
+<p><strong>Timeline</strong>: End of each migration phase</p>
+<p><strong>Activities</strong>:
+- Service-to-service integration testing
+- Database integration testing
+- Message queue integration testing
+- API contract testing</p>
+<p><strong>Entry Criteria</strong>:
+- All components unit tested
+- Integration environment ready
+- Test data prepared</p>
+<p><strong>Exit Criteria</strong>:
+- All integration tests passing
+- No critical defects
+- Performance baselines met</p>
+<h3 id="phase-3-system-testing-end-to-end">Phase 3: System Testing (End-to-End)</h3>
+<p><strong>Timeline</strong>: After Phase 4 (Transaction Processing complete)</p>
+<p><strong>Activities</strong>:
+- End-to-end business process testing
+- Cross-functional testing
+- Negative testing
+- Error handling and recovery testing</p>
+<p><strong>Entry Criteria</strong>:
+- All microservices deployed
+- System test environment ready
+- Test scenarios documented</p>
+<p><strong>Exit Criteria</strong>:
+- All test scenarios executed
+- No critical or high-severity defects
+- System stability demonstrated</p>
+<h3 id="phase-4-performance-testing">Phase 4: Performance Testing</h3>
+<p><strong>Timeline</strong>: After Phase 4, ongoing</p>
+<p><strong>Activities</strong>:
+- Load testing
+- Stress testing
+- Endurance testing
+- Scalability testing</p>
+<p><strong>Entry Criteria</strong>:
+- System testing complete
+- Performance test environment ready
+- Performance requirements defined</p>
+<p><strong>Exit Criteria</strong>:
+- Performance targets met
+- No performance degradation under load
+- Scalability validated</p>
+<h3 id="phase-5-security-testing">Phase 5: Security Testing</h3>
+<p><strong>Timeline</strong>: Ongoing, formal testing in Month 15</p>
+<p><strong>Activities</strong>:
+- Vulnerability scanning
+- Penetration testing
+- Authentication/authorization testing
+- Data encryption validation</p>
+<p><strong>Entry Criteria</strong>:
+- System testing complete
+- Security requirements defined
+- Security tools configured</p>
+<p><strong>Exit Criteria</strong>:
+- No critical security vulnerabilities
+- Security audit passed
+- Compliance requirements met</p>
+<h3 id="phase-6-user-acceptance-testing-uat">Phase 6: User Acceptance Testing (UAT)</h3>
+<p><strong>Timeline</strong>: Month 16-17</p>
+<p><strong>Activities</strong>:
+- Business user testing
+- Usability testing
+- Accessibility testing
+- Training validation</p>
+<p><strong>Entry Criteria</strong>:
+- System and performance testing complete
+- UAT environment ready
+- Business users trained</p>
+<p><strong>Exit Criteria</strong>:
+- Business sign-off received
+- User satisfaction criteria met
+- Training materials validated</p>
+<h3 id="phase-7-parallel-testing">Phase 7: Parallel Testing</h3>
+<p><strong>Timeline</strong>: Month 17</p>
+<p><strong>Activities</strong>:
+- Run mainframe and microservices in parallel
+- Compare outputs and results
+- Validate data consistency
+- Performance comparison</p>
+<p><strong>Entry Criteria</strong>:
+- UAT complete
+- Production-like environment ready
+- Parallel testing scripts ready</p>
+<p><strong>Exit Criteria</strong>:
+- Results match between systems
+- Performance acceptable
+- Business confidence achieved</p>
+<h2 id="unit-testing">Unit Testing</h2>
+<h3 id="unit-testing-framework">Unit Testing Framework</h3>
+<p><strong>Technology Stack</strong>:
+- JUnit 5 for test framework
+- Mockito for mocking
+- AssertJ for fluent assertions
+- JaCoCo for code coverage</p>
+<h3 id="unit-testing-standards">Unit Testing Standards</h3>
+<p><strong>Test Structure</strong>:</p>
+<pre><code class="language-java">@ExtendWith(MockitoExtension.class)
+class CustomerServiceTest {
+
+    @Mock
+    private CustomerRepository customerRepository;
+
+    @Mock
+    private KafkaTemplate&lt;String, Object&gt; kafkaTemplate;
+
+    @InjectMocks
+    private CustomerServiceImpl customerService;
+
+    @Test
+    @DisplayName(&quot;Should create customer successfully when valid request provided&quot;)
+    void testCreateCustomer_Success() {
+        // Given (Arrange)
+        CustomerRequest request = createValidCustomerRequest();
+        Customer expectedCustomer = createCustomerEntity();
+
+        when(customerRepository.existsBySsn(anyString())).thenReturn(false);
+        when(customerRepository.save(any(Customer.class))).thenReturn(expectedCustomer);
+
+        // When (Act)
+        CustomerResponse response = customerService.createCustomer(request);
+
+        // Then (Assert)
+        assertThat(response).isNotNull();
+        assertThat(response.getCustomerId()).isEqualTo(1L);
+        assertThat(response.getFirstName()).isEqualTo(&quot;John&quot;);
+
+        verify(customerRepository).existsBySsn(&quot;123456789&quot;);
+        verify(customerRepository).save(any(Customer.class));
+        verify(kafkaTemplate).send(eq(&quot;customer-events&quot;), eq(&quot;customer.created&quot;), any());
+    }
+
+    @Test
+    @DisplayName(&quot;Should throw DuplicateCustomerException when SSN already exists&quot;)
+    void testCreateCustomer_DuplicateSSN() {
+        // Given
+        CustomerRequest request = createValidCustomerRequest();
+        when(customerRepository.existsBySsn(anyString())).thenReturn(true);
+
+        // When &amp; Then
+        assertThatThrownBy(() -&gt; customerService.createCustomer(request))
+            .isInstanceOf(DuplicateCustomerException.class)
+            .hasMessageContaining(&quot;Customer with SSN already exists&quot;);
+
+        verify(customerRepository).existsBySsn(&quot;123456789&quot;);
+        verify(customerRepository, never()).save(any());
+    }
+
+    private CustomerRequest createValidCustomerRequest() {
+        return CustomerRequest.builder()
+            .customerId(1L)
+            .firstName(&quot;John&quot;)
+            .lastName(&quot;Doe&quot;)
+            .ssn(&quot;123456789&quot;)
+            .build();
+    }
+
+    private Customer createCustomerEntity() {
+        return Customer.builder()
+            .customerId(1L)
+            .firstName(&quot;John&quot;)
+            .lastName(&quot;Doe&quot;)
+            .ssn(&quot;123456789&quot;)
+            .build();
+    }
+}
+</code></pre>
+<h3 id="unit-test-coverage-requirements">Unit Test Coverage Requirements</h3>
+<p><strong>Minimum Coverage</strong>:
+- Line Coverage: 80%
+- Branch Coverage: 75%
+- Method Coverage: 90%</p>
+<p><strong>Focus Areas</strong>:
+- Business logic methods
+- Data validation
+- Error handling
+- Edge cases and boundary conditions</p>
+<p><strong>Exclusions</strong>:
+- DTOs and entities (data classes)
+- Configuration classes
+- Main application class</p>
+<h2 id="integration-testing">Integration Testing</h2>
+<h3 id="integration-testing-approach">Integration Testing Approach</h3>
+<p><strong>Technology Stack</strong>:
+- Spring Boot Test
+- Testcontainers for databases
+- WireMock for external service mocking
+- REST Assured for API testing</p>
+<h3 id="database-integration-testing">Database Integration Testing</h3>
+<pre><code class="language-java">@SpringBootTest
+@Testcontainers
+class CustomerRepositoryIntegrationTest {
+
+    @Container
+    static PostgreSQLContainer&lt;?&gt; postgres = new PostgreSQLContainer&lt;&gt;(&quot;postgres:15&quot;)
+        .withDatabaseName(&quot;testdb&quot;)
+        .withUsername(&quot;test&quot;)
+        .withPassword(&quot;test&quot;);
+
+    @DynamicPropertySource
+    static void configureProperties(DynamicPropertyRegistry registry) {
+        registry.add(&quot;spring.datasource.url&quot;, postgres::getJdbcUrl);
+        registry.add(&quot;spring.datasource.username&quot;, postgres::getUsername);
+        registry.add(&quot;spring.datasource.password&quot;, postgres::getPassword);
+    }
+
+    @Autowired
+    private CustomerRepository customerRepository;
+
+    @Test
+    void testSaveAndFindCustomer() {
+        // Given
+        Customer customer = Customer.builder()
+            .customerId(1L)
+            .firstName(&quot;John&quot;)
+            .lastName(&quot;Doe&quot;)
+            .ssn(&quot;123456789&quot;)
+            .build();
+
+        // When
+        Customer saved = customerRepository.save(customer);
+        Optional&lt;Customer&gt; found = customerRepository.findById(1L);
+
+        // Then
+        assertThat(found).isPresent();
+        assertThat(found.get().getFirstName()).isEqualTo(&quot;John&quot;);
+        assertThat(found.get().getSsn()).isEqualTo(&quot;123456789&quot;);
+    }
+
+    @Test
+    void testFindBySsn() {
+        // Given
+        Customer customer = createAndSaveCustomer(&quot;123456789&quot;);
+
+        // When
+        Optional&lt;Customer&gt; found = customerRepository.findBySsn(&quot;123456789&quot;);
+
+        // Then
+        assertThat(found).isPresent();
+        assertThat(found.get().getCustomerId()).isEqualTo(customer.getCustomerId());
+    }
+}
+</code></pre>
+<h3 id="api-integration-testing">API Integration Testing</h3>
+<pre><code class="language-java">@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@Testcontainers
+class CustomerApiIntegrationTest {
+
+    @LocalServerPort
+    private int port;
+
+    @Container
+    static PostgreSQLContainer&lt;?&gt; postgres = new PostgreSQLContainer&lt;&gt;(&quot;postgres:15&quot;);
+
+    @BeforeEach
+    void setUp() {
+        RestAssured.port = port;
+        RestAssured.basePath = &quot;/api/v1&quot;;
+    }
+
+    @Test
+    void testCreateCustomer() {
+        CustomerRequest request = CustomerRequest.builder()
+            .customerId(1L)
+            .firstName(&quot;John&quot;)
+            .lastName(&quot;Doe&quot;)
+            .ssn(&quot;123456789&quot;)
+            .build();
+
+        given()
+            .contentType(ContentType.JSON)
+            .body(request)
+        .when()
+            .post(&quot;/customers&quot;)
+        .then()
+            .statusCode(201)
+            .body(&quot;customerId&quot;, equalTo(1))
+            .body(&quot;firstName&quot;, equalTo(&quot;John&quot;))
+            .body(&quot;lastName&quot;, equalTo(&quot;Doe&quot;));
+    }
+
+    @Test
+    void testGetCustomer() {
+        // Given - create customer first
+        Long customerId = createCustomerViaApi();
+
+        // When &amp; Then
+        given()
+            .contentType(ContentType.JSON)
+        .when()
+            .get(&quot;/customers/{id}&quot;, customerId)
+        .then()
+            .statusCode(200)
+            .body(&quot;customerId&quot;, equalTo(customerId.intValue()))
+            .body(&quot;firstName&quot;, notNullValue());
+    }
+
+    @Test
+    void testGetCustomer_NotFound() {
+        given()
+            .contentType(ContentType.JSON)
+        .when()
+            .get(&quot;/customers/{id}&quot;, 99999L)
+        .then()
+            .statusCode(404)
+            .body(&quot;error&quot;, equalTo(&quot;Not Found&quot;));
+    }
+}
+</code></pre>
+<h3 id="service-to-service-integration-testing">Service-to-Service Integration Testing</h3>
+<pre><code class="language-java">@SpringBootTest
+@AutoConfigureWireMock(port = 0)
+class AccountServiceIntegrationTest {
+
+    @Autowired
+    private AccountService accountService;
+
+    @Value(&quot;${wiremock.server.port}&quot;)
+    private int wireMockPort;
+
+    @Test
+    void testCreateAccount_WithCustomerValidation() {
+        // Given - Mock customer service response
+        stubFor(get(urlEqualTo(&quot;/api/v1/customers/1&quot;))
+            .willReturn(aResponse()
+                .withStatus(200)
+                .withHeader(&quot;Content-Type&quot;, &quot;application/json&quot;)
+                .withBody(&quot;{\&quot;customerId\&quot;:1,\&quot;firstName\&quot;:\&quot;John\&quot;,\&quot;lastName\&quot;:\&quot;Doe\&quot;}&quot;)));
+
+        AccountRequest request = AccountRequest.builder()
+            .accountId(1L)
+            .customerId(1L)
+            .creditLimit(new BigDecimal(&quot;5000.00&quot;))
+            .build();
+
+        // When
+        AccountResponse response = accountService.createAccount(request);
+
+        // Then
+        assertThat(response).isNotNull();
+        assertThat(response.getAccountId()).isEqualTo(1L);
+
+        verify(getRequestedFor(urlEqualTo(&quot;/api/v1/customers/1&quot;)));
+    }
+}
+</code></pre>
+<h3 id="message-queue-integration-testing">Message Queue Integration Testing</h3>
+<pre><code class="language-java">@SpringBootTest
+@EmbeddedKafka(partitions = 1, topics = {&quot;customer-events&quot;})
+class CustomerEventIntegrationTest {
+
+    @Autowired
+    private KafkaTemplate&lt;String, Object&gt; kafkaTemplate;
+
+    @Autowired
+    private CustomerService customerService;
+
+    @Test
+    void testCustomerCreatedEventPublished() throws Exception {
+        // Given
+        CountDownLatch latch = new CountDownLatch(1);
+        AtomicReference&lt;CustomerEvent&gt; receivedEvent = new AtomicReference&lt;&gt;();
+
+        // Set up consumer
+        @KafkaListener(topics = &quot;customer-events&quot;, groupId = &quot;test-group&quot;)
+        public void listen(ConsumerRecord&lt;String, CustomerEvent&gt; record) {
+            receivedEvent.set(record.value());
+            latch.countDown();
+        }
+
+        CustomerRequest request = createValidCustomerRequest();
+
+        // When
+        customerService.createCustomer(request);
+
+        // Then
+        assertThat(latch.await(10, TimeUnit.SECONDS)).isTrue();
+        assertThat(receivedEvent.get()).isNotNull();
+        assertThat(receivedEvent.get().getCustomerId()).isEqualTo(1L);
+    }
+}
+</code></pre>
+<h2 id="system-testing">System Testing</h2>
+<h3 id="end-to-end-test-scenarios">End-to-End Test Scenarios</h3>
+<h4 id="scenario-1-complete-customer-onboarding">Scenario 1: Complete Customer Onboarding</h4>
+<p><strong>Test Steps</strong>:
+1. Create new customer
+2. Create account for customer
+3. Issue card for account
+4. Activate card
+5. Verify customer can view account and card details</p>
+<p><strong>Expected Results</strong>:
+- Customer created successfully
+- Account linked to customer
+- Card issued and activated
+- All data visible in UI</p>
+<h4 id="scenario-2-transaction-processing-flow">Scenario 2: Transaction Processing Flow</h4>
+<p><strong>Test Steps</strong>:
+1. Create transaction for card
+2. Verify transaction appears in transaction list
+3. Verify account balance updated
+4. Verify transaction details correct
+5. Process payment
+6. Verify balance updated after payment</p>
+<p><strong>Expected Results</strong>:
+- Transaction created and posted
+- Balance reflects transaction
+- Payment processed correctly
+- Transaction history accurate</p>
+<h4 id="scenario-3-user-management-flow">Scenario 3: User Management Flow</h4>
+<p><strong>Test Steps</strong>:
+1. Admin creates new user
+2. New user logs in
+3. User updates profile
+4. User changes password
+5. Admin deactivates user
+6. User cannot log in</p>
+<p><strong>Expected Results</strong>:
+- User created successfully
+- Authentication works
+- Profile updates saved
+- Password change successful
+- Deactivated user cannot access system</p>
+<h3 id="system-test-automation">System Test Automation</h3>
+<pre><code class="language-java">@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+class CustomerOnboardingE2ETest {
+
+    private static Long customerId;
+    private static Long accountId;
+    private static String cardNumber;
+
+    @Test
+    @Order(1)
+    void step1_CreateCustomer() {
+        CustomerRequest request = CustomerRequest.builder()
+            .customerId(System.currentTimeMillis())
+            .firstName(&quot;John&quot;)
+            .lastName(&quot;Doe&quot;)
+            .ssn(&quot;123456789&quot;)
+            .build();
+
+        CustomerResponse response = given()
+            .contentType(ContentType.JSON)
+            .body(request)
+        .when()
+            .post(&quot;http://localhost:8081/api/v1/customers&quot;)
+        .then()
+            .statusCode(201)
+            .extract()
+            .as(CustomerResponse.class);
+
+        customerId = response.getCustomerId();
+        assertThat(customerId).isNotNull();
+    }
+
+    @Test
+    @Order(2)
+    void step2_CreateAccount() {
+        AccountRequest request = AccountRequest.builder()
+            .accountId(System.currentTimeMillis())
+            .customerId(customerId)
+            .creditLimit(new BigDecimal(&quot;5000.00&quot;))
+            .build();
+
+        AccountResponse response = given()
+            .contentType(ContentType.JSON)
+            .body(request)
+        .when()
+            .post(&quot;http://localhost:8082/api/v1/accounts&quot;)
+        .then()
+            .statusCode(201)
+            .extract()
+            .as(AccountResponse.class);
+
+        accountId = response.getAccountId();
+        assertThat(accountId).isNotNull();
+    }
+
+    @Test
+    @Order(3)
+    void step3_IssueCard() {
+        CardRequest request = CardRequest.builder()
+            .accountId(accountId)
+            .embossedName(&quot;JOHN DOE&quot;)
+            .build();
+
+        CardResponse response = given()
+            .contentType(ContentType.JSON)
+            .body(request)
+        .when()
+            .post(&quot;http://localhost:8083/api/v1/cards&quot;)
+        .then()
+            .statusCode(201)
+            .extract()
+            .as(CardResponse.class);
+
+        cardNumber = response.getCardNumber();
+        assertThat(cardNumber).isNotNull();
+    }
+
+    @Test
+    @Order(4)
+    void step4_VerifyCustomerData() {
+        // Verify customer can see their account and card
+        given()
+            .contentType(ContentType.JSON)
+        .when()
+            .get(&quot;http://localhost:8082/api/v1/customers/{customerId}/accounts&quot;, customerId)
+        .then()
+            .statusCode(200)
+            .body(&quot;size()&quot;, greaterThan(0))
+            .body(&quot;[0].accountId&quot;, equalTo(accountId.intValue()));
+
+        given()
+            .contentType(ContentType.JSON)
+        .when()
+            .get(&quot;http://localhost:8083/api/v1/accounts/{accountId}/cards&quot;, accountId)
+        .then()
+            .statusCode(200)
+            .body(&quot;size()&quot;, greaterThan(0))
+            .body(&quot;[0].cardNumber&quot;, equalTo(cardNumber));
+    }
+}
+</code></pre>
+<h2 id="performance-testing">Performance Testing</h2>
+<h3 id="performance-testing-tools">Performance Testing Tools</h3>
+<ul>
+<li><strong>JMeter</strong>: Load testing and performance measurement</li>
+<li><strong>Gatling</strong>: Scala-based load testing</li>
+<li><strong>K6</strong>: Modern load testing tool</li>
+<li><strong>Artillery</strong>: Node.js-based load testing</li>
+</ul>
+<h3 id="performance-test-scenarios">Performance Test Scenarios</h3>
+<h4 id="load-test-normal-load">Load Test: Normal Load</h4>
+<p><strong>Objective</strong>: Verify system performs under expected load</p>
+<p><strong>Configuration</strong>:
+- Users: 100 concurrent users
+- Duration: 30 minutes
+- Ramp-up: 5 minutes
+- Think time: 2-5 seconds</p>
+<p><strong>Transactions</strong>:
+- Customer lookup: 40%
+- Account view: 30%
+- Transaction list: 20%
+- Create transaction: 10%</p>
+<p><strong>Success Criteria</strong>:
+- Response time &lt; 500ms (95th percentile)
+- Error rate &lt; 0.1%
+- Throughput: 1000+ TPS</p>
+<h4 id="stress-test-peak-load">Stress Test: Peak Load</h4>
+<p><strong>Objective</strong>: Determine system breaking point</p>
+<p><strong>Configuration</strong>:
+- Users: Start at 100, increase to 500
+- Duration: 60 minutes
+- Ramp-up: 10 minutes
+- No think time</p>
+<p><strong>Success Criteria</strong>:
+- System remains stable up to 300 users
+- Graceful degradation beyond capacity
+- No data corruption
+- Recovery within 5 minutes</p>
+<h4 id="endurance-test-sustained-load">Endurance Test: Sustained Load</h4>
+<p><strong>Objective</strong>: Verify system stability over time</p>
+<p><strong>Configuration</strong>:
+- Users: 100 concurrent users
+- Duration: 8 hours
+- Constant load</p>
+<p><strong>Success Criteria</strong>:
+- No memory leaks
+- No performance degradation
+- No connection pool exhaustion
+- Stable response times</p>
+<h3 id="jmeter-test-plan-example">JMeter Test Plan Example</h3>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;jmeterTestPlan version=&quot;1.2&quot;&gt;
+  &lt;hashTree&gt;
+    &lt;TestPlan guiclass=&quot;TestPlanGui&quot; testclass=&quot;TestPlan&quot; testname=&quot;CardDemo Load Test&quot;&gt;
+      &lt;elementProp name=&quot;TestPlan.user_defined_variables&quot; elementType=&quot;Arguments&quot;&gt;
+        &lt;collectionProp name=&quot;Arguments.arguments&quot;&gt;
+          &lt;elementProp name=&quot;BASE_URL&quot; elementType=&quot;Argument&quot;&gt;
+            &lt;stringProp name=&quot;Argument.name&quot;&gt;BASE_URL&lt;/stringProp&gt;
+            &lt;stringProp name=&quot;Argument.value&quot;&gt;http://localhost:8080&lt;/stringProp&gt;
+          &lt;/elementProp&gt;
+          &lt;elementProp name=&quot;THREADS&quot; elementType=&quot;Argument&quot;&gt;
+            &lt;stringProp name=&quot;Argument.name&quot;&gt;THREADS&lt;/stringProp&gt;
+            &lt;stringProp name=&quot;Argument.value&quot;&gt;100&lt;/stringProp&gt;
+          &lt;/elementProp&gt;
+        &lt;/collectionProp&gt;
+      &lt;/elementProp&gt;
+    &lt;/TestPlan&gt;
+    &lt;hashTree&gt;
+      &lt;ThreadGroup guiclass=&quot;ThreadGroupGui&quot; testclass=&quot;ThreadGroup&quot; testname=&quot;User Threads&quot;&gt;
+        &lt;stringProp name=&quot;ThreadGroup.num_threads&quot;&gt;${THREADS}&lt;/stringProp&gt;
+        &lt;stringProp name=&quot;ThreadGroup.ramp_time&quot;&gt;300&lt;/stringProp&gt;
+        &lt;stringProp name=&quot;ThreadGroup.duration&quot;&gt;1800&lt;/stringProp&gt;
+        &lt;boolProp name=&quot;ThreadGroup.scheduler&quot;&gt;true&lt;/boolProp&gt;
+      &lt;/ThreadGroup&gt;
+      &lt;hashTree&gt;
+        &lt;HTTPSamplerProxy guiclass=&quot;HttpTestSampleGui&quot; testclass=&quot;HTTPSamplerProxy&quot; testname=&quot;Get Customer&quot;&gt;
+          &lt;stringProp name=&quot;HTTPSampler.domain&quot;&gt;${BASE_URL}&lt;/stringProp&gt;
+          &lt;stringProp name=&quot;HTTPSampler.path&quot;&gt;/api/v1/customers/${customerId}&lt;/stringProp&gt;
+          &lt;stringProp name=&quot;HTTPSampler.method&quot;&gt;GET&lt;/stringProp&gt;
+        &lt;/HTTPSamplerProxy&gt;
+        &lt;hashTree&gt;
+          &lt;ResponseAssertion guiclass=&quot;AssertionGui&quot; testclass=&quot;ResponseAssertion&quot; testname=&quot;Response Code&quot;&gt;
+            &lt;collectionProp name=&quot;Asserion.test_strings&quot;&gt;
+              &lt;stringProp name=&quot;49586&quot;&gt;200&lt;/stringProp&gt;
+            &lt;/collectionProp&gt;
+            &lt;stringProp name=&quot;Assertion.test_field&quot;&gt;Assertion.response_code&lt;/stringProp&gt;
+          &lt;/ResponseAssertion&gt;
+        &lt;/hashTree&gt;
+      &lt;/hashTree&gt;
+    &lt;/hashTree&gt;
+  &lt;/hashTree&gt;
+&lt;/jmeterTestPlan&gt;
+</code></pre>
+<h3 id="performance-monitoring">Performance Monitoring</h3>
+<p><strong>Metrics to Monitor</strong>:
+- Response time (average, median, 95th, 99th percentile)
+- Throughput (requests per second)
+- Error rate
+- CPU utilization
+- Memory usage
+- Database connections
+- Thread pool utilization
+- Garbage collection activity</p>
+<p><strong>Tools</strong>:
+- Prometheus + Grafana for metrics
+- Application Performance Monitoring (APM) tools
+- Database monitoring tools
+- JVM monitoring (JConsole, VisualVM)</p>
+<h2 id="security-testing">Security Testing</h2>
+<h3 id="security-testing-scope">Security Testing Scope</h3>
+<ol>
+<li><strong>Authentication Testing</strong></li>
+<li>Valid/invalid credentials</li>
+<li>Session management</li>
+<li>Token expiration</li>
+<li>
+<p>Password policies</p>
+</li>
+<li>
+<p><strong>Authorization Testing</strong></p>
+</li>
+<li>Role-based access control</li>
+<li>Resource-level permissions</li>
+<li>
+<p>Privilege escalation attempts</p>
+</li>
+<li>
+<p><strong>Input Validation</strong></p>
+</li>
+<li>SQL injection</li>
+<li>XSS (Cross-Site Scripting)</li>
+<li>Command injection</li>
+<li>
+<p>Path traversal</p>
+</li>
+<li>
+<p><strong>API Security</strong></p>
+</li>
+<li>Authentication bypass</li>
+<li>Rate limiting</li>
+<li>CORS configuration</li>
+<li>
+<p>API key management</p>
+</li>
+<li>
+<p><strong>Data Protection</strong></p>
+</li>
+<li>Encryption at rest</li>
+<li>Encryption in transit</li>
+<li>Sensitive data exposure</li>
+<li>PII handling</li>
+</ol>
+<h3 id="security-test-cases">Security Test Cases</h3>
+<h4 id="authentication-tests">Authentication Tests</h4>
+<pre><code class="language-java">@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+class AuthenticationSecurityTest {
+
+    @Test
+    void testLogin_ValidCredentials() {
+        LoginRequest request = new LoginRequest(&quot;user001&quot;, &quot;password123&quot;);
+
+        given()
+            .contentType(ContentType.JSON)
+            .body(request)
+        .when()
+            .post(&quot;/api/v1/auth/login&quot;)
+        .then()
+            .statusCode(200)
+            .body(&quot;token&quot;, notNullValue())
+            .body(&quot;expiresIn&quot;, greaterThan(0));
+    }
+
+    @Test
+    void testLogin_InvalidCredentials() {
+        LoginRequest request = new LoginRequest(&quot;user001&quot;, &quot;wrongpassword&quot;);
+
+        given()
+            .contentType(ContentType.JSON)
+            .body(request)
+        .when()
+            .post(&quot;/api/v1/auth/login&quot;)
+        .then()
+            .statusCode(401)
+            .body(&quot;error&quot;, equalTo(&quot;Unauthorized&quot;));
+    }
+
+    @Test
+    void testAccessProtectedResource_WithoutToken() {
+        given()
+            .contentType(ContentType.JSON)
+        .when()
+            .get(&quot;/api/v1/customers/1&quot;)
+        .then()
+            .statusCode(401);
+    }
+
+    @Test
+    void testAccessProtectedResource_WithExpiredToken() {
+        String expiredToken = generateExpiredToken();
+
+        given()
+            .contentType(ContentType.JSON)
+            .header(&quot;Authorization&quot;, &quot;Bearer &quot; + expiredToken)
+        .when()
+            .get(&quot;/api/v1/customers/1&quot;)
+        .then()
+            .statusCode(401);
+    }
+}
+</code></pre>
+<h4 id="authorization-tests">Authorization Tests</h4>
+<pre><code class="language-java">@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+class AuthorizationSecurityTest {
+
+    @Test
+    void testAdminEndpoint_AsAdmin() {
+        String adminToken = loginAsAdmin();
+
+        given()
+            .contentType(ContentType.JSON)
+            .header(&quot;Authorization&quot;, &quot;Bearer &quot; + adminToken)
+        .when()
+            .get(&quot;/api/v1/admin/users&quot;)
+        .then()
+            .statusCode(200);
+    }
+
+    @Test
+    void testAdminEndpoint_AsRegularUser() {
+        String userToken = loginAsUser();
+
+        given()
+            .contentType(ContentType.JSON)
+            .header(&quot;Authorization&quot;, &quot;Bearer &quot; + userToken)
+        .when()
+            .get(&quot;/api/v1/admin/users&quot;)
+        .then()
+            .statusCode(403);
+    }
+
+    @Test
+    void testAccessOtherUserData() {
+        String user1Token = loginAs(&quot;user001&quot;);
+
+        // Try to access user002's data
+        given()
+            .contentType(ContentType.JSON)
+            .header(&quot;Authorization&quot;, &quot;Bearer &quot; + user1Token)
+        .when()
+            .get(&quot;/api/v1/users/user002/profile&quot;)
+        .then()
+            .statusCode(403);
+    }
+}
+</code></pre>
+<h3 id="security-scanning-tools">Security Scanning Tools</h3>
+<p><strong>SAST (Static Application Security Testing)</strong>:
+- SonarQube with security rules
+- Checkmarx
+- Fortify</p>
+<p><strong>DAST (Dynamic Application Security Testing)</strong>:
+- OWASP ZAP
+- Burp Suite
+- Acunetix</p>
+<p><strong>Dependency Scanning</strong>:
+- OWASP Dependency-Check
+- Snyk
+- WhiteSource</p>
+<p><strong>Container Scanning</strong>:
+- Trivy
+- Clair
+- Anchore</p>
+<h2 id="data-migration-testing">Data Migration Testing</h2>
+<h3 id="data-migration-test-strategy">Data Migration Test Strategy</h3>
+<ol>
+<li><strong>Pre-Migration Validation</strong></li>
+<li>Source data quality assessment</li>
+<li>Data profiling</li>
+<li>
+<p>Identify data issues</p>
+</li>
+<li>
+<p><strong>Migration Execution Testing</strong></p>
+</li>
+<li>Test migration scripts</li>
+<li>Validate transformation logic</li>
+<li>
+<p>Check error handling</p>
+</li>
+<li>
+<p><strong>Post-Migration Validation</strong></p>
+</li>
+<li>Record count verification</li>
+<li>Data accuracy validation</li>
+<li>Referential integrity checks</li>
+<li>Business rule validation</li>
+</ol>
+<h3 id="data-migration-test-cases">Data Migration Test Cases</h3>
+<h4 id="test-case-1-record-count-validation">Test Case 1: Record Count Validation</h4>
+<pre><code class="language-sql">-- Source (Mainframe VSAM)
+-- Get record counts from COBOL program or file utilities
+
+-- Target (PostgreSQL)
+SELECT 
+    'customers' as table_name,
+    COUNT(*) as record_count,
+    (SELECT COUNT(*) FROM customers WHERE created_at &gt;= '2025-11-21') as migrated_today
+FROM customers
+
+UNION ALL
+
+SELECT 
+    'accounts' as table_name,
+    COUNT(*) as record_count,
+    (SELECT COUNT(*) FROM accounts WHERE created_at &gt;= '2025-11-21') as migrated_today
+FROM accounts;
+
+-- Compare counts with source
+</code></pre>
+<h4 id="test-case-2-data-accuracy-validation">Test Case 2: Data Accuracy Validation</h4>
+<pre><code class="language-sql">-- Sample 100 random records and compare with source
+SELECT 
+    customer_id,
+    first_name,
+    last_name,
+    ssn,
+    date_of_birth,
+    fico_credit_score
+FROM customers
+ORDER BY RANDOM()
+LIMIT 100;
+
+-- Manually verify against mainframe records
+</code></pre>
+<h4 id="test-case-3-referential-integrity">Test Case 3: Referential Integrity</h4>
+<pre><code class="language-sql">-- Check for orphaned records
+SELECT 'Orphaned Accounts' as issue, COUNT(*) as count
+FROM accounts a
+LEFT JOIN customers c ON a.customer_id = c.customer_id
+WHERE c.customer_id IS NULL
+
+UNION ALL
+
+SELECT 'Orphaned Cards', COUNT(*)
+FROM cards c
+LEFT JOIN accounts a ON c.account_id = a.account_id
+WHERE a.account_id IS NULL
+
+UNION ALL
+
+SELECT 'Orphaned Transactions', COUNT(*)
+FROM transactions t
+LEFT JOIN cards c ON t.card_number = c.card_number
+WHERE c.card_number IS NULL;
+
+-- All counts should be 0
+</code></pre>
+<h4 id="test-case-4-business-rule-validation">Test Case 4: Business Rule Validation</h4>
+<pre><code class="language-sql">-- Validate credit limits
+SELECT COUNT(*) as invalid_credit_limits
+FROM accounts
+WHERE credit_limit &lt; 0 
+   OR cash_credit_limit &gt; credit_limit
+   OR current_balance &lt; -credit_limit;
+
+-- Should return 0
+
+-- Validate card expiration dates
+SELECT COUNT(*) as invalid_expirations
+FROM cards
+WHERE expiration_date &lt; issue_date;
+
+-- Should return 0
+
+-- Validate transaction amounts
+SELECT COUNT(*) as invalid_amounts
+FROM transactions
+WHERE amount = 0 
+   OR ABS(amount) &gt; 999999.99;
+
+-- Should return 0 (or expected count for $0 transactions)
+</code></pre>
+<h3 id="data-migration-reconciliation">Data Migration Reconciliation</h3>
+<p><strong>Automated Reconciliation Script</strong>:</p>
+<pre><code class="language-java">@Service
+@Slf4j
+public class DataReconciliationService {
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+    public ReconciliationReport reconcileCustomers(Map&lt;Long, Customer&gt; mainframeData) {
+        ReconciliationReport report = new ReconciliationReport();
+
+        // Get all customers from PostgreSQL
+        List&lt;Customer&gt; pgCustomers = jdbcTemplate.query(
+            &quot;SELECT * FROM customers&quot;,
+            (rs, rowNum) -&gt; mapCustomer(rs));
+
+        Map&lt;Long, Customer&gt; pgMap = pgCustomers.stream()
+            .collect(Collectors.toMap(Customer::getCustomerId, c -&gt; c));
+
+        // Compare counts
+        report.setMainframeCount(mainframeData.size());
+        report.setPostgresCount(pgCustomers.size());
+
+        // Find missing records
+        Set&lt;Long&gt; missingInPg = new HashSet&lt;&gt;(mainframeData.keySet());
+        missingInPg.removeAll(pgMap.keySet());
+        report.setMissingInPostgres(missingInPg);
+
+        // Find extra records
+        Set&lt;Long&gt; extraInPg = new HashSet&lt;&gt;(pgMap.keySet());
+        extraInPg.removeAll(mainframeData.keySet());
+        report.setExtraInPostgres(extraInPg);
+
+        // Compare data for matching records
+        for (Long id : mainframeData.keySet()) {
+            if (pgMap.containsKey(id)) {
+                Customer mfCustomer = mainframeData.get(id);
+                Customer pgCustomer = pgMap.get(id);
+
+                if (!compareCustomers(mfCustomer, pgCustomer)) {
+                    report.addMismatch(id, findDifferences(mfCustomer, pgCustomer));
+                }
+            }
+        }
+
+        return report;
+    }
+
+    private boolean compareCustomers(Customer mf, Customer pg) {
+        return Objects.equals(mf.getFirstName(), pg.getFirstName()) &amp;&amp;
+               Objects.equals(mf.getLastName(), pg.getLastName()) &amp;&amp;
+               Objects.equals(mf.getSsn(), pg.getSsn()) &amp;&amp;
+               Objects.equals(mf.getDateOfBirth(), pg.getDateOfBirth());
+    }
+}
+</code></pre>
+<h2 id="user-acceptance-testing">User Acceptance Testing</h2>
+<h3 id="uat-approach">UAT Approach</h3>
+<p><strong>Participants</strong>:
+- Business users (5-10 representatives)
+- Business analysts
+- Product owner
+- QA team</p>
+<p><strong>Duration</strong>: 2-3 weeks</p>
+<p><strong>Environment</strong>: UAT environment (production-like)</p>
+<h3 id="uat-test-scenarios">UAT Test Scenarios</h3>
+<h4 id="scenario-1-customer-service-representative-workflow">Scenario 1: Customer Service Representative Workflow</h4>
+<p><strong>User Role</strong>: Customer Service Rep</p>
+<p><strong>Steps</strong>:
+1. Log in to application
+2. Search for customer by name
+3. View customer details
+4. View customer accounts
+5. View account transactions
+6. Process a payment
+7. Update customer address
+8. Log out</p>
+<p><strong>Acceptance Criteria</strong>:
+- All screens load within 3 seconds
+- Search returns accurate results
+- Data is displayed correctly
+- Payment processes successfully
+- Updates are saved</p>
+<h4 id="scenario-2-account-manager-workflow">Scenario 2: Account Manager Workflow</h4>
+<p><strong>User Role</strong>: Account Manager</p>
+<p><strong>Steps</strong>:
+1. Log in to application
+2. View list of accounts
+3. Filter accounts by status
+4. View account details
+5. Update credit limit
+6. View transaction history
+7. Generate account statement
+8. Download statement as PDF</p>
+<p><strong>Acceptance Criteria</strong>:
+- Filtering works correctly
+- Credit limit update saves
+- Statement generates accurately
+- PDF downloads successfully</p>
+<h3 id="uat-feedback-collection">UAT Feedback Collection</h3>
+<p><strong>Feedback Form</strong>:
+- Ease of use (1-5 scale)
+- Performance (1-5 scale)
+- Functionality completeness (1-5 scale)
+- Issues encountered (free text)
+- Suggestions for improvement (free text)</p>
+<p><strong>Acceptance Criteria</strong>:
+- Average rating &gt;= 4.0 on all scales
+- No critical issues
+- All high-priority features working
+- User satisfaction &gt;= 80%</p>
+<h2 id="test-automation">Test Automation</h2>
+<h3 id="test-automation-strategy">Test Automation Strategy</h3>
+<p><strong>Automation Pyramid</strong>:</p>
+<pre><code>       /\
+      /E2E\       10% - End-to-End Tests
+     /------\
+    /  API   \    30% - API/Integration Tests
+   /----------\
+  /   Unit     \  60% - Unit Tests
+ /--------------\
+</code></pre>
+<h3 id="cicd-integration">CI/CD Integration</h3>
+<p><strong>Jenkins Pipeline Example</strong>:</p>
+<pre><code class="language-groovy">pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn clean compile'
+            }
+        }
+
+        stage('Unit Tests') {
+            steps {
+                sh 'mvn test'
+            }
+            post {
+                always {
+                    junit '**/target/surefire-reports/*.xml'
+                    jacoco execPattern: '**/target/jacoco.exec'
+                }
+            }
+        }
+
+        stage('Integration Tests') {
+            steps {
+                sh 'mvn verify -P integration-tests'
+            }
+            post {
+                always {
+                    junit '**/target/failsafe-reports/*.xml'
+                }
+            }
+        }
+
+        stage('Code Quality') {
+            steps {
+                sh 'mvn sonar:sonar'
+            }
+        }
+
+        stage('Security Scan') {
+            steps {
+                sh 'mvn dependency-check:check'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t carddemo/customer-service:${BUILD_NUMBER} .'
+            }
+        }
+
+        stage('Deploy to Test') {
+            steps {
+                sh 'kubectl apply -f k8s/test/'
+            }
+        }
+
+        stage('E2E Tests') {
+            steps {
+                sh 'mvn verify -P e2e-tests'
+            }
+        }
+
+        stage('Performance Tests') {
+            when {
+                branch 'main'
+            }
+            steps {
+                sh 'jmeter -n -t performance-test.jmx -l results.jtl'
+            }
+        }
+    }
+
+    post {
+        always {
+            cleanWs()
+        }
+        failure {
+            mail to: 'team@carddemo.com',
+                 subject: &quot;Build Failed: ${env.JOB_NAME} - ${env.BUILD_NUMBER}&quot;,
+                 body: &quot;Check console output at ${env.BUILD_URL}&quot;
+        }
+    }
+}
+</code></pre>
+<h2 id="test-environments">Test Environments</h2>
+<h3 id="environment-strategy">Environment Strategy</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Environment</th>
+<th style="text-align: left;">Purpose</th>
+<th style="text-align: left;">Data</th>
+<th style="text-align: left;">Refresh Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Development</td>
+<td style="text-align: left;">Developer testing</td>
+<td style="text-align: left;">Synthetic</td>
+<td style="text-align: left;">On demand</td>
+</tr>
+<tr>
+<td style="text-align: left;">Integration</td>
+<td style="text-align: left;">Integration testing</td>
+<td style="text-align: left;">Synthetic</td>
+<td style="text-align: left;">Daily</td>
+</tr>
+<tr>
+<td style="text-align: left;">QA</td>
+<td style="text-align: left;">System testing</td>
+<td style="text-align: left;">Masked production</td>
+<td style="text-align: left;">Weekly</td>
+</tr>
+<tr>
+<td style="text-align: left;">UAT</td>
+<td style="text-align: left;">User acceptance</td>
+<td style="text-align: left;">Masked production</td>
+<td style="text-align: left;">Weekly</td>
+</tr>
+<tr>
+<td style="text-align: left;">Performance</td>
+<td style="text-align: left;">Performance testing</td>
+<td style="text-align: left;">Production-like volume</td>
+<td style="text-align: left;">Monthly</td>
+</tr>
+<tr>
+<td style="text-align: left;">Staging</td>
+<td style="text-align: left;">Pre-production validation</td>
+<td style="text-align: left;">Masked production</td>
+<td style="text-align: left;">Weekly</td>
+</tr>
+<tr>
+<td style="text-align: left;">Production</td>
+<td style="text-align: left;">Live system</td>
+<td style="text-align: left;">Real data</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+</tbody>
+</table>
+<h3 id="environment-configuration">Environment Configuration</h3>
+<p><strong>Development Environment</strong>:
+- Local Docker containers
+- In-memory databases for fast tests
+- Mock external services
+- Minimal data set</p>
+<p><strong>Integration Environment</strong>:
+- Kubernetes cluster
+- PostgreSQL database
+- Kafka message broker
+- All microservices deployed
+- Synthetic test data</p>
+<p><strong>QA Environment</strong>:
+- Production-like infrastructure
+- Full data set (masked)
+- All integrations enabled
+- Monitoring and logging</p>
+<p><strong>UAT Environment</strong>:
+- Production-like infrastructure
+- Masked production data
+- Read-only access to production (for comparison)
+- Business user access</p>
+<p><strong>Performance Environment</strong>:
+- Production-equivalent infrastructure
+- Production-like data volume
+- Performance monitoring tools
+- Load generation tools</p>
+<h2 id="test-data-management">Test Data Management</h2>
+<h3 id="test-data-strategy">Test Data Strategy</h3>
+<p><strong>Synthetic Data</strong>:
+- Generated programmatically
+- Consistent and predictable
+- Used for unit and integration tests</p>
+<p><strong>Masked Production Data</strong>:
+- Real data with PII masked
+- Realistic data patterns
+- Used for system and UAT</p>
+<p><strong>Production-Like Volume</strong>:
+- Large data sets for performance testing
+- Realistic data distribution
+- Used for load and stress testing</p>
+<h3 id="data-masking-rules">Data Masking Rules</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Masking Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">SSN</td>
+<td style="text-align: left;">Replace with random 9 digits</td>
+</tr>
+<tr>
+<td style="text-align: left;">Credit Card Number</td>
+<td style="text-align: left;">Keep first 6 and last 4, mask middle</td>
+</tr>
+<tr>
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">Replace with fake names</td>
+</tr>
+<tr>
+<td style="text-align: left;">Address</td>
+<td style="text-align: left;">Replace with fake addresses</td>
+</tr>
+<tr>
+<td style="text-align: left;">Phone</td>
+<td style="text-align: left;">Replace with fake phone numbers</td>
+</tr>
+<tr>
+<td style="text-align: left;">Email</td>
+<td style="text-align: left;">Replace with fake emails</td>
+</tr>
+<tr>
+<td style="text-align: left;">Account Balance</td>
+<td style="text-align: left;">Randomize within range</td>
+</tr>
+</tbody>
+</table>
+<h3 id="test-data-generation">Test Data Generation</h3>
+<pre><code class="language-java">@Service
+public class TestDataGenerator {
+
+    private final Faker faker = new Faker();
+
+    public Customer generateCustomer() {
+        return Customer.builder()
+            .customerId(faker.number().randomNumber(9, true))
+            .firstName(faker.name().firstName())
+            .lastName(faker.name().lastName())
+            .ssn(faker.number().digits(9))
+            .dateOfBirth(faker.date().birthday(18, 80).toLocalDateTime().toLocalDate())
+            .addressLine1(faker.address().streetAddress())
+            .stateCode(faker.address().stateAbbr())
+            .zipCode(faker.address().zipCode())
+            .phoneNumber1(faker.phoneNumber().phoneNumber())
+            .ficoCreditScore((short) faker.number().numberBetween(300, 850))
+            .build();
+    }
+
+    public Account generateAccount(Long customerId) {
+        return Account.builder()
+            .accountId(faker.number().randomNumber(11, true))
+            .customerId(customerId)
+            .activeStatus(&quot;Y&quot;)
+            .creditLimit(new BigDecimal(faker.number().numberBetween(1000, 50000)))
+            .currentBalance(new BigDecimal(faker.number().numberBetween(0, 10000)))
+            .openDate(LocalDate.now().minusYears(faker.number().numberBetween(1, 10)))
+            .expirationDate(LocalDate.now().plusYears(5))
+            .build();
+    }
+
+    public Transaction generateTransaction(String cardNumber) {
+        return Transaction.builder()
+            .transactionId(&quot;T&quot; + faker.number().digits(15))
+            .transactionType(&quot;PU&quot;)
+            .categoryCode(&quot;5411&quot;)
+            .description(faker.commerce().productName())
+            .amount(new BigDecimal(faker.number().randomDouble(2, 1, 500)))
+            .cardNumber(cardNumber)
+            .merchantName(faker.company().name())
+            .merchantCity(faker.address().city())
+            .originalTimestamp(LocalDateTime.now())
+            .build();
+    }
+}
+</code></pre>
+<hr />
+<p><strong>Navigation</strong>: <a href="../Home/">Home</a> | <a href="../Migration-Plan/">Migration Plan</a> | <a href="../Migration-Technical-Guide/">Migration Technical Guide</a> | <a href="../Migration-Data-Dictionary/">Migration Data Dictionary</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

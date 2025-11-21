@@ -1,0 +1,3599 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://akanshahahaha.github.io/carddemo-staticpage/Migration-Technical-Guide/">
+      
+      
+        <link rel="prev" href="../Migration-Plan/">
+      
+      
+        <link rel="next" href="../Migration-Data-Dictionary/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Technical Guide - AWS Mainframe Modernization Card Demo - Deep Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#migration-technical-implementation-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-header__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AWS Mainframe Modernization Card Demo - Deep Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Technical Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-nav__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AWS Mainframe Modernization Card Demo - Deep Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quick-Start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Admin-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Batch-Processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technical-Components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CICS-Configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CICS Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optional Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Optional Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Transaction-Type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transaction Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-VSAM-MQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VSAM-MQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Migration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Migration-Plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Environment Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Development Environment Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-development-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local Development Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Local Development Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-install-java-development-kit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Install Java Development Kit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-install-maven" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Install Maven
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-install-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Install Docker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-set-up-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Set Up PostgreSQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-set-up-redis-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Set Up Redis (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-set-up-kafka-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Set Up Kafka (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ide-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IDE Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IDE Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intellij-idea-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IntelliJ IDEA Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microservice-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microservice Template
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Microservice Template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spring-boot-project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spring Boot Project Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven-pom-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maven POM Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entity-class-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entity Class Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repository-interface-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository Interface Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-interface-and-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Interface and Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rest-controller-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REST Controller Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exception Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dockerfile
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flyway-migration-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flyway Migration Scripts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-implementation-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Implementation Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Implementation Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#restful-api-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RESTful API Design Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Communication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Service Communication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-communication-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synchronous Communication (REST)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-communication-kafka" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asynchronous Communication (Kafka)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-migration-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Migration Scripts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Migration Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vsam-to-csv-export-cobol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM to CSV Export (COBOL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-to-postgresql-import-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSV to PostgreSQL Import (Java)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Approach
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-testing-with-testcontainers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Testing with Testcontainers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kubernetes Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Migration-Data-Dictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Dictionary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Migration-Testing-Strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Environment Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Development Environment Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-development-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local Development Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Local Development Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-install-java-development-kit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Install Java Development Kit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-install-maven" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Install Maven
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-install-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Install Docker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-set-up-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Set Up PostgreSQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-set-up-redis-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Set Up Redis (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-set-up-kafka-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Set Up Kafka (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ide-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IDE Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IDE Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intellij-idea-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IntelliJ IDEA Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microservice-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microservice Template
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Microservice Template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spring-boot-project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spring Boot Project Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven-pom-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maven POM Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entity-class-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entity Class Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repository-interface-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository Interface Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-interface-and-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Interface and Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rest-controller-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REST Controller Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exception Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dockerfile
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flyway-migration-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flyway Migration Scripts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-implementation-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Implementation Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Implementation Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#restful-api-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RESTful API Design Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Communication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Service Communication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-communication-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synchronous Communication (REST)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-communication-kafka" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asynchronous Communication (Kafka)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-migration-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Migration Scripts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Migration Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vsam-to-csv-export-cobol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSAM to CSV Export (COBOL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-to-postgresql-import-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSV to PostgreSQL Import (Java)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Approach
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-testing-with-testcontainers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Testing with Testcontainers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kubernetes Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="migration-technical-implementation-guide">Migration Technical Implementation Guide</h1>
+<p>Detailed technical guide for implementing the CardDemo migration from mainframe to Java microservices.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#development-environment-setup">Development Environment Setup</a></li>
+<li><a href="#microservice-template">Microservice Template</a></li>
+<li><a href="#database-setup">Database Setup</a></li>
+<li><a href="#api-implementation-patterns">API Implementation Patterns</a></li>
+<li><a href="#service-communication">Service Communication</a></li>
+<li><a href="#data-migration-scripts">Data Migration Scripts</a></li>
+<li><a href="#testing-approach">Testing Approach</a></li>
+<li><a href="#deployment-guide">Deployment Guide</a></li>
+</ul>
+<h2 id="development-environment-setup">Development Environment Setup</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<p><strong>Required Software:</strong>
+- Java 17 or 21 (OpenJDK or Oracle JDK)
+- Maven 3.8+ or Gradle 8+
+- Docker Desktop 4.x
+- PostgreSQL 15+ (or Docker container)
+- Git
+- IDE (IntelliJ IDEA, Eclipse, or VS Code)
+- Postman or similar API testing tool</p>
+<p><strong>Optional Tools:</strong>
+- Kubernetes (Minikube or Docker Desktop Kubernetes)
+- Redis (or Docker container)
+- Kafka (or Docker container)</p>
+<h3 id="local-development-setup">Local Development Setup</h3>
+<h4 id="1-install-java-development-kit">1. Install Java Development Kit</h4>
+<pre><code class="language-bash"># Install Java 17 (Ubuntu/Debian)
+sudo apt update
+sudo apt install openjdk-17-jdk
+
+# Verify installation
+java -version
+javac -version
+
+# Set JAVA_HOME
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+</code></pre>
+<h4 id="2-install-maven">2. Install Maven</h4>
+<pre><code class="language-bash"># Install Maven
+sudo apt install maven
+
+# Verify installation
+mvn -version
+</code></pre>
+<h4 id="3-install-docker">3. Install Docker</h4>
+<pre><code class="language-bash"># Install Docker (Ubuntu/Debian)
+sudo apt install docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker $USER
+
+# Verify installation
+docker --version
+docker-compose --version
+</code></pre>
+<h4 id="4-set-up-postgresql">4. Set Up PostgreSQL</h4>
+<p><strong>Option A: Docker Container (Recommended for Development)</strong></p>
+<pre><code class="language-bash"># Create docker-compose.yml for PostgreSQL
+cat &gt; docker-compose-postgres.yml &lt;&lt; 'EOF'
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15
+    container_name: carddemo-postgres
+    environment:
+      POSTGRES_USER: carddemo
+      POSTGRES_PASSWORD: carddemo123
+      POSTGRES_DB: carddemo
+    ports:
+      - &quot;5432:5432&quot;
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - carddemo-network
+
+volumes:
+  postgres-data:
+
+networks:
+  carddemo-network:
+    driver: bridge
+EOF
+
+# Start PostgreSQL
+docker-compose -f docker-compose-postgres.yml up -d
+
+# Verify PostgreSQL is running
+docker ps | grep postgres
+</code></pre>
+<p><strong>Option B: Native Installation</strong></p>
+<pre><code class="language-bash"># Install PostgreSQL (Ubuntu/Debian)
+sudo apt install postgresql postgresql-contrib
+
+# Start PostgreSQL
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+
+# Create database and user
+sudo -u postgres psql
+CREATE USER carddemo WITH PASSWORD 'carddemo123';
+CREATE DATABASE carddemo OWNER carddemo;
+GRANT ALL PRIVILEGES ON DATABASE carddemo TO carddemo;
+\q
+</code></pre>
+<h4 id="5-set-up-redis-optional">5. Set Up Redis (Optional)</h4>
+<pre><code class="language-bash"># Docker container for Redis
+docker run -d --name carddemo-redis \
+  -p 6379:6379 \
+  --network carddemo-network \
+  redis:7-alpine
+
+# Verify Redis is running
+docker exec -it carddemo-redis redis-cli ping
+# Should return: PONG
+</code></pre>
+<h4 id="6-set-up-kafka-optional">6. Set Up Kafka (Optional)</h4>
+<pre><code class="language-bash"># Create docker-compose.yml for Kafka
+cat &gt; docker-compose-kafka.yml &lt;&lt; 'EOF'
+version: '3.8'
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      - carddemo-network
+
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    depends_on:
+      - zookeeper
+    ports:
+      - &quot;9092:9092&quot;
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    networks:
+      - carddemo-network
+
+networks:
+  carddemo-network:
+    external: true
+EOF
+
+# Start Kafka
+docker-compose -f docker-compose-kafka.yml up -d
+</code></pre>
+<h3 id="ide-configuration">IDE Configuration</h3>
+<h4 id="intellij-idea-setup">IntelliJ IDEA Setup</h4>
+<ol>
+<li><strong>Install Plugins</strong>:</li>
+<li>Spring Boot</li>
+<li>Lombok</li>
+<li>Docker</li>
+<li>
+<p>Database Navigator</p>
+</li>
+<li>
+<p><strong>Configure Project SDK</strong>:</p>
+</li>
+<li>
+<p>File → Project Structure → Project SDK → Select Java 17</p>
+</li>
+<li>
+<p><strong>Configure Maven</strong>:</p>
+</li>
+<li>File → Settings → Build Tools → Maven</li>
+<li>Set Maven home directory</li>
+<li>
+<p>Enable "Import Maven projects automatically"</p>
+</li>
+<li>
+<p><strong>Configure Database</strong>:</p>
+</li>
+<li>View → Tool Windows → Database</li>
+<li>Add PostgreSQL data source</li>
+<li>Connection: localhost:5432, database: carddemo</li>
+</ol>
+<h2 id="microservice-template">Microservice Template</h2>
+<h3 id="spring-boot-project-structure">Spring Boot Project Structure</h3>
+<pre><code>customer-service/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── carddemo/
+│   │   │           └── customer/
+│   │   │               ├── CustomerServiceApplication.java
+│   │   │               ├── config/
+│   │   │               │   ├── DatabaseConfig.java
+│   │   │               │   ├── SecurityConfig.java
+│   │   │               │   └── SwaggerConfig.java
+│   │   │               ├── controller/
+│   │   │               │   └── CustomerController.java
+│   │   │               ├── service/
+│   │   │               │   ├── CustomerService.java
+│   │   │               │   └── impl/
+│   │   │               │       └── CustomerServiceImpl.java
+│   │   │               ├── repository/
+│   │   │               │   └── CustomerRepository.java
+│   │   │               ├── model/
+│   │   │               │   ├── entity/
+│   │   │               │   │   └── Customer.java
+│   │   │               │   └── dto/
+│   │   │               │       ├── CustomerRequest.java
+│   │   │               │       └── CustomerResponse.java
+│   │   │               ├── exception/
+│   │   │               │   ├── CustomerNotFoundException.java
+│   │   │               │   └── GlobalExceptionHandler.java
+│   │   │               └── util/
+│   │   │                   └── ValidationUtil.java
+│   │   └── resources/
+│   │       ├── application.yml
+│   │       ├── application-dev.yml
+│   │       ├── application-prod.yml
+│   │       └── db/
+│   │           └── migration/
+│   │               └── V1__create_customer_table.sql
+│   └── test/
+│       └── java/
+│           └── com/
+│               └── carddemo/
+│                   └── customer/
+│                       ├── CustomerServiceApplicationTests.java
+│                       ├── controller/
+│                       │   └── CustomerControllerTest.java
+│                       ├── service/
+│                       │   └── CustomerServiceTest.java
+│                       └── repository/
+│                           └── CustomerRepositoryTest.java
+├── Dockerfile
+├── pom.xml
+└── README.md
+</code></pre>
+<h3 id="maven-pom-template">Maven POM Template</h3>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 
+         https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;parent&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+        &lt;version&gt;3.2.0&lt;/version&gt;
+        &lt;relativePath/&gt;
+    &lt;/parent&gt;
+
+    &lt;groupId&gt;com.carddemo&lt;/groupId&gt;
+    &lt;artifactId&gt;customer-service&lt;/artifactId&gt;
+    &lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;
+    &lt;name&gt;Customer Service&lt;/name&gt;
+    &lt;description&gt;Customer management microservice for CardDemo&lt;/description&gt;
+
+    &lt;properties&gt;
+        &lt;java.version&gt;17&lt;/java.version&gt;
+        &lt;spring-cloud.version&gt;2023.0.0&lt;/spring-cloud.version&gt;
+        &lt;springdoc.version&gt;2.3.0&lt;/springdoc.version&gt;
+    &lt;/properties&gt;
+
+    &lt;dependencies&gt;
+        &lt;!-- Spring Boot Starters --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-validation&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- Spring Cloud --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-config&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-openfeign&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- Database --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.postgresql&lt;/groupId&gt;
+            &lt;artifactId&gt;postgresql&lt;/artifactId&gt;
+            &lt;scope&gt;runtime&lt;/scope&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.flywaydb&lt;/groupId&gt;
+            &lt;artifactId&gt;flyway-core&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- Redis Cache --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- Kafka --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.kafka&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-kafka&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- API Documentation --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springdoc&lt;/groupId&gt;
+            &lt;artifactId&gt;springdoc-openapi-starter-webmvc-ui&lt;/artifactId&gt;
+            &lt;version&gt;${springdoc.version}&lt;/version&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- Utilities --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+            &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+            &lt;optional&gt;true&lt;/optional&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.mapstruct&lt;/groupId&gt;
+            &lt;artifactId&gt;mapstruct&lt;/artifactId&gt;
+            &lt;version&gt;1.5.5.Final&lt;/version&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- Monitoring --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;io.micrometer&lt;/groupId&gt;
+            &lt;artifactId&gt;micrometer-registry-prometheus&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;io.micrometer&lt;/groupId&gt;
+            &lt;artifactId&gt;micrometer-tracing-bridge-brave&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- Testing --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-security-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.testcontainers&lt;/groupId&gt;
+            &lt;artifactId&gt;postgresql&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.testcontainers&lt;/groupId&gt;
+            &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+    &lt;dependencyManagement&gt;
+        &lt;dependencies&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+                &lt;version&gt;${spring-cloud.version}&lt;/version&gt;
+                &lt;type&gt;pom&lt;/type&gt;
+                &lt;scope&gt;import&lt;/scope&gt;
+            &lt;/dependency&gt;
+
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.testcontainers&lt;/groupId&gt;
+                &lt;artifactId&gt;testcontainers-bom&lt;/artifactId&gt;
+                &lt;version&gt;1.19.3&lt;/version&gt;
+                &lt;type&gt;pom&lt;/type&gt;
+                &lt;scope&gt;import&lt;/scope&gt;
+            &lt;/dependency&gt;
+        &lt;/dependencies&gt;
+    &lt;/dependencyManagement&gt;
+
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+                &lt;configuration&gt;
+                    &lt;excludes&gt;
+                        &lt;exclude&gt;
+                            &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+                            &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+                        &lt;/exclude&gt;
+                    &lt;/excludes&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;
+
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+                &lt;configuration&gt;
+                    &lt;source&gt;17&lt;/source&gt;
+                    &lt;target&gt;17&lt;/target&gt;
+                    &lt;annotationProcessorPaths&gt;
+                        &lt;path&gt;
+                            &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+                            &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+                            &lt;version&gt;${lombok.version}&lt;/version&gt;
+                        &lt;/path&gt;
+                        &lt;path&gt;
+                            &lt;groupId&gt;org.mapstruct&lt;/groupId&gt;
+                            &lt;artifactId&gt;mapstruct-processor&lt;/artifactId&gt;
+                            &lt;version&gt;1.5.5.Final&lt;/version&gt;
+                        &lt;/path&gt;
+                    &lt;/annotationProcessorPaths&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;
+
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.jacoco&lt;/groupId&gt;
+                &lt;artifactId&gt;jacoco-maven-plugin&lt;/artifactId&gt;
+                &lt;version&gt;0.8.11&lt;/version&gt;
+                &lt;executions&gt;
+                    &lt;execution&gt;
+                        &lt;goals&gt;
+                            &lt;goal&gt;prepare-agent&lt;/goal&gt;
+                        &lt;/goals&gt;
+                    &lt;/execution&gt;
+                    &lt;execution&gt;
+                        &lt;id&gt;report&lt;/id&gt;
+                        &lt;phase&gt;test&lt;/phase&gt;
+                        &lt;goals&gt;
+                            &lt;goal&gt;report&lt;/goal&gt;
+                        &lt;/goals&gt;
+                    &lt;/execution&gt;
+                &lt;/executions&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+&lt;/project&gt;
+</code></pre>
+<h3 id="application-configuration">Application Configuration</h3>
+<p><strong>application.yml</strong></p>
+<pre><code class="language-yaml">spring:
+  application:
+    name: customer-service
+
+  profiles:
+    active: ${SPRING_PROFILE:dev}
+
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:customer_db}
+    username: ${DB_USER:carddemo}
+    password: ${DB_PASSWORD:carddemo123}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        use_sql_comments: true
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+    timeout: 2000ms
+
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    consumer:
+      group-id: customer-service
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+server:
+  port: ${SERVER_PORT:8081}
+  servlet:
+    context-path: /api/v1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka/}
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 30
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+
+logging:
+  level:
+    root: INFO
+    com.carddemo: DEBUG
+    org.springframework.web: DEBUG
+    org.hibernate.SQL: DEBUG
+  pattern:
+    console: &quot;%d{yyyy-MM-dd HH:mm:ss} - %msg%n&quot;
+    file: &quot;%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n&quot;
+</code></pre>
+<h3 id="entity-class-example">Entity Class Example</h3>
+<pre><code class="language-java">package com.carddemo.customer.model.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = &quot;customers&quot;, indexes = {
+    @Index(name = &quot;idx_customers_ssn&quot;, columnList = &quot;ssn&quot;),
+    @Index(name = &quot;idx_customers_name&quot;, columnList = &quot;last_name, first_name&quot;)
+})
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Customer {
+
+    @Id
+    @Column(name = &quot;customer_id&quot;, nullable = false)
+    private Long customerId;
+
+    @Column(name = &quot;first_name&quot;, length = 25, nullable = false)
+    private String firstName;
+
+    @Column(name = &quot;middle_name&quot;, length = 25)
+    private String middleName;
+
+    @Column(name = &quot;last_name&quot;, length = 25, nullable = false)
+    private String lastName;
+
+    @Column(name = &quot;address_line1&quot;, length = 50)
+    private String addressLine1;
+
+    @Column(name = &quot;address_line2&quot;, length = 50)
+    private String addressLine2;
+
+    @Column(name = &quot;address_line3&quot;, length = 50)
+    private String addressLine3;
+
+    @Column(name = &quot;state_code&quot;, length = 2)
+    private String stateCode;
+
+    @Column(name = &quot;country_code&quot;, length = 3)
+    private String countryCode;
+
+    @Column(name = &quot;zip_code&quot;, length = 10)
+    private String zipCode;
+
+    @Column(name = &quot;phone_number1&quot;, length = 15)
+    private String phoneNumber1;
+
+    @Column(name = &quot;phone_number2&quot;, length = 15)
+    private String phoneNumber2;
+
+    @Column(name = &quot;ssn&quot;, length = 9)
+    private String ssn;
+
+    @Column(name = &quot;govt_issued_id&quot;, length = 20)
+    private String govtIssuedId;
+
+    @Column(name = &quot;date_of_birth&quot;)
+    private LocalDate dateOfBirth;
+
+    @Column(name = &quot;eft_account_id&quot;, length = 10)
+    private String eftAccountId;
+
+    @Column(name = &quot;primary_card_holder_ind&quot;, length = 1)
+    private String primaryCardHolderInd;
+
+    @Column(name = &quot;fico_credit_score&quot;)
+    private Short ficoCreditScore;
+
+    @CreationTimestamp
+    @Column(name = &quot;created_at&quot;, nullable = false, updatable = false)
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    @Column(name = &quot;updated_at&quot;, nullable = false)
+    private LocalDateTime updatedAt;
+
+    @Version
+    @Column(name = &quot;version&quot;, nullable = false)
+    private Integer version;
+}
+</code></pre>
+<h3 id="repository-interface-example">Repository Interface Example</h3>
+<pre><code class="language-java">package com.carddemo.customer.repository;
+
+import com.carddemo.customer.model.entity.Customer;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface CustomerRepository extends JpaRepository&lt;Customer, Long&gt; {
+
+    Optional&lt;Customer&gt; findBySsn(String ssn);
+
+    List&lt;Customer&gt; findByLastNameContainingIgnoreCase(String lastName);
+
+    @Query(&quot;SELECT c FROM Customer c WHERE &quot; +
+           &quot;LOWER(c.firstName) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR &quot; +
+           &quot;LOWER(c.lastName) LIKE LOWER(CONCAT('%', :searchTerm, '%'))&quot;)
+    List&lt;Customer&gt; searchByName(@Param(&quot;searchTerm&quot;) String searchTerm);
+
+    @Query(&quot;SELECT c FROM Customer c WHERE c.stateCode = :stateCode&quot;)
+    List&lt;Customer&gt; findByState(@Param(&quot;stateCode&quot;) String stateCode);
+
+    boolean existsBySsn(String ssn);
+}
+</code></pre>
+<h3 id="service-interface-and-implementation">Service Interface and Implementation</h3>
+<pre><code class="language-java">package com.carddemo.customer.service;
+
+import com.carddemo.customer.model.dto.CustomerRequest;
+import com.carddemo.customer.model.dto.CustomerResponse;
+
+import java.util.List;
+
+public interface CustomerService {
+    CustomerResponse createCustomer(CustomerRequest request);
+    CustomerResponse getCustomer(Long customerId);
+    CustomerResponse updateCustomer(Long customerId, CustomerRequest request);
+    void deleteCustomer(Long customerId);
+    List&lt;CustomerResponse&gt; searchCustomers(String searchTerm);
+    List&lt;CustomerResponse&gt; getCustomersByState(String stateCode);
+}
+</code></pre>
+<pre><code class="language-java">package com.carddemo.customer.service.impl;
+
+import com.carddemo.customer.exception.CustomerNotFoundException;
+import com.carddemo.customer.exception.DuplicateCustomerException;
+import com.carddemo.customer.model.dto.CustomerRequest;
+import com.carddemo.customer.model.dto.CustomerResponse;
+import com.carddemo.customer.model.entity.Customer;
+import com.carddemo.customer.repository.CustomerRepository;
+import com.carddemo.customer.service.CustomerService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+@RequiredArgsConstructor
+@Slf4j
+@Transactional
+public class CustomerServiceImpl implements CustomerService {
+
+    private final CustomerRepository customerRepository;
+    private final KafkaTemplate&lt;String, Object&gt; kafkaTemplate;
+
+    @Override
+    public CustomerResponse createCustomer(CustomerRequest request) {
+        log.info(&quot;Creating customer with SSN: {}&quot;, request.getSsn());
+
+        // Check for duplicate SSN
+        if (customerRepository.existsBySsn(request.getSsn())) {
+            throw new DuplicateCustomerException(&quot;Customer with SSN already exists&quot;);
+        }
+
+        Customer customer = Customer.builder()
+            .customerId(request.getCustomerId())
+            .firstName(request.getFirstName())
+            .middleName(request.getMiddleName())
+            .lastName(request.getLastName())
+            .addressLine1(request.getAddressLine1())
+            .addressLine2(request.getAddressLine2())
+            .addressLine3(request.getAddressLine3())
+            .stateCode(request.getStateCode())
+            .countryCode(request.getCountryCode())
+            .zipCode(request.getZipCode())
+            .phoneNumber1(request.getPhoneNumber1())
+            .phoneNumber2(request.getPhoneNumber2())
+            .ssn(request.getSsn())
+            .govtIssuedId(request.getGovtIssuedId())
+            .dateOfBirth(request.getDateOfBirth())
+            .eftAccountId(request.getEftAccountId())
+            .primaryCardHolderInd(request.getPrimaryCardHolderInd())
+            .ficoCreditScore(request.getFicoCreditScore())
+            .build();
+
+        Customer savedCustomer = customerRepository.save(customer);
+
+        // Publish event
+        kafkaTemplate.send(&quot;customer-events&quot;, &quot;customer.created&quot;, savedCustomer);
+
+        log.info(&quot;Customer created successfully with ID: {}&quot;, savedCustomer.getCustomerId());
+        return mapToResponse(savedCustomer);
+    }
+
+    @Override
+    @Cacheable(value = &quot;customers&quot;, key = &quot;#customerId&quot;)
+    @Transactional(readOnly = true)
+    public CustomerResponse getCustomer(Long customerId) {
+        log.info(&quot;Fetching customer with ID: {}&quot;, customerId);
+
+        Customer customer = customerRepository.findById(customerId)
+            .orElseThrow(() -&gt; new CustomerNotFoundException(&quot;Customer not found with ID: &quot; + customerId));
+
+        return mapToResponse(customer);
+    }
+
+    @Override
+    @CacheEvict(value = &quot;customers&quot;, key = &quot;#customerId&quot;)
+    public CustomerResponse updateCustomer(Long customerId, CustomerRequest request) {
+        log.info(&quot;Updating customer with ID: {}&quot;, customerId);
+
+        Customer customer = customerRepository.findById(customerId)
+            .orElseThrow(() -&gt; new CustomerNotFoundException(&quot;Customer not found with ID: &quot; + customerId));
+
+        // Update fields
+        customer.setFirstName(request.getFirstName());
+        customer.setMiddleName(request.getMiddleName());
+        customer.setLastName(request.getLastName());
+        customer.setAddressLine1(request.getAddressLine1());
+        customer.setAddressLine2(request.getAddressLine2());
+        customer.setAddressLine3(request.getAddressLine3());
+        customer.setStateCode(request.getStateCode());
+        customer.setCountryCode(request.getCountryCode());
+        customer.setZipCode(request.getZipCode());
+        customer.setPhoneNumber1(request.getPhoneNumber1());
+        customer.setPhoneNumber2(request.getPhoneNumber2());
+        customer.setGovtIssuedId(request.getGovtIssuedId());
+        customer.setDateOfBirth(request.getDateOfBirth());
+        customer.setEftAccountId(request.getEftAccountId());
+        customer.setPrimaryCardHolderInd(request.getPrimaryCardHolderInd());
+        customer.setFicoCreditScore(request.getFicoCreditScore());
+
+        Customer updatedCustomer = customerRepository.save(customer);
+
+        // Publish event
+        kafkaTemplate.send(&quot;customer-events&quot;, &quot;customer.updated&quot;, updatedCustomer);
+
+        log.info(&quot;Customer updated successfully with ID: {}&quot;, customerId);
+        return mapToResponse(updatedCustomer);
+    }
+
+    @Override
+    @CacheEvict(value = &quot;customers&quot;, key = &quot;#customerId&quot;)
+    public void deleteCustomer(Long customerId) {
+        log.info(&quot;Deleting customer with ID: {}&quot;, customerId);
+
+        if (!customerRepository.existsById(customerId)) {
+            throw new CustomerNotFoundException(&quot;Customer not found with ID: &quot; + customerId);
+        }
+
+        customerRepository.deleteById(customerId);
+
+        // Publish event
+        kafkaTemplate.send(&quot;customer-events&quot;, &quot;customer.deleted&quot;, customerId);
+
+        log.info(&quot;Customer deleted successfully with ID: {}&quot;, customerId);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List&lt;CustomerResponse&gt; searchCustomers(String searchTerm) {
+        log.info(&quot;Searching customers with term: {}&quot;, searchTerm);
+
+        List&lt;Customer&gt; customers = customerRepository.searchByName(searchTerm);
+        return customers.stream()
+            .map(this::mapToResponse)
+            .collect(Collectors.toList());
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List&lt;CustomerResponse&gt; getCustomersByState(String stateCode) {
+        log.info(&quot;Fetching customers for state: {}&quot;, stateCode);
+
+        List&lt;Customer&gt; customers = customerRepository.findByState(stateCode);
+        return customers.stream()
+            .map(this::mapToResponse)
+            .collect(Collectors.toList());
+    }
+
+    private CustomerResponse mapToResponse(Customer customer) {
+        return CustomerResponse.builder()
+            .customerId(customer.getCustomerId())
+            .firstName(customer.getFirstName())
+            .middleName(customer.getMiddleName())
+            .lastName(customer.getLastName())
+            .addressLine1(customer.getAddressLine1())
+            .addressLine2(customer.getAddressLine2())
+            .addressLine3(customer.getAddressLine3())
+            .stateCode(customer.getStateCode())
+            .countryCode(customer.getCountryCode())
+            .zipCode(customer.getZipCode())
+            .phoneNumber1(customer.getPhoneNumber1())
+            .phoneNumber2(customer.getPhoneNumber2())
+            .ssn(customer.getSsn())
+            .govtIssuedId(customer.getGovtIssuedId())
+            .dateOfBirth(customer.getDateOfBirth())
+            .eftAccountId(customer.getEftAccountId())
+            .primaryCardHolderInd(customer.getPrimaryCardHolderInd())
+            .ficoCreditScore(customer.getFicoCreditScore())
+            .createdAt(customer.getCreatedAt())
+            .updatedAt(customer.getUpdatedAt())
+            .build();
+    }
+}
+</code></pre>
+<h3 id="rest-controller-example">REST Controller Example</h3>
+<pre><code class="language-java">package com.carddemo.customer.controller;
+
+import com.carddemo.customer.model.dto.CustomerRequest;
+import com.carddemo.customer.model.dto.CustomerResponse;
+import com.carddemo.customer.service.CustomerService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping(&quot;/customers&quot;)
+@RequiredArgsConstructor
+@Slf4j
+@Tag(name = &quot;Customer Management&quot;, description = &quot;APIs for managing customers&quot;)
+public class CustomerController {
+
+    private final CustomerService customerService;
+
+    @PostMapping
+    @Operation(summary = &quot;Create a new customer&quot;)
+    public ResponseEntity&lt;CustomerResponse&gt; createCustomer(@Valid @RequestBody CustomerRequest request) {
+        log.info(&quot;REST request to create customer&quot;);
+        CustomerResponse response = customerService.createCustomer(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+
+    @GetMapping(&quot;/{customerId}&quot;)
+    @Operation(summary = &quot;Get customer by ID&quot;)
+    public ResponseEntity&lt;CustomerResponse&gt; getCustomer(@PathVariable Long customerId) {
+        log.info(&quot;REST request to get customer: {}&quot;, customerId);
+        CustomerResponse response = customerService.getCustomer(customerId);
+        return ResponseEntity.ok(response);
+    }
+
+    @PutMapping(&quot;/{customerId}&quot;)
+    @Operation(summary = &quot;Update customer&quot;)
+    public ResponseEntity&lt;CustomerResponse&gt; updateCustomer(
+            @PathVariable Long customerId,
+            @Valid @RequestBody CustomerRequest request) {
+        log.info(&quot;REST request to update customer: {}&quot;, customerId);
+        CustomerResponse response = customerService.updateCustomer(customerId, request);
+        return ResponseEntity.ok(response);
+    }
+
+    @DeleteMapping(&quot;/{customerId}&quot;)
+    @Operation(summary = &quot;Delete customer&quot;)
+    public ResponseEntity&lt;Void&gt; deleteCustomer(@PathVariable Long customerId) {
+        log.info(&quot;REST request to delete customer: {}&quot;, customerId);
+        customerService.deleteCustomer(customerId);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping(&quot;/search&quot;)
+    @Operation(summary = &quot;Search customers by name&quot;)
+    public ResponseEntity&lt;List&lt;CustomerResponse&gt;&gt; searchCustomers(@RequestParam String q) {
+        log.info(&quot;REST request to search customers: {}&quot;, q);
+        List&lt;CustomerResponse&gt; responses = customerService.searchCustomers(q);
+        return ResponseEntity.ok(responses);
+    }
+
+    @GetMapping(&quot;/state/{stateCode}&quot;)
+    @Operation(summary = &quot;Get customers by state&quot;)
+    public ResponseEntity&lt;List&lt;CustomerResponse&gt;&gt; getCustomersByState(@PathVariable String stateCode) {
+        log.info(&quot;REST request to get customers by state: {}&quot;, stateCode);
+        List&lt;CustomerResponse&gt; responses = customerService.getCustomersByState(stateCode);
+        return ResponseEntity.ok(responses);
+    }
+}
+</code></pre>
+<h3 id="exception-handling">Exception Handling</h3>
+<pre><code class="language-java">package com.carddemo.customer.exception;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
+
+@RestControllerAdvice
+@Slf4j
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(CustomerNotFoundException.class)
+    public ResponseEntity&lt;ErrorResponse&gt; handleCustomerNotFoundException(CustomerNotFoundException ex) {
+        log.error(&quot;Customer not found: {}&quot;, ex.getMessage());
+        ErrorResponse error = ErrorResponse.builder()
+            .timestamp(LocalDateTime.now())
+            .status(HttpStatus.NOT_FOUND.value())
+            .error(&quot;Not Found&quot;)
+            .message(ex.getMessage())
+            .build();
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+    }
+
+    @ExceptionHandler(DuplicateCustomerException.class)
+    public ResponseEntity&lt;ErrorResponse&gt; handleDuplicateCustomerException(DuplicateCustomerException ex) {
+        log.error(&quot;Duplicate customer: {}&quot;, ex.getMessage());
+        ErrorResponse error = ErrorResponse.builder()
+            .timestamp(LocalDateTime.now())
+            .status(HttpStatus.CONFLICT.value())
+            .error(&quot;Conflict&quot;)
+            .message(ex.getMessage())
+            .build();
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
+    }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity&lt;ErrorResponse&gt; handleValidationExceptions(MethodArgumentNotValidException ex) {
+        Map&lt;String, String&gt; errors = new HashMap&lt;&gt;();
+        ex.getBindingResult().getAllErrors().forEach((error) -&gt; {
+            String fieldName = ((FieldError) error).getField();
+            String errorMessage = error.getDefaultMessage();
+            errors.put(fieldName, errorMessage);
+        });
+
+        ErrorResponse error = ErrorResponse.builder()
+            .timestamp(LocalDateTime.now())
+            .status(HttpStatus.BAD_REQUEST.value())
+            .error(&quot;Validation Failed&quot;)
+            .message(&quot;Invalid input&quot;)
+            .validationErrors(errors)
+            .build();
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity&lt;ErrorResponse&gt; handleGenericException(Exception ex) {
+        log.error(&quot;Unexpected error: {}&quot;, ex.getMessage(), ex);
+        ErrorResponse error = ErrorResponse.builder()
+            .timestamp(LocalDateTime.now())
+            .status(HttpStatus.INTERNAL_SERVER_ERROR.value())
+            .error(&quot;Internal Server Error&quot;)
+            .message(&quot;An unexpected error occurred&quot;)
+            .build();
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
+    }
+}
+</code></pre>
+<h3 id="dockerfile">Dockerfile</h3>
+<pre><code class="language-dockerfile"># Multi-stage build for optimal image size
+FROM maven:3.9-eclipse-temurin-17 AS build
+WORKDIR /app
+
+# Copy pom.xml and download dependencies (cached layer)
+COPY pom.xml .
+RUN mvn dependency:go-offline
+
+# Copy source code and build
+COPY src ./src
+RUN mvn clean package -DskipTests
+
+# Runtime stage
+FROM eclipse-temurin:17-jre-alpine
+WORKDIR /app
+
+# Create non-root user
+RUN addgroup -S spring &amp;&amp; adduser -S spring -G spring
+USER spring:spring
+
+# Copy JAR from build stage
+COPY --from=build /app/target/*.jar app.jar
+
+# Expose port
+EXPOSE 8081
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=60s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:8081/api/v1/actuator/health || exit 1
+
+# Run application
+ENTRYPOINT [&quot;java&quot;, &quot;-jar&quot;, &quot;app.jar&quot;]
+</code></pre>
+<h2 id="database-setup">Database Setup</h2>
+<h3 id="flyway-migration-scripts">Flyway Migration Scripts</h3>
+<p><strong>V1__create_customer_table.sql</strong></p>
+<pre><code class="language-sql">-- Create customers table
+CREATE TABLE customers (
+    customer_id BIGINT PRIMARY KEY,
+    first_name VARCHAR(25) NOT NULL,
+    middle_name VARCHAR(25),
+    last_name VARCHAR(25) NOT NULL,
+    address_line1 VARCHAR(50),
+    address_line2 VARCHAR(50),
+    address_line3 VARCHAR(50),
+    state_code VARCHAR(2),
+    country_code VARCHAR(3),
+    zip_code VARCHAR(10),
+    phone_number1 VARCHAR(15),
+    phone_number2 VARCHAR(15),
+    ssn VARCHAR(9),
+    govt_issued_id VARCHAR(20),
+    date_of_birth DATE,
+    eft_account_id VARCHAR(10),
+    primary_card_holder_ind CHAR(1),
+    fico_credit_score SMALLINT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    version INTEGER DEFAULT 0 NOT NULL
+);
+
+-- Create indexes
+CREATE INDEX idx_customers_ssn ON customers(ssn);
+CREATE INDEX idx_customers_name ON customers(last_name, first_name);
+CREATE INDEX idx_customers_state ON customers(state_code);
+
+-- Add comments
+COMMENT ON TABLE customers IS 'Customer master data';
+COMMENT ON COLUMN customers.customer_id IS 'Unique customer identifier (from CUSTDAT)';
+COMMENT ON COLUMN customers.ssn IS 'Social Security Number';
+COMMENT ON COLUMN customers.fico_credit_score IS 'FICO credit score (300-850)';
+</code></pre>
+<h2 id="api-implementation-patterns">API Implementation Patterns</h2>
+<h3 id="restful-api-design-principles">RESTful API Design Principles</h3>
+<ol>
+<li><strong>Resource-Based URLs</strong>: Use nouns, not verbs</li>
+<li>Good: <code>GET /api/v1/customers/{id}</code></li>
+<li>
+<p>Bad: <code>GET /api/v1/getCustomer?id={id}</code></p>
+</li>
+<li>
+<p><strong>HTTP Methods</strong>: Use appropriate HTTP methods</p>
+</li>
+<li>GET: Retrieve resources</li>
+<li>POST: Create resources</li>
+<li>PUT: Update resources (full update)</li>
+<li>PATCH: Partial update</li>
+<li>
+<p>DELETE: Delete resources</p>
+</li>
+<li>
+<p><strong>Status Codes</strong>: Return appropriate HTTP status codes</p>
+</li>
+<li>200 OK: Successful GET, PUT, PATCH</li>
+<li>201 Created: Successful POST</li>
+<li>204 No Content: Successful DELETE</li>
+<li>400 Bad Request: Invalid input</li>
+<li>401 Unauthorized: Authentication required</li>
+<li>403 Forbidden: Insufficient permissions</li>
+<li>404 Not Found: Resource not found</li>
+<li>409 Conflict: Duplicate resource</li>
+<li>
+<p>500 Internal Server Error: Server error</p>
+</li>
+<li>
+<p><strong>Versioning</strong>: Use URL versioning</p>
+</li>
+<li><code>/api/v1/customers</code></li>
+<li>
+<p><code>/api/v2/customers</code></p>
+</li>
+<li>
+<p><strong>Pagination</strong>: Support pagination for list endpoints</p>
+</li>
+<li>
+<p><code>/api/v1/customers?page=0&amp;size=20&amp;sort=lastName,asc</code></p>
+</li>
+<li>
+<p><strong>Filtering</strong>: Support filtering</p>
+</li>
+<li>
+<p><code>/api/v1/customers?state=NY&amp;status=ACTIVE</code></p>
+</li>
+<li>
+<p><strong>Error Responses</strong>: Consistent error format
+   <code>json
+   {
+     "timestamp": "2025-11-21T10:30:00",
+     "status": 404,
+     "error": "Not Found",
+     "message": "Customer not found with ID: 12345",
+     "path": "/api/v1/customers/12345"
+   }</code></p>
+</li>
+</ol>
+<h2 id="service-communication">Service Communication</h2>
+<h3 id="synchronous-communication-rest">Synchronous Communication (REST)</h3>
+<p><strong>Using OpenFeign Client</strong></p>
+<pre><code class="language-java">@FeignClient(name = &quot;account-service&quot;, url = &quot;${account.service.url}&quot;)
+public interface AccountClient {
+
+    @GetMapping(&quot;/api/v1/accounts/{accountId}&quot;)
+    AccountResponse getAccount(@PathVariable Long accountId);
+
+    @GetMapping(&quot;/api/v1/customers/{customerId}/accounts&quot;)
+    List&lt;AccountResponse&gt; getCustomerAccounts(@PathVariable Long customerId);
+}
+</code></pre>
+<h3 id="asynchronous-communication-kafka">Asynchronous Communication (Kafka)</h3>
+<p><strong>Event Publisher</strong></p>
+<pre><code class="language-java">@Service
+@RequiredArgsConstructor
+public class EventPublisher {
+
+    private final KafkaTemplate&lt;String, Object&gt; kafkaTemplate;
+
+    public void publishCustomerCreated(Customer customer) {
+        CustomerCreatedEvent event = CustomerCreatedEvent.builder()
+            .customerId(customer.getCustomerId())
+            .firstName(customer.getFirstName())
+            .lastName(customer.getLastName())
+            .timestamp(LocalDateTime.now())
+            .build();
+
+        kafkaTemplate.send(&quot;customer-events&quot;, &quot;customer.created&quot;, event);
+    }
+}
+</code></pre>
+<p><strong>Event Consumer</strong></p>
+<pre><code class="language-java">@Service
+@Slf4j
+public class CustomerEventConsumer {
+
+    @KafkaListener(topics = &quot;customer-events&quot;, groupId = &quot;account-service&quot;)
+    public void handleCustomerEvent(ConsumerRecord&lt;String, CustomerEvent&gt; record) {
+        String eventType = record.key();
+        CustomerEvent event = record.value();
+
+        log.info(&quot;Received event: {} for customer: {}&quot;, eventType, event.getCustomerId());
+
+        switch (eventType) {
+            case &quot;customer.created&quot;:
+                handleCustomerCreated(event);
+                break;
+            case &quot;customer.updated&quot;:
+                handleCustomerUpdated(event);
+                break;
+            case &quot;customer.deleted&quot;:
+                handleCustomerDeleted(event);
+                break;
+            default:
+                log.warn(&quot;Unknown event type: {}&quot;, eventType);
+        }
+    }
+
+    private void handleCustomerCreated(CustomerEvent event) {
+        // Handle customer created event
+    }
+
+    private void handleCustomerUpdated(CustomerEvent event) {
+        // Handle customer updated event
+    }
+
+    private void handleCustomerDeleted(CustomerEvent event) {
+        // Handle customer deleted event
+    }
+}
+</code></pre>
+<h2 id="data-migration-scripts">Data Migration Scripts</h2>
+<h3 id="vsam-to-csv-export-cobol">VSAM to CSV Export (COBOL)</h3>
+<pre><code class="language-cobol">       IDENTIFICATION DIVISION.
+       PROGRAM-ID. VSAMTOCSV.
+
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+           SELECT CUSTDAT-FILE
+               ASSIGN TO CUSTDAT
+               ORGANIZATION IS INDEXED
+               ACCESS MODE IS SEQUENTIAL
+               RECORD KEY IS CUST-ID
+               FILE STATUS IS WS-FILE-STATUS.
+
+           SELECT CSV-FILE
+               ASSIGN TO CUSTCSV
+               ORGANIZATION IS LINE SEQUENTIAL
+               FILE STATUS IS WS-CSV-STATUS.
+
+       DATA DIVISION.
+       FILE SECTION.
+       FD  CUSTDAT-FILE.
+       01  CUSTOMER-RECORD.
+           COPY CVCUS01Y.
+
+       FD  CSV-FILE.
+       01  CSV-RECORD              PIC X(1000).
+
+       WORKING-STORAGE SECTION.
+       01  WS-FILE-STATUS          PIC XX.
+       01  WS-CSV-STATUS           PIC XX.
+       01  WS-RECORD-COUNT         PIC 9(09) VALUE ZERO.
+       01  WS-CSV-LINE             PIC X(1000).
+
+       PROCEDURE DIVISION.
+       MAIN-LOGIC.
+           OPEN INPUT CUSTDAT-FILE
+           OPEN OUTPUT CSV-FILE
+
+           PERFORM WRITE-CSV-HEADER
+           PERFORM READ-AND-CONVERT UNTIL WS-FILE-STATUS = '10'
+
+           CLOSE CUSTDAT-FILE
+           CLOSE CSV-FILE
+
+           DISPLAY 'RECORDS EXPORTED: ' WS-RECORD-COUNT
+           STOP RUN.
+
+       READ-AND-CONVERT.
+           READ CUSTDAT-FILE
+               AT END
+                   MOVE '10' TO WS-FILE-STATUS
+               NOT AT END
+                   PERFORM BUILD-CSV-LINE
+                   WRITE CSV-RECORD FROM WS-CSV-LINE
+                   ADD 1 TO WS-RECORD-COUNT
+           END-READ.
+
+       BUILD-CSV-LINE.
+           STRING
+               CUST-ID DELIMITED BY SIZE
+               ',' DELIMITED BY SIZE
+               CUST-FIRST-NAME DELIMITED BY SIZE
+               ',' DELIMITED BY SIZE
+               CUST-MIDDLE-NAME DELIMITED BY SIZE
+               ',' DELIMITED BY SIZE
+               CUST-LAST-NAME DELIMITED BY SIZE
+               ',' DELIMITED BY SIZE
+               CUST-ADDR-LINE-1 DELIMITED BY SIZE
+               ',' DELIMITED BY SIZE
+               CUST-ADDR-LINE-2 DELIMITED BY SIZE
+               ',' DELIMITED BY SIZE
+               CUST-ADDR-LINE-3 DELIMITED BY SIZE
+               ',' DELIMITED BY SIZE
+               CUST-ADDR-STATE-CD DELIMITED BY SIZE
+               ',' DELIMITED BY SIZE
+               CUST-ADDR-COUNTRY-CD DELIMITED BY SIZE
+               ',' DELIMITED BY SIZE
+               CUST-ADDR-ZIP DELIMITED BY SIZE
+               ',' DELIMITED BY SIZE
+               CUST-PHONE-NUM-1 DELIMITED BY SIZE
+               ',' DELIMITED BY SIZE
+               CUST-PHONE-NUM-2 DELIMITED BY SIZE
+               ',' DELIMITED BY SIZE
+               CUST-SSN DELIMITED BY SIZE
+               ',' DELIMITED BY SIZE
+               CUST-GOVT-ISSUED-ID DELIMITED BY SIZE
+               ',' DELIMITED BY SIZE
+               CUST-DOB-YYYY-MM-DD DELIMITED BY SIZE
+               ',' DELIMITED BY SIZE
+               CUST-EFT-ACCOUNT-ID DELIMITED BY SIZE
+               ',' DELIMITED BY SIZE
+               CUST-PRI-CARD-HOLDER-IND DELIMITED BY SIZE
+               ',' DELIMITED BY SIZE
+               CUST-FICO-CREDIT-SCORE DELIMITED BY SIZE
+               INTO WS-CSV-LINE
+           END-STRING.
+
+       WRITE-CSV-HEADER.
+           MOVE 'customer_id,first_name,middle_name,last_name,' &amp;
+                'address_line1,address_line2,address_line3,' &amp;
+                'state_code,country_code,zip_code,' &amp;
+                'phone_number1,phone_number2,ssn,govt_issued_id,' &amp;
+                'date_of_birth,eft_account_id,primary_card_holder_ind,' &amp;
+                'fico_credit_score' TO WS-CSV-LINE
+           WRITE CSV-RECORD FROM WS-CSV-LINE.
+</code></pre>
+<h3 id="csv-to-postgresql-import-java">CSV to PostgreSQL Import (Java)</h3>
+<pre><code class="language-java">@Service
+@RequiredArgsConstructor
+@Slf4j
+public class DataMigrationService {
+
+    private final JdbcTemplate jdbcTemplate;
+
+    public void importCustomersFromCsv(String csvFilePath) throws IOException {
+        log.info(&quot;Starting customer data import from: {}&quot;, csvFilePath);
+
+        // Disable indexes for faster import
+        jdbcTemplate.execute(&quot;DROP INDEX IF EXISTS idx_customers_ssn&quot;);
+        jdbcTemplate.execute(&quot;DROP INDEX IF EXISTS idx_customers_name&quot;);
+
+        // Use COPY command for bulk import
+        String sql = String.format(
+            &quot;COPY customers (customer_id, first_name, middle_name, last_name, &quot; +
+            &quot;address_line1, address_line2, address_line3, state_code, country_code, &quot; +
+            &quot;zip_code, phone_number1, phone_number2, ssn, govt_issued_id, &quot; +
+            &quot;date_of_birth, eft_account_id, primary_card_holder_ind, fico_credit_score) &quot; +
+            &quot;FROM '%s' DELIMITER ',' CSV HEADER&quot;, csvFilePath);
+
+        jdbcTemplate.execute(sql);
+
+        // Recreate indexes
+        jdbcTemplate.execute(&quot;CREATE INDEX idx_customers_ssn ON customers(ssn)&quot;);
+        jdbcTemplate.execute(&quot;CREATE INDEX idx_customers_name ON customers(last_name, first_name)&quot;);
+
+        // Get record count
+        Integer count = jdbcTemplate.queryForObject(&quot;SELECT COUNT(*) FROM customers&quot;, Integer.class);
+        log.info(&quot;Customer data import completed. Records imported: {}&quot;, count);
+    }
+
+    public void validateMigration() {
+        log.info(&quot;Validating data migration...&quot;);
+
+        // Check record counts
+        Integer customerCount = jdbcTemplate.queryForObject(
+            &quot;SELECT COUNT(*) FROM customers&quot;, Integer.class);
+        log.info(&quot;Customer records: {}&quot;, customerCount);
+
+        // Check for null values in required fields
+        Integer nullFirstNames = jdbcTemplate.queryForObject(
+            &quot;SELECT COUNT(*) FROM customers WHERE first_name IS NULL&quot;, Integer.class);
+        Integer nullLastNames = jdbcTemplate.queryForObject(
+            &quot;SELECT COUNT(*) FROM customers WHERE last_name IS NULL&quot;, Integer.class);
+
+        if (nullFirstNames &gt; 0 || nullLastNames &gt; 0) {
+            log.error(&quot;Data validation failed: Found null values in required fields&quot;);
+        } else {
+            log.info(&quot;Data validation passed&quot;);
+        }
+
+        // Sample data verification
+        List&lt;Customer&gt; samples = jdbcTemplate.query(
+            &quot;SELECT * FROM customers LIMIT 10&quot;,
+            (rs, rowNum) -&gt; mapRowToCustomer(rs));
+
+        samples.forEach(customer -&gt; 
+            log.info(&quot;Sample customer: {} {} (ID: {})&quot;, 
+                customer.getFirstName(), customer.getLastName(), customer.getCustomerId()));
+    }
+
+    private Customer mapRowToCustomer(ResultSet rs) throws SQLException {
+        return Customer.builder()
+            .customerId(rs.getLong(&quot;customer_id&quot;))
+            .firstName(rs.getString(&quot;first_name&quot;))
+            .lastName(rs.getString(&quot;last_name&quot;))
+            .build();
+    }
+}
+</code></pre>
+<h2 id="testing-approach">Testing Approach</h2>
+<h3 id="unit-testing">Unit Testing</h3>
+<pre><code class="language-java">@ExtendWith(MockitoExtension.class)
+class CustomerServiceTest {
+
+    @Mock
+    private CustomerRepository customerRepository;
+
+    @Mock
+    private KafkaTemplate&lt;String, Object&gt; kafkaTemplate;
+
+    @InjectMocks
+    private CustomerServiceImpl customerService;
+
+    @Test
+    void testCreateCustomer_Success() {
+        // Given
+        CustomerRequest request = CustomerRequest.builder()
+            .customerId(1L)
+            .firstName(&quot;John&quot;)
+            .lastName(&quot;Doe&quot;)
+            .ssn(&quot;123456789&quot;)
+            .build();
+
+        Customer customer = Customer.builder()
+            .customerId(1L)
+            .firstName(&quot;John&quot;)
+            .lastName(&quot;Doe&quot;)
+            .ssn(&quot;123456789&quot;)
+            .build();
+
+        when(customerRepository.existsBySsn(anyString())).thenReturn(false);
+        when(customerRepository.save(any(Customer.class))).thenReturn(customer);
+
+        // When
+        CustomerResponse response = customerService.createCustomer(request);
+
+        // Then
+        assertNotNull(response);
+        assertEquals(1L, response.getCustomerId());
+        assertEquals(&quot;John&quot;, response.getFirstName());
+        assertEquals(&quot;Doe&quot;, response.getLastName());
+
+        verify(customerRepository).existsBySsn(&quot;123456789&quot;);
+        verify(customerRepository).save(any(Customer.class));
+        verify(kafkaTemplate).send(eq(&quot;customer-events&quot;), eq(&quot;customer.created&quot;), any());
+    }
+
+    @Test
+    void testCreateCustomer_DuplicateSSN() {
+        // Given
+        CustomerRequest request = CustomerRequest.builder()
+            .customerId(1L)
+            .ssn(&quot;123456789&quot;)
+            .build();
+
+        when(customerRepository.existsBySsn(anyString())).thenReturn(true);
+
+        // When &amp; Then
+        assertThrows(DuplicateCustomerException.class, 
+            () -&gt; customerService.createCustomer(request));
+
+        verify(customerRepository).existsBySsn(&quot;123456789&quot;);
+        verify(customerRepository, never()).save(any());
+    }
+}
+</code></pre>
+<h3 id="integration-testing-with-testcontainers">Integration Testing with Testcontainers</h3>
+<pre><code class="language-java">@SpringBootTest
+@Testcontainers
+class CustomerServiceIntegrationTest {
+
+    @Container
+    static PostgreSQLContainer&lt;?&gt; postgres = new PostgreSQLContainer&lt;&gt;(&quot;postgres:15&quot;)
+        .withDatabaseName(&quot;testdb&quot;)
+        .withUsername(&quot;test&quot;)
+        .withPassword(&quot;test&quot;);
+
+    @DynamicPropertySource
+    static void configureProperties(DynamicPropertyRegistry registry) {
+        registry.add(&quot;spring.datasource.url&quot;, postgres::getJdbcUrl);
+        registry.add(&quot;spring.datasource.username&quot;, postgres::getUsername);
+        registry.add(&quot;spring.datasource.password&quot;, postgres::getPassword);
+    }
+
+    @Autowired
+    private CustomerService customerService;
+
+    @Autowired
+    private CustomerRepository customerRepository;
+
+    @Test
+    void testCreateAndRetrieveCustomer() {
+        // Given
+        CustomerRequest request = CustomerRequest.builder()
+            .customerId(1L)
+            .firstName(&quot;John&quot;)
+            .lastName(&quot;Doe&quot;)
+            .ssn(&quot;123456789&quot;)
+            .build();
+
+        // When
+        CustomerResponse created = customerService.createCustomer(request);
+        CustomerResponse retrieved = customerService.getCustomer(created.getCustomerId());
+
+        // Then
+        assertNotNull(retrieved);
+        assertEquals(&quot;John&quot;, retrieved.getFirstName());
+        assertEquals(&quot;Doe&quot;, retrieved.getLastName());
+    }
+}
+</code></pre>
+<h2 id="deployment-guide">Deployment Guide</h2>
+<h3 id="kubernetes-deployment">Kubernetes Deployment</h3>
+<p><strong>deployment.yaml</strong></p>
+<pre><code class="language-yaml">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-service
+  labels:
+    app: customer-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: customer-service
+  template:
+    metadata:
+      labels:
+        app: customer-service
+    spec:
+      containers:
+      - name: customer-service
+        image: carddemo/customer-service:1.0.0
+        ports:
+        - containerPort: 8081
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: &quot;prod&quot;
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: customer-config
+              key: db.host
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: customer-secrets
+              key: db.password
+        resources:
+          requests:
+            memory: &quot;512Mi&quot;
+            cpu: &quot;500m&quot;
+          limits:
+            memory: &quot;1Gi&quot;
+            cpu: &quot;1000m&quot;
+        livenessProbe:
+          httpGet:
+            path: /api/v1/actuator/health/liveness
+            port: 8081
+          initialDelaySeconds: 60
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /api/v1/actuator/health/readiness
+            port: 8081
+          initialDelaySeconds: 30
+          periodSeconds: 5
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: customer-service
+spec:
+  selector:
+    app: customer-service
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8081
+  type: ClusterIP
+</code></pre>
+<hr />
+<p><strong>Navigation</strong>: <a href="../Home/">Home</a> | <a href="../Migration-Plan/">Migration Plan</a> | <a href="../Migration-Data-Dictionary/">Migration Data Dictionary</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

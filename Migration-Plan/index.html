@@ -1,0 +1,5285 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://akanshahahaha.github.io/carddemo-staticpage/Migration-Plan/">
+      
+      
+        <link rel="prev" href="../Optional-Module-VSAM-MQ/">
+      
+      
+        <link rel="next" href="../Migration-Technical-Guide/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Migration Plan - AWS Mainframe Modernization Card Demo - Deep Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#carddemo-migration-plan-mainframe-to-java-microservices" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-header__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AWS Mainframe Modernization Card Demo - Deep Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Migration Plan
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-nav__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AWS Mainframe Modernization Card Demo - Deep Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quick-Start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Admin-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Batch-Processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technical-Components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CICS-Configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CICS Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optional Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Optional Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Transaction-Type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transaction Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-VSAM-MQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VSAM-MQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Migration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Plan
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Executive Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#migration-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-state-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current State Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Current State Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Inventory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Inventory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#online-programs-29-cobol-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Online Programs (29 COBOL Programs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-programs-33-jcl-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Programs (33 JCL Jobs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-stores-10-vsam-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Stores (10 VSAM Files)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-data-stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Data Stores
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-debt-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Debt Assessment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#target-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Target Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-level-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Level Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technology-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technology Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microservices-decomposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microservices Decomposition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Microservices Decomposition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#service-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Boundaries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Service Boundaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-customer-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Customer Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-account-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Account Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-card-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Card Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-transaction-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Transaction Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-payment-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Payment Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-report-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Report Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-user-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. User Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-authorization-service-optional-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Authorization Service (Optional Module)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-communication-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Communication Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-migration-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Migration Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Migration Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-schema-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Schema Design
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Schema Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postgresql-schema-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PostgreSQL Schema Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema-mapping-vsam-to-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema Mapping: VSAM to PostgreSQL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schema Mapping: VSAM to PostgreSQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customer-schema-customer_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Schema (customer_db)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-schema-account_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Schema (account_db)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-schema-card_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card Schema (card_db)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-schema-transaction_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Schema (transaction_db)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-schema-user_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Schema (user_db)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-migration-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Migration Approach
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Migration Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-schema-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Schema Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-historical-data-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Historical Data Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-incremental-data-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Incremental Data Sync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-data-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Data Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-synchronization-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Synchronization Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technology-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technology Stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technology Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backend-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend Technologies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backend Technologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programming-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programming Language
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#messaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Messaging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend Technologies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend Technologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Database
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infrastructure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#containerization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Containerization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orchestration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Mesh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Gateway
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Observability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributed-tracing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Distributed Tracing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-performance-monitoring-apm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Performance Monitoring (APM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CI/CD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#artifact-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artifact Repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-as-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure as Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud Platform
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Roadmap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Roadmap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#migration-strategy-strangler-fig-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Strategy: Strangler Fig Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-0-foundation-months-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 0: Foundation (Months 1-2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-user-authentication-authorization-months-3-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: User Authentication &amp; Authorization (Months 3-4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-customer-account-management-months-5-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Customer &amp; Account Management (Months 5-7)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-card-management-months-8-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Card Management (Months 8-9)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-transaction-processing-months-10-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Transaction Processing (Months 10-12)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-reporting-batch-processing-months-13-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: Reporting &amp; Batch Processing (Months 13-14)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-6-optional-modules-months-15-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 6: Optional Modules (Months 15-16)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-7-cutover-decommissioning-months-17-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 7: Cutover &amp; Decommissioning (Months 17-18)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeline-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeline Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Assessment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Risk Assessment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technical-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Risks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Risks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#risk-1-data-migration-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 1: Data Migration Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-2-performance-degradation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 2: Performance Degradation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-3-distributed-transaction-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 3: Distributed Transaction Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-4-integration-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 4: Integration Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-5-security-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 5: Security Vulnerabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Risks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Business Risks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#risk-6-extended-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 6: Extended Timeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-7-user-adoption-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 7: User Adoption Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-8-budget-overruns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 8: Budget Overruns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-9-knowledge-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 9: Knowledge Loss
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-10-operational-readiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 10: Operational Readiness
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Criteria
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Success Criteria">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technical-success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migration-success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Migration-Technical-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Migration-Data-Dictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Dictionary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Migration-Testing-Strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Executive Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#migration-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-state-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current State Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Current State Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Inventory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Inventory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#online-programs-29-cobol-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Online Programs (29 COBOL Programs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-programs-33-jcl-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Programs (33 JCL Jobs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-stores-10-vsam-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Stores (10 VSAM Files)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-data-stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Data Stores
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-debt-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Debt Assessment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#target-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Target Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-level-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Level Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technology-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technology Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microservices-decomposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microservices Decomposition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Microservices Decomposition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#service-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Boundaries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Service Boundaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-customer-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Customer Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-account-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Account Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-card-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Card Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-transaction-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Transaction Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-payment-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Payment Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-report-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Report Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-user-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. User Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-authorization-service-optional-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Authorization Service (Optional Module)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-communication-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Communication Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-migration-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Migration Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Migration Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-schema-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Schema Design
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Schema Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postgresql-schema-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PostgreSQL Schema Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema-mapping-vsam-to-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema Mapping: VSAM to PostgreSQL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schema Mapping: VSAM to PostgreSQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customer-schema-customer_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Schema (customer_db)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-schema-account_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Schema (account_db)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-schema-card_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card Schema (card_db)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-schema-transaction_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Schema (transaction_db)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-schema-user_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Schema (user_db)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-migration-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Migration Approach
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Migration Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-schema-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Schema Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-historical-data-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Historical Data Migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-incremental-data-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Incremental Data Sync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-data-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Data Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-synchronization-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Synchronization Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technology-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technology Stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technology Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backend-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend Technologies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backend Technologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programming-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programming Language
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#messaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Messaging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend Technologies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend Technologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Database
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infrastructure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#containerization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Containerization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orchestration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Mesh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Gateway
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Observability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributed-tracing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Distributed Tracing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-performance-monitoring-apm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Performance Monitoring (APM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CI/CD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#artifact-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artifact Repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-as-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure as Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud Platform
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Roadmap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Roadmap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#migration-strategy-strangler-fig-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Strategy: Strangler Fig Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-0-foundation-months-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 0: Foundation (Months 1-2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-user-authentication-authorization-months-3-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: User Authentication &amp; Authorization (Months 3-4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-customer-account-management-months-5-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Customer &amp; Account Management (Months 5-7)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-card-management-months-8-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Card Management (Months 8-9)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-transaction-processing-months-10-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Transaction Processing (Months 10-12)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-reporting-batch-processing-months-13-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: Reporting &amp; Batch Processing (Months 13-14)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-6-optional-modules-months-15-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 6: Optional Modules (Months 15-16)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-7-cutover-decommissioning-months-17-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 7: Cutover &amp; Decommissioning (Months 17-18)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeline-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeline Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Assessment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Risk Assessment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technical-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Risks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Risks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#risk-1-data-migration-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 1: Data Migration Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-2-performance-degradation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 2: Performance Degradation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-3-distributed-transaction-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 3: Distributed Transaction Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-4-integration-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 4: Integration Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-5-security-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 5: Security Vulnerabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Risks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Business Risks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#risk-6-extended-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 6: Extended Timeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-7-user-adoption-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 7: User Adoption Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-8-budget-overruns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 8: Budget Overruns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-9-knowledge-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 9: Knowledge Loss
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-10-operational-readiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk 10: Operational Readiness
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Criteria
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Success Criteria">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technical-success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migration-success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="carddemo-migration-plan-mainframe-to-java-microservices">CardDemo Migration Plan: Mainframe to Java Microservices</h1>
+<p>Comprehensive migration plan for modernizing CardDemo from mainframe (COBOL/CICS/VSAM) to Java microservices with PostgreSQL database.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#executive-summary">Executive Summary</a></li>
+<li><a href="#current-state-analysis">Current State Analysis</a></li>
+<li><a href="#target-architecture">Target Architecture</a></li>
+<li><a href="#microservices-decomposition">Microservices Decomposition</a></li>
+<li><a href="#data-migration-strategy">Data Migration Strategy</a></li>
+<li><a href="#technology-stack">Technology Stack</a></li>
+<li><a href="#implementation-roadmap">Implementation Roadmap</a></li>
+<li><a href="#risk-assessment">Risk Assessment</a></li>
+<li><a href="#success-criteria">Success Criteria</a></li>
+</ul>
+<h2 id="executive-summary">Executive Summary</h2>
+<h3 id="migration-overview">Migration Overview</h3>
+<p><strong>Objective</strong>: Modernize the CardDemo credit card management application from mainframe technologies to cloud-native Java microservices architecture.</p>
+<p><strong>Current State</strong>: Mainframe application with 29 COBOL programs, 10 VSAM files, 14 CICS transactions, 33 batch jobs</p>
+<p><strong>Target State</strong>: Cloud-native microservices application with Java Spring Boot, PostgreSQL database, REST APIs, and modern UI</p>
+<p><strong>Migration Approach</strong>: Strangler Fig Pattern - Incremental migration with coexistence of old and new systems</p>
+<p><strong>Estimated Duration</strong>: 12-18 months (depending on team size and resources)</p>
+<p><strong>Key Benefits</strong>:
+- Cloud scalability and elasticity
+- Modern development practices (CI/CD, DevOps)
+- Improved maintainability and agility
+- Cost reduction (mainframe licensing)
+- Enhanced user experience
+- API-first architecture for integration</p>
+<h2 id="current-state-analysis">Current State Analysis</h2>
+<h3 id="application-inventory">Application Inventory</h3>
+<h4 id="online-programs-29-cobol-programs">Online Programs (29 COBOL Programs)</h4>
+<p><strong>User Functions:</strong>
+- COSGN00C - Sign-on and authentication
+- COMEN01C - Main menu navigation
+- COACTVWC, COACTUPC - Account view and update
+- COCRDLIC, COCRDSLC, COCRDUPC - Card management
+- COTRN00C, COTRN01C, COTRN02C - Transaction management
+- COBIL00C - Bill payment processing
+- CORPT00C - Report generation</p>
+<p><strong>Admin Functions:</strong>
+- COADM01C - Admin menu
+- COUSR00C, COUSR01C, COUSR02C, COUSR03C - User management (CRUD)</p>
+<p><strong>Optional Modules:</strong>
+- COPAUA0C, COPAUS0C, COPAUS1C - Authorization processing (IMS-DB2-MQ)
+- COTRTLIC, COTRTUPC - Transaction type management (DB2)
+- CODATE01, COACCT01 - Account extraction (VSAM-MQ)</p>
+<h4 id="batch-programs-33-jcl-jobs">Batch Programs (33 JCL Jobs)</h4>
+<p><strong>Daily Processing:</strong>
+- CBTRN02C - Transaction posting
+- CBTRN03C - Transaction reports
+- Transaction backup and indexing</p>
+<p><strong>Monthly Processing:</strong>
+- CBACT04C - Interest calculation
+- CBSTM03A - Statement generation</p>
+<p><strong>Data Management:</strong>
+- File initialization and loading
+- Data extraction and transformation
+- Backup and recovery</p>
+<h4 id="data-stores-10-vsam-files">Data Stores (10 VSAM Files)</h4>
+<ul>
+<li>ACCTDAT - Account master (300 bytes/record)</li>
+<li>CARDDAT - Card master (150 bytes/record)</li>
+<li>CUSTDAT - Customer master (500 bytes/record)</li>
+<li>CARDXREF - Cross-reference (50 bytes/record)</li>
+<li>TRANSACT - Transaction history (350 bytes/record)</li>
+<li>USRSEC - User security (80 bytes/record)</li>
+<li>TRANTYPE, TRANCATG, DISCGRP, TCATBALF - Reference data</li>
+</ul>
+<h4 id="optional-data-stores">Optional Data Stores</h4>
+<ul>
+<li>DB2 - Transaction types, fraud tracking</li>
+<li>IMS DB - Authorization details (hierarchical)</li>
+<li>MQ - Message queuing for async processing</li>
+</ul>
+<h3 id="architecture-characteristics">Architecture Characteristics</h3>
+<p><strong>Presentation Layer:</strong>
+- 3270 terminal screens (BMS maps)
+- Character-based UI (24x80)
+- Function key navigation</p>
+<p><strong>Business Logic:</strong>
+- COBOL programs with embedded business rules
+- Pseudo-conversational CICS transactions
+- Copybook-based data structures</p>
+<p><strong>Data Access:</strong>
+- VSAM indexed files (KSDS)
+- Alternate indexes for secondary keys
+- Batch/online file sharing with locking</p>
+<p><strong>Integration:</strong>
+- MQ for asynchronous messaging
+- DB2 for relational data
+- IMS DB for hierarchical data</p>
+<h3 id="technical-debt-assessment">Technical Debt Assessment</h3>
+<p><strong>Challenges:</strong>
+1. <strong>Monolithic Structure</strong>: Tight coupling between presentation, business logic, and data access
+2. <strong>Technology Lock-in</strong>: Mainframe-specific technologies (COBOL, CICS, VSAM)
+3. <strong>Limited Scalability</strong>: Vertical scaling only, expensive hardware
+4. <strong>Maintenance Burden</strong>: Aging technology, limited developer pool
+5. <strong>Integration Complexity</strong>: Difficult to integrate with modern systems
+6. <strong>User Experience</strong>: Outdated terminal-based interface
+7. <strong>Testing Challenges</strong>: Limited automated testing capabilities
+8. <strong>Deployment Rigidity</strong>: Infrequent releases, complex deployment process</p>
+<p><strong>Strengths to Preserve:</strong>
+1. <strong>Business Logic</strong>: Well-tested, proven business rules
+2. <strong>Data Integrity</strong>: ACID transactions, data consistency
+3. <strong>Performance</strong>: Optimized for high-volume transaction processing
+4. <strong>Reliability</strong>: Proven stability and uptime
+5. <strong>Security</strong>: Robust authentication and authorization</p>
+<h2 id="target-architecture">Target Architecture</h2>
+<h3 id="architecture-principles">Architecture Principles</h3>
+<ol>
+<li><strong>Microservices</strong>: Decompose monolith into independently deployable services</li>
+<li><strong>API-First</strong>: RESTful APIs for all service interactions</li>
+<li><strong>Cloud-Native</strong>: Designed for cloud deployment (AWS, Azure, GCP)</li>
+<li><strong>Event-Driven</strong>: Asynchronous communication where appropriate</li>
+<li><strong>Stateless</strong>: Services maintain no session state</li>
+<li><strong>Database per Service</strong>: Each microservice owns its data</li>
+<li><strong>Containerized</strong>: Docker containers for consistent deployment</li>
+<li><strong>DevOps</strong>: CI/CD pipelines, automated testing, monitoring</li>
+</ol>
+<h3 id="high-level-architecture">High-Level Architecture</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│                     Presentation Layer                       │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
+│  │   Web App    │  │  Mobile App  │  │  Admin UI    │      │
+│  │  (React/     │  │  (iOS/       │  │  (Angular)   │      │
+│  │   Angular)   │  │   Android)   │  │              │      │
+│  └──────────────┘  └──────────────┘  └──────────────┘      │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│                      API Gateway Layer                       │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  API Gateway (Spring Cloud Gateway / Kong / Apigee)  │   │
+│  │  - Routing, Authentication, Rate Limiting            │   │
+│  └──────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│                   Microservices Layer                        │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐       │
+│  │Customer  │ │ Account  │ │   Card   │ │Transaction│      │
+│  │Service   │ │ Service  │ │ Service  │ │ Service   │      │
+│  └──────────┘ └──────────┘ └──────────┘ └──────────┘       │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐       │
+│  │  User    │ │ Payment  │ │  Report  │ │   Auth    │      │
+│  │ Service  │ │ Service  │ │ Service  │ │ Service   │      │
+│  └──────────┘ └──────────┘ └──────────┘ └──────────┘       │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    Data Layer (PostgreSQL)                   │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐       │
+│  │Customer  │ │ Account  │ │   Card   │ │Transaction│      │
+│  │   DB     │ │   DB     │ │   DB     │ │    DB     │      │
+│  └──────────┘ └──────────┘ └──────────┘ └──────────┘       │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│                  Infrastructure Services                     │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐       │
+│  │ Service  │ │  Config  │ │  Message │ │  Logging │       │
+│  │Discovery │ │  Server  │ │  Queue   │ │  Monitor │       │
+│  │(Eureka)  │ │ (Spring) │ │ (Kafka)  │ │(ELK/APM) │       │
+│  └──────────┘ └──────────┘ └──────────┘ └──────────┘       │
+└─────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="technology-architecture">Technology Architecture</h3>
+<p><strong>Frontend:</strong>
+- React or Angular for web application
+- React Native or native iOS/Android for mobile
+- Material-UI or Bootstrap for UI components
+- Redux or NgRx for state management</p>
+<p><strong>API Gateway:</strong>
+- Spring Cloud Gateway or Kong
+- OAuth 2.0 / JWT for authentication
+- Rate limiting and throttling
+- Request routing and load balancing</p>
+<p><strong>Microservices:</strong>
+- Java 17+ with Spring Boot 3.x
+- Spring Cloud for microservices patterns
+- Spring Data JPA for data access
+- Spring Security for authentication/authorization
+- RESTful APIs with OpenAPI/Swagger documentation</p>
+<p><strong>Data Layer:</strong>
+- PostgreSQL 15+ for relational data
+- Redis for caching
+- Flyway or Liquibase for schema migration
+- Connection pooling (HikariCP)</p>
+<p><strong>Messaging:</strong>
+- Apache Kafka for event streaming
+- RabbitMQ or AWS SQS for message queuing
+- Spring Cloud Stream for messaging abstraction</p>
+<p><strong>Infrastructure:</strong>
+- Docker for containerization
+- Kubernetes for orchestration
+- Service mesh (Istio or Linkerd) for service communication
+- Prometheus + Grafana for monitoring
+- ELK Stack (Elasticsearch, Logstash, Kibana) for logging
+- Jaeger or Zipkin for distributed tracing</p>
+<p><strong>CI/CD:</strong>
+- Jenkins, GitLab CI, or GitHub Actions
+- SonarQube for code quality
+- JUnit, Mockito for unit testing
+- Testcontainers for integration testing
+- Selenium or Cypress for E2E testing</p>
+<h2 id="microservices-decomposition">Microservices Decomposition</h2>
+<h3 id="service-boundaries">Service Boundaries</h3>
+<h4 id="1-customer-service">1. Customer Service</h4>
+<p><strong>Responsibility</strong>: Manage customer information and profiles</p>
+<p><strong>Functionality:</strong>
+- Customer CRUD operations
+- Customer search and lookup
+- Customer profile management
+- Address and contact management</p>
+<p><strong>Data Owned:</strong>
+- Customer master data (from CUSTDAT)</p>
+<p><strong>APIs:</strong>
+- <code>POST /api/customers</code> - Create customer
+- <code>GET /api/customers/{id}</code> - Get customer details
+- <code>PUT /api/customers/{id}</code> - Update customer
+- <code>DELETE /api/customers/{id}</code> - Delete customer
+- <code>GET /api/customers/search</code> - Search customers</p>
+<p><strong>Source Programs:</strong>
+- Customer data access from CVCUS01Y copybook</p>
+<h4 id="2-account-service">2. Account Service</h4>
+<p><strong>Responsibility</strong>: Manage credit card accounts</p>
+<p><strong>Functionality:</strong>
+- Account CRUD operations
+- Account balance management
+- Credit limit management
+- Account status management
+- Account-customer relationship</p>
+<p><strong>Data Owned:</strong>
+- Account master data (from ACCTDAT)
+- Account-customer relationships (from CARDXREF)</p>
+<p><strong>APIs:</strong>
+- <code>POST /api/accounts</code> - Create account
+- <code>GET /api/accounts/{id}</code> - Get account details
+- <code>PUT /api/accounts/{id}</code> - Update account
+- <code>GET /api/accounts/{id}/balance</code> - Get balance
+- <code>PUT /api/accounts/{id}/credit-limit</code> - Update credit limit
+- <code>GET /api/customers/{customerId}/accounts</code> - Get customer accounts</p>
+<p><strong>Source Programs:</strong>
+- COACTVWC - Account view logic
+- COACTUPC - Account update logic</p>
+<h4 id="3-card-service">3. Card Service</h4>
+<p><strong>Responsibility</strong>: Manage credit cards</p>
+<p><strong>Functionality:</strong>
+- Card CRUD operations
+- Card issuance and activation
+- Card status management (active, blocked, expired)
+- Card-account relationship
+- Card validation (Luhn algorithm)</p>
+<p><strong>Data Owned:</strong>
+- Card master data (from CARDDAT)
+- Card cross-reference (from CARDXREF)</p>
+<p><strong>APIs:</strong>
+- <code>POST /api/cards</code> - Issue new card
+- <code>GET /api/cards/{cardNumber}</code> - Get card details
+- <code>PUT /api/cards/{cardNumber}</code> - Update card
+- <code>PUT /api/cards/{cardNumber}/status</code> - Update card status
+- <code>GET /api/accounts/{accountId}/cards</code> - Get account cards
+- <code>POST /api/cards/{cardNumber}/validate</code> - Validate card</p>
+<p><strong>Source Programs:</strong>
+- COCRDLIC - Card list logic
+- COCRDSLC - Card view logic
+- COCRDUPC - Card update logic</p>
+<h4 id="4-transaction-service">4. Transaction Service</h4>
+<p><strong>Responsibility</strong>: Process and manage transactions</p>
+<p><strong>Functionality:</strong>
+- Transaction creation and posting
+- Transaction history and search
+- Transaction categorization
+- Transaction validation
+- Real-time balance updates</p>
+<p><strong>Data Owned:</strong>
+- Transaction history (from TRANSACT)
+- Transaction types (from TRANTYPE)
+- Transaction categories (from TRANCATG)</p>
+<p><strong>APIs:</strong>
+- <code>POST /api/transactions</code> - Create transaction
+- <code>GET /api/transactions/{id}</code> - Get transaction details
+- <code>GET /api/cards/{cardNumber}/transactions</code> - Get card transactions
+- <code>GET /api/accounts/{accountId}/transactions</code> - Get account transactions
+- <code>POST /api/transactions/search</code> - Search transactions
+- <code>GET /api/transactions/types</code> - Get transaction types</p>
+<p><strong>Source Programs:</strong>
+- COTRN00C - Transaction list logic
+- COTRN01C - Transaction view logic
+- COTRN02C - Transaction add logic
+- CBTRN02C - Transaction posting logic</p>
+<p><strong>Events Published:</strong>
+- TransactionCreated
+- TransactionPosted
+- TransactionFailed</p>
+<h4 id="5-payment-service">5. Payment Service</h4>
+<p><strong>Responsibility</strong>: Process bill payments</p>
+<p><strong>Functionality:</strong>
+- Payment processing
+- Payment validation
+- Balance adjustment
+- Payment history</p>
+<p><strong>Data Owned:</strong>
+- Payment transactions (subset of TRANSACT)</p>
+<p><strong>APIs:</strong>
+- <code>POST /api/payments</code> - Process payment
+- <code>GET /api/payments/{id}</code> - Get payment details
+- <code>GET /api/accounts/{accountId}/payments</code> - Get account payments
+- <code>POST /api/payments/validate</code> - Validate payment</p>
+<p><strong>Source Programs:</strong>
+- COBIL00C - Bill payment logic</p>
+<p><strong>Events Published:</strong>
+- PaymentProcessed
+- PaymentFailed</p>
+<h4 id="6-report-service">6. Report Service</h4>
+<p><strong>Responsibility</strong>: Generate reports and statements</p>
+<p><strong>Functionality:</strong>
+- Transaction reports
+- Account statements
+- Summary reports
+- Report scheduling
+- Report export (PDF, CSV)</p>
+<p><strong>Data Owned:</strong>
+- Report definitions
+- Scheduled reports</p>
+<p><strong>APIs:</strong>
+- <code>POST /api/reports/transactions</code> - Generate transaction report
+- <code>POST /api/reports/statements/{accountId}</code> - Generate statement
+- <code>GET /api/reports/{id}</code> - Get report
+- <code>GET /api/reports/{id}/download</code> - Download report</p>
+<p><strong>Source Programs:</strong>
+- CORPT00C - Report generation logic
+- CBSTM03A - Statement generation logic</p>
+<h4 id="7-user-service">7. User Service</h4>
+<p><strong>Responsibility</strong>: Manage application users and authentication</p>
+<p><strong>Functionality:</strong>
+- User registration and management
+- User authentication
+- Password management
+- User roles and permissions
+- Session management</p>
+<p><strong>Data Owned:</strong>
+- User credentials (from USRSEC)
+- User profiles
+- User sessions</p>
+<p><strong>APIs:</strong>
+- <code>POST /api/users/register</code> - Register user
+- <code>POST /api/users/login</code> - User login
+- <code>POST /api/users/logout</code> - User logout
+- <code>GET /api/users/{id}</code> - Get user details
+- <code>PUT /api/users/{id}</code> - Update user
+- <code>PUT /api/users/{id}/password</code> - Change password
+- <code>DELETE /api/users/{id}</code> - Delete user</p>
+<p><strong>Source Programs:</strong>
+- COSGN00C - Sign-on logic
+- COUSR00C, COUSR01C, COUSR02C, COUSR03C - User management logic</p>
+<h4 id="8-authorization-service-optional-module">8. Authorization Service (Optional Module)</h4>
+<p><strong>Responsibility</strong>: Real-time transaction authorization</p>
+<p><strong>Functionality:</strong>
+- Authorization request processing
+- Fraud detection
+- Authorization history
+- Authorization rules engine</p>
+<p><strong>Data Owned:</strong>
+- Authorization history
+- Fraud tracking data</p>
+<p><strong>APIs:</strong>
+- <code>POST /api/authorizations</code> - Process authorization
+- <code>GET /api/authorizations/{id}</code> - Get authorization details
+- <code>GET /api/cards/{cardNumber}/authorizations</code> - Get card authorizations
+- <code>PUT /api/authorizations/{id}/fraud</code> - Mark as fraud</p>
+<p><strong>Source Programs:</strong>
+- COPAUA0C - Authorization processing logic
+- COPAUS0C, COPAUS1C - Authorization inquiry logic</p>
+<p><strong>Events Consumed:</strong>
+- AuthorizationRequest (from MQ)</p>
+<p><strong>Events Published:</strong>
+- AuthorizationApproved
+- AuthorizationDeclined
+- FraudDetected</p>
+<h3 id="service-communication-patterns">Service Communication Patterns</h3>
+<p><strong>Synchronous (REST):</strong>
+- User Service → Customer Service (get customer details)
+- Account Service → Customer Service (validate customer)
+- Card Service → Account Service (validate account)
+- Transaction Service → Card Service (validate card)
+- Transaction Service → Account Service (update balance)</p>
+<p><strong>Asynchronous (Events):</strong>
+- Transaction Service → Payment Service (transaction posted)
+- Transaction Service → Report Service (transaction created)
+- Authorization Service → Transaction Service (authorization approved)
+- Payment Service → Account Service (payment processed)</p>
+<p><strong>Data Consistency:</strong>
+- Saga pattern for distributed transactions
+- Event sourcing for audit trail
+- Eventual consistency where appropriate
+- Compensating transactions for rollback</p>
+<h2 id="data-migration-strategy">Data Migration Strategy</h2>
+<h3 id="database-schema-design">Database Schema Design</h3>
+<h4 id="postgresql-schema-structure">PostgreSQL Schema Structure</h4>
+<p><strong>Database per Service Pattern:</strong>
+- <code>customer_db</code> - Customer Service database
+- <code>account_db</code> - Account Service database
+- <code>card_db</code> - Card Service database
+- <code>transaction_db</code> - Transaction Service database
+- <code>user_db</code> - User Service database
+- <code>payment_db</code> - Payment Service database
+- <code>report_db</code> - Report Service database</p>
+<h3 id="schema-mapping-vsam-to-postgresql">Schema Mapping: VSAM to PostgreSQL</h3>
+<h4 id="customer-schema-customer_db">Customer Schema (customer_db)</h4>
+<p><strong>Source</strong>: CUSTDAT VSAM file (CVCUS01Y copybook)</p>
+<pre><code class="language-sql">CREATE TABLE customers (
+    customer_id BIGINT PRIMARY KEY,
+    first_name VARCHAR(25) NOT NULL,
+    middle_name VARCHAR(25),
+    last_name VARCHAR(25) NOT NULL,
+    address_line1 VARCHAR(50),
+    address_line2 VARCHAR(50),
+    address_line3 VARCHAR(50),
+    state_code VARCHAR(2),
+    country_code VARCHAR(3),
+    zip_code VARCHAR(10),
+    phone_number1 VARCHAR(15),
+    phone_number2 VARCHAR(15),
+    ssn VARCHAR(9),
+    govt_issued_id VARCHAR(20),
+    date_of_birth DATE,
+    eft_account_id VARCHAR(10),
+    primary_card_holder_ind CHAR(1),
+    fico_credit_score SMALLINT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    version INTEGER DEFAULT 0
+);
+
+CREATE INDEX idx_customers_ssn ON customers(ssn);
+CREATE INDEX idx_customers_name ON customers(last_name, first_name);
+</code></pre>
+<p><strong>Migration Notes:</strong>
+- CUST-ID (PIC 9(09)) → customer_id (BIGINT)
+- Date format conversion: YYYY-MM-DD string → DATE type
+- Add audit columns: created_at, updated_at, version
+- Add indexes for common queries</p>
+<h4 id="account-schema-account_db">Account Schema (account_db)</h4>
+<p><strong>Source</strong>: ACCTDAT VSAM file (CVACT01Y copybook)</p>
+<pre><code class="language-sql">CREATE TABLE accounts (
+    account_id BIGINT PRIMARY KEY,
+    customer_id BIGINT NOT NULL,
+    active_status CHAR(1) NOT NULL DEFAULT 'Y',
+    current_balance DECIMAL(12,2) NOT NULL DEFAULT 0.00,
+    credit_limit DECIMAL(12,2) NOT NULL,
+    cash_credit_limit DECIMAL(12,2) NOT NULL,
+    open_date DATE NOT NULL,
+    expiration_date DATE NOT NULL,
+    reissue_date DATE,
+    current_cycle_credit DECIMAL(12,2) DEFAULT 0.00,
+    current_cycle_debit DECIMAL(12,2) DEFAULT 0.00,
+    address_zip VARCHAR(10),
+    group_id VARCHAR(10),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    version INTEGER DEFAULT 0,
+    CONSTRAINT chk_balance CHECK (current_balance &gt;= -credit_limit),
+    CONSTRAINT chk_credit_limit CHECK (credit_limit &gt;= 0),
+    CONSTRAINT chk_cash_limit CHECK (cash_credit_limit &lt;= credit_limit)
+);
+
+CREATE INDEX idx_accounts_customer ON accounts(customer_id);
+CREATE INDEX idx_accounts_status ON accounts(active_status);
+
+-- Account-Customer relationship
+CREATE TABLE account_customers (
+    account_id BIGINT NOT NULL,
+    customer_id BIGINT NOT NULL,
+    relationship_type VARCHAR(20) NOT NULL, -- PRIMARY, JOINT, AUTHORIZED
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (account_id, customer_id)
+);
+</code></pre>
+<p><strong>Migration Notes:</strong>
+- ACCT-ID (PIC 9(11)) → account_id (BIGINT)
+- COMP-3 amounts → DECIMAL(12,2)
+- Add foreign key to customer (from CARDXREF)
+- Add check constraints for business rules
+- Separate table for account-customer relationships</p>
+<h4 id="card-schema-card_db">Card Schema (card_db)</h4>
+<p><strong>Source</strong>: CARDDAT VSAM file (CVACT02Y copybook)</p>
+<pre><code class="language-sql">CREATE TABLE cards (
+    card_number VARCHAR(16) PRIMARY KEY,
+    account_id BIGINT NOT NULL,
+    cvv_code VARCHAR(3) NOT NULL,
+    embossed_name VARCHAR(50) NOT NULL,
+    expiration_date DATE NOT NULL,
+    active_status CHAR(1) NOT NULL DEFAULT 'Y',
+    card_type VARCHAR(20) DEFAULT 'CREDIT', -- CREDIT, DEBIT
+    issue_date DATE DEFAULT CURRENT_DATE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    version INTEGER DEFAULT 0,
+    CONSTRAINT chk_card_status CHECK (active_status IN ('Y', 'N', 'B', 'E'))
+);
+
+CREATE INDEX idx_cards_account ON cards(account_id);
+CREATE INDEX idx_cards_status ON cards(active_status);
+CREATE INDEX idx_cards_expiration ON cards(expiration_date);
+
+-- Card-Account-Customer cross reference
+CREATE TABLE card_xref (
+    card_number VARCHAR(16) NOT NULL,
+    account_id BIGINT NOT NULL,
+    customer_id BIGINT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (card_number, account_id, customer_id)
+);
+</code></pre>
+<p><strong>Migration Notes:</strong>
+- CARD-NUM (PIC 9(16)) → card_number (VARCHAR(16))
+- Add card_type for future expansion
+- Add issue_date for tracking
+- Preserve CARDXREF structure</p>
+<h4 id="transaction-schema-transaction_db">Transaction Schema (transaction_db)</h4>
+<p><strong>Source</strong>: TRANSACT VSAM file (CVTRA05Y copybook)</p>
+<pre><code class="language-sql">CREATE TABLE transactions (
+    transaction_id VARCHAR(16) PRIMARY KEY,
+    transaction_type VARCHAR(2) NOT NULL,
+    category_code VARCHAR(4),
+    source VARCHAR(10),
+    description VARCHAR(100),
+    amount DECIMAL(11,2) NOT NULL,
+    card_number VARCHAR(16) NOT NULL,
+    merchant_id VARCHAR(9),
+    merchant_name VARCHAR(50),
+    merchant_city VARCHAR(50),
+    merchant_zip VARCHAR(10),
+    original_timestamp TIMESTAMP NOT NULL,
+    processed_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status VARCHAR(20) DEFAULT 'POSTED', -- PENDING, POSTED, REVERSED
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    version INTEGER DEFAULT 0
+);
+
+CREATE INDEX idx_transactions_card ON transactions(card_number, original_timestamp DESC);
+CREATE INDEX idx_transactions_date ON transactions(original_timestamp);
+CREATE INDEX idx_transactions_type ON transactions(transaction_type);
+CREATE INDEX idx_transactions_status ON transactions(status);
+
+-- Transaction types reference
+CREATE TABLE transaction_types (
+    type_code VARCHAR(2) PRIMARY KEY,
+    type_name VARCHAR(50) NOT NULL,
+    description VARCHAR(100),
+    debit_credit_indicator CHAR(1) NOT NULL, -- D=Debit, C=Credit
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Transaction categories reference
+CREATE TABLE transaction_categories (
+    category_code VARCHAR(4) PRIMARY KEY,
+    category_name VARCHAR(50) NOT NULL,
+    description VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+</code></pre>
+<p><strong>Migration Notes:</strong>
+- TRAN-ID (PIC X(16)) → transaction_id (VARCHAR(16))
+- COMP-3 amount → DECIMAL(11,2)
+- Timestamp conversion from mainframe format
+- Add status field for transaction lifecycle
+- Separate tables for reference data
+- Partition by date for performance (monthly partitions)</p>
+<h4 id="user-schema-user_db">User Schema (user_db)</h4>
+<p><strong>Source</strong>: USRSEC VSAM file (CSUSR01Y copybook)</p>
+<pre><code class="language-sql">CREATE TABLE users (
+    user_id VARCHAR(8) PRIMARY KEY,
+    first_name VARCHAR(20) NOT NULL,
+    last_name VARCHAR(20) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL, -- BCrypt hash
+    user_type VARCHAR(10) NOT NULL, -- ADMIN, USER
+    status VARCHAR(20) DEFAULT 'ACTIVE', -- ACTIVE, INACTIVE, LOCKED
+    last_login TIMESTAMP,
+    failed_login_attempts INTEGER DEFAULT 0,
+    password_changed_at TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    version INTEGER DEFAULT 0,
+    CONSTRAINT chk_user_type CHECK (user_type IN ('ADMIN', 'USER'))
+);
+
+CREATE INDEX idx_users_email ON users(email);
+CREATE INDEX idx_users_type ON users(user_type);
+
+-- User roles and permissions
+CREATE TABLE user_roles (
+    user_id VARCHAR(8) NOT NULL,
+    role_name VARCHAR(50) NOT NULL,
+    granted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (user_id, role_name)
+);
+
+CREATE TABLE roles (
+    role_name VARCHAR(50) PRIMARY KEY,
+    description VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE permissions (
+    permission_name VARCHAR(50) PRIMARY KEY,
+    description VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE role_permissions (
+    role_name VARCHAR(50) NOT NULL,
+    permission_name VARCHAR(50) NOT NULL,
+    PRIMARY KEY (role_name, permission_name)
+);
+</code></pre>
+<p><strong>Migration Notes:</strong>
+- SEC-USR-ID (PIC X(08)) → user_id (VARCHAR(8))
+- Password migration: Re-hash with BCrypt (users must reset)
+- Add email field (required for modern auth)
+- Expand user type to role-based access control
+- Add security fields (failed attempts, password expiry)</p>
+<h3 id="data-migration-approach">Data Migration Approach</h3>
+<h4 id="phase-1-schema-creation">Phase 1: Schema Creation</h4>
+<ol>
+<li>Create PostgreSQL databases for each service</li>
+<li>Run DDL scripts to create tables, indexes, constraints</li>
+<li>Create database users and grant permissions</li>
+<li>Set up connection pools and monitoring</li>
+</ol>
+<h4 id="phase-2-historical-data-migration">Phase 2: Historical Data Migration</h4>
+<p><strong>Approach</strong>: One-time bulk migration of historical data</p>
+<p><strong>Tools</strong>:
+- Custom Java migration utility
+- Spring Batch for large-volume processing
+- JDBC for database connectivity
+- CSV as intermediate format</p>
+<p><strong>Process</strong>:
+1. <strong>Extract</strong> from VSAM files:
+   - Use COBOL programs or file utilities to export VSAM to CSV
+   - One CSV file per VSAM file
+   - Include all records with proper field delimiters</p>
+<ol>
+<li><strong>Transform</strong> data:</li>
+<li>Convert data types (COMP-3 to decimal, dates to ISO format)</li>
+<li>Handle null values and defaults</li>
+<li>Validate data integrity</li>
+<li>Generate surrogate keys if needed</li>
+<li>
+<p>Split data across microservice databases</p>
+</li>
+<li>
+<p><strong>Load</strong> into PostgreSQL:</p>
+</li>
+<li>Use COPY command for bulk loading</li>
+<li>Disable indexes during load, rebuild after</li>
+<li>Load in dependency order (customers → accounts → cards → transactions)</li>
+<li>Validate record counts and data integrity</li>
+</ol>
+<p><strong>Migration Script Example</strong>:</p>
+<pre><code class="language-java">@Component
+public class VsamToPostgresMigrator {
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+    public void migrateCustomers(String csvFilePath) {
+        String sql = &quot;COPY customers (customer_id, first_name, middle_name, &quot; +
+                    &quot;last_name, address_line1, ...) &quot; +
+                    &quot;FROM '&quot; + csvFilePath + &quot;' &quot; +
+                    &quot;DELIMITER ',' CSV HEADER&quot;;
+        jdbcTemplate.execute(sql);
+    }
+
+    public void migrateAccounts(String csvFilePath) {
+        // Similar COPY command for accounts
+    }
+
+    // ... other migration methods
+}
+</code></pre>
+<h4 id="phase-3-incremental-data-sync">Phase 3: Incremental Data Sync</h4>
+<p><strong>Approach</strong>: Keep mainframe and PostgreSQL in sync during transition</p>
+<p><strong>Options</strong>:</p>
+<p><strong>Option A: Dual Write Pattern</strong>
+- Application writes to both VSAM and PostgreSQL
+- Read from PostgreSQL, fallback to VSAM
+- Requires modification of COBOL programs</p>
+<p><strong>Option B: Change Data Capture (CDC)</strong>
+- Capture changes from VSAM files
+- Replicate to PostgreSQL in near real-time
+- Tools: IBM InfoSphere CDC, custom batch jobs</p>
+<p><strong>Option C: Event-Based Sync</strong>
+- Publish events for all data changes
+- Event consumers update PostgreSQL
+- Kafka or MQ as event bus</p>
+<p><strong>Recommended</strong>: Option C (Event-Based Sync)
+- Least intrusive to mainframe
+- Enables gradual migration
+- Provides audit trail</p>
+<h4 id="phase-4-data-validation">Phase 4: Data Validation</h4>
+<p><strong>Validation Checks</strong>:
+1. Record count comparison (VSAM vs PostgreSQL)
+2. Sample data verification (random records)
+3. Referential integrity checks
+4. Business rule validation
+5. Performance testing</p>
+<p><strong>Validation Script</strong>:</p>
+<pre><code class="language-sql">-- Count validation
+SELECT 'CUSTOMERS' as table_name, COUNT(*) as pg_count FROM customers;
+-- Compare with VSAM record count
+
+-- Sample data validation
+SELECT * FROM customers WHERE customer_id = 1;
+-- Compare with VSAM record
+
+-- Referential integrity
+SELECT COUNT(*) FROM accounts a 
+LEFT JOIN customers c ON a.customer_id = c.customer_id 
+WHERE c.customer_id IS NULL;
+-- Should return 0
+</code></pre>
+<h3 id="data-synchronization-strategy">Data Synchronization Strategy</h3>
+<p><strong>During Migration Period</strong>:
+1. Mainframe remains system of record
+2. PostgreSQL is read replica
+3. Sync frequency: Real-time (events) or batch (hourly/daily)
+4. Conflict resolution: Mainframe wins</p>
+<p><strong>After Cutover</strong>:
+1. PostgreSQL becomes system of record
+2. Mainframe decommissioned or archived
+3. No more synchronization needed</p>
+<h2 id="technology-stack">Technology Stack</h2>
+<h3 id="backend-technologies">Backend Technologies</h3>
+<h4 id="core-framework">Core Framework</h4>
+<p><strong>Spring Boot 3.2+</strong>
+- Mature, enterprise-ready framework
+- Extensive ecosystem and community
+- Built-in support for microservices patterns
+- Excellent documentation and tooling</p>
+<p><strong>Alternatives Considered</strong>:
+- Quarkus: Better for cloud-native, smaller footprint
+- Micronaut: Faster startup, lower memory
+- <strong>Recommendation</strong>: Spring Boot for enterprise maturity</p>
+<h4 id="programming-language">Programming Language</h4>
+<p><strong>Java 17 LTS (or Java 21 LTS)</strong>
+- Long-term support and stability
+- Modern language features (records, pattern matching, text blocks)
+- Large developer pool
+- Excellent tooling and IDE support</p>
+<h4 id="data-access">Data Access</h4>
+<p><strong>Spring Data JPA with Hibernate</strong>
+- ORM for object-relational mapping
+- Repository pattern for data access
+- Query methods and specifications
+- Caching support</p>
+<p><strong>Flyway or Liquibase</strong>
+- Database schema versioning
+- Migration scripts management
+- Rollback capabilities</p>
+<h4 id="api-documentation">API Documentation</h4>
+<p><strong>SpringDoc OpenAPI (Swagger)</strong>
+- Automatic API documentation generation
+- Interactive API testing
+- Client SDK generation</p>
+<h4 id="security">Security</h4>
+<p><strong>Spring Security + OAuth 2.0 + JWT</strong>
+- Authentication and authorization
+- Token-based security
+- Role-based access control (RBAC)
+- Integration with identity providers</p>
+<h4 id="messaging">Messaging</h4>
+<p><strong>Apache Kafka</strong>
+- Event streaming platform
+- High throughput and scalability
+- Event sourcing and CQRS support
+- Durable message storage</p>
+<p><strong>Spring Cloud Stream</strong>
+- Abstraction over messaging systems
+- Simplified Kafka integration
+- Support for multiple binders</p>
+<h4 id="caching">Caching</h4>
+<p><strong>Redis</strong>
+- In-memory data store
+- Session management
+- Cache aside pattern
+- Distributed caching</p>
+<h4 id="testing">Testing</h4>
+<p><strong>JUnit 5 + Mockito + Testcontainers</strong>
+- Unit testing framework
+- Mocking dependencies
+- Integration testing with real databases
+- Test coverage reporting (JaCoCo)</p>
+<h3 id="frontend-technologies">Frontend Technologies</h3>
+<h4 id="web-application">Web Application</h4>
+<p><strong>React 18+ or Angular 16+</strong>
+- Component-based architecture
+- Rich ecosystem of libraries
+- Strong community support
+- TypeScript for type safety</p>
+<p><strong>UI Component Library</strong>:
+- Material-UI (React)
+- Angular Material (Angular)
+- Ant Design (React)</p>
+<p><strong>State Management</strong>:
+- Redux Toolkit (React)
+- NgRx (Angular)</p>
+<h4 id="mobile-application">Mobile Application</h4>
+<p><strong>React Native or Native (iOS/Android)</strong>
+- Cross-platform development (React Native)
+- Native performance and UX (Native)
+- Shared codebase with web (React Native)</p>
+<h3 id="database">Database</h3>
+<h4 id="primary-database">Primary Database</h4>
+<p><strong>PostgreSQL 15+</strong>
+- ACID compliance
+- Advanced features (JSON, full-text search, partitioning)
+- Excellent performance
+- Strong community and tooling
+- Open source</p>
+<p><strong>Configuration</strong>:
+- Connection pooling: HikariCP
+- Read replicas for scaling
+- Partitioning for large tables (transactions)
+- Indexes for query optimization</p>
+<h3 id="infrastructure">Infrastructure</h3>
+<h4 id="containerization">Containerization</h4>
+<p><strong>Docker</strong>
+- Container runtime
+- Dockerfile for each service
+- Multi-stage builds for optimization
+- Docker Compose for local development</p>
+<h4 id="orchestration">Orchestration</h4>
+<p><strong>Kubernetes</strong>
+- Container orchestration
+- Auto-scaling and self-healing
+- Service discovery and load balancing
+- Rolling updates and rollbacks</p>
+<p><strong>Helm Charts</strong>:
+- Package manager for Kubernetes
+- Templated deployments
+- Version management</p>
+<h4 id="service-mesh">Service Mesh</h4>
+<p><strong>Istio or Linkerd</strong>
+- Service-to-service communication
+- Traffic management
+- Security (mTLS)
+- Observability</p>
+<h4 id="api-gateway">API Gateway</h4>
+<p><strong>Spring Cloud Gateway or Kong</strong>
+- Routing and load balancing
+- Authentication and authorization
+- Rate limiting and throttling
+- Request/response transformation</p>
+<h4 id="service-discovery">Service Discovery</h4>
+<p><strong>Spring Cloud Netflix Eureka or Consul</strong>
+- Service registration and discovery
+- Health checking
+- Load balancing</p>
+<h4 id="configuration-management">Configuration Management</h4>
+<p><strong>Spring Cloud Config Server</strong>
+- Centralized configuration
+- Environment-specific configs
+- Dynamic configuration updates
+- Git-backed storage</p>
+<h3 id="observability">Observability</h3>
+<h4 id="logging">Logging</h4>
+<p><strong>ELK Stack (Elasticsearch, Logstash, Kibana)</strong>
+- Centralized logging
+- Log aggregation and search
+- Visualization and dashboards
+- Alerting</p>
+<p><strong>Alternative</strong>: Splunk, Datadog</p>
+<h4 id="monitoring">Monitoring</h4>
+<p><strong>Prometheus + Grafana</strong>
+- Metrics collection and storage
+- Time-series database
+- Alerting rules
+- Visualization dashboards</p>
+<p><strong>Spring Boot Actuator</strong>:
+- Application metrics
+- Health checks
+- Environment info</p>
+<h4 id="distributed-tracing">Distributed Tracing</h4>
+<p><strong>Jaeger or Zipkin</strong>
+- Request tracing across services
+- Performance analysis
+- Dependency mapping
+- Latency analysis</p>
+<p><strong>Spring Cloud Sleuth</strong>:
+- Distributed tracing integration
+- Correlation IDs
+- Span and trace generation</p>
+<h4 id="application-performance-monitoring-apm">Application Performance Monitoring (APM)</h4>
+<p><strong>New Relic, Datadog, or Dynatrace</strong>
+- End-to-end performance monitoring
+- User experience tracking
+- Error tracking
+- Transaction tracing</p>
+<h3 id="cicd">CI/CD</h3>
+<h4 id="version-control">Version Control</h4>
+<p><strong>Git + GitHub/GitLab/Bitbucket</strong>
+- Source code management
+- Branch strategies (GitFlow, trunk-based)
+- Pull request workflows
+- Code review</p>
+<h4 id="cicd-pipeline">CI/CD Pipeline</h4>
+<p><strong>Jenkins, GitLab CI, or GitHub Actions</strong>
+- Automated builds
+- Unit and integration testing
+- Code quality checks (SonarQube)
+- Security scanning (OWASP, Snyk)
+- Container image building
+- Deployment automation</p>
+<h4 id="artifact-repository">Artifact Repository</h4>
+<p><strong>JFrog Artifactory or Nexus</strong>
+- Maven artifact storage
+- Docker image registry
+- Dependency management</p>
+<h4 id="infrastructure-as-code">Infrastructure as Code</h4>
+<p><strong>Terraform or AWS CloudFormation</strong>
+- Infrastructure provisioning
+- Version-controlled infrastructure
+- Reproducible environments</p>
+<h3 id="cloud-platform">Cloud Platform</h3>
+<p><strong>Recommended</strong>: AWS, Azure, or GCP</p>
+<p><strong>AWS Services</strong>:
+- EKS (Elastic Kubernetes Service) for container orchestration
+- RDS for PostgreSQL (managed database)
+- ElastiCache for Redis
+- MSK (Managed Streaming for Kafka)
+- S3 for object storage
+- CloudWatch for monitoring
+- IAM for security
+- Route 53 for DNS
+- ALB/NLB for load balancing</p>
+<p><strong>Azure Services</strong>:
+- AKS (Azure Kubernetes Service)
+- Azure Database for PostgreSQL
+- Azure Cache for Redis
+- Event Hubs (Kafka-compatible)
+- Azure Monitor
+- Azure Active Directory</p>
+<p><strong>GCP Services</strong>:
+- GKE (Google Kubernetes Engine)
+- Cloud SQL for PostgreSQL
+- Memorystore for Redis
+- Pub/Sub (messaging)
+- Cloud Monitoring
+- Cloud IAM</p>
+<h2 id="implementation-roadmap">Implementation Roadmap</h2>
+<h3 id="migration-strategy-strangler-fig-pattern">Migration Strategy: Strangler Fig Pattern</h3>
+<p><strong>Approach</strong>: Gradually replace mainframe functionality with microservices while both systems coexist.</p>
+<p><strong>Benefits</strong>:
+- Reduced risk (incremental migration)
+- Continuous delivery of value
+- Ability to rollback if needed
+- Learn and adapt during migration</p>
+<h3 id="phase-0-foundation-months-1-2">Phase 0: Foundation (Months 1-2)</h3>
+<p><strong>Objectives</strong>: Set up infrastructure and tooling</p>
+<p><strong>Activities</strong>:
+1. <strong>Team Formation</strong>:
+   - Assemble migration team (Java developers, DBAs, DevOps, architects)
+   - Training on Spring Boot, microservices, PostgreSQL
+   - Establish roles and responsibilities</p>
+<ol>
+<li><strong>Infrastructure Setup</strong>:</li>
+<li>Set up development, staging, production environments</li>
+<li>Configure Kubernetes clusters</li>
+<li>Set up CI/CD pipelines</li>
+<li>
+<p>Configure monitoring and logging</p>
+</li>
+<li>
+<p><strong>Development Standards</strong>:</p>
+</li>
+<li>Define coding standards and conventions</li>
+<li>Set up code templates and archetypes</li>
+<li>Configure SonarQube rules</li>
+<li>
+<p>Establish Git workflow</p>
+</li>
+<li>
+<p><strong>Architecture Validation</strong>:</p>
+</li>
+<li>Build proof-of-concept for one microservice</li>
+<li>Validate technology choices</li>
+<li>Test integration patterns</li>
+<li>Performance baseline</li>
+</ol>
+<p><strong>Deliverables</strong>:
+- Infrastructure environments ready
+- CI/CD pipelines operational
+- Development standards documented
+- POC microservice deployed</p>
+<h3 id="phase-1-user-authentication-authorization-months-3-4">Phase 1: User Authentication &amp; Authorization (Months 3-4)</h3>
+<p><strong>Objectives</strong>: Migrate user management and authentication</p>
+<p><strong>Microservices</strong>:
+- User Service</p>
+<p><strong>Activities</strong>:
+1. <strong>Database Migration</strong>:
+   - Create user_db schema in PostgreSQL
+   - Migrate USRSEC data to users table
+   - Implement password re-hashing (BCrypt)</p>
+<ol>
+<li><strong>Service Development</strong>:</li>
+<li>Implement User Service with Spring Boot</li>
+<li>Develop REST APIs for user management</li>
+<li>Implement JWT-based authentication</li>
+<li>
+<p>Integrate with Spring Security</p>
+</li>
+<li>
+<p><strong>Frontend Development</strong>:</p>
+</li>
+<li>Build login page (React/Angular)</li>
+<li>Implement authentication flow</li>
+<li>
+<p>Token management and refresh</p>
+</li>
+<li>
+<p><strong>Integration</strong>:</p>
+</li>
+<li>API Gateway configuration</li>
+<li>Route authentication requests to User Service</li>
+<li>
+<p>Fallback to mainframe for non-migrated users</p>
+</li>
+<li>
+<p><strong>Testing</strong>:</p>
+</li>
+<li>Unit tests (80%+ coverage)</li>
+<li>Integration tests</li>
+<li>Security testing</li>
+<li>Performance testing</li>
+</ol>
+<p><strong>Success Criteria</strong>:
+- Users can log in via new UI
+- Authentication handled by User Service
+- Session management with JWT
+- Performance: &lt; 200ms response time
+- Zero downtime deployment</p>
+<p><strong>Mainframe Programs Replaced</strong>:
+- COSGN00C (Sign-on)
+- COUSR00C, COUSR01C, COUSR02C, COUSR03C (User management)</p>
+<h3 id="phase-2-customer-account-management-months-5-7">Phase 2: Customer &amp; Account Management (Months 5-7)</h3>
+<p><strong>Objectives</strong>: Migrate customer and account functionality</p>
+<p><strong>Microservices</strong>:
+- Customer Service
+- Account Service</p>
+<p><strong>Activities</strong>:
+1. <strong>Database Migration</strong>:
+   - Create customer_db and account_db schemas
+   - Migrate CUSTDAT and ACCTDAT data
+   - Migrate CARDXREF relationships
+   - Set up data synchronization</p>
+<ol>
+<li><strong>Service Development</strong>:</li>
+<li>Implement Customer Service APIs</li>
+<li>Implement Account Service APIs</li>
+<li>Service-to-service communication</li>
+<li>
+<p>Event publishing for data changes</p>
+</li>
+<li>
+<p><strong>Frontend Development</strong>:</p>
+</li>
+<li>Customer management UI</li>
+<li>Account view and update UI</li>
+<li>
+<p>Account list and search</p>
+</li>
+<li>
+<p><strong>Integration</strong>:</p>
+</li>
+<li>API Gateway routing</li>
+<li>Service discovery configuration</li>
+<li>
+<p>Data sync with mainframe (dual write or CDC)</p>
+</li>
+<li>
+<p><strong>Testing</strong>:</p>
+</li>
+<li>Comprehensive testing</li>
+<li>Data consistency validation</li>
+<li>Performance testing</li>
+</ol>
+<p><strong>Success Criteria</strong>:
+- Customer and account operations via microservices
+- Data consistency between mainframe and PostgreSQL
+- Performance: &lt; 300ms for read, &lt; 500ms for write
+- 99.9% uptime</p>
+<p><strong>Mainframe Programs Replaced</strong>:
+- COACTVWC (Account view)
+- COACTUPC (Account update)
+- Customer data access logic</p>
+<h3 id="phase-3-card-management-months-8-9">Phase 3: Card Management (Months 8-9)</h3>
+<p><strong>Objectives</strong>: Migrate card management functionality</p>
+<p><strong>Microservices</strong>:
+- Card Service</p>
+<p><strong>Activities</strong>:
+1. <strong>Database Migration</strong>:
+   - Create card_db schema
+   - Migrate CARDDAT data
+   - Migrate CARDXREF relationships</p>
+<ol>
+<li><strong>Service Development</strong>:</li>
+<li>Implement Card Service APIs</li>
+<li>Card validation logic (Luhn algorithm)</li>
+<li>Card status management</li>
+<li>
+<p>Integration with Account Service</p>
+</li>
+<li>
+<p><strong>Frontend Development</strong>:</p>
+</li>
+<li>Card list UI</li>
+<li>Card details UI</li>
+<li>Card update UI</li>
+<li>
+<p>Card issuance workflow</p>
+</li>
+<li>
+<p><strong>Testing</strong>:</p>
+</li>
+<li>Unit and integration tests</li>
+<li>Card validation testing</li>
+<li>Security testing (PCI compliance considerations)</li>
+</ol>
+<p><strong>Success Criteria</strong>:
+- Card operations via Card Service
+- Card validation working correctly
+- Integration with Account Service
+- Performance: &lt; 300ms response time</p>
+<p><strong>Mainframe Programs Replaced</strong>:
+- COCRDLIC (Card list)
+- COCRDSLC (Card view)
+- COCRDUPC (Card update)</p>
+<h3 id="phase-4-transaction-processing-months-10-12">Phase 4: Transaction Processing (Months 10-12)</h3>
+<p><strong>Objectives</strong>: Migrate transaction processing</p>
+<p><strong>Microservices</strong>:
+- Transaction Service
+- Payment Service</p>
+<p><strong>Activities</strong>:
+1. <strong>Database Migration</strong>:
+   - Create transaction_db schema
+   - Migrate TRANSACT data (historical)
+   - Set up partitioning for performance
+   - Migrate reference data (TRANTYPE, TRANCATG)</p>
+<ol>
+<li><strong>Service Development</strong>:</li>
+<li>Implement Transaction Service APIs</li>
+<li>Implement Payment Service APIs</li>
+<li>Real-time transaction posting</li>
+<li>Event-driven architecture</li>
+<li>
+<p>Saga pattern for distributed transactions</p>
+</li>
+<li>
+<p><strong>Frontend Development</strong>:</p>
+</li>
+<li>Transaction list UI</li>
+<li>Transaction details UI</li>
+<li>Transaction search UI</li>
+<li>
+<p>Payment processing UI</p>
+</li>
+<li>
+<p><strong>Integration</strong>:</p>
+</li>
+<li>Integration with Card and Account Services</li>
+<li>Event publishing and consumption</li>
+<li>
+<p>Kafka topics configuration</p>
+</li>
+<li>
+<p><strong>Testing</strong>:</p>
+</li>
+<li>Transaction processing tests</li>
+<li>Payment processing tests</li>
+<li>Distributed transaction tests</li>
+<li>Performance and load testing</li>
+</ol>
+<p><strong>Success Criteria</strong>:
+- Transaction creation and posting via microservices
+- Payment processing working correctly
+- Event-driven updates to accounts
+- Performance: &lt; 500ms for transaction posting
+- Handle 1000+ TPS (transactions per second)</p>
+<p><strong>Mainframe Programs Replaced</strong>:
+- COTRN00C, COTRN01C, COTRN02C (Transaction management)
+- COBIL00C (Bill payment)
+- CBTRN02C (Transaction posting batch)</p>
+<h3 id="phase-5-reporting-batch-processing-months-13-14">Phase 5: Reporting &amp; Batch Processing (Months 13-14)</h3>
+<p><strong>Objectives</strong>: Migrate reporting and batch jobs</p>
+<p><strong>Microservices</strong>:
+- Report Service</p>
+<p><strong>Activities</strong>:
+1. <strong>Service Development</strong>:
+   - Implement Report Service APIs
+   - Report generation logic
+   - Statement generation
+   - Report scheduling
+   - Export functionality (PDF, CSV)</p>
+<ol>
+<li><strong>Batch Processing</strong>:</li>
+<li>Convert batch jobs to Spring Batch</li>
+<li>Interest calculation job</li>
+<li>Statement generation job</li>
+<li>
+<p>Scheduled job execution</p>
+</li>
+<li>
+<p><strong>Frontend Development</strong>:</p>
+</li>
+<li>Report generation UI</li>
+<li>Report history UI</li>
+<li>
+<p>Report download</p>
+</li>
+<li>
+<p><strong>Testing</strong>:</p>
+</li>
+<li>Report generation tests</li>
+<li>Batch job tests</li>
+<li>Performance tests (large reports)</li>
+</ol>
+<p><strong>Success Criteria</strong>:
+- Reports generated via Report Service
+- Batch jobs running on schedule
+- Report accuracy validated
+- Performance: Statements generated within batch window</p>
+<p><strong>Mainframe Programs Replaced</strong>:
+- CORPT00C (Report generation)
+- CBSTM03A (Statement generation)
+- CBACT04C (Interest calculation)
+- Other batch jobs</p>
+<h3 id="phase-6-optional-modules-months-15-16">Phase 6: Optional Modules (Months 15-16)</h3>
+<p><strong>Objectives</strong>: Migrate optional modules</p>
+<p><strong>Microservices</strong>:
+- Authorization Service (IMS-DB2-MQ module)
+- Transaction Type Service (DB2 module)</p>
+<p><strong>Activities</strong>:
+1. <strong>Authorization Service</strong>:
+   - Migrate IMS DB data to PostgreSQL
+   - Implement authorization processing
+   - MQ integration (or replace with Kafka)
+   - Fraud detection logic</p>
+<ol>
+<li><strong>Transaction Type Service</strong>:</li>
+<li>Migrate DB2 transaction types to PostgreSQL</li>
+<li>Implement transaction type management</li>
+<li>
+<p>Integration with Transaction Service</p>
+</li>
+<li>
+<p><strong>Testing</strong>:</p>
+</li>
+<li>Authorization processing tests</li>
+<li>Integration tests</li>
+<li>Performance tests</li>
+</ol>
+<p><strong>Success Criteria</strong>:
+- Authorization processing via microservices
+- Transaction type management working
+- Integration with core services
+- Performance: &lt; 100ms for authorization</p>
+<p><strong>Mainframe Programs Replaced</strong>:
+- COPAUA0C, COPAUS0C, COPAUS1C (Authorization)
+- COTRTLIC, COTRTUPC (Transaction types)</p>
+<h3 id="phase-7-cutover-decommissioning-months-17-18">Phase 7: Cutover &amp; Decommissioning (Months 17-18)</h3>
+<p><strong>Objectives</strong>: Complete migration and decommission mainframe</p>
+<p><strong>Activities</strong>:
+1. <strong>Final Data Migration</strong>:
+   - Stop data synchronization
+   - Final data validation
+   - PostgreSQL becomes system of record</p>
+<ol>
+<li><strong>Cutover</strong>:</li>
+<li>Route all traffic to microservices</li>
+<li>Disable mainframe applications</li>
+<li>
+<p>Monitor for issues</p>
+</li>
+<li>
+<p><strong>Stabilization</strong>:</p>
+</li>
+<li>24/7 monitoring for 2 weeks</li>
+<li>Bug fixes and performance tuning</li>
+<li>
+<p>User support and training</p>
+</li>
+<li>
+<p><strong>Decommissioning</strong>:</p>
+</li>
+<li>Archive mainframe data</li>
+<li>Decommission mainframe applications</li>
+<li>Cancel mainframe licenses</li>
+<li>Document lessons learned</li>
+</ol>
+<p><strong>Success Criteria</strong>:
+- All functionality migrated
+- Zero critical issues
+- Performance targets met
+- User acceptance achieved
+- Mainframe decommissioned</p>
+<h3 id="timeline-summary">Timeline Summary</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Phase</th>
+<th style="text-align: left;">Duration</th>
+<th style="text-align: left;">Microservices</th>
+<th style="text-align: left;">Key Deliverables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Phase 0</td>
+<td style="text-align: left;">Months 1-2</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Infrastructure, POC</td>
+</tr>
+<tr>
+<td style="text-align: left;">Phase 1</td>
+<td style="text-align: left;">Months 3-4</td>
+<td style="text-align: left;">User Service</td>
+<td style="text-align: left;">Authentication &amp; user management</td>
+</tr>
+<tr>
+<td style="text-align: left;">Phase 2</td>
+<td style="text-align: left;">Months 5-7</td>
+<td style="text-align: left;">Customer, Account Services</td>
+<td style="text-align: left;">Customer &amp; account management</td>
+</tr>
+<tr>
+<td style="text-align: left;">Phase 3</td>
+<td style="text-align: left;">Months 8-9</td>
+<td style="text-align: left;">Card Service</td>
+<td style="text-align: left;">Card management</td>
+</tr>
+<tr>
+<td style="text-align: left;">Phase 4</td>
+<td style="text-align: left;">Months 10-12</td>
+<td style="text-align: left;">Transaction, Payment Services</td>
+<td style="text-align: left;">Transaction processing</td>
+</tr>
+<tr>
+<td style="text-align: left;">Phase 5</td>
+<td style="text-align: left;">Months 13-14</td>
+<td style="text-align: left;">Report Service</td>
+<td style="text-align: left;">Reporting &amp; batch</td>
+</tr>
+<tr>
+<td style="text-align: left;">Phase 6</td>
+<td style="text-align: left;">Months 15-16</td>
+<td style="text-align: left;">Authorization, TranType Services</td>
+<td style="text-align: left;">Optional modules</td>
+</tr>
+<tr>
+<td style="text-align: left;">Phase 7</td>
+<td style="text-align: left;">Months 17-18</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Cutover &amp; decommissioning</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total Duration</strong>: 18 months</p>
+<p><strong>Team Size Estimate</strong>:
+- 4-6 Backend Developers (Java/Spring Boot)
+- 2-3 Frontend Developers (React/Angular)
+- 1-2 DBAs (PostgreSQL)
+- 1-2 DevOps Engineers
+- 1 Architect
+- 1 QA Lead + 2-3 QA Engineers
+- 1 Project Manager
+- 1 Business Analyst</p>
+<h2 id="risk-assessment">Risk Assessment</h2>
+<h3 id="technical-risks">Technical Risks</h3>
+<h4 id="risk-1-data-migration-complexity">Risk 1: Data Migration Complexity</h4>
+<p><strong>Probability</strong>: High<br />
+<strong>Impact</strong>: High<br />
+<strong>Description</strong>: Migrating large volumes of data from VSAM to PostgreSQL with data integrity</p>
+<p><strong>Mitigation</strong>:
+- Comprehensive data validation scripts
+- Pilot migration with subset of data
+- Automated reconciliation tools
+- Rollback procedures
+- Data synchronization during transition</p>
+<h4 id="risk-2-performance-degradation">Risk 2: Performance Degradation</h4>
+<p><strong>Probability</strong>: Medium<br />
+<strong>Impact</strong>: High<br />
+<strong>Description</strong>: Microservices may not match mainframe performance</p>
+<p><strong>Mitigation</strong>:
+- Performance testing early and often
+- Database indexing and query optimization
+- Caching strategy (Redis)
+- Load testing with production-like volumes
+- Performance monitoring and tuning</p>
+<h4 id="risk-3-distributed-transaction-complexity">Risk 3: Distributed Transaction Complexity</h4>
+<p><strong>Probability</strong>: High<br />
+<strong>Impact</strong>: Medium<br />
+<strong>Description</strong>: Managing data consistency across microservices</p>
+<p><strong>Mitigation</strong>:
+- Saga pattern implementation
+- Event sourcing for audit trail
+- Compensating transactions
+- Idempotent operations
+- Comprehensive testing of failure scenarios</p>
+<h4 id="risk-4-integration-issues">Risk 4: Integration Issues</h4>
+<p><strong>Probability</strong>: Medium<br />
+<strong>Impact</strong>: Medium<br />
+<strong>Description</strong>: Service-to-service communication failures</p>
+<p><strong>Mitigation</strong>:
+- Circuit breaker pattern (Resilience4j)
+- Retry mechanisms with exponential backoff
+- Fallback strategies
+- Service mesh for reliability
+- Comprehensive integration testing</p>
+<h4 id="risk-5-security-vulnerabilities">Risk 5: Security Vulnerabilities</h4>
+<p><strong>Probability</strong>: Medium<br />
+<strong>Impact</strong>: High<br />
+<strong>Description</strong>: Security gaps in new architecture</p>
+<p><strong>Mitigation</strong>:
+- Security testing (OWASP, penetration testing)
+- OAuth 2.0 + JWT for authentication
+- API Gateway for centralized security
+- Regular security audits
+- Compliance validation (PCI-DSS if applicable)</p>
+<h3 id="business-risks">Business Risks</h3>
+<h4 id="risk-6-extended-timeline">Risk 6: Extended Timeline</h4>
+<p><strong>Probability</strong>: Medium<br />
+<strong>Impact</strong>: High<br />
+<strong>Description</strong>: Migration takes longer than planned</p>
+<p><strong>Mitigation</strong>:
+- Phased approach with incremental value
+- Regular progress reviews
+- Adjust scope if needed
+- Parallel teams for different phases
+- Clear milestones and checkpoints</p>
+<h4 id="risk-7-user-adoption-issues">Risk 7: User Adoption Issues</h4>
+<p><strong>Probability</strong>: Medium<br />
+<strong>Impact</strong>: Medium<br />
+<strong>Description</strong>: Users resist new UI/UX</p>
+<p><strong>Mitigation</strong>:
+- User involvement in design
+- Training and documentation
+- Gradual rollout with feedback
+- Support team ready
+- Maintain familiar workflows where possible</p>
+<h4 id="risk-8-budget-overruns">Risk 8: Budget Overruns</h4>
+<p><strong>Probability</strong>: Medium<br />
+<strong>Impact</strong>: High<br />
+<strong>Description</strong>: Migration costs exceed budget</p>
+<p><strong>Mitigation</strong>:
+- Detailed cost estimation upfront
+- Regular budget reviews
+- Cloud cost optimization
+- Prioritize features (MVP approach)
+- Contingency budget (20%)</p>
+<h4 id="risk-9-knowledge-loss">Risk 9: Knowledge Loss</h4>
+<p><strong>Probability</strong>: High<br />
+<strong>Impact</strong>: High<br />
+<strong>Description</strong>: Loss of mainframe business logic understanding</p>
+<p><strong>Mitigation</strong>:
+- Document business rules thoroughly
+- Involve mainframe experts in migration
+- Code reviews by business analysts
+- Comprehensive testing
+- Knowledge transfer sessions</p>
+<h4 id="risk-10-operational-readiness">Risk 10: Operational Readiness</h4>
+<p><strong>Probability</strong>: Medium<br />
+<strong>Impact</strong>: High<br />
+<strong>Description</strong>: Operations team not ready for microservices</p>
+<p><strong>Mitigation</strong>:
+- DevOps training
+- Runbooks and documentation
+- Monitoring and alerting setup
+- Incident response procedures
+- Practice deployments and rollbacks</p>
+<h3 id="risk-matrix">Risk Matrix</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Risk</th>
+<th style="text-align: left;">Probability</th>
+<th style="text-align: left;">Impact</th>
+<th style="text-align: left;">Priority</th>
+<th style="text-align: left;">Mitigation Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Data Migration</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">Critical</td>
+<td style="text-align: left;">Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">Performance</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">Distributed Transactions</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">Integration Issues</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">Security</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">Extended Timeline</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">Monitored</td>
+</tr>
+<tr>
+<td style="text-align: left;">User Adoption</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">Budget Overruns</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">Monitored</td>
+</tr>
+<tr>
+<td style="text-align: left;">Knowledge Loss</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">Critical</td>
+<td style="text-align: left;">Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">Operational Readiness</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">Planned</td>
+</tr>
+</tbody>
+</table>
+<h2 id="success-criteria">Success Criteria</h2>
+<h3 id="technical-success-criteria">Technical Success Criteria</h3>
+<ol>
+<li><strong>Functionality</strong>:</li>
+<li>100% of mainframe functionality replicated</li>
+<li>All business rules preserved</li>
+<li>
+<p>Data integrity maintained</p>
+</li>
+<li>
+<p><strong>Performance</strong>:</p>
+</li>
+<li>API response time &lt; 500ms (95th percentile)</li>
+<li>Transaction throughput: 1000+ TPS</li>
+<li>Database query time &lt; 100ms (95th percentile)</li>
+<li>
+<p>UI page load time &lt; 2 seconds</p>
+</li>
+<li>
+<p><strong>Reliability</strong>:</p>
+</li>
+<li>99.9% uptime (&lt; 8.76 hours downtime/year)</li>
+<li>Zero data loss</li>
+<li>
+<p>Successful disaster recovery tests</p>
+</li>
+<li>
+<p><strong>Scalability</strong>:</p>
+</li>
+<li>Auto-scaling based on load</li>
+<li>Handle 3x peak load</li>
+<li>
+<p>Linear scalability with added resources</p>
+</li>
+<li>
+<p><strong>Security</strong>:</p>
+</li>
+<li>Pass security audit</li>
+<li>Zero critical vulnerabilities</li>
+<li>
+<p>Compliance with regulations (PCI-DSS if applicable)</p>
+</li>
+<li>
+<p><strong>Code Quality</strong>:</p>
+</li>
+<li>80%+ unit test coverage</li>
+<li>SonarQube quality gate passed</li>
+<li>Zero critical code smells</li>
+</ol>
+<h3 id="business-success-criteria">Business Success Criteria</h3>
+<ol>
+<li><strong>User Satisfaction</strong>:</li>
+<li>User acceptance testing passed</li>
+<li>Positive user feedback (&gt; 80% satisfaction)</li>
+<li>
+<p>Reduced support tickets</p>
+</li>
+<li>
+<p><strong>Cost Savings</strong>:</p>
+</li>
+<li>30-50% reduction in infrastructure costs</li>
+<li>Mainframe license costs eliminated</li>
+<li>
+<p>ROI achieved within 3 years</p>
+</li>
+<li>
+<p><strong>Time to Market</strong>:</p>
+</li>
+<li>New features deployed weekly</li>
+<li>Reduced development cycle time</li>
+<li>
+<p>Faster bug fixes</p>
+</li>
+<li>
+<p><strong>Business Agility</strong>:</p>
+</li>
+<li>Ability to integrate with new systems</li>
+<li>Support for new channels (mobile, web)</li>
+<li>
+<p>API ecosystem for partners</p>
+</li>
+<li>
+<p><strong>Operational Excellence</strong>:</p>
+</li>
+<li>Automated deployments</li>
+<li>Reduced MTTR (Mean Time To Recovery)</li>
+<li>Improved monitoring and observability</li>
+</ol>
+<h3 id="migration-success-criteria">Migration Success Criteria</h3>
+<ol>
+<li><strong>Zero Downtime</strong>: No service interruption during migration</li>
+<li><strong>Data Accuracy</strong>: 100% data consistency validation</li>
+<li><strong>Performance</strong>: Meet or exceed mainframe performance</li>
+<li><strong>Timeline</strong>: Complete within 18 months</li>
+<li><strong>Budget</strong>: Stay within allocated budget</li>
+<li><strong>Knowledge Transfer</strong>: Operations team fully trained</li>
+</ol>
+<hr />
+<h2 id="next-steps">Next Steps</h2>
+<ol>
+<li><strong>Review and Approval</strong>: Present migration plan to stakeholders</li>
+<li><strong>Team Formation</strong>: Assemble migration team</li>
+<li><strong>Budget Allocation</strong>: Secure funding for migration</li>
+<li><strong>Infrastructure Setup</strong>: Begin Phase 0 activities</li>
+<li><strong>Detailed Planning</strong>: Create detailed project plan with tasks and assignments</li>
+</ol>
+<hr />
+<p><strong>Navigation</strong>: <a href="../Home/">Home</a> | <a href="../Architecture/">Architecture</a> | <a href="../Technical-Components/">Technical Components</a> | <a href="../Data-Models/">Data Models</a></p>
+<p><strong>Related Documentation</strong>:
+- <a href="../Migration-Technical-Guide/">Migration Technical Guide</a> - Detailed technical implementation guide
+- <a href="../Migration-Data-Dictionary/">Migration Data Dictionary</a> - Complete data mapping reference
+- <a href="../Migration-Testing-Strategy/">Migration Testing Strategy</a> - Comprehensive testing approach</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

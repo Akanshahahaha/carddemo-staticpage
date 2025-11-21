@@ -1,0 +1,3349 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://akanshahahaha.github.io/carddemo-staticpage/Migration-Data-Dictionary/">
+      
+      
+        <link rel="prev" href="../Migration-Technical-Guide/">
+      
+      
+        <link rel="next" href="../Migration-Testing-Strategy/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Data Dictionary - AWS Mainframe Modernization Card Demo - Deep Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#migration-data-dictionary" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-header__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AWS Mainframe Modernization Card Demo - Deep Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data Dictionary
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AWS Mainframe Modernization Card Demo - Deep Wiki" class="md-nav__button md-logo" aria-label="AWS Mainframe Modernization Card Demo - Deep Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AWS Mainframe Modernization Card Demo - Deep Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quick-Start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Admin-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Batch-Processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technical-Components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CICS-Configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CICS Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optional Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Optional Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-Transaction-Type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transaction Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Optional-Module-VSAM-MQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VSAM-MQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Migration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Migration-Plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Migration-Technical-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Dictionary
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Dictionary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mapping-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapping Conventions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customer-data-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Data Mapping
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customer Data Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-custdat-vsam-file-copybook-cvcus01y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source: CUSTDAT VSAM File (Copybook: CVCUS01Y)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-customers-table-in-customer_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target: customers table in customer_db
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Transformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#account-data-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Data Mapping
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Account Data Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-acctdat-vsam-file-copybook-cvact01y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source: ACCTDAT VSAM File (Copybook: CVACT01Y)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-accounts-table-in-account_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target: accounts table in account_db
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comp-3-packed-decimal-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMP-3 (Packed Decimal) Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-transformation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Transformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#card-data-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card Data Mapping
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Card Data Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-carddat-vsam-file-copybook-cvact02y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source: CARDDAT VSAM File (Copybook: CVACT02Y)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-cards-table-in-card_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target: cards table in card_db
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-number-validation-luhn-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card Number Validation (Luhn Algorithm)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-transformation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Transformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transaction-data-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Data Mapping
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transaction Data Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-transact-vsam-file-copybook-cvtra05y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source: TRANSACT VSAM File (Copybook: CVTRA05Y)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-transactions-table-in-transaction_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target: transactions table in transaction_db
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mainframe-timestamp-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mainframe Timestamp Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-transformation_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Transformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-security-data-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Security Data Mapping
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Security Data Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-usrsec-vsam-file-copybook-csusr01y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source: USRSEC VSAM File (Copybook: CSUSR01Y)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-users-table-in-user_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target: users table in user_db
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-migration-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password Migration Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-transformation_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Transformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-data-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference Data Mapping
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference Data Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transaction-types-trantype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Types (TRANTYPE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-categories-trancatg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Categories (TRANCATG)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-type-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Type Conversions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Type Conversions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numeric-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Conversions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        String Conversions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Date/Time Conversions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Special Conversions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#business-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Business Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customer-data-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Data Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-data-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Data Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-data-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card Data Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-data-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Data Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-security-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Security Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Queries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-migration-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-Migration Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Migration-Testing-Strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mapping-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapping Conventions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customer-data-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Data Mapping
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customer Data Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-custdat-vsam-file-copybook-cvcus01y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source: CUSTDAT VSAM File (Copybook: CVCUS01Y)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-customers-table-in-customer_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target: customers table in customer_db
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Transformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#account-data-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Data Mapping
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Account Data Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-acctdat-vsam-file-copybook-cvact01y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source: ACCTDAT VSAM File (Copybook: CVACT01Y)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-accounts-table-in-account_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target: accounts table in account_db
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comp-3-packed-decimal-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMP-3 (Packed Decimal) Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-transformation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Transformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#card-data-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card Data Mapping
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Card Data Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-carddat-vsam-file-copybook-cvact02y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source: CARDDAT VSAM File (Copybook: CVACT02Y)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-cards-table-in-card_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target: cards table in card_db
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-number-validation-luhn-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card Number Validation (Luhn Algorithm)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-transformation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Transformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transaction-data-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Data Mapping
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transaction Data Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-transact-vsam-file-copybook-cvtra05y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source: TRANSACT VSAM File (Copybook: CVTRA05Y)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-transactions-table-in-transaction_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target: transactions table in transaction_db
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mainframe-timestamp-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mainframe Timestamp Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-transformation_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Transformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-security-data-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Security Data Mapping
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Security Data Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-usrsec-vsam-file-copybook-csusr01y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source: USRSEC VSAM File (Copybook: CSUSR01Y)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-users-table-in-user_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target: users table in user_db
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-migration-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password Migration Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-transformation_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Transformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-data-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference Data Mapping
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference Data Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transaction-types-trantype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Types (TRANTYPE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-categories-trancatg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Categories (TRANCATG)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-type-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Type Conversions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Type Conversions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numeric-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Conversions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        String Conversions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Date/Time Conversions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Special Conversions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#business-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Business Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customer-data-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Data Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-data-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Data Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-data-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card Data Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-data-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction Data Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-security-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Security Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Queries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-migration-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-Migration Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="migration-data-dictionary">Migration Data Dictionary</h1>
+<p>Complete field-level mapping from mainframe VSAM/COBOL structures to PostgreSQL database schema.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#customer-data-mapping">Customer Data Mapping</a></li>
+<li><a href="#account-data-mapping">Account Data Mapping</a></li>
+<li><a href="#card-data-mapping">Card Data Mapping</a></li>
+<li><a href="#transaction-data-mapping">Transaction Data Mapping</a></li>
+<li><a href="#user-security-data-mapping">User Security Data Mapping</a></li>
+<li><a href="#reference-data-mapping">Reference Data Mapping</a></li>
+<li><a href="#data-type-conversions">Data Type Conversions</a></li>
+<li><a href="#business-rules">Business Rules</a></li>
+</ul>
+<h2 id="overview">Overview</h2>
+<p>This document provides complete field-level mappings between mainframe COBOL copybook structures and PostgreSQL database tables. Each mapping includes:
+- Source COBOL field definition
+- Target PostgreSQL column definition
+- Data type conversion rules
+- Validation rules
+- Sample data transformations</p>
+<h3 id="mapping-conventions">Mapping Conventions</h3>
+<p><strong>Naming Conventions:</strong>
+- COBOL: UPPERCASE-WITH-HYPHENS
+- PostgreSQL: lowercase_with_underscores</p>
+<p><strong>Data Type Mappings:</strong>
+- PIC 9(n) → BIGINT or INTEGER
+- PIC X(n) → VARCHAR(n)
+- PIC S9(n)V99 COMP-3 → DECIMAL(n+2,2)
+- Date strings → DATE or TIMESTAMP</p>
+<h2 id="customer-data-mapping">Customer Data Mapping</h2>
+<h3 id="source-custdat-vsam-file-copybook-cvcus01y">Source: CUSTDAT VSAM File (Copybook: CVCUS01Y)</h3>
+<h3 id="target-customers-table-in-customer_db">Target: customers table in customer_db</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">COBOL Field</th>
+<th style="text-align: left;">COBOL Definition</th>
+<th style="text-align: left;">PostgreSQL Column</th>
+<th style="text-align: left;">PostgreSQL Type</th>
+<th style="text-align: left;">Conversion Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">CUST-ID</td>
+<td style="text-align: left;">PIC 9(09)</td>
+<td style="text-align: left;">customer_id</td>
+<td style="text-align: left;">BIGINT</td>
+<td style="text-align: left;">Direct numeric conversion</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUST-FIRST-NAME</td>
+<td style="text-align: left;">PIC X(25)</td>
+<td style="text-align: left;">first_name</td>
+<td style="text-align: left;">VARCHAR(25)</td>
+<td style="text-align: left;">Trim trailing spaces, NOT NULL</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUST-MIDDLE-NAME</td>
+<td style="text-align: left;">PIC X(25)</td>
+<td style="text-align: left;">middle_name</td>
+<td style="text-align: left;">VARCHAR(25)</td>
+<td style="text-align: left;">Trim trailing spaces, nullable</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUST-LAST-NAME</td>
+<td style="text-align: left;">PIC X(25)</td>
+<td style="text-align: left;">last_name</td>
+<td style="text-align: left;">VARCHAR(25)</td>
+<td style="text-align: left;">Trim trailing spaces, NOT NULL</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUST-ADDR-LINE-1</td>
+<td style="text-align: left;">PIC X(50)</td>
+<td style="text-align: left;">address_line1</td>
+<td style="text-align: left;">VARCHAR(50)</td>
+<td style="text-align: left;">Trim trailing spaces</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUST-ADDR-LINE-2</td>
+<td style="text-align: left;">PIC X(50)</td>
+<td style="text-align: left;">address_line2</td>
+<td style="text-align: left;">VARCHAR(50)</td>
+<td style="text-align: left;">Trim trailing spaces</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUST-ADDR-LINE-3</td>
+<td style="text-align: left;">PIC X(50)</td>
+<td style="text-align: left;">address_line3</td>
+<td style="text-align: left;">VARCHAR(50)</td>
+<td style="text-align: left;">Trim trailing spaces</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUST-ADDR-STATE-CD</td>
+<td style="text-align: left;">PIC X(02)</td>
+<td style="text-align: left;">state_code</td>
+<td style="text-align: left;">VARCHAR(2)</td>
+<td style="text-align: left;">Uppercase, validate against state list</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUST-ADDR-COUNTRY-CD</td>
+<td style="text-align: left;">PIC X(03)</td>
+<td style="text-align: left;">country_code</td>
+<td style="text-align: left;">VARCHAR(3)</td>
+<td style="text-align: left;">Uppercase, validate against country list</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUST-ADDR-ZIP</td>
+<td style="text-align: left;">PIC X(10)</td>
+<td style="text-align: left;">zip_code</td>
+<td style="text-align: left;">VARCHAR(10)</td>
+<td style="text-align: left;">Trim trailing spaces</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUST-PHONE-NUM-1</td>
+<td style="text-align: left;">PIC X(15)</td>
+<td style="text-align: left;">phone_number1</td>
+<td style="text-align: left;">VARCHAR(15)</td>
+<td style="text-align: left;">Format: (XXX) XXX-XXXX or +X-XXX-XXX-XXXX</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUST-PHONE-NUM-2</td>
+<td style="text-align: left;">PIC X(15)</td>
+<td style="text-align: left;">phone_number2</td>
+<td style="text-align: left;">VARCHAR(15)</td>
+<td style="text-align: left;">Format: (XXX) XXX-XXXX or +X-XXX-XXX-XXXX</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUST-SSN</td>
+<td style="text-align: left;">PIC 9(09)</td>
+<td style="text-align: left;">ssn</td>
+<td style="text-align: left;">VARCHAR(9)</td>
+<td style="text-align: left;">Convert to string, validate format</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUST-GOVT-ISSUED-ID</td>
+<td style="text-align: left;">PIC X(20)</td>
+<td style="text-align: left;">govt_issued_id</td>
+<td style="text-align: left;">VARCHAR(20)</td>
+<td style="text-align: left;">Trim trailing spaces</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUST-DOB-YYYY-MM-DD</td>
+<td style="text-align: left;">PIC X(10)</td>
+<td style="text-align: left;">date_of_birth</td>
+<td style="text-align: left;">DATE</td>
+<td style="text-align: left;">Convert from 'YYYY-MM-DD' string to DATE</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUST-EFT-ACCOUNT-ID</td>
+<td style="text-align: left;">PIC X(10)</td>
+<td style="text-align: left;">eft_account_id</td>
+<td style="text-align: left;">VARCHAR(10)</td>
+<td style="text-align: left;">Trim trailing spaces</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUST-PRI-CARD-HOLDER-IND</td>
+<td style="text-align: left;">PIC X(01)</td>
+<td style="text-align: left;">primary_card_holder_ind</td>
+<td style="text-align: left;">CHAR(1)</td>
+<td style="text-align: left;">Y/N indicator</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUST-FICO-CREDIT-SCORE</td>
+<td style="text-align: left;">PIC 9(03)</td>
+<td style="text-align: left;">fico_credit_score</td>
+<td style="text-align: left;">SMALLINT</td>
+<td style="text-align: left;">Range: 300-850, 0 = not scored</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">created_at</td>
+<td style="text-align: left;">TIMESTAMP</td>
+<td style="text-align: left;">Set to migration timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">updated_at</td>
+<td style="text-align: left;">TIMESTAMP</td>
+<td style="text-align: left;">Set to migration timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">INTEGER</td>
+<td style="text-align: left;">Set to 0 for optimistic locking</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sample-transformation">Sample Transformation</h3>
+<p><strong>COBOL Record:</strong></p>
+<pre><code>CUST-ID                    = 000000001
+CUST-FIRST-NAME            = 'John                     '
+CUST-MIDDLE-NAME           = 'Michael               '
+CUST-LAST-NAME             = 'Doe                      '
+CUST-ADDR-LINE-1           = '123 Main Street                                   '
+CUST-ADDR-STATE-CD         = 'NY'
+CUST-SSN                   = 123456789
+CUST-DOB-YYYY-MM-DD        = '1980-05-15'
+CUST-FICO-CREDIT-SCORE     = 720
+</code></pre>
+<p><strong>PostgreSQL Record:</strong></p>
+<pre><code class="language-sql">INSERT INTO customers (
+    customer_id, first_name, middle_name, last_name,
+    address_line1, state_code, ssn, date_of_birth,
+    fico_credit_score, created_at, updated_at, version
+) VALUES (
+    1, 'John', 'Michael', 'Doe',
+    '123 Main Street', 'NY', '123456789', '1980-05-15',
+    720, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0
+);
+</code></pre>
+<h2 id="account-data-mapping">Account Data Mapping</h2>
+<h3 id="source-acctdat-vsam-file-copybook-cvact01y">Source: ACCTDAT VSAM File (Copybook: CVACT01Y)</h3>
+<h3 id="target-accounts-table-in-account_db">Target: accounts table in account_db</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">COBOL Field</th>
+<th style="text-align: left;">COBOL Definition</th>
+<th style="text-align: left;">PostgreSQL Column</th>
+<th style="text-align: left;">PostgreSQL Type</th>
+<th style="text-align: left;">Conversion Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ACCT-ID</td>
+<td style="text-align: left;">PIC 9(11)</td>
+<td style="text-align: left;">account_id</td>
+<td style="text-align: left;">BIGINT</td>
+<td style="text-align: left;">Direct numeric conversion</td>
+</tr>
+<tr>
+<td style="text-align: left;">ACCT-ACTIVE-STATUS</td>
+<td style="text-align: left;">PIC X(01)</td>
+<td style="text-align: left;">active_status</td>
+<td style="text-align: left;">CHAR(1)</td>
+<td style="text-align: left;">Y=Active, N=Inactive, default 'Y'</td>
+</tr>
+<tr>
+<td style="text-align: left;">ACCT-CURR-BAL</td>
+<td style="text-align: left;">PIC S9(10)V99 COMP-3</td>
+<td style="text-align: left;">current_balance</td>
+<td style="text-align: left;">DECIMAL(12,2)</td>
+<td style="text-align: left;">Convert packed decimal to decimal</td>
+</tr>
+<tr>
+<td style="text-align: left;">ACCT-CREDIT-LIMIT</td>
+<td style="text-align: left;">PIC S9(10)V99 COMP-3</td>
+<td style="text-align: left;">credit_limit</td>
+<td style="text-align: left;">DECIMAL(12,2)</td>
+<td style="text-align: left;">Convert packed decimal, must be &gt;= 0</td>
+</tr>
+<tr>
+<td style="text-align: left;">ACCT-CASH-CREDIT-LIMIT</td>
+<td style="text-align: left;">PIC S9(10)V99 COMP-3</td>
+<td style="text-align: left;">cash_credit_limit</td>
+<td style="text-align: left;">DECIMAL(12,2)</td>
+<td style="text-align: left;">Convert packed decimal, must be &lt;= credit_limit</td>
+</tr>
+<tr>
+<td style="text-align: left;">ACCT-OPEN-DATE</td>
+<td style="text-align: left;">PIC X(10)</td>
+<td style="text-align: left;">open_date</td>
+<td style="text-align: left;">DATE</td>
+<td style="text-align: left;">Convert from 'YYYY-MM-DD' string</td>
+</tr>
+<tr>
+<td style="text-align: left;">ACCT-EXPIRATION-DATE</td>
+<td style="text-align: left;">PIC X(10)</td>
+<td style="text-align: left;">expiration_date</td>
+<td style="text-align: left;">DATE</td>
+<td style="text-align: left;">Convert from 'YYYY-MM-DD' string</td>
+</tr>
+<tr>
+<td style="text-align: left;">ACCT-REISSUE-DATE</td>
+<td style="text-align: left;">PIC X(10)</td>
+<td style="text-align: left;">reissue_date</td>
+<td style="text-align: left;">DATE</td>
+<td style="text-align: left;">Convert from 'YYYY-MM-DD' string, nullable</td>
+</tr>
+<tr>
+<td style="text-align: left;">ACCT-CURR-CYC-CREDIT</td>
+<td style="text-align: left;">PIC S9(10)V99 COMP-3</td>
+<td style="text-align: left;">current_cycle_credit</td>
+<td style="text-align: left;">DECIMAL(12,2)</td>
+<td style="text-align: left;">Convert packed decimal, default 0.00</td>
+</tr>
+<tr>
+<td style="text-align: left;">ACCT-CURR-CYC-DEBIT</td>
+<td style="text-align: left;">PIC S9(10)V99 COMP-3</td>
+<td style="text-align: left;">current_cycle_debit</td>
+<td style="text-align: left;">DECIMAL(12,2)</td>
+<td style="text-align: left;">Convert packed decimal, default 0.00</td>
+</tr>
+<tr>
+<td style="text-align: left;">ACCT-ADDR-ZIP</td>
+<td style="text-align: left;">PIC X(10)</td>
+<td style="text-align: left;">address_zip</td>
+<td style="text-align: left;">VARCHAR(10)</td>
+<td style="text-align: left;">Trim trailing spaces</td>
+</tr>
+<tr>
+<td style="text-align: left;">ACCT-GROUP-ID</td>
+<td style="text-align: left;">PIC X(10)</td>
+<td style="text-align: left;">group_id</td>
+<td style="text-align: left;">VARCHAR(10)</td>
+<td style="text-align: left;">Trim trailing spaces</td>
+</tr>
+<tr>
+<td style="text-align: left;">(From CARDXREF)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">customer_id</td>
+<td style="text-align: left;">BIGINT</td>
+<td style="text-align: left;">Join from CARDXREF, NOT NULL</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">created_at</td>
+<td style="text-align: left;">TIMESTAMP</td>
+<td style="text-align: left;">Set to migration timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">updated_at</td>
+<td style="text-align: left;">TIMESTAMP</td>
+<td style="text-align: left;">Set to migration timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">INTEGER</td>
+<td style="text-align: left;">Set to 0 for optimistic locking</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comp-3-packed-decimal-conversion">COMP-3 (Packed Decimal) Conversion</h3>
+<p><strong>COBOL COMP-3 Format:</strong>
+- Storage: 2 digits per byte (except last byte: 1 digit + sign)
+- Example: PIC S9(10)V99 COMP-3 = 6 bytes
+- Value: 12345678.90 stored as: 12 34 56 78 90 0C (hex)</p>
+<p><strong>Conversion Algorithm:</strong></p>
+<pre><code class="language-java">public BigDecimal convertComp3ToDecimal(byte[] comp3Bytes, int scale) {
+    StringBuilder digits = new StringBuilder();
+
+    for (int i = 0; i &lt; comp3Bytes.length; i++) {
+        byte b = comp3Bytes[i];
+        int highNibble = (b &gt;&gt; 4) &amp; 0x0F;
+        int lowNibble = b &amp; 0x0F;
+
+        if (i == comp3Bytes.length - 1) {
+            // Last byte: digit + sign
+            digits.append(highNibble);
+            boolean negative = (lowNibble == 0x0D);
+        } else {
+            digits.append(highNibble);
+            digits.append(lowNibble);
+        }
+    }
+
+    BigDecimal value = new BigDecimal(digits.toString());
+    return value.movePointLeft(scale);
+}
+</code></pre>
+<h3 id="sample-transformation_1">Sample Transformation</h3>
+<p><strong>COBOL Record:</strong></p>
+<pre><code>ACCT-ID                    = 00000000001
+ACCT-ACTIVE-STATUS         = 'Y'
+ACCT-CURR-BAL              = +0000123456C (COMP-3: $1,234.56)
+ACCT-CREDIT-LIMIT          = +0000500000C (COMP-3: $5,000.00)
+ACCT-CASH-CREDIT-LIMIT     = +0000100000C (COMP-3: $1,000.00)
+ACCT-OPEN-DATE             = '2020-01-15'
+ACCT-EXPIRATION-DATE       = '2025-01-15'
+</code></pre>
+<p><strong>PostgreSQL Record:</strong></p>
+<pre><code class="language-sql">INSERT INTO accounts (
+    account_id, customer_id, active_status, current_balance,
+    credit_limit, cash_credit_limit, open_date, expiration_date,
+    current_cycle_credit, current_cycle_debit,
+    created_at, updated_at, version
+) VALUES (
+    1, 1, 'Y', 1234.56,
+    5000.00, 1000.00, '2020-01-15', '2025-01-15',
+    0.00, 0.00,
+    CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0
+);
+</code></pre>
+<h2 id="card-data-mapping">Card Data Mapping</h2>
+<h3 id="source-carddat-vsam-file-copybook-cvact02y">Source: CARDDAT VSAM File (Copybook: CVACT02Y)</h3>
+<h3 id="target-cards-table-in-card_db">Target: cards table in card_db</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">COBOL Field</th>
+<th style="text-align: left;">COBOL Definition</th>
+<th style="text-align: left;">PostgreSQL Column</th>
+<th style="text-align: left;">PostgreSQL Type</th>
+<th style="text-align: left;">Conversion Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">CARD-NUM</td>
+<td style="text-align: left;">PIC 9(16)</td>
+<td style="text-align: left;">card_number</td>
+<td style="text-align: left;">VARCHAR(16)</td>
+<td style="text-align: left;">Convert to string, validate Luhn</td>
+</tr>
+<tr>
+<td style="text-align: left;">CARD-ACCT-ID</td>
+<td style="text-align: left;">PIC 9(11)</td>
+<td style="text-align: left;">account_id</td>
+<td style="text-align: left;">BIGINT</td>
+<td style="text-align: left;">Foreign key to accounts</td>
+</tr>
+<tr>
+<td style="text-align: left;">CARD-CVV-CD</td>
+<td style="text-align: left;">PIC 9(03)</td>
+<td style="text-align: left;">cvv_code</td>
+<td style="text-align: left;">VARCHAR(3)</td>
+<td style="text-align: left;">Convert to string with leading zeros</td>
+</tr>
+<tr>
+<td style="text-align: left;">CARD-EMBOSSED-NAME</td>
+<td style="text-align: left;">PIC X(50)</td>
+<td style="text-align: left;">embossed_name</td>
+<td style="text-align: left;">VARCHAR(50)</td>
+<td style="text-align: left;">Uppercase, trim spaces</td>
+</tr>
+<tr>
+<td style="text-align: left;">CARD-EXPIRATION-DATE</td>
+<td style="text-align: left;">PIC X(10)</td>
+<td style="text-align: left;">expiration_date</td>
+<td style="text-align: left;">DATE</td>
+<td style="text-align: left;">Convert from 'YYYY-MM-DD' or 'MM/YY'</td>
+</tr>
+<tr>
+<td style="text-align: left;">CARD-ACTIVE-STATUS</td>
+<td style="text-align: left;">PIC X(01)</td>
+<td style="text-align: left;">active_status</td>
+<td style="text-align: left;">CHAR(1)</td>
+<td style="text-align: left;">Y=Active, N=Inactive, B=Blocked, E=Expired</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">card_type</td>
+<td style="text-align: left;">VARCHAR(20)</td>
+<td style="text-align: left;">Default 'CREDIT'</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">issue_date</td>
+<td style="text-align: left;">DATE</td>
+<td style="text-align: left;">Set to open_date or migration date</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">created_at</td>
+<td style="text-align: left;">TIMESTAMP</td>
+<td style="text-align: left;">Set to migration timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">updated_at</td>
+<td style="text-align: left;">TIMESTAMP</td>
+<td style="text-align: left;">Set to migration timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">INTEGER</td>
+<td style="text-align: left;">Set to 0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="card-number-validation-luhn-algorithm">Card Number Validation (Luhn Algorithm)</h3>
+<pre><code class="language-java">public boolean validateCardNumber(String cardNumber) {
+    int sum = 0;
+    boolean alternate = false;
+
+    for (int i = cardNumber.length() - 1; i &gt;= 0; i--) {
+        int digit = Character.getNumericValue(cardNumber.charAt(i));
+
+        if (alternate) {
+            digit *= 2;
+            if (digit &gt; 9) {
+                digit = (digit % 10) + 1;
+            }
+        }
+
+        sum += digit;
+        alternate = !alternate;
+    }
+
+    return (sum % 10 == 0);
+}
+</code></pre>
+<h3 id="sample-transformation_2">Sample Transformation</h3>
+<p><strong>COBOL Record:</strong></p>
+<pre><code>CARD-NUM                   = 4000123456789010
+CARD-ACCT-ID               = 00000000001
+CARD-CVV-CD                = 123
+CARD-EMBOSSED-NAME         = 'JOHN M DOE                                        '
+CARD-EXPIRATION-DATE       = '2025-12-31'
+CARD-ACTIVE-STATUS         = 'Y'
+</code></pre>
+<p><strong>PostgreSQL Record:</strong></p>
+<pre><code class="language-sql">INSERT INTO cards (
+    card_number, account_id, cvv_code, embossed_name,
+    expiration_date, active_status, card_type, issue_date,
+    created_at, updated_at, version
+) VALUES (
+    '4000123456789010', 1, '123', 'JOHN M DOE',
+    '2025-12-31', 'Y', 'CREDIT', '2020-01-15',
+    CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0
+);
+</code></pre>
+<h2 id="transaction-data-mapping">Transaction Data Mapping</h2>
+<h3 id="source-transact-vsam-file-copybook-cvtra05y">Source: TRANSACT VSAM File (Copybook: CVTRA05Y)</h3>
+<h3 id="target-transactions-table-in-transaction_db">Target: transactions table in transaction_db</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">COBOL Field</th>
+<th style="text-align: left;">COBOL Definition</th>
+<th style="text-align: left;">PostgreSQL Column</th>
+<th style="text-align: left;">PostgreSQL Type</th>
+<th style="text-align: left;">Conversion Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">TRAN-ID</td>
+<td style="text-align: left;">PIC X(16)</td>
+<td style="text-align: left;">transaction_id</td>
+<td style="text-align: left;">VARCHAR(16)</td>
+<td style="text-align: left;">Trim trailing spaces</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRAN-TYPE-CD</td>
+<td style="text-align: left;">PIC X(02)</td>
+<td style="text-align: left;">transaction_type</td>
+<td style="text-align: left;">VARCHAR(2)</td>
+<td style="text-align: left;">Uppercase, validate against types</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRAN-CAT-CD</td>
+<td style="text-align: left;">PIC 9(04)</td>
+<td style="text-align: left;">category_code</td>
+<td style="text-align: left;">VARCHAR(4)</td>
+<td style="text-align: left;">Convert to string with leading zeros</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRAN-SOURCE</td>
+<td style="text-align: left;">PIC X(10)</td>
+<td style="text-align: left;">source</td>
+<td style="text-align: left;">VARCHAR(10)</td>
+<td style="text-align: left;">Trim trailing spaces</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRAN-DESC</td>
+<td style="text-align: left;">PIC X(100)</td>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">VARCHAR(100)</td>
+<td style="text-align: left;">Trim trailing spaces</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRAN-AMT</td>
+<td style="text-align: left;">PIC S9(09)V99 COMP-3</td>
+<td style="text-align: left;">amount</td>
+<td style="text-align: left;">DECIMAL(11,2)</td>
+<td style="text-align: left;">Convert packed decimal</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRAN-CARD-NUM</td>
+<td style="text-align: left;">PIC 9(16)</td>
+<td style="text-align: left;">card_number</td>
+<td style="text-align: left;">VARCHAR(16)</td>
+<td style="text-align: left;">Convert to string</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRAN-MERCHANT-ID</td>
+<td style="text-align: left;">PIC 9(09)</td>
+<td style="text-align: left;">merchant_id</td>
+<td style="text-align: left;">VARCHAR(9)</td>
+<td style="text-align: left;">Convert to string</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRAN-MERCHANT-NAME</td>
+<td style="text-align: left;">PIC X(50)</td>
+<td style="text-align: left;">merchant_name</td>
+<td style="text-align: left;">VARCHAR(50)</td>
+<td style="text-align: left;">Trim trailing spaces</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRAN-MERCHANT-CITY</td>
+<td style="text-align: left;">PIC X(50)</td>
+<td style="text-align: left;">merchant_city</td>
+<td style="text-align: left;">VARCHAR(50)</td>
+<td style="text-align: left;">Trim trailing spaces</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRAN-MERCHANT-ZIP</td>
+<td style="text-align: left;">PIC X(10)</td>
+<td style="text-align: left;">merchant_zip</td>
+<td style="text-align: left;">VARCHAR(10)</td>
+<td style="text-align: left;">Trim trailing spaces</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRAN-ORIG-TS</td>
+<td style="text-align: left;">PIC X(26)</td>
+<td style="text-align: left;">original_timestamp</td>
+<td style="text-align: left;">TIMESTAMP</td>
+<td style="text-align: left;">Convert mainframe timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRAN-PROC-TS</td>
+<td style="text-align: left;">PIC X(26)</td>
+<td style="text-align: left;">processed_timestamp</td>
+<td style="text-align: left;">TIMESTAMP</td>
+<td style="text-align: left;">Convert mainframe timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">VARCHAR(20)</td>
+<td style="text-align: left;">Default 'POSTED'</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">created_at</td>
+<td style="text-align: left;">TIMESTAMP</td>
+<td style="text-align: left;">Set to migration timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">INTEGER</td>
+<td style="text-align: left;">Set to 0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mainframe-timestamp-conversion">Mainframe Timestamp Conversion</h3>
+<p><strong>Mainframe Format:</strong> YYYY-MM-DD-HH.MM.SS.NNNNNN (26 characters)
+<strong>Example:</strong> 2025-11-21-10.30.45.123456</p>
+<p><strong>PostgreSQL Format:</strong> YYYY-MM-DD HH:MM:SS.NNNNNN
+<strong>Example:</strong> 2025-11-21 10:30:45.123456</p>
+<p><strong>Conversion:</strong></p>
+<pre><code class="language-java">public Timestamp convertMainframeTimestamp(String mfTimestamp) {
+    // Input: 2025-11-21-10.30.45.123456
+    // Output: 2025-11-21 10:30:45.123456
+
+    String formatted = mfTimestamp
+        .substring(0, 10) + &quot; &quot; +  // Date part
+        mfTimestamp.substring(11, 13) + &quot;:&quot; +  // Hour
+        mfTimestamp.substring(14, 16) + &quot;:&quot; +  // Minute
+        mfTimestamp.substring(17, 19) + &quot;.&quot; +  // Second
+        mfTimestamp.substring(20);  // Microseconds
+
+    return Timestamp.valueOf(formatted);
+}
+</code></pre>
+<h3 id="sample-transformation_3">Sample Transformation</h3>
+<p><strong>COBOL Record:</strong></p>
+<pre><code>TRAN-ID                    = 'T000000000000001'
+TRAN-TYPE-CD               = 'PU'
+TRAN-CAT-CD                = 5411
+TRAN-DESC                  = 'GROCERY STORE PURCHASE                                                                              '
+TRAN-AMT                   = +0000004567C (COMP-3: $45.67)
+TRAN-CARD-NUM              = 4000123456789010
+TRAN-MERCHANT-ID           = 123456789
+TRAN-MERCHANT-NAME         = 'ABC Grocery Store                                 '
+TRAN-MERCHANT-CITY         = 'New York                                          '
+TRAN-ORIG-TS               = '2025-11-21-10.30.45.123456'
+TRAN-PROC-TS               = '2025-11-21-10.31.00.000000'
+</code></pre>
+<p><strong>PostgreSQL Record:</strong></p>
+<pre><code class="language-sql">INSERT INTO transactions (
+    transaction_id, transaction_type, category_code, source,
+    description, amount, card_number, merchant_id,
+    merchant_name, merchant_city, original_timestamp,
+    processed_timestamp, status, created_at, version
+) VALUES (
+    'T000000000000001', 'PU', '5411', 'POS',
+    'GROCERY STORE PURCHASE', 45.67, '4000123456789010', '123456789',
+    'ABC Grocery Store', 'New York', '2025-11-21 10:30:45.123456',
+    '2025-11-21 10:31:00.000000', 'POSTED', CURRENT_TIMESTAMP, 0
+);
+</code></pre>
+<h2 id="user-security-data-mapping">User Security Data Mapping</h2>
+<h3 id="source-usrsec-vsam-file-copybook-csusr01y">Source: USRSEC VSAM File (Copybook: CSUSR01Y)</h3>
+<h3 id="target-users-table-in-user_db">Target: users table in user_db</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">COBOL Field</th>
+<th style="text-align: left;">COBOL Definition</th>
+<th style="text-align: left;">PostgreSQL Column</th>
+<th style="text-align: left;">PostgreSQL Type</th>
+<th style="text-align: left;">Conversion Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">SEC-USR-ID</td>
+<td style="text-align: left;">PIC X(08)</td>
+<td style="text-align: left;">user_id</td>
+<td style="text-align: left;">VARCHAR(8)</td>
+<td style="text-align: left;">Trim trailing spaces</td>
+</tr>
+<tr>
+<td style="text-align: left;">SEC-USR-FNAME</td>
+<td style="text-align: left;">PIC X(20)</td>
+<td style="text-align: left;">first_name</td>
+<td style="text-align: left;">VARCHAR(20)</td>
+<td style="text-align: left;">Trim trailing spaces</td>
+</tr>
+<tr>
+<td style="text-align: left;">SEC-USR-LNAME</td>
+<td style="text-align: left;">PIC X(20)</td>
+<td style="text-align: left;">last_name</td>
+<td style="text-align: left;">VARCHAR(20)</td>
+<td style="text-align: left;">Trim trailing spaces</td>
+</tr>
+<tr>
+<td style="text-align: left;">SEC-USR-PWD</td>
+<td style="text-align: left;">PIC X(08)</td>
+<td style="text-align: left;">password_hash</td>
+<td style="text-align: left;">VARCHAR(255)</td>
+<td style="text-align: left;"><strong>Re-hash with BCrypt</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">SEC-USR-TYPE</td>
+<td style="text-align: left;">PIC X(01)</td>
+<td style="text-align: left;">user_type</td>
+<td style="text-align: left;">VARCHAR(10)</td>
+<td style="text-align: left;">A→ADMIN, U→USER</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">email</td>
+<td style="text-align: left;">VARCHAR(100)</td>
+<td style="text-align: left;">Generate from user_id@carddemo.com</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">VARCHAR(20)</td>
+<td style="text-align: left;">Default 'ACTIVE'</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">last_login</td>
+<td style="text-align: left;">TIMESTAMP</td>
+<td style="text-align: left;">NULL initially</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">failed_login_attempts</td>
+<td style="text-align: left;">INTEGER</td>
+<td style="text-align: left;">Default 0</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">password_changed_at</td>
+<td style="text-align: left;">TIMESTAMP</td>
+<td style="text-align: left;">Set to migration timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">created_at</td>
+<td style="text-align: left;">TIMESTAMP</td>
+<td style="text-align: left;">Set to migration timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">updated_at</td>
+<td style="text-align: left;">TIMESTAMP</td>
+<td style="text-align: left;">Set to migration timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">INTEGER</td>
+<td style="text-align: left;">Set to 0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="password-migration-strategy">Password Migration Strategy</h3>
+<p><strong>Important:</strong> Mainframe passwords cannot be directly migrated due to different hashing algorithms.</p>
+<p><strong>Options:</strong></p>
+<ol>
+<li><strong>Force Password Reset (Recommended)</strong></li>
+<li>Set temporary password for all users</li>
+<li>Force password change on first login</li>
+<li>
+<p>Send password reset email</p>
+</li>
+<li>
+<p><strong>Generate Random Passwords</strong></p>
+</li>
+<li>Generate secure random password for each user</li>
+<li>Hash with BCrypt</li>
+<li>Send to users via secure channel</li>
+</ol>
+<p><strong>BCrypt Hashing:</strong></p>
+<pre><code class="language-java">import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+public String hashPassword(String plainPassword) {
+    BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
+    return encoder.encode(plainPassword);
+}
+</code></pre>
+<h3 id="sample-transformation_4">Sample Transformation</h3>
+<p><strong>COBOL Record:</strong></p>
+<pre><code>SEC-USR-ID                 = 'ADMIN001'
+SEC-USR-FNAME              = 'System              '
+SEC-USR-LNAME              = 'Administrator       '
+SEC-USR-PWD                = 'PASSWORD'  (mainframe hash)
+SEC-USR-TYPE               = 'A'
+</code></pre>
+<p><strong>PostgreSQL Record:</strong></p>
+<pre><code class="language-sql">INSERT INTO users (
+    user_id, first_name, last_name, email,
+    password_hash, user_type, status,
+    failed_login_attempts, password_changed_at,
+    created_at, updated_at, version
+) VALUES (
+    'ADMIN001', 'System', 'Administrator', 'admin001@carddemo.com',
+    '$2a$12$...bcrypt.hash...', 'ADMIN', 'ACTIVE',
+    0, CURRENT_TIMESTAMP,
+    CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0
+);
+</code></pre>
+<h2 id="reference-data-mapping">Reference Data Mapping</h2>
+<h3 id="transaction-types-trantype">Transaction Types (TRANTYPE)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">COBOL Field</th>
+<th style="text-align: left;">COBOL Definition</th>
+<th style="text-align: left;">PostgreSQL Column</th>
+<th style="text-align: left;">PostgreSQL Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">TRAN-TYPE-CD</td>
+<td style="text-align: left;">PIC X(02)</td>
+<td style="text-align: left;">type_code</td>
+<td style="text-align: left;">VARCHAR(2)</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRAN-TYPE-DESC</td>
+<td style="text-align: left;">PIC X(50)</td>
+<td style="text-align: left;">type_name</td>
+<td style="text-align: left;">VARCHAR(50)</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">VARCHAR(100)</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">debit_credit_indicator</td>
+<td style="text-align: left;">CHAR(1)</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">created_at</td>
+<td style="text-align: left;">TIMESTAMP</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sample Data:</strong></p>
+<pre><code class="language-sql">INSERT INTO transaction_types (type_code, type_name, description, debit_credit_indicator) VALUES
+('PU', 'Purchase', 'Card purchase transaction', 'D'),
+('PA', 'Payment', 'Payment received', 'C'),
+('FE', 'Fee', 'Service fee', 'D'),
+('IN', 'Interest', 'Interest charge', 'D'),
+('CR', 'Credit', 'Credit adjustment', 'C'),
+('RE', 'Refund', 'Purchase refund', 'C');
+</code></pre>
+<h3 id="transaction-categories-trancatg">Transaction Categories (TRANCATG)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">COBOL Field</th>
+<th style="text-align: left;">COBOL Definition</th>
+<th style="text-align: left;">PostgreSQL Column</th>
+<th style="text-align: left;">PostgreSQL Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">TRAN-CAT-CD</td>
+<td style="text-align: left;">PIC 9(04)</td>
+<td style="text-align: left;">category_code</td>
+<td style="text-align: left;">VARCHAR(4)</td>
+</tr>
+<tr>
+<td style="text-align: left;">TRAN-CAT-DESC</td>
+<td style="text-align: left;">PIC X(50)</td>
+<td style="text-align: left;">category_name</td>
+<td style="text-align: left;">VARCHAR(50)</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">VARCHAR(100)</td>
+</tr>
+<tr>
+<td style="text-align: left;">(New)</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">created_at</td>
+<td style="text-align: left;">TIMESTAMP</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sample Data:</strong></p>
+<pre><code class="language-sql">INSERT INTO transaction_categories (category_code, category_name, description) VALUES
+('5411', 'Grocery Stores', 'Grocery stores and supermarkets'),
+('5812', 'Restaurants', 'Eating places and restaurants'),
+('5541', 'Service Stations', 'Service stations and gas'),
+('5999', 'Miscellaneous', 'Miscellaneous retail'),
+('4900', 'Utilities', 'Electric, gas, water, sanitary'),
+('5311', 'Department Stores', 'Department stores');
+</code></pre>
+<h2 id="data-type-conversions">Data Type Conversions</h2>
+<h3 id="numeric-conversions">Numeric Conversions</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">COBOL Type</th>
+<th style="text-align: left;">Example</th>
+<th style="text-align: left;">PostgreSQL Type</th>
+<th style="text-align: left;">Java Type</th>
+<th style="text-align: left;">Conversion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">PIC 9(n)</td>
+<td style="text-align: left;">PIC 9(09)</td>
+<td style="text-align: left;">BIGINT</td>
+<td style="text-align: left;">Long</td>
+<td style="text-align: left;">Direct conversion</td>
+</tr>
+<tr>
+<td style="text-align: left;">PIC 9(n)</td>
+<td style="text-align: left;">PIC 9(03)</td>
+<td style="text-align: left;">SMALLINT</td>
+<td style="text-align: left;">Short</td>
+<td style="text-align: left;">Direct conversion</td>
+</tr>
+<tr>
+<td style="text-align: left;">PIC S9(n)</td>
+<td style="text-align: left;">PIC S9(10)</td>
+<td style="text-align: left;">BIGINT</td>
+<td style="text-align: left;">Long</td>
+<td style="text-align: left;">Handle sign</td>
+</tr>
+<tr>
+<td style="text-align: left;">PIC S9(n)V99 COMP-3</td>
+<td style="text-align: left;">PIC S9(10)V99 COMP-3</td>
+<td style="text-align: left;">DECIMAL(12,2)</td>
+<td style="text-align: left;">BigDecimal</td>
+<td style="text-align: left;">Unpack COMP-3</td>
+</tr>
+<tr>
+<td style="text-align: left;">PIC S9(n)V99</td>
+<td style="text-align: left;">PIC S9(09)V99</td>
+<td style="text-align: left;">DECIMAL(11,2)</td>
+<td style="text-align: left;">BigDecimal</td>
+<td style="text-align: left;">Parse with decimal</td>
+</tr>
+</tbody>
+</table>
+<h3 id="string-conversions">String Conversions</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">COBOL Type</th>
+<th style="text-align: left;">Example</th>
+<th style="text-align: left;">PostgreSQL Type</th>
+<th style="text-align: left;">Conversion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">PIC X(n)</td>
+<td style="text-align: left;">PIC X(25)</td>
+<td style="text-align: left;">VARCHAR(n)</td>
+<td style="text-align: left;">Trim trailing spaces</td>
+</tr>
+<tr>
+<td style="text-align: left;">PIC X(01)</td>
+<td style="text-align: left;">PIC X(01)</td>
+<td style="text-align: left;">CHAR(1)</td>
+<td style="text-align: left;">Direct, no trim</td>
+</tr>
+<tr>
+<td style="text-align: left;">PIC A(n)</td>
+<td style="text-align: left;">PIC A(20)</td>
+<td style="text-align: left;">VARCHAR(n)</td>
+<td style="text-align: left;">Trim, alphabetic only</td>
+</tr>
+</tbody>
+</table>
+<h3 id="datetime-conversions">Date/Time Conversions</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">COBOL Format</th>
+<th style="text-align: left;">Example</th>
+<th style="text-align: left;">PostgreSQL Type</th>
+<th style="text-align: left;">Conversion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">YYYY-MM-DD</td>
+<td style="text-align: left;">'2025-11-21'</td>
+<td style="text-align: left;">DATE</td>
+<td style="text-align: left;">Parse ISO date</td>
+</tr>
+<tr>
+<td style="text-align: left;">MM/DD/YYYY</td>
+<td style="text-align: left;">'11/21/2025'</td>
+<td style="text-align: left;">DATE</td>
+<td style="text-align: left;">Parse US date</td>
+</tr>
+<tr>
+<td style="text-align: left;">YYYYMMDD</td>
+<td style="text-align: left;">'20251121'</td>
+<td style="text-align: left;">DATE</td>
+<td style="text-align: left;">Parse compact date</td>
+</tr>
+<tr>
+<td style="text-align: left;">YYYY-MM-DD-HH.MM.SS.NNNNNN</td>
+<td style="text-align: left;">'2025-11-21-10.30.45.123456'</td>
+<td style="text-align: left;">TIMESTAMP</td>
+<td style="text-align: left;">Convert format</td>
+</tr>
+</tbody>
+</table>
+<h3 id="special-conversions">Special Conversions</h3>
+<p><strong>Packed Decimal (COMP-3):</strong></p>
+<pre><code class="language-java">// Example: Convert PIC S9(10)V99 COMP-3 (6 bytes) to BigDecimal
+public BigDecimal convertPackedDecimal(byte[] bytes) {
+    long value = 0;
+    boolean negative = false;
+
+    for (int i = 0; i &lt; bytes.length; i++) {
+        byte b = bytes[i];
+        int high = (b &gt;&gt; 4) &amp; 0x0F;
+        int low = b &amp; 0x0F;
+
+        if (i == bytes.length - 1) {
+            value = value * 10 + high;
+            negative = (low == 0x0D);
+        } else {
+            value = value * 100 + high * 10 + low;
+        }
+    }
+
+    BigDecimal result = BigDecimal.valueOf(value).movePointLeft(2);
+    return negative ? result.negate() : result;
+}
+</code></pre>
+<p><strong>Binary (COMP):</strong></p>
+<pre><code class="language-java">// Example: Convert PIC 9(04) COMP (2 bytes) to Integer
+public int convertBinary(byte[] bytes) {
+    return ByteBuffer.wrap(bytes).getShort();
+}
+</code></pre>
+<h2 id="business-rules">Business Rules</h2>
+<h3 id="customer-data-rules">Customer Data Rules</h3>
+<ol>
+<li><strong>Customer ID</strong>: Must be unique, 9 digits</li>
+<li><strong>SSN</strong>: Must be unique (if provided), 9 digits</li>
+<li><strong>Name</strong>: First and last name required, middle name optional</li>
+<li><strong>FICO Score</strong>: Range 300-850, or 0 for not scored</li>
+<li><strong>Date of Birth</strong>: Must be in the past, age &gt;= 18 for primary cardholder</li>
+</ol>
+<h3 id="account-data-rules">Account Data Rules</h3>
+<ol>
+<li><strong>Account ID</strong>: Must be unique, 11 digits</li>
+<li><strong>Credit Limit</strong>: Must be &gt;= 0</li>
+<li><strong>Cash Credit Limit</strong>: Must be &lt;= Credit Limit</li>
+<li><strong>Current Balance</strong>: Must be &gt;= -Credit Limit (no over-limit)</li>
+<li><strong>Expiration Date</strong>: Must be &gt; Open Date</li>
+<li><strong>Active Status</strong>: Y or N only</li>
+</ol>
+<h3 id="card-data-rules">Card Data Rules</h3>
+<ol>
+<li><strong>Card Number</strong>: Must be unique, 16 digits, pass Luhn check</li>
+<li><strong>CVV</strong>: 3 digits</li>
+<li><strong>Expiration Date</strong>: Must be future date</li>
+<li><strong>Active Status</strong>: Y (Active), N (Inactive), B (Blocked), E (Expired)</li>
+<li><strong>Card-Account Relationship</strong>: Each card must belong to exactly one account</li>
+</ol>
+<h3 id="transaction-data-rules">Transaction Data Rules</h3>
+<ol>
+<li><strong>Transaction ID</strong>: Must be unique</li>
+<li><strong>Amount</strong>: Can be positive (charge) or negative (credit/payment)</li>
+<li><strong>Transaction Type</strong>: Must exist in transaction_types table</li>
+<li><strong>Category Code</strong>: Must exist in transaction_categories table</li>
+<li><strong>Card Number</strong>: Must exist in cards table</li>
+<li><strong>Timestamp</strong>: Original timestamp &lt;= Processed timestamp</li>
+</ol>
+<h3 id="user-security-rules">User Security Rules</h3>
+<ol>
+<li><strong>User ID</strong>: Must be unique, 8 characters max</li>
+<li><strong>User Type</strong>: ADMIN or USER only</li>
+<li><strong>Password</strong>: Must be BCrypt hashed, minimum 8 characters</li>
+<li><strong>Email</strong>: Must be unique, valid email format</li>
+<li><strong>Status</strong>: ACTIVE, INACTIVE, or LOCKED</li>
+</ol>
+<h2 id="validation-queries">Validation Queries</h2>
+<h3 id="post-migration-validation">Post-Migration Validation</h3>
+<pre><code class="language-sql">-- 1. Record count validation
+SELECT 'customers' as table_name, COUNT(*) as count FROM customers
+UNION ALL
+SELECT 'accounts', COUNT(*) FROM accounts
+UNION ALL
+SELECT 'cards', COUNT(*) FROM cards
+UNION ALL
+SELECT 'transactions', COUNT(*) FROM transactions
+UNION ALL
+SELECT 'users', COUNT(*) FROM users;
+
+-- 2. Referential integrity checks
+-- Accounts without customers
+SELECT COUNT(*) as orphaned_accounts
+FROM accounts a
+LEFT JOIN customers c ON a.customer_id = c.customer_id
+WHERE c.customer_id IS NULL;
+
+-- Cards without accounts
+SELECT COUNT(*) as orphaned_cards
+FROM cards c
+LEFT JOIN accounts a ON c.account_id = a.account_id
+WHERE a.account_id IS NULL;
+
+-- Transactions without cards
+SELECT COUNT(*) as orphaned_transactions
+FROM transactions t
+LEFT JOIN cards c ON t.card_number = c.card_number
+WHERE c.card_number IS NULL;
+
+-- 3. Data quality checks
+-- Null values in required fields
+SELECT 'customers' as table_name, 
+       COUNT(*) as null_first_names
+FROM customers 
+WHERE first_name IS NULL;
+
+SELECT 'customers' as table_name,
+       COUNT(*) as null_last_names
+FROM customers
+WHERE last_name IS NULL;
+
+-- Invalid credit limits
+SELECT COUNT(*) as invalid_credit_limits
+FROM accounts
+WHERE credit_limit &lt; 0 OR cash_credit_limit &gt; credit_limit;
+
+-- Invalid card numbers (Luhn check)
+-- (Requires custom function)
+
+-- 4. Business rule validation
+-- Customers under 18
+SELECT COUNT(*) as underage_customers
+FROM customers
+WHERE date_of_birth &gt; CURRENT_DATE - INTERVAL '18 years';
+
+-- Expired cards still active
+SELECT COUNT(*) as expired_active_cards
+FROM cards
+WHERE expiration_date &lt; CURRENT_DATE AND active_status = 'Y';
+
+-- Over-limit accounts
+SELECT COUNT(*) as overlimit_accounts
+FROM accounts
+WHERE current_balance &gt; credit_limit;
+
+-- 5. Sample data verification
+-- Random sample of 10 customers
+SELECT customer_id, first_name, last_name, ssn, fico_credit_score
+FROM customers
+ORDER BY RANDOM()
+LIMIT 10;
+
+-- Random sample of 10 transactions
+SELECT transaction_id, transaction_type, amount, card_number, 
+       original_timestamp, processed_timestamp
+FROM transactions
+ORDER BY RANDOM()
+LIMIT 10;
+</code></pre>
+<hr />
+<p><strong>Navigation</strong>: <a href="../Home/">Home</a> | <a href="../Migration-Plan/">Migration Plan</a> | <a href="../Migration-Technical-Guide/">Migration Technical Guide</a> | <a href="../Migration-Testing-Strategy/">Migration Testing Strategy</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
